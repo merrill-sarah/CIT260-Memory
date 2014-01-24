@@ -8,7 +8,7 @@ package memory;
 
 /**
  *
- * @author Sarawr
+ * @author Sarah M and Janis F
  */
 public class Memory {
 
