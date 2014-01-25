@@ -8,16 +8,15 @@ package memory;
 
 /**
  *
- * @author Janis
+ * @author - official version will be created by Sarah - this is just to make mine run
  */
-public class Card {
+// add score here?
+public class PlayerTemp {
+    String name;
+    int matchedGame;
+    int matchedOverall;
     
-    int number;
-    
-    
-    public Card(){
-        String shape = "";
-        String color = "";
-     
+    public PlayerTemp(){
+        
     }
 }

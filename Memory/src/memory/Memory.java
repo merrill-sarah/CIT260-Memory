@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class Memory {
     
      String name;
+     
      String instructions = " Welcome to a game of Memory!"
             + "\n\tYou may play against the computer or"
              + " another player."
@@ -27,18 +28,29 @@ public class Memory {
     
     public static void main(String[] args) {
         Memory myGame = new Memory();
-        myGame.getName();
+        myGame.getName1();
         myGame.displayHelp();
         
-        Board board = new Board();
-        board.displayGrid() // will need to rename after pulling board class
+        //Board board = new Board(); to be created
+        //board.displayGrid() // will need to rename after pulling board class
+    }
+   
+    public void getName1() {// lines 40 and 42 have errors... need to fix 
+        Scanner input = new Scanner(System.in);
+        System.out.println("First Player, Enter your name: ");
+        this.name= input.next();
     }
     
-    public void getName() {
+     public void getName2() {// lines 40 and 42 have errors... need to fix 
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter your name: ");
-        this.name = input.next();
-    }
+        System.out.println("Second Player, Enter your name: ");
+        this.name= input.next();
+     }
+    /*   Not working... need to learn more.
+       public void setNames(){
+       Game.player1.getName1();
+        System.out.println("");
+    }*/
     public void displayHelp(){
        System.out.println("\nWelcome " + this.name + "\n");
        System.out.println(this.instructions);        

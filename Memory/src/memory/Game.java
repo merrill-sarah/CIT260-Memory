@@ -11,28 +11,30 @@ package memory;
  * @author Janis
  */
 public class Game {
-    Player player1;
-    Player player2;
+    
+    PlayerTemp player1;  //use until 'official' Player class is created
+    PlayerTemp player2;
+    
+    public Game(){
+    this.player1 = new PlayerTemp();
+    this.player1.name = "Player 1"; //default until new name is chosen
+    this.player2 = new PlayerTemp();
+    this.player2.name = "Player 2";//default until new name is chosen
   
     int score;
-    int matchedPairs1 = 0;
-    int matchedPairs2 = 0;
-    int matchedPairsTotal1 = 0;
-    int matchedPairsTotal2 = 0;
-    String leader;
-    Board board;
-    
-    public void displayPlayers(){
-        System.out.println("");
+   
+    String leader; // will be determined through score comparison
+   // Board board;  Still needs to be created
     }
+ 
 
     public void displayMatchesMade(){
         System.out.println(
              "\n\t*******************************************************************"
-           + "\n\t" + this.player1 + "made " +matchedPairs1+ " matches in this game."
-           + "\n\t" + this.player2 + "made " +matchedPairs2+ " matches in this game."
-           + "\n\t" + this.player1 + "made " +matchedPairsTotal1+ " matches in all."
-           + "\n\t" + this.player2 + "made " +matchedPairsTotal2+ " matches in all."
+           + "\n\t" + this.player1 + "made " +this.player1.matchedGame+ " matches in this game."
+           + "\n\t" + this.player2 + "made " +this.player2.matchedGame+ " matches in this game."
+           + "\n\t" + this.player1 + "made " +this.player1.matchedOverall+ " matches in all."
+           + "\n\t" + this.player2 + "made " +this.player2.matchedOverall+ " matches in all."
            + "\n\t*******************************************************************");
     }
    
@@ -40,7 +42,7 @@ public class Game {
     public void displayLeader(){
         System.out.println(
         "\n\t*******************************************************************"
-       +"\n\t" + leader + " is in first place! Congratulations"
+       +"\n\tleader is in first place! Congratulations"  // will replace with leader variable
        +"\n\t*******************************************************************");
     }
 }
