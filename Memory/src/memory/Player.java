@@ -6,6 +6,8 @@
 
 package memory;
 
+import java.util.Scanner;
+
 /**
  *
  * @author - official version will be created by Sarah - this is just to make mine run
@@ -13,10 +15,34 @@ package memory;
 // add score here?
 public class Player {
     String name;
-    int matchedGame;
-    int matchedOverall;
+    int matchedGame = 0; //default starts at zero
+    int matchedOverall = 0; //default starts at zero
     
     public Player(){
-        
+        //counts matches in a game not exactly sure how to code. 
+        //if(player get a match) {
+        //matchedGame = matchedGame + 1;
+        // }
+        //
     }
+    public void getName1() {// lines 40 and 42 have errors... need to fix 
+        Scanner input = new Scanner(System.in);
+        System.out.println("First Player, Enter your name: ");
+        this.name= input.next();
+    }
+    public void getName2() {// lines 40 and 42 have errors... need to fix 
+        Scanner input = new Scanner(System.in);
+        System.out.println("Second Player, Enter your name: ");
+        this.name= input.next();
+    }
+    public void welcomePlayer1(){
+        System.out.println("Hello " + name + "!");
+    }
+    public void welcomePlayer2(){
+        System.out.println("And hello " + name +"!");
+    }
+    public void displayScore(){
+        System.out.println( name + ": " + matchedGame );
+    }
+    
 }

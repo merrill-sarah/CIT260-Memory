@@ -8,13 +8,16 @@ package memory;
 
 import java.util.Scanner;
 
+
+
 /**
  *
  * @author Sarah M and Janis F
  */
 public class Memory {
     
-     String name;
+     Player player1;
+     Player player2;        
      
      String instructions = " Welcome to a game of Memory!"
             + "\n\tYou may play against the computer or"
@@ -28,32 +31,35 @@ public class Memory {
     
     public static void main(String[] args) {
         Memory myGame = new Memory();
-        myGame.getName1();
         myGame.displayHelp();
+        
+        Player player1 = new Player();
+        Player player2 = new Player();
+        
+        player1.getName1();
+        player2.getName2();
+        
+        player1.welcomePlayer1();  
+        player2.welcomePlayer2();
+        
+        /*Displaying score.
+        Not sure if we want the code for displaying the current score
+        in the memory class
+        */
+        myGame.scoreHeading();
+        player1.displayScore();
+        player2.displayScore();
         
         Board board = new Board();
         board.displayGrid();
     }
-   
-    public void getName1() {// lines 40 and 42 have errors... need to fix 
-        Scanner input = new Scanner(System.in);
-        System.out.println("First Player, Enter your name: ");
-        this.name= input.next();
-    }
     
-     public void getName2() {// lines 40 and 42 have errors... need to fix 
-        Scanner input = new Scanner(System.in);
-        System.out.println("Second Player, Enter your name: ");
-        this.name= input.next();
-     }
-    /*   Not working... need to learn more.
-       public void setNames(){
-       Game.player1.getName1();
-        System.out.println("");
-    }*/
+              
+    
     public void displayHelp(){
-       System.out.println("\nWelcome " + this.name + "\n");
        System.out.println(this.instructions);        
     }
-   
+    public void scoreHeading(){
+        System.out.println("\n\tCurrent Score:" );
+    }
 }
