@@ -31,8 +31,8 @@ public class Memory {
         myGame.getName1();
         myGame.displayHelp();
         
-        //Board board = new Board(); to be created
-        //board.displayGrid() // will need to rename after pulling board class
+        Board board = new Board();
+        board.displayGrid();
     }
    
     public void getName1() {// lines 40 and 42 have errors... need to fix 

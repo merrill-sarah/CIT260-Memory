@@ -11,12 +11,12 @@ package memory;
  * @author - official version will be created by Sarah - this is just to make mine run
  */
 // add score here?
-public class PlayerTemp {
+public class Player {
     String name;
     int matchedGame;
     int matchedOverall;
     
-    public PlayerTemp(){
+    public Player(){
         
     }
 }
