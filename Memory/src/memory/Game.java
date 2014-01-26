@@ -16,14 +16,14 @@ public class Game {
     PlayerTemp player2;
     
     public Game(){
-    this.player1 = new PlayerTemp();
-    this.player1.name = "Player 1"; //default until new name is chosen
-    this.player2 = new PlayerTemp();
-    this.player2.name = "Player 2";//default until new name is chosen
+        this.player1 = new PlayerTemp();
+        this.player1.name = "Player 1"; //default until new name is chosen
+        this.player2 = new PlayerTemp();
+        this.player2.name = "Player 2";//default until new name is chosen
   
-    int score;
+        int score;
    
-    String leader; // will be determined through score comparison
+        String leader; // will be determined through score comparison
    // Board board;  Still needs to be created
     }
  
@@ -42,7 +42,7 @@ public class Game {
     public void displayLeader(){
         System.out.println(
         "\n\t*******************************************************************"
-       +"\n\tleader is in first place! Congratulations"  // will replace with leader variable
+       +"\n\tleader is in first place! Congratulations"  // will replace "leader" with leader variable
        +"\n\t*******************************************************************");
     }
 }
