@@ -42,16 +42,16 @@ public class Memory {
         player1.welcomePlayer1();  
         player2.welcomePlayer2();
         
-        /*Displaying score.
-        Not sure if we want the code for displaying the current score
-        in the memory class
-        */
+       
         myGame.scoreHeading();
         player1.displayScore();
         player2.displayScore();
         
         Board board = new Board();
         board.displayGrid();
+        
+        Card card1 = new Card();
+        card1.status();
     }
     
               

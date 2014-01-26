@@ -12,13 +12,19 @@ package memory;
  */
 public class Card {
     
-    int number; //to use until graphics can be added
+    int number = 5; // for now to use until graphics can be added
     String shape = ""; // I'm unsure if these go here or in the constructor
     String color = "";
-    boolean flipped = false; // indicates which side of the card is showing, True is face-up
+    boolean flipped = true; // indicates which side of the card is showing, True is face-up
     
     
     public Card(){
     
+    }
+    public void status(){
+        if (flipped){
+            System.out.println("Card display is " +number);
+        }
+            
     }
 }
