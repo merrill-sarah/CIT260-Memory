@@ -12,14 +12,21 @@ package memory;
  */
 public class Game {
     
-    PlayerTemp player1;  //use until 'official' Player class is created
-    PlayerTemp player2;
+    Player player1;  //use until 'official' Player class is created
+    Player player2;
     
     public Game(){
+   /*     // HEAD
         this.player1 = new PlayerTemp();
         this.player1.name = "Player 1"; //default until new name is chosen
         this.player2 = new PlayerTemp();
         this.player2.name = "Player 2";//default until new name is chosen
+=======*/
+    this.player1 = new Player();
+    this.player1.name = "Player 1"; //default until new name is chosen
+    this.player2 = new Player();
+    this.player2.name = "Player 2";//default until new name is chosen
+//>>>>>>> origin/master
   
         int score;
    
