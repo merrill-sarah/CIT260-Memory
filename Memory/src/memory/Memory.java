@@ -42,10 +42,12 @@ public class Memory {
         player1.welcomePlayer1();  
         player2.welcomePlayer2();
         
-       
-        myGame.scoreHeading();
-        player1.displayScore();
-        player2.displayScore();
+       GetMatchedStatus matchedstatus = new GetMatchedStatus();
+       matchedstatus.getMatchedStatus(36);
+        
+        //myGame.scoreHeading();
+        //player1.displayScore();
+        //player2.displayScore();
         
         Board board = new Board();
         board.displayGrid();
