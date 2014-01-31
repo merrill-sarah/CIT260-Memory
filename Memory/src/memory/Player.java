@@ -25,12 +25,12 @@ public class Player {
         // }
         //
     }
-    public void getName1() {// lines 40 and 42 have errors... need to fix 
+    public void getName1() { 
         Scanner input = new Scanner(System.in);
         System.out.println("First Player, Enter your name: ");
         this.name= input.next();
     }
-    public void getName2() {// lines 40 and 42 have errors... need to fix 
+    public void getName2() { 
         Scanner input = new Scanner(System.in);
         System.out.println("Second Player, Enter your name: ");
         this.name= input.next();

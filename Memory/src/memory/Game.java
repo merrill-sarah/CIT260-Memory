@@ -14,6 +14,7 @@ public class Game {
     
     Player player1;  //use until 'official' Player class is created
     Player player2;
+    GetMatchedStatus matchStatus;
     
     public Game(){
    /*     // HEAD
@@ -28,12 +29,24 @@ public class Game {
     this.player2.name = "Player 2";//default until new name is chosen
 //>>>>>>> origin/master
   
-        int score;
+        int score; // this may be better coming from a class instead?
    
         String leader; // will be determined through score comparison
    // Board board;  Still needs to be created
     }
  
+    
+    public void getStatus(){
+        int row;
+        int column;
+        int cardTotal;  // should this go in the Board class?
+      this.matchStatus= new GetMatchedStatus();
+      this.row.board.row;     // how to call values from other classes?
+      // column
+      cardTotal = row*column;
+      
+      matchStatus.getMatchedStatus(cardTotal);
+    }
 
     public void displayMatchesMade(){
         System.out.println(
