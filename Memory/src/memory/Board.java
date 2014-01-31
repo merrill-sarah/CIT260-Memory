@@ -22,4 +22,19 @@ public class Board {
                            + this.columns + " in size.");
         //will eventually show actually grid, not text//
         }
+    
+    
+    public int displayRows(){ // normally call getRows
+    return rows;
     }
+    public void setRows(int r){
+    rows = r;
+    }
+    
+    public int getColumns(){ // normally call getRows
+    return columns;
+    }
+    public void setColumns(int c){
+    columns = c;
+    }
+}

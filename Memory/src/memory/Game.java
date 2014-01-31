@@ -37,15 +37,21 @@ public class Game {
  
     
     public void getStatus(){
-        int row;
-        int column;
+        Board board = new Board();
+       int rows = board.displayRows();
+       // int rows=displayRows() NOT THIS WAY
+       
+    //to change number of rows
+        
+       
+       
+        int column = board.getColumns();
         int cardTotal;  // should this go in the Board class?
-      this.matchStatus= new GetMatchedStatus();
-      this.row.board.row;     // how to call values from other classes?
-      // column
-      cardTotal = row*column;
       
-      matchStatus.getMatchedStatus(cardTotal);
+      cardTotal = rows*column;
+      
+      GetMatchedStatus.getMatchedStatus(cardTotal);
+      
     }
 
     public void displayMatchesMade(){
