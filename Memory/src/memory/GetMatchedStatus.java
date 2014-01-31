@@ -54,10 +54,10 @@ public class GetMatchedStatus {
 
 	if (match){ 
 		numCards -= 2;
-	
+        }
 	System.out.println(
                 "\n\tnumber of matches left is: " + numCards/2);
-        }
+        
         
          // player2 inputs whether or not they made a match NEXT UPDATE NEED TO ACCESS PLAYER2 value
         System.out.println("Player 2, "
@@ -83,19 +83,20 @@ public class GetMatchedStatus {
 
 	if (match){ 
 		numCards -= 2;
-	
+        }
 	System.out.println(
                 "\n\tnumber of matches left is: " + numCards/2);
-        }
+        
 
 	if (numCards == gridSize){ 
 		System.out.println("0% of cards are matched");
         }
 	else {
-            percentDone=((gridSize - numCards)/gridSize);
-            percentDone = (int) (percentDone * 100); //cast to an int to use before the percent sign in the printout
+            percentDone=((float)(gridSize - numCards)/gridSize);
+           // System.out.println("percentDone as float = " +percentDone);
+            percentDone =  (percentDone * 100); 
 	    System.out.println(
-                "\n\t." + percentDone + "% of cards are matched.");
+                "\n\tnow " + (int)percentDone + "% of cards are matched.");
         }
 
     }	
