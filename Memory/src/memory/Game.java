@@ -43,7 +43,9 @@ public class Game {
        
     //to change number of rows
         
-       
+     /*  
+     Commented this stuff out because I did it in the board class and something
+       in here was giving me an error because of it
        
         int column = board.getColumns();
         int cardTotal;  // should this go in the Board class?
@@ -51,7 +53,7 @@ public class Game {
       cardTotal = rows*column;
       
       GetMatchedStatus.getMatchedStatus(cardTotal);
-      
+      */
     }
 
     public void displayMatchesMade(){

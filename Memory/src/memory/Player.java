@@ -36,7 +36,7 @@ public class Player {
         this.name= input.next();
     }
     public void welcomePlayer1(){
-        System.out.println("Hello " + name + "!");
+        System.out.println("\nHello " + name + "!");
     }
     public void welcomePlayer2(){
         System.out.println("And hello " + name +"!");

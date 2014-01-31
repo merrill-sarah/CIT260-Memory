@@ -17,6 +17,8 @@ public class GetMatchedStatus {
     boolean match;
     int numCards;
     static float percentDone;
+    String player1;
+    
     
     /* This is so I have an entry example****************
      public void getName1() {// 
@@ -25,13 +27,13 @@ public class GetMatchedStatus {
         this.name= input.next();
      }*/
     
-    public static void getMatchedStatus(int gridSize) { 
+    public static void getMatchedStatus(int gridSize,String player1,String player2) { 
         String response;
         boolean match = false;
         Scanner input = new Scanner(System.in);
         
         // player1 inputs whether or not they made a match NEXT UPDATE NEED TO ACCESS PLAYER1 value
-        System.out.println("Player 1 , "
+        System.out.println(player1 +", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
         response= input.next();
                         
@@ -60,7 +62,7 @@ public class GetMatchedStatus {
         
         
          // player2 inputs whether or not they made a match NEXT UPDATE NEED TO ACCESS PLAYER2 value
-        System.out.println("Player 2, "
+        System.out.println(player2 + ", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
         response= input.next();
                         

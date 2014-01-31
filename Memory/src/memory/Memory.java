@@ -42,14 +42,13 @@ public class Memory {
         player1.welcomePlayer1();  
         player2.welcomePlayer2();
         
-       GetMatchedStatus matchedstatus = new GetMatchedStatus();
-       matchedstatus.getMatchedStatus(36);
-        
-        //myGame.scoreHeading();
-        //player1.displayScore();
-        //player2.displayScore();
-        
         Board board = new Board();
+        board.gridSize();
+        
+        
+       GetMatchedStatus matchedstatus = new GetMatchedStatus();
+       matchedstatus.getMatchedStatus(board.totalCards, player1.name, player2.name);
+        
         board.displayGrid();
         
         Card card1 = new Card();
@@ -60,8 +59,5 @@ public class Memory {
     
     public void displayHelp(){
        System.out.println(this.instructions);        
-    }
-    public void scoreHeading(){
-        System.out.println("\n\tCurrent Score:" );
     }
 }

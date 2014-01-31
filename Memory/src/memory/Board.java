@@ -6,13 +6,18 @@
 
 package memory;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Sarawr
  */
 public class Board {
-    int rows = 6;
-    int columns = 9;
+    int rows;
+    int columns;
+    String size;
+    int totalCards;
+    float totalMatches;
     
     public Board(){
     }
@@ -22,8 +27,36 @@ public class Board {
                            + this.columns + " in size.");
         //will eventually show actually grid, not text//
         }
-    
-    
+    public void gridSize(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nEnter what size board you would like to play: "
+                + "\"small\" \"medium\" or \"large\":");
+        this.size= input.next();
+        
+        if(size.equals("small")){
+            rows = 3;
+            columns = 4;
+        }
+        else if(size.equals("medium")){
+            rows = 4;
+            columns = 6;
+        }
+        else if(size.equals("large")){
+             rows = 6;
+             columns = 8;
+                    }
+        else {
+             System.out.println("Invalid entry. Please enter: "
+                     + "\"small\" \"medium\" or \"large\" (without quotes):");
+                    }
+        
+        totalCards = rows * columns;
+        totalMatches = totalCards/2;
+        
+        System.out.println("\nThe board is " + rows + " by " + columns + ". "
+                + "There are a total of " + (int)totalMatches + " matches to find.");
+        }
+        
     public int displayRows(){ // normally call getRows
     return rows;
     }
