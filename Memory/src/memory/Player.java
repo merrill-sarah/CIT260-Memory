@@ -27,19 +27,13 @@ public class Player {
     }
     public void getName1() { 
         Scanner input = new Scanner(System.in);
-        System.out.println("First Player, Enter your name: ");
+        System.out.println("First Player, enter your name: ");
         this.name= input.next();
     }
     public void getName2() { 
         Scanner input = new Scanner(System.in);
-        System.out.println("Second Player, Enter your name: ");
+        System.out.println("Second Player, enter your name: ");
         this.name= input.next();
-    }
-    public void welcomePlayer1(){
-        System.out.println("\nHello " + name + "!");
-    }
-    public void welcomePlayer2(){
-        System.out.println("And hello " + name +"!");
     }
     public void displayScore(){
         System.out.println( name + ": " + matchedGame );
