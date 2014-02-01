@@ -39,8 +39,7 @@ public class Memory {
         player1.getName1();
         player2.getName2();
         
-        player1.welcomePlayer1();  
-        player2.welcomePlayer2();
+        myGame.welcomePlayers(player1.name, player2.name);
         
         Board board = new Board();
         board.gridSize();
@@ -57,9 +56,11 @@ public class Memory {
         
     }
     
-              
-    
     public void displayHelp(){
        System.out.println(this.instructions);        
+    }
+    public void welcomePlayers(String player1, String player2){
+        System.out.println("\nHello " + player1 + " and " + 
+                player2 + "! Welcome to Memory!");
     }
 }
