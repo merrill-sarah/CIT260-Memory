@@ -25,6 +25,17 @@ public class Card {
         if (flipped){
             System.out.println("Card display is " +number);
         }
+    }
+    
+    public void symbolsNeeded(){
+      int numSymbols;
+      int numMatching;
+      int numCards;
+      
+      Board board = new Board();
+      numCards = board.getTotalCards();
+      System.out.println("numCards is "+ numCards);
+     
             
     }
 }

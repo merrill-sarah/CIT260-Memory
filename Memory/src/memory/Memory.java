@@ -53,6 +53,8 @@ public class Memory {
         
         Card card1 = new Card();
         card1.status();
+        card1.symbolsNeeded();
+        
     }
     
               

@@ -38,8 +38,8 @@ public class Game {
     
     public void getStatus(){
         Board board = new Board();
-       int rows = board.displayRows();
-       // int rows=displayRows() NOT THIS WAY
+       int rows = board.getRows();
+       
        
     //to change number of rows
         

@@ -16,7 +16,7 @@ public class Board {
     int rows;
     int columns;
     String size;
-    int totalCards;
+    public int totalCards;
     float totalMatches;
     
     public Board(){
@@ -57,17 +57,30 @@ public class Board {
                 + "There are a total of " + (int)totalMatches + " matches to find.");
         }
         
-    public int displayRows(){ // normally call getRows
-    return rows;
+    // these get and set functions for rows and columns were per Bro. Neville's instructions
+    // I'm not sure how or if they'll be used
+    public int getRows(){ 
+        return rows;
     }
     public void setRows(int r){
-    rows = r;
+        rows = r;
     }
     
     public int getColumns(){ // normally call getRows
-    return columns;
+        return columns;
     }
     public void setColumns(int c){
-    columns = c;
+        columns = c;
+    }
+    
+    // these get and set are based on the above example - Game calls getTotalCards
+    // set... is there to follow the example - will have to watch and see if it is used
+    
+    public int getTotalCards(){
+        return totalCards;
+    }
+    
+    public void setTotalCards(int numCards){
+        totalCards = numCards;
     }
 }
