@@ -83,8 +83,9 @@ public class Game {
         welcomePlayers(player1.name, player2.name);
         Board board = new Board();
         board.gridSize();
-        
-        
+        numSymbolsNeeded(board.totalCards); // how is this different from the function on line 99??
+                                                // THIS IS WHERE THE FUNCTION RUNS
+                                    
        GetMatchedStatus matchedstatus = new GetMatchedStatus();
        matchedstatus.getMatchedStatus(board.totalCards, player1.name, player2.name);
         
@@ -94,4 +95,12 @@ public class Game {
         System.out.println("\nHello " + player1 + " and " + 
                 player2 + "! Welcome to Memory!");
     }
+     // ************** FUNCTION FOR INDIVIDUAL ASSIGNMENT L03 *****************
+      public void numSymbolsNeeded(int numCards){
+      int numOfSymbols;
+      int matchingSymbols;
+            
+      System.out.println( "numSymbolsNeeded Function - accessed!");
+      }
+     
 }
