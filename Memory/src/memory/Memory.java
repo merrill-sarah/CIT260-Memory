@@ -32,23 +32,9 @@ public class Memory {
     public static void main(String[] args) {
         Memory myGame = new Memory();
         myGame.displayHelp();
-        
-        Player player1 = new Player();
-        Player player2 = new Player();
-        
-        player1.getName1();
-        player2.getName2();
-        
-        myGame.welcomePlayers(player1.name, player2.name);
-        
-        Board board = new Board();
-        board.gridSize();
-        
-        
-       GetMatchedStatus matchedstatus = new GetMatchedStatus();
-       matchedstatus.getMatchedStatus(board.totalCards, player1.name, player2.name);
-        
-        board.displayGrid();
+             
+        Game newGame = new Game();
+        newGame.startGame();
         
         Card card1 = new Card();
         card1.status();
@@ -58,9 +44,5 @@ public class Memory {
     
     public void displayHelp(){
        System.out.println(this.instructions);        
-    }
-    public void welcomePlayers(String player1, String player2){
-        System.out.println("\nHello " + player1 + " and " + 
-                player2 + "! Welcome to Memory!");
     }
 }
