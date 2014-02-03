@@ -81,7 +81,7 @@ public class GetMatchedStatus {
 		System.out.println("0% of cards are matched");
         }
 	else {
-            percentDone=(/*(float)*/(gridSize - numCards)/gridSize);
+            percentDone=((float)(gridSize - numCards)/gridSize);
            // System.out.println("percentDone as float = " +percentDone);
             percentDone =  (percentDone * 100); 
 	    System.out.println(
