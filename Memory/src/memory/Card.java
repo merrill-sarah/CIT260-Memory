@@ -31,11 +31,11 @@ public class Card {
       int numSymbols;
       int numMatching;
       int numCards;
-      
-      Board board = new Board();
-      numCards = board.getTotalCards();
+     /* 
+      Board board1 = new Board();
+      numCards = board1.getTotalCards();
       System.out.println("numCards is "+ numCards);
-     
+     */
             
     }
 }

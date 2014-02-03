@@ -20,12 +20,7 @@ public class GetMatchedStatus {
     String player1;
     
     
-    /* This is so I have an entry example****************
-     public void getName1() {// 
-        Scanner input = new Scanner(System.in);
-        System.out.println("First Player, Enter your name: ");
-        this.name= input.next();
-     }*/
+    
     
     public static void getMatchedStatus(int gridSize,String player1,String player2) { 
         String response;
@@ -47,10 +42,7 @@ public class GetMatchedStatus {
            else {
                System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
            }    
-        /*  This was in the assignment example - don't know how to incorporate
-	if (match != True & match != False) then
-	display “Invalid Entry: please enter t or f”
-		return -1	*/
+       
 	
 	int numCards = gridSize;	
 
@@ -76,12 +68,7 @@ public class GetMatchedStatus {
            else {
                System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
            }    
-        /*  This was in the assignment example - don't know how to incorporate
-	if (match != True & match != False) then
-	display “Invalid Entry: please enter t or f”
-		return -1	*/
-	
-	//int numCards = gridSize;	
+       	
 
 	if (match){ 
 		numCards -= 2;
