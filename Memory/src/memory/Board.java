@@ -51,7 +51,7 @@ public class Board {
                     }
         
         totalCards = rows * columns;
-        totalMatches = (float)totalCards/2;
+        totalMatches = /*(float)*/totalCards/2;
         
         System.out.println("\nThe board is " + rows + " by " + columns + ". "
                 + "There are a total of " + (int)totalMatches + " matches to find.");
