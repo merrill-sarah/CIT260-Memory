@@ -56,6 +56,23 @@ public class Board {
         System.out.println("\nThe board is " + rows + " by " + columns + ". "
                 + "There are a total of " + (int)totalMatches + " matches to find.");
         }
+    
+    
+    public int matchDifficulty(){
+        int numMatchingSymbols;
+        System.out.println("\n\tYou can change the difficulty by choosing whether there are 4 "
+                + "of each kind of card, or 2 of each");
+        
+        
+          Scanner matchChoice = new Scanner(System.in);
+          
+          System.out.println("\n\tEnter how many of each kind of card 2 or 4: ");
+         
+          numMatchingSymbols = matchChoice.nextInt();
+          
+          return numMatchingSymbols;
+     }
+                 
         
     // these get and set functions for rows and columns were per Bro. Neville's instructions
     // I'm not sure how or if they'll be used

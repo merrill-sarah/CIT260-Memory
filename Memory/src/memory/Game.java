@@ -83,8 +83,7 @@ public class Game {
         welcomePlayers(player1.name, player2.name);
         Board board = new Board();
         board.gridSize();
-        numSymbolsNeeded(board.totalCards); // how is this different from the function on line 99??
-                                                // THIS IS WHERE THE FUNCTION RUNS
+        numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and gets totalCards from Board board
                                     
        GetMatchedStatus matchedstatus = new GetMatchedStatus();
        matchedstatus.getMatchedStatus(board.totalCards, player1.name, player2.name);
@@ -96,11 +95,32 @@ public class Game {
                 player2 + "! Welcome to Memory!");
     }
      // ************** FUNCTION FOR INDIVIDUAL ASSIGNMENT L03 *****************
-      public void numSymbolsNeeded(int numCards){
+      public void numSymbolsNeeded(int numCards, int matchingSymbols){
       int numOfSymbols;
-      int matchingSymbols;
+     
+      // ******** error checking ***********
+        if ((numCards != 12) & (numCards != 24) & (numCards != 48)){
+            System.out.println("Invalid entry. Please enter board size again");
+           // board.gridSize();
+           }   
+
+        if (matchingSymbols != 2 & matchingSymbols != 4){
+             System.out.println("Invalid entry. Please enter number of matching cards again");
+             // board.matchDifficulty();
+        }
+
+        if (numCards % matchingSymbols !=4){
+            System.out.println("Error. Please choose grid size and number of matching cards again");
+                // function for repeating choices here
+        }
             
-      System.out.println( "numSymbolsNeeded Function - accessed!");
+      numOfSymbols = numCards / matchingSymbols;
+      
+      System.out.println( "\n\tYou need a total of " + numOfSymbols + " different symbols.");
+      
+      //matchingSymbols(board.matchDifficulty();
+            
+      //System.out.println( "numSymbolsNeeded Function - accessed!"); //to test function is working
       }
      
 }
