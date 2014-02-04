@@ -13,7 +13,7 @@ package memory;
 public class Card {
     
     int number = 5; // for now to use until graphics can be added
-    String shape = ""; // I'm unsure if these go here or in the constructor
+    String shape = ""; 
     String color = "";
     boolean flipped = true; // indicates which side of the card is showing, True is face-up
     
@@ -31,11 +31,6 @@ public class Card {
       int numSymbols;
       int numMatching;
       int numCards;
-     /* 
-      Board board1 = new Board();
-      numCards = board1.getTotalCards();
-      System.out.println("numCards is "+ numCards);
-     */
             
     }
 }

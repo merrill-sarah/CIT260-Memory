@@ -15,15 +15,11 @@ import java.util.Scanner;
 // add score here?
 public class Player {
     String name;
-    int matchedGame = 0; //default starts at zero
-    int matchedOverall = 0; //default starts at zero
+    int matchedGame; 
+    int matchedOverall; 
     
     public Player(){
-        //counts matches in a game not exactly sure how to code. 
-        //if(player get a match) {
-        //matchedGame = matchedGame + 1;
-        // }
-        //
+        
     }
     public void getName1() { 
         Scanner input = new Scanner(System.in);

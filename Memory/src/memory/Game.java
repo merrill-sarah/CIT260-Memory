@@ -17,19 +17,14 @@ public class Game {
     GetMatchedStatus matchStatus;
     
     public Game(){
-   /*     // HEAD
-        this.player1 = new PlayerTemp();
-        this.player1.name = "Player 1"; //default until new name is chosen
-        this.player2 = new PlayerTemp();
-        this.player2.name = "Player 2";//default until new name is chosen
-=======*/
+  
     this.player1 = new Player();
     this.player1.name = "Player 1"; //default until new name is chosen
     this.player2 = new Player();
     this.player2.name = "Player 2";//default until new name is chosen
 //>>>>>>> origin/master
   
-        int score; // this may be better coming from a class instead?
+        int score; 
    
         String leader; // will be determined through score comparison
    // Board board;  Still needs to be created
@@ -40,21 +35,7 @@ public class Game {
         Board board = new Board();
        int rows = board.getRows();
        
-       
-    //to change number of rows
-        
-     /*  
-     Commented this stuff out because I did it in the board class and something
-       in here was giving me an error because of it
-       
-        int column = board.getColumns();
-        int cardTotal;  // should this go in the Board class?
-      
-      cardTotal = rows*column;
-      
-      GetMatchedStatus.getMatchedStatus(cardTotal);
-      */
-    }
+        }
 
     public void displayMatchesMade(){
         System.out.println(
@@ -83,7 +64,7 @@ public class Game {
         welcomePlayers(player1.name, player2.name);
         Board board = new Board();
         board.gridSize();
-        numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and gets totalCards from Board board
+        numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
                                     
        GetMatchedStatus matchedstatus = new GetMatchedStatus();
        matchedstatus.getMatchedStatus(board.totalCards, player1.name, player2.name);
@@ -93,34 +74,33 @@ public class Game {
     public void welcomePlayers(String player1, String player2){
         System.out.println("\nHello " + player1 + " and " + 
                 player2 + "! Welcome to Memory!");
+        
     }
      // ************** FUNCTION FOR INDIVIDUAL ASSIGNMENT L03 *****************
+    
       public void numSymbolsNeeded(int numCards, int matchingSymbols){
       int numOfSymbols;
+      String errorMessage;
+      
+      errorMessage = ("\n\tError. Please choose grid size and number of matching cards again.");
      
-      // ******** error checking ***********
+      // ******** error checking of parameters***********
         if ((numCards != 12) & (numCards != 24) & (numCards != 48)){
-            System.out.println("Invalid entry. Please enter board size again");
-           // board.gridSize();
+            System.out.println("\n\tInvalid entry. Please enter board size again");
+           // board.gridSize(); for re-entering choice
            }   
 
-        if (matchingSymbols != 2 & matchingSymbols != 4){
-             System.out.println("Invalid entry. Please enter number of matching cards again");
-             // board.matchDifficulty();
-        }
-
-        if (numCards % matchingSymbols !=4){
-            System.out.println("Error. Please choose grid size and number of matching cards again");
-                // function for repeating choices here
+       // using short-circuit operators
+        if ((numCards % matchingSymbols !=0) ||(matchingSymbols % 3==0)) {
+            System.out.println(errorMessage);
+                // use function for repeating choices here
         }
             
       numOfSymbols = numCards / matchingSymbols;
       
       System.out.println( "\n\tYou need a total of " + numOfSymbols + " different symbols.");
       
-      //matchingSymbols(board.matchDifficulty();
-            
-      //System.out.println( "numSymbolsNeeded Function - accessed!"); //to test function is working
+     
       }
      
 }

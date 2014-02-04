@@ -27,7 +27,7 @@ public class GetMatchedStatus {
         boolean match = false;
         Scanner input = new Scanner(System.in);
         
-        // player1 inputs whether or not they made a match NEXT UPDATE NEED TO ACCESS PLAYER1 value
+       
         System.out.println(player1 +", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
         response= input.next();
@@ -53,7 +53,7 @@ public class GetMatchedStatus {
                 "\n\tnumber of matches left is: " + numCards/2);
         
         
-         // player2 inputs whether or not they made a match NEXT UPDATE NEED TO ACCESS PLAYER2 value
+        
         System.out.println(player2 + ", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
         response= input.next();

@@ -72,10 +72,7 @@ public class Board {
           
           return numMatchingSymbols;
      }
-                 
-        
-    // these get and set functions for rows and columns were per Bro. Neville's instructions
-    // I'm not sure how or if they'll be used
+         
     public int getRows(){ 
         return rows;
     }
@@ -83,21 +80,5 @@ public class Board {
         rows = r;
     }
     
-    public int getColumns(){ // normally call getRows
-        return columns;
-    }
-    public void setColumns(int c){
-        columns = c;
-    }
-    
-    // these get and set are based on the above example - Game calls getTotalCards
-    // set... is there to follow the example - will have to watch and see if it is used
-    
-    public int getTotalCards(){
-        return totalCards;
-    }
-    
-    public void setTotalCards(int numCards){
-        totalCards = numCards;
-    }
+
 }

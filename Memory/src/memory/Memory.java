@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Sarah M and Janis F
+ * @authors Sarah M and Janis F
  */
 public class Memory {
     
