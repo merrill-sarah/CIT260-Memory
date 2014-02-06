@@ -6,6 +6,7 @@
 
 package memory;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -29,7 +30,7 @@ public class Memory {
              +"\n\tHave Fun!!"
              + "\n";
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Memory myGame = new Memory();
         myGame.displayHelp();
              

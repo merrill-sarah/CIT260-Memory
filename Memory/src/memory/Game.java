@@ -6,6 +6,9 @@
 
 package memory;
 
+import java.io.IOException;
+import java.util.Scanner;
+
 /**
  *
  * @author Janis
@@ -54,7 +57,7 @@ public class Game {
        +"\n\tleader is in first place! Congratulations"  // will replace "leader" with leader variable
        +"\n\t*******************************************************************");
     }
-    public void startGame(){
+    public void startGame() throws IOException{
         Player player1 = new Player();
         Player player2 = new Player();
         
@@ -70,6 +73,9 @@ public class Game {
        matchedstatus.getMatchedStatus(board.totalCards, player1.name, player2.name);
         
         board.displayGrid();
+        
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.getInput();
     }
     public void welcomePlayers(String player1, String player2){
         System.out.println("\nHello " + player1 + " and " + 
@@ -102,5 +108,23 @@ public class Game {
       
      
       }
+   /* ************* moving this function here to remove unneeded Class -- in progress *********
+      public static void getMatchedStatus(int gridSize,String player1,String player2) {
+          String response; // player inputs whether a match or not using 't' or 'f'
+          int numCards=gridSize;
+          boolean match;
+          double percentDone;
+          
+          
+          Scanner input = new Scanner(System.in);
+        
+       
+        System.out.println(player1 +", "
+                + "Enter 't' if you made a match, or 'f' if you didn't; ");
+        response= input.next();
+          
+       **** change if else if else to switch?*****   
+          
+      }*/
      
 }

@@ -6,6 +6,7 @@
 
 package memory;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -22,21 +23,22 @@ public class GetMatchedStatus {
     
     
     
-    public static void getMatchedStatus(int gridSize,String player1,String player2) { 
-        String response;
+    public static void getMatchedStatus(int gridSize,String player1,String player2) throws IOException { 
+        char response;
+        String response2;
         boolean match = false;
         Scanner input = new Scanner(System.in);
         
        
         System.out.println(player1 +", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
-        response= input.next();
+        response= (char)System.in.read();//input.next();
                         
 
-        if (response.equals("t")) {
+        if (response == 't') {
            match = true;   } 
         
-           else if(response.equals("f")){
+           else if(response == 'f'){
                  match = false;
                    }
            else {
@@ -56,13 +58,13 @@ public class GetMatchedStatus {
         
         System.out.println(player2 + ", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
-        response= input.next();
+        response2= input.next();
                         
 
-        if (response.equals("t")) {
+        if (response2.equals("t")) {
            match = true;   } 
         
-           else if(response.equals("f")){
+           else if(response2.equals("f")){
                  match = false;
                    }
            else {
