@@ -12,22 +12,20 @@ import java.util.Scanner;
  *
  * @author Janis
  */
-public class HelpMenuView {
- 
-  private final static String[][] menuItems = {
-        {"B", "The board"},
-        {"C", "Choosing Cards"}, 
-        {"H", "How to Play"},
-        {"O", "Options"},
-        {"P", "Choosing Players"},        
-        {"Q", "Quit Help"}        
+public class OptionMenuView {
+    private final static String[][] menuItems = {
+        {"B", "Choose Board Size"},
+        {"M", "Matching Difficulty"},
+        {"N", "Number of Players"},
+        {"P", "Player Names"},
+        {"Q", "Quit Option Menu"}
     };
     
-    // Create instance of the HelpMenuControl (action) class
-    private HelpMenuControl helpMenuControl = new HelpMenuControl();
+    // Create instance of the OptionsMenuControl (action) class
+    private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
     
     // default constructor
-    public HelpMenuView() {
+    public OptionMenuView() {
         
     } 
     
@@ -47,20 +45,17 @@ public class HelpMenuView {
             
             switch (command) {
                 case "B":
-                    this.helpMenuControl.displayBoardHelp();
+                    this.optionsMenuControl.displayBoardOption();
                     break;
-                case "C":
-                    this.helpMenuControl.displayCardChoiceHelp();
+                case "M":
+                    this.optionsMenuControl.displayMatchingOption();
                     break;
-                case "H":
-                    this.helpMenuControl.displayGameHelp();
+                case "N":
+                    this.optionsMenuControl.displayNumPlayersOption();
                     break;                  
-                case "O":
-                    this.helpMenuControl.displayOptionsHelp();
+                case "P":
+                    this.optionsMenuControl.displayPlayerNamesOption();
                     break;
-                 case "P":
-                    this.helpMenuControl.displayPlayersHelp();
-                    break; 
                 case "Q": 
                     break;
                 default: 
@@ -77,7 +72,7 @@ public class HelpMenuView {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following Help Menus:");
 
-        for (int i = 0; i < HelpMenuView.menuItems.length; i++) {
+        for (int i = 0; i < OptionMenuView.menuItems.length; i++) {
             System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
         System.out.println("\t===============================================================\n");

@@ -76,6 +76,9 @@ public class Game {
         
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.getInput();
+        
+        OptionMenuView optionMenuView = new OptionMenuView();
+        optionMenuView.getInput();
     }
     public void welcomePlayers(String player1, String player2){
         System.out.println("\nHello " + player1 + " and " + 
