@@ -71,14 +71,5 @@ public class Board {
           numMatchingSymbols = matchChoice.nextInt();
           
           return numMatchingSymbols;
-     }
-         
-    public int getRows(){ 
-        return rows;
-    }
-    public void setRows(int r){
-        rows = r;
-    }
-    
-
+     }  
 }

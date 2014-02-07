@@ -24,23 +24,6 @@ public class Game {
         String leader; // will be determined through score comparison
    // Board board;  Still needs to be created
     }
-    public void displayMatchesMade(){
-        System.out.println(
-             "\n\t*******************************************************************"
-           + "\n\t" + player1 + "made " + player1.matchedGame+ " matches in this game."
-           + "\n\t" + player2 + "made " + player2.matchedGame+ " matches in this game."
-           + "\n\t" + player1 + "made " + player1.matchedOverall+ " matches in all."
-           + "\n\t" + player2 + "made " + player2.matchedOverall+ " matches in all."
-           + "\n\t*******************************************************************");
-    }
-   
-    
-    public void displayLeader(){
-        System.out.println(
-        "\n\t*******************************************************************"
-       +"\n\tleader is in first place! Congratulations"  // will replace "leader" with leader variable
-       +"\n\t*******************************************************************");
-    }
     public void startGame() throws IOException{       
         player1.getName1();
         player2.getName2();
@@ -58,6 +41,23 @@ public class Game {
         
         OptionMenuView optionMenuView = new OptionMenuView();
         optionMenuView.getInput();
+    }
+    public void displayMatchesMade(){
+        System.out.println(
+             "\n\t*******************************************************************"
+           + "\n\t" + player1 + "made " + player1.matchedGame+ " matches in this game."
+           + "\n\t" + player2 + "made " + player2.matchedGame+ " matches in this game."
+           + "\n\t" + player1 + "made " + player1.matchedOverall+ " matches in all."
+           + "\n\t" + player2 + "made " + player2.matchedOverall+ " matches in all."
+           + "\n\t*******************************************************************");
+    }
+   
+    
+    public void displayLeader(){
+        System.out.println(
+        "\n\t*******************************************************************"
+       +"\n\tleader is in first place! Congratulations"  // will replace "leader" with leader variable
+       +"\n\t*******************************************************************");
     }
     public void welcomePlayers(String player1, String player2){
         System.out.println("\nHello " + player1 + " and " + 
