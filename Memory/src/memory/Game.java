@@ -14,39 +14,41 @@ import java.util.Scanner;
  * @author Janis
  */
 public class Game {
-    
-    Player player1;  //use until 'official' Player class is created
-    Player player2;
-    GetMatchedStatus matchStatus;
+    Player player1 = new Player();
+    Player player2 = new Player();
     
     public Game(){
-  
-    this.player1 = new Player();
-    this.player1.name = "Player 1"; //default until new name is chosen
-    this.player2 = new Player();
-    this.player2.name = "Player 2";//default until new name is chosen
-//>>>>>>> origin/master
   
         int score; 
    
         String leader; // will be determined through score comparison
    // Board board;  Still needs to be created
     }
- 
-    
-    public void getStatus(){
+    public void startGame() throws IOException{       
+        player1.getName1();
+        player2.getName2();
+        
+        welcomePlayers(player1.name, player2.name);
         Board board = new Board();
-       int rows = board.getRows();
-       
-        }
-
+        board.gridSize();
+        numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
+                                    
+        getMatchedStatus(board.totalCards, player1.name, player2.name);
+        board.displayGrid();
+        
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.getInput();
+        
+        OptionMenuView optionMenuView = new OptionMenuView();
+        optionMenuView.getInput();
+    }
     public void displayMatchesMade(){
         System.out.println(
              "\n\t*******************************************************************"
-           + "\n\t" + this.player1 + "made " +this.player1.matchedGame+ " matches in this game."
-           + "\n\t" + this.player2 + "made " +this.player2.matchedGame+ " matches in this game."
-           + "\n\t" + this.player1 + "made " +this.player1.matchedOverall+ " matches in all."
-           + "\n\t" + this.player2 + "made " +this.player2.matchedOverall+ " matches in all."
+           + "\n\t" + player1 + "made " + player1.matchedGame+ " matches in this game."
+           + "\n\t" + player2 + "made " + player2.matchedGame+ " matches in this game."
+           + "\n\t" + player1 + "made " + player1.matchedOverall+ " matches in all."
+           + "\n\t" + player2 + "made " + player2.matchedOverall+ " matches in all."
            + "\n\t*******************************************************************");
     }
    
@@ -56,29 +58,6 @@ public class Game {
         "\n\t*******************************************************************"
        +"\n\tleader is in first place! Congratulations"  // will replace "leader" with leader variable
        +"\n\t*******************************************************************");
-    }
-    public void startGame() throws IOException{
-        Player player1 = new Player();
-        Player player2 = new Player();
-        
-        player1.getName1();
-        player2.getName2();
-        
-        welcomePlayers(player1.name, player2.name);
-        Board board = new Board();
-        board.gridSize();
-        numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
-                                    
-       GetMatchedStatus matchedstatus = new GetMatchedStatus();
-       matchedstatus.getMatchedStatus(board.totalCards, player1.name, player2.name);
-        
-        board.displayGrid();
-        
-        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.getInput();
-        
-        OptionMenuView optionMenuView = new OptionMenuView();
-        optionMenuView.getInput();
     }
     public void welcomePlayers(String player1, String player2){
         System.out.println("\nHello " + player1 + " and " + 
@@ -111,23 +90,74 @@ public class Game {
       
      
       }
-   /* ************* moving this function here to remove unneeded Class -- in progress *********
-      public static void getMatchedStatus(int gridSize,String player1,String player2) {
-          String response; // player inputs whether a match or not using 't' or 'f'
-          int numCards=gridSize;
-          boolean match;
-          double percentDone;
-          
-          
-          Scanner input = new Scanner(System.in);
+      public static void getMatchedStatus(int gridSize,String player1,String player2) throws IOException { 
+        float percentDone;
+        char response;
+        String response2;
+        boolean match = false;
+        Scanner input = new Scanner(System.in);
         
        
         System.out.println(player1 +", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
-        response= input.next();
-          
-       **** change if else if else to switch?*****   
-          
-      }*/
-     
+        response= (char)System.in.read();//input.next();
+                        
+        /**** change if else if else to switch?*****/
+        if (response == 't') {
+           match = true;   } 
+        
+           else if(response == 'f'){
+                 match = false;
+                   }
+           else {
+               System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
+           }    
+       
+	
+	int numCards = gridSize;	
+
+	if (match){ 
+		numCards -= 2;
+        }
+	System.out.println(
+                "\n\tnumber of matches left is: " + numCards/2);
+        
+        
+        
+        System.out.println(player2 + ", "
+                + "Enter 't' if you made a match, or 'f' if you didn't; ");
+        response2= input.next();
+                        
+        /**** change if else if else to switch?*****/
+        if (response2.equals("t")) {
+           match = true;   } 
+        
+           else if(response2.equals("f")){
+                 match = false;
+                   }
+           else {
+               System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
+           }    
+       	
+
+	if (match){ 
+		numCards -= 2;
+        }
+	System.out.println(
+                "\n\tnumber of matches left is: " + numCards/2);
+        
+
+	if (numCards == gridSize){ 
+		System.out.println("0% of cards are matched");
+        }
+	else {
+            percentDone=((float)(gridSize - numCards)/gridSize);
+           
+            percentDone =  (percentDone * 100); 
+	    System.out.println(
+                "\n\tnow " + (int)percentDone + "% of cards are matched.");
+        }
+        
+      }
+      
 }
