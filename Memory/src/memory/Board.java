@@ -29,25 +29,26 @@ public class Board {
         }
     public void gridSize(){
         Scanner input = new Scanner(System.in);
-        System.out.println("\nEnter what size board you would like to play: "
-                + "\"small\" \"medium\" or \"large\":");
+        System.out.println("\nEnter the letter associated with the size board "
+                + "you would like to play: "
+                + "\n\"s\" for small, \"m\" for medium, or \"l\" for large:");
         this.size= input.next();
         
-        if(size.equals("small")){
+        if(size.equals("s")){
             rows = 3;
             columns = 4;
         }
-        else if(size.equals("medium")){
+        else if(size.equals("m")){
             rows = 4;
             columns = 6;
         }
-        else if(size.equals("large")){
+        else if(size.equals("l")){
              rows = 6;
              columns = 8;
                     }
         else {
              System.out.println("Invalid entry. Please enter: "
-                     + "\"small\" \"medium\" or \"large\" (without quotes):");
+                     + "\"s\" \"m\" or \"l\" (without quotes):");
                     }
         
         totalCards = rows * columns;

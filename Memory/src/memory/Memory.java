@@ -33,9 +33,12 @@ public class Memory {
     public static void main(String[] args) throws IOException {
         Memory myGame = new Memory();
         myGame.displayHelp();
-             
-        Game newGame = new Game();
-        newGame.startGame();
+        
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.getInput();
+        
+        //Game newGame = new Game();
+        //newGame.startGame();
         
         Card card1 = new Card();
         card1.status();
