@@ -70,7 +70,8 @@ public class OptionMenuView {
         // displays the help menu
     public final void display() {
         System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following Help Menus:");
+        System.out.println("\t*** OPTIONS MENU **************************************"
+                + "\n\tEnter the letter to change one of the following options:");
 
         for (int i = 0; i < OptionMenuView.menuItems.length; i++) {
             System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);

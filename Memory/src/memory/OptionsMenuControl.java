@@ -12,6 +12,7 @@ package memory;
  */
 public class OptionsMenuControl {
     Board board = new Board();
+    Player player = new Player();
     public OptionsMenuControl(){
         
     }
@@ -26,10 +27,14 @@ public class OptionsMenuControl {
     }   
         
     public void displayNumPlayersOption()/*Case N*/{
-       // this.board.matchDifficulty();
+        System.out.println("You will get to choose 2 players, or to play against the computer."
+                + "\nThis method is still under construction."
+                + "\nBut THE MENU WORKS!!");
+                     
     }   
     
     public void displayPlayerNamesOption()/*Case P*/{
-       // this.board.matchDifficulty();
+       this.player.getName1();
+       this.player.getName2();
     }   
 }
