@@ -59,6 +59,7 @@ public class Board {
         }
     
     
+    
     public int matchDifficulty(){
         int numMatchingSymbols;
         System.out.println("\n\tYou can change the difficulty by choosing whether there are 4 "

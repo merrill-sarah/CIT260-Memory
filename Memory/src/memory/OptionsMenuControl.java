@@ -13,6 +13,8 @@ package memory;
 public class OptionsMenuControl {
     Board board = new Board();
     Player player = new Player();
+    
+    
     public OptionsMenuControl(){
         
     }

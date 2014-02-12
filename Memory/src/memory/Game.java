@@ -36,12 +36,16 @@ public class Game {
         getMatchedStatus(board.totalCards, player1.name, player2.name);
         board.displayGrid();
         
+        BoardView boardView = new BoardView();
+        boardView.displayBoard(board);
+        
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.getInput();
         
         OptionMenuView optionMenuView = new OptionMenuView();
         optionMenuView.getInput();
     }
+    
     public void displayMatchesMade(){
         System.out.println(
              "\n\t*******************************************************************"
