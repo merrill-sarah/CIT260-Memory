@@ -21,7 +21,7 @@ public class MainMenuView {
         {"Q", "Quit"}
     };
     
-    // Create instance of the HelpMenuControl (action) class
+    // Create instance of the MainMenuControl (action) class
     private MainMenuControl mainMenuControl = new MainMenuControl();
     
     // default constructor
@@ -39,7 +39,7 @@ public class MainMenuView {
             
             this.display(); // display the menu
             
-            // get commaned entered
+            // get command entered
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             

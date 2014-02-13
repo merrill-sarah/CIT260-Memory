@@ -17,8 +17,8 @@ public class BoardView {
         this.board = board;
         
        int gridNums = 1;
-       int rows= 4; // will have to pass these values in
-       int columns=6;// will have to pass these values in
+       int rows= board.rows; // will have to pass these values in
+       int columns=board.columns ;// will have to pass these values in
         int nums [][] = new int [rows][columns];
         
         for (int i=0; i<rows; i++){
