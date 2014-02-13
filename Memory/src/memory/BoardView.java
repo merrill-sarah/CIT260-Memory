@@ -17,8 +17,8 @@ public class BoardView {
         this.board = board;
         
        int gridNums = 1;
-       int rows= board.rows; // will have to pass these values in
-       int columns=board.columns ;// will have to pass these values in
+       int rows= board.rows; //  pass these values in
+       int columns=board.columns ;//  pass these values in
         int nums [][] = new int [rows][columns];
         
         for (int i=0; i<rows; i++){
@@ -29,10 +29,8 @@ public class BoardView {
         System.out.print("\t|");
         
         //Use method here for making the lines
-        for (int i=0; i<columns; i++){
-                         System.out.print("---------------|");}
-        System.out.print("\n");
-                         
+        this.horizontalLn();
+                                
          for (int x[] : nums){
              for (int y : x){
                  if (y%columns!=0){
@@ -41,12 +39,8 @@ public class BoardView {
                  else{
                      System.out.print("\t|\t" +y + "\t|");
                      System.out.print("\n\t|");
-                     for (int i=0; i<columns; i++){
-                         System.out.print("---------------|");
-                     }
-                     System.out.print("\n");
-                 
-                    
+                     this.horizontalLn();
+                     
                  } 
                
              }
@@ -54,11 +48,13 @@ public class BoardView {
          }
     }
                  
-    /*   public void horizontalLn(int columns){  
+       public void horizontalLn(){  
+           int columns=board.columns;
            for (int i=0; i<columns; i++){
                          System.out.print("---------------|");
            }
-    }*/
+           System.out.print("\n");
+    }
 }
  
         
