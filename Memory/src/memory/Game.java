@@ -33,11 +33,12 @@ public class Game {
         board.gridSize();
         numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
                                     
-        getMatchedStatus(board.totalCards, player1.name, player2.name);
-        board.displayGrid();
-        
         BoardView boardView = new BoardView();
         boardView.displayBoard(board);
+        selectCard(boardView.nums);
+        
+        getMatchedStatus(board.totalCards, player1.name, player2.name);
+        board.displayGrid();
         
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.getInput();
@@ -68,6 +69,7 @@ public class Game {
                 player2 + "! Welcome to Memory!");
         
     }
+
      // ************** FUNCTION FOR INDIVIDUAL ASSIGNMENT L03 *****************
     
       public void numSymbolsNeeded(int numCards, int matchingSymbols){
@@ -94,6 +96,39 @@ public class Game {
       
      
       }
+             
+    public void selectCard(int nums[][]){
+        String cardSelection;
+        int cardSymbol = 0;
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter the number of your card selection: ");
+        cardSelection = input.next();
+        
+        switch (cardSelection) {
+                case "1":
+                    cardSymbol = nums [1][1];
+                    break;
+                case "C":
+                    
+                    break;
+                case "H":
+                    
+                    break;                  
+                case "O":
+                    
+                    break;
+                 case "P":
+                    
+                    break; 
+                case "Q": 
+                    break;
+                default: 
+                    new MemoryError().displayError("Invalid command. Please enter a valid command.");
+            }  
+
+        System.out.println("The symbol on the card is " + cardSymbol + ".");
+} 
       public static void getMatchedStatus(int gridSize,String player1,String player2) throws IOException { 
         float percentDone;
         char response;
@@ -162,6 +197,6 @@ public class Game {
                 "\n\tnow " + (int)percentDone + "% of cards are matched.");
         }
         
-      }
+    }
       
 }

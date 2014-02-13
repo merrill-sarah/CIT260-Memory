@@ -6,20 +6,22 @@
 
 package memory;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Janis
  */
 public class BoardView {
    Board board;
-    
+   int nums [][];
     public void displayBoard(Board board) {
         this.board = board;
         
        int gridNums = 1;
        int rows= board.rows; //  pass these values in
        int columns=board.columns ;//  pass these values in
-        int nums [][] = new int [rows][columns];
+       int nums [][] = new int [rows][columns]; 
         
         for (int i=0; i<rows; i++){
             for (int j=0; j<columns; j++)
@@ -43,8 +45,7 @@ public class BoardView {
                      
                  } 
                
-             }
-                
+             }      
          }
     }
                  
@@ -54,8 +55,11 @@ public class BoardView {
                          System.out.print("---------------|");
            }
            System.out.print("\n");
-    }
+       }
+
 }
+       
+
  
         
         
