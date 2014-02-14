@@ -35,7 +35,7 @@ public class Game {
                                     
         BoardView boardView = new BoardView();
         boardView.displayBoard(board);
-        selectCard(boardView.nums);
+        selectCard(board);
         
         getMatchedStatus(board.totalCards, player1.name, player2.name);
         board.displayGrid();
@@ -97,35 +97,30 @@ public class Game {
      
       }
              
-    public void selectCard(int nums[][]){
-        String cardSelection;
-        int cardSymbol = 0;
+    public void selectCard(Board board){
+        int cardSymbol;
+        int cardRow;
+        int cardColumn; 
         
-        Scanner input = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         System.out.println("Please enter the number of your card selection: ");
-        cardSelection = input.next();
+        int cardSelection = in.nextInt();
         
-        switch (cardSelection) {
-                case "1":
-                    cardSymbol = nums [1][1];
-                    break;
-                case "C":
-                    
-                    break;
-                case "H":
-                    
-                    break;                  
-                case "O":
-                    
-                    break;
-                 case "P":
-                    
-                    break; 
-                case "Q": 
-                    break;
-                default: 
-                    new MemoryError().displayError("Invalid command. Please enter a valid command.");
-            }  
+        
+       int gridNums = 1;
+       int rows= board.rows; //  pass these values in
+       int columns=board.columns ;//  pass these values in
+       int nums [][] = new int [rows][columns]; 
+        
+        for (int i=0; i<rows; i++){
+            for (int j=0; j<columns; j++)
+             nums[i][j] = gridNums++;
+        } 
+        
+        cardRow = cardSelection/board.rows;
+        cardColumn = (cardSelection - 1)%board.columns;
+        
+        cardSymbol = nums[cardRow][cardColumn];        
 
         System.out.println("The symbol on the card is " + cardSymbol + ".");
 } 

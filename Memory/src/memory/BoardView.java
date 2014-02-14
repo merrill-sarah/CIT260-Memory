@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class BoardView {
    Board board;
-   int nums [][];
+   
     public void displayBoard(Board board) {
         this.board = board;
         
