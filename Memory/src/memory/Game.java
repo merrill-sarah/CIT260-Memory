@@ -105,7 +105,7 @@ public class Game {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter the number of your card selection: ");
         int cardSelection = in.nextInt();
-        
+      
         
        int gridNums = 1;
        int rows= board.rows; //  pass these values in
@@ -117,12 +117,17 @@ public class Game {
              nums[i][j] = gridNums++;
         } 
         
+        if (cardSelection < 1 || cardSelection > board.totalCards){
+            System.out.println("Not a valid card selection.");
+        }
+        else {
         cardRow = cardSelection/board.rows;
         cardColumn = (cardSelection - 1)%board.columns;
         
         cardSymbol = nums[cardRow][cardColumn];        
 
         System.out.println("The symbol on the card is " + cardSymbol + ".");
+        }
 } 
       public static void getMatchedStatus(int gridSize,String player1,String player2) throws IOException { 
         float percentDone;
