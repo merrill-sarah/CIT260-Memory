@@ -121,7 +121,7 @@ public class Game {
             System.out.println("Not a valid card selection.");
         }
         else {
-        cardRow = cardSelection/board.columns;
+        cardRow = (cardSelection-1)/board.columns;
         cardColumn = (cardSelection - 1)%board.columns;
         
         cardSymbol = nums[cardRow][cardColumn];        
