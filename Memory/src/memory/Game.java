@@ -16,6 +16,8 @@ import java.util.Scanner;
 public class Game {
     Player player1 = new Player();
     Player player2 = new Player();
+    int numCards;
+    
     
     public Game(){
   
@@ -32,13 +34,9 @@ public class Game {
         Board board = new Board();
         board.gridSize();
         numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
-                                    
-        BoardView boardView = new BoardView();
-        boardView.displayBoard(board);
-        selectCard(board);
         
-        getMatchedStatus(board.totalCards, player1.name, player2.name);
-        board.displayGrid();
+        playersTurns(board, player1, player2);
+        displayScore(player1, player2);
         
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.getInput();
@@ -96,7 +94,60 @@ public class Game {
       
      
       }
-             
+     public void playersTurns(Board board, Player player1, Player player2) throws IOException{
+        char response;
+        String response2;
+        boolean match = false;
+        Scanner input = new Scanner(System.in);
+        int totalMatchesMade = 0;
+        numCards = board.totalCards;
+        
+         while (totalMatchesMade < board.totalMatches){
+             BoardView boardView = new BoardView();
+             boardView.displayBoard(board);
+             selectCard(board);
+            
+            /*player1's turn */
+            System.out.println(player1.name +", "
+                + "Enter 't' if you made a match, or 'f' if you didn't; ");
+            response= (char)System.in.read();//input.next();
+                        
+            
+            if (response == 't') {
+                match = true;
+                totalMatchesMade += 1;
+                player1.matchedGame += 1;
+            } 
+        
+                else if(response == 'f'){
+                    match = false;
+                   }
+                else {
+                    System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
+           }    
+            getMatchedStatus(board.totalCards, match);
+            
+            /*player2's turn*/
+            System.out.println(player2.name + ", "
+                + "Enter 't' if you made a match, or 'f' if you didn't; ");
+                    response2= input.next();
+                       
+            if (response2.equals("t")) {
+                 match = true;
+                totalMatchesMade += 1;
+                player2.matchedGame += 1;
+            } 
+        
+                else if(response2.equals("f")){
+                    match = false;
+                   }
+                else {
+                System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
+           }
+           getMatchedStatus(board.totalCards, match); 
+         }
+      }  
+     
     public void selectCard(Board board){
         int cardSymbol;
         int cardRow;
@@ -129,55 +180,8 @@ public class Game {
         System.out.println("The symbol on the card is " + cardSymbol + ".");
         }
 } 
-      public static void getMatchedStatus(int gridSize,String player1,String player2) throws IOException { 
-        float percentDone;
-        char response;
-        String response2;
-        boolean match = false;
-        Scanner input = new Scanner(System.in);
-        
-       
-        System.out.println(player1 +", "
-                + "Enter 't' if you made a match, or 'f' if you didn't; ");
-        response= (char)System.in.read();//input.next();
-                        
-        /**** change if else if else to switch?*****/
-        if (response == 't') {
-           match = true;   } 
-        
-           else if(response == 'f'){
-                 match = false;
-                   }
-           else {
-               System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
-           }    
-       
-	
-	int numCards = gridSize;	
-
-	if (match){ 
-		numCards -= 2;
-        }
-	System.out.println(
-                "\n\tnumber of matches left is: " + numCards/2);
-        
-        
-        
-        System.out.println(player2 + ", "
-                + "Enter 't' if you made a match, or 'f' if you didn't; ");
-        response2= input.next();
-                        
-        /**** change if else if else to switch?*****/
-        if (response2.equals("t")) {
-           match = true;   } 
-        
-           else if(response2.equals("f")){
-                 match = false;
-                   }
-           else {
-               System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
-           }    
-       	
+      public void getMatchedStatus(int gridSize, boolean match) throws IOException { 
+        float percentDone;	
 
 	if (match){ 
 		numCards -= 2;
@@ -197,6 +201,10 @@ public class Game {
                 "\n\tnow " + (int)percentDone + "% of cards are matched.");
         }
         
+ 
     }
-      
+      public void displayScore(Player player1, Player player2){
+          System.out.println(player1.name + " made a total of " + player1.matchedGame + " matches."
+                  + "\n" + player2.name + " made a total of " + player2.matchedGame + " matches.");
+      }
 }

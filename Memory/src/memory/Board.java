@@ -20,13 +20,8 @@ public class Board {
     float totalMatches;
     
     public Board(){
-    }
-   
-    public void displayGrid() {
-        System.out.println("\n\tThe board is " + this.rows + " by " 
-                           + this.columns + " in size.");
-        //will eventually show actually grid, not text//
-        }
+    }        
+    
     public void gridSize(){
         Scanner input = new Scanner(System.in);
         System.out.println("\nEnter the letter associated with the size board "

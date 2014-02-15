@@ -15,7 +15,7 @@ import java.util.Scanner;
 // add score here?
 public class Player {
     String name;
-    int matchedGame; 
+    int matchedGame = 0; 
     int matchedOverall; 
     
     public Player(){
