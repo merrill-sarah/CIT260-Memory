@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class MainMenuView {
     private final static String[][] menuItems = {
-        {"S", "Start Game"},
+        {"N", "New Game"},
         {"O", "Options Menu"}, 
         {"H", "Help Menu"},
         {"Q", "Quit"}
@@ -44,7 +44,7 @@ public class MainMenuView {
             command = command.trim().toUpperCase();
             
             switch (command) {
-                case "S":
+                case "N":
                     this.mainMenuControl.startGame();
                     break;
                 case "O":
