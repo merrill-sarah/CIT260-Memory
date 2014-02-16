@@ -96,70 +96,60 @@ public class Game {
       }
      public void playersTurns(Board board, Player player1, Player player2) throws IOException{
         char response;
-        String response2;
         boolean match = false;
-        Scanner input = new Scanner(System.in);
         int totalMatchesMade = 0;
         numCards = board.totalCards;
+        String name;
+        int counter = 1;
         
          while (totalMatchesMade < board.totalMatches){
              BoardView boardView = new BoardView();
              boardView.displayBoard(board);
-            
-            /*player1's turn */
+             
+             
+             if (counter % 2 != 0){
+                 name = player1.name;
+             }
+             else {
+                 name = player2.name;
+             }
                  for (int i=0; i<2; i++){
-                 selectCard(board);
+                 selectCard(board, name);
                  }
-            System.out.println(player1.name +", "
+            System.out.println(name +", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
-            response= (char)System.in.read();//input.next();
+            response = (char)System.in.read();//input.next();
                         
             
-            if (response == 't') {
+            if (response == 't' && counter % 2 != 0) {
                 match = true;
                 totalMatchesMade += 1;
                 player1.matchedGame += 1;
             } 
+            else if (response == 't' && counter % 2 == 0){
+                match = true;
+                totalMatchesMade += 1;
+                player2.matchedGame += 1;
+            }
         
-                else if(response == 'f'){
+            else if(response == 'f'){
                     match = false;
                    }
-                else {
+            else {
                     System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
            }    
             getMatchedStatus(board.totalCards, match);
-            
-            /*player2's turn*/
-            for (int i=0; i<2; i++){
-                 selectCard(board);
-                 }
-            System.out.println(player2.name + ", "
-                + "Enter 't' if you made a match, or 'f' if you didn't; ");
-                    response2= input.next();
-                       
-            if (response2.equals("t")) {
-                 match = true;
-                totalMatchesMade += 1;
-                player2.matchedGame += 1;
-            } 
-        
-                else if(response2.equals("f")){
-                    match = false;
-                   }
-                else {
-                System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
-           }
-           getMatchedStatus(board.totalCards, match); 
+            counter += 1; 
          }
       }  
      
-    public void selectCard(Board board){
+    public void selectCard(Board board, String name){
         int cardSymbol;
         int cardRow;
         int cardColumn; 
         
         Scanner in = new Scanner(System.in);
-        System.out.println("Please enter the number of your card selection: ");
+        System.out.println(name + ", please enter the number of your card selection: ");
         int cardSelection = in.nextInt();
       
         
@@ -209,19 +199,19 @@ public class Game {
  
     }
       public void displayScore(Player player1, Player player2){
-          System.out.println(player1.name + " made a total of " + player1.matchedGame + " matches."
+          System.out.println("\n" + player1.name + " made a total of " + player1.matchedGame + " matches."
                   + "\n" + player2.name + " made a total of " + player2.matchedGame + " matches.");
           
           if (player1.matchedGame < player2.matchedGame){
               player2.totalWins += 1;
-              System.out.println(player2.name + " is the winner!");
+              System.out.println("\n" + player2.name + " is the winner!");
           }
           else if (player1.matchedGame > player2.matchedGame){
               player1.totalWins +=1;
-              System.out.println(player1.name + " is the winner!");
+              System.out.println("\n" + player1.name + " is the winner!");
             }
           else {
-              System.out.println(player1.name + " and " + player2.name + "tied!");
+              System.out.println("\n" + player1.name + " and " + player2.name + "tied!");
             }
       }      
 }
