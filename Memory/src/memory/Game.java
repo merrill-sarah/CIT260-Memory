@@ -45,7 +45,7 @@ public class Game {
         optionMenuView.getInput();
     }
     
-    public void displayMatchesMade(){
+    /*public void displayMatchesMade(){
         System.out.println(
              "\n\t*******************************************************************"
            + "\n\t" + player1 + "made " + player1.matchedGame+ " matches in this game."
@@ -55,7 +55,7 @@ public class Game {
            + "\n\t*******************************************************************");
     }
    
-    
+    */
     public void displayLeader(){
         System.out.println(
         "\n\t*******************************************************************"
@@ -206,5 +206,17 @@ public class Game {
       public void displayScore(Player player1, Player player2){
           System.out.println(player1.name + " made a total of " + player1.matchedGame + " matches."
                   + "\n" + player2.name + " made a total of " + player2.matchedGame + " matches.");
-      }
+          
+          if (player1.matchedGame < player2.matchedGame){
+              player2.totalWins += 1;
+              System.out.println(player2.name + " is the winner!");
+          }
+          else if (player1.matchedGame > player2.matchedGame){
+              player1.totalWins +=1;
+              System.out.println(player1.name + " is the winner!");
+            }
+          else {
+              System.out.println(player1.name + " and " + player2.name + "tied!");
+            }
+      }      
 }

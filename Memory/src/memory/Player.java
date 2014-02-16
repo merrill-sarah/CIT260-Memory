@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Player {
     String name;
     int matchedGame = 0; 
-    int matchedOverall; 
+    int totalWins = 0; 
     
     public Player(){
         
