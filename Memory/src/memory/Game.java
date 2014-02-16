@@ -105,9 +105,11 @@ public class Game {
          while (totalMatchesMade < board.totalMatches){
              BoardView boardView = new BoardView();
              boardView.displayBoard(board);
-             selectCard(board);
             
             /*player1's turn */
+                 for (int i=0; i<2; i++){
+                 selectCard(board);
+                 }
             System.out.println(player1.name +", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
             response= (char)System.in.read();//input.next();
@@ -128,6 +130,9 @@ public class Game {
             getMatchedStatus(board.totalCards, match);
             
             /*player2's turn*/
+            for (int i=0; i<2; i++){
+                 selectCard(board);
+                 }
             System.out.println(player2.name + ", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
                     response2= input.next();
@@ -168,16 +173,16 @@ public class Game {
              nums[i][j] = gridNums++;
         } 
         
-        if (cardSelection < 1 || cardSelection > board.totalCards){
-            System.out.println("Not a valid card selection.");
-        }
-        else {
-        cardRow = (cardSelection-1)/board.columns;
-        cardColumn = (cardSelection - 1)%board.columns;
+        if (cardSelection >= 1 && cardSelection <= board.totalCards){
+            cardRow = (cardSelection-1)/board.columns;
+            cardColumn = (cardSelection - 1)%board.columns;
         
-        cardSymbol = nums[cardRow][cardColumn];        
+            cardSymbol = nums[cardRow][cardColumn];        
 
-        System.out.println("The symbol on the card is " + cardSymbol + ".");
+            System.out.println("The symbol on the card is " + cardSymbol + ".");
+        }
+        else {        
+            System.out.println("Not a valid card selection.");
         }
 } 
       public void getMatchedStatus(int gridSize, boolean match) throws IOException { 
