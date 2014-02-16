@@ -37,9 +37,6 @@ public class Memory {
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.getInput();
         
-        //Game newGame = new Game();
-        //newGame.startGame();
-        
         Card card1 = new Card();
         card1.status();
         card1.symbolsNeeded();
