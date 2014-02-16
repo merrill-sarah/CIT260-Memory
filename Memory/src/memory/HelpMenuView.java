@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class HelpMenuView {
  
   private final static String[][] menuItems = {
-        {"B", "The board"},
+        {"B", "The Board"},
         {"C", "Choosing Cards"}, 
         {"H", "How to Play"},
         {"O", "Options"},

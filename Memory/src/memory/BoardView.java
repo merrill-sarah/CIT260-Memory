@@ -19,8 +19,16 @@ public class BoardView {
         this.board = board;
         
        int gridNums = 1;
-       int rows= board.rows; //  pass these values in
-       int columns=board.columns ;//  pass these values in
+       int rows= board.rows; 
+       int columns=board.columns;
+       
+       if (!(rows==3 && columns==4) & !(rows==4 && columns==6) & !(rows==6 && columns==8)){
+           System.out.println("\t***********************************************************************************"
+                   + "\n\tERROR: please enter \"s\" for small, \"m\" for medium, or \"l\" for large board size"
+                   +"\n\t**************************************************************************************");
+                   board.gridSize();
+                   } 
+       
        int nums [][] = new int [rows][columns]; 
         
         for (int i=0; i<rows; i++){
