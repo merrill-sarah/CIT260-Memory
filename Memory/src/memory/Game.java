@@ -106,40 +106,44 @@ public class Game {
              BoardView boardView = new BoardView();
              boardView.displayBoard(board);
              
-             
+             //determine player1 or player2
              if (counter % 2 != 0){
                  name = player1.name;
              }
              else {
                  name = player2.name;
              }
-                 for (int i=0; i<2; i++){
+             
+             //have player select two cards
+             for (int i=0; i<2; i++){
                  selectCard(board, name);
                  }
+             
+             /*determine if a match was made and distribute point to player1 or 
+                     player2 based on who's turn it is */
             System.out.println(name +", "
                 + "Enter 't' if you made a match, or 'f' if you didn't; ");
-            response = (char)System.in.read();//input.next();
-                        
-            
+            response = (char)System.in.read();
+                                    
             if (response == 't' && counter % 2 != 0) {
                 match = true;
                 totalMatchesMade += 1;
                 player1.matchedGame += 1;
-            } 
+            }
             else if (response == 't' && counter % 2 == 0){
                 match = true;
                 totalMatchesMade += 1;
                 player2.matchedGame += 1;
             }
-        
             else if(response == 'f'){
                     match = false;
+                    counter += 1;
                    }
             else {
                     System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
            }    
             getMatchedStatus(board.totalCards, match);
-            counter += 1; 
+             
          }
       }  
      
