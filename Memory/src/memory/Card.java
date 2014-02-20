@@ -23,7 +23,7 @@ public class Card {
     }
     public void status(){
         if (flipped){
-            System.out.println("Card display is " +number);
+           // System.out.println("Card display is " +number);
         }
     }
     

@@ -30,7 +30,7 @@ public class GetPlayerListView {
         Scanner inFile = new Scanner(System.in);
         
         for  ( nameIndex=0; nameIndex < numPlayers; nameIndex++){
-            System.out.println("Please enter the name of player #" +(nameIndex+1)+ ": ");
+            System.out.println("Player #" +(nameIndex+1)+ " please enter your name: ");
             String playersName;
             playersName = inFile.nextLine();
             playersName = playersName.trim();
@@ -52,7 +52,7 @@ public class GetPlayerListView {
     }
     
     public void displayNameList(String[] names){
-        System.out.println("\tHere is the unsorted list of players in the game");
+        System.out.println("\tHere is the list of players in the game");
      
         for (int i = 0; i < names.length; i++) {
             if (names[i] == null) {
@@ -60,7 +60,7 @@ public class GetPlayerListView {
             }
                 
             int namePosition = i+1;
-            System.out.println("\t   " + namePosition + "\t" + names[i]);
+            System.out.println("\t   " + names[i] + " is Player"+ namePosition);
         }
     }
     

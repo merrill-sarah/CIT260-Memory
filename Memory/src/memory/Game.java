@@ -14,6 +14,7 @@ import java.util.Scanner;
  * @author Janis
  */
 public class Game {
+    GetPlayerListView playerList= new GetPlayerListView();
     Player player1 = new Player();
     Player player2 = new Player();
     int numCards;
@@ -27,8 +28,11 @@ public class Game {
    // Board board;  Still needs to be created
     }
     public void startGame() throws IOException{       
-        player1.getName1();
-        player2.getName2();
+      
+        playerList.getInputNames();
+        
+        player1.name=playerList.listOfPlayerNames[0];
+        player2.name=playerList.listOfPlayerNames[1];
         
         welcomePlayers(player1.name, player2.name);
         Board board = new Board();
@@ -38,12 +42,7 @@ public class Game {
         playersTurns(board, player1, player2);
         displayScore(player1, player2);
         
-        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.getInput();
-        
-        OptionMenuView optionMenuView = new OptionMenuView();
-        optionMenuView.getInput();
-    }
+   }
     
     /*public void displayMatchesMade(){
         System.out.println(
