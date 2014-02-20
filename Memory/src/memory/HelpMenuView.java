@@ -20,7 +20,7 @@ public class HelpMenuView {
         {"H", "How to Play"},
         {"O", "Options"},
         {"P", "Choosing Players"},        
-        {"Q", "Quit Help"}        
+        {"X", "Exit Help Menu"}        
     };
     
     // Create instance of the HelpMenuControl (action) class
@@ -61,13 +61,13 @@ public class HelpMenuView {
                  case "P":
                     this.helpMenuControl.displayPlayersHelp();
                     break; 
-                case "Q": 
+                case "X": 
                     break;
                 default: 
                     new MemoryError().displayError("Invalid command. Please enter a valid command.");
                     continue;
             }
-        } while (!command.equals("Q"));  
+        } while (!command.equals("X"));  
         
          return;
     }

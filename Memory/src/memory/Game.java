@@ -41,6 +41,7 @@ public class Game {
         
         playersTurns(board, player1, player2);
         displayScore(player1, player2);
+         System.out.println("");
         
    }
     

@@ -18,7 +18,7 @@ public class OptionMenuView {
         {"M", "Matching Difficulty"},
         {"N", "Number of Players"},
         {"P", "Player Names"},
-        {"Q", "Quit Option Menu"}
+        {"X", "Exit Option Menu"}
     };
     
     // Create instance of the OptionsMenuControl (action) class
@@ -56,13 +56,13 @@ public class OptionMenuView {
                 case "P":
                     this.optionsMenuControl.displayPlayerNamesOption();
                     break;
-                case "Q": 
+                case "X": 
                     break;
                 default: 
                     new MemoryError().displayError("Invalid command. Please enter a valid command.");
                     continue;
             }
-        } while (!command.equals("Q"));  
+        } while (!command.equals("X"));  
         
          return;
     }

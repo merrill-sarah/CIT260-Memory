@@ -18,7 +18,7 @@ public class MainMenuView {
         {"N", "New Game"},
         {"O", "Options Menu"}, 
         {"H", "Help Menu"},
-        {"Q", "Quit"}
+        {"Q", "Quit Game"}
     };
     
     // Create instance of the MainMenuControl (action) class
@@ -62,7 +62,7 @@ public class MainMenuView {
         } while (!command.equals("Q"));  
         
          System.out.println( 
-                "\t-----Quits Game----"
+                "\t-----Game Over----"
                 ); 
     }
 
