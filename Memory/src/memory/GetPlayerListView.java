@@ -7,6 +7,7 @@
 package memory;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 /**
  *
@@ -26,6 +27,7 @@ public class GetPlayerListView {
     
     public String[] getInputNames(){
         int nameIndex =0;
+        int playerNum =1;
         int numPlayers =2; // Change this to a variable if we add more players option
         boolean finished = false;
         MemoryError errorMsg = new MemoryError();
@@ -65,8 +67,9 @@ public class GetPlayerListView {
             } 
             
             //add names to player list of names
-            this.listOfPlayerNames[nameIndex]=playersName;
+            this.listOfPlayerNames[nameIndex]= playersName + " is Player " + playerNum;
            nameIndex++;
+           playerNum++;
         }
             
             String[] newPlayerList = new String[nameIndex];
@@ -74,6 +77,7 @@ public class GetPlayerListView {
                 newPlayerList[i]=this.listOfPlayerNames[i];
             
             
+            sortFunction(newPlayerList);
             this.displayNameList(newPlayerList);
             
             
@@ -87,9 +91,8 @@ public class GetPlayerListView {
             if (names[i] == null) {
                 break;
             }
-                
-            int namePosition = i+1;
-            System.out.println("\t   " + names[i] + " is Player"+ namePosition);
+            
+            System.out.println("\t   " + names[i]);
         }
     }
         
@@ -101,6 +104,23 @@ public class GetPlayerListView {
         }
         return false;
     }
+ public static void sortFunction( String x[ ] ){
+        int i, j;
+        String temp;
+
+            for ( i = 0;  i < x.length - 1;  i++ )
+            {
+                for ( j = i + 1;  j < x.length;  j++ )
+                {  
+                         if ( x [ i ].compareToIgnoreCase( x [ j ] ) > 0 )
+                          {                                             // ascending sort
+                                      temp = x [ i ];
+                                      x [ i ] = x [ j ];    // swapping
+                                      x [ j ] = temp; 
+                           } 
+                   } 
+            } 
+      } 
     }
     
     
