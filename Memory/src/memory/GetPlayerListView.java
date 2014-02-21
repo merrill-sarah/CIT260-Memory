@@ -25,13 +25,13 @@ public class GetPlayerListView {
     }
     
     public String[] getInputNames(){
-        int nameIndex;
+        int nameIndex =0;
         int numPlayers =2; // Change this to a variable if we add more players option
         boolean finished = false;
         MemoryError errorMsg = new MemoryError();
         Scanner inFile = new Scanner(System.in);
         
-        for  ( nameIndex=0; nameIndex < numPlayers && !finished; nameIndex++){
+        while  (nameIndex < numPlayers && !finished){
             System.out.println("Player #" +(nameIndex+1)+ " please enter your name "
                     + "(or enter \"Q\" to quit}: ");
             String playersName;
@@ -66,7 +66,7 @@ public class GetPlayerListView {
             
             //add names to player list of names
             this.listOfPlayerNames[nameIndex]=playersName;
-           
+           nameIndex++;
         }
             
             String[] newPlayerList = new String[nameIndex];
