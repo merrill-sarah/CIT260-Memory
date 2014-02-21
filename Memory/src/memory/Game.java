@@ -217,5 +217,5 @@ public class Game {
           else {
               System.out.println("\n" + player1.name + " and " + player2.name + "tied!");
             }
-      }      
+      } 
 }
