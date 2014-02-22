@@ -46,17 +46,7 @@ public class Game {
         
    }
     
-    /*public void displayMatchesMade(){
-        System.out.println(
-             "\n\t*******************************************************************"
-           + "\n\t" + player1 + "made " + player1.matchedGame+ " matches in this game."
-           + "\n\t" + player2 + "made " + player2.matchedGame+ " matches in this game."
-           + "\n\t" + player1 + "made " + player1.matchedOverall+ " matches in all."
-           + "\n\t" + player2 + "made " + player2.matchedOverall+ " matches in all."
-           + "\n\t*******************************************************************");
-    }
    
-    */
     public void displayLeader(){
         System.out.println(
         "\n\t*******************************************************************"
@@ -71,7 +61,7 @@ public class Game {
         
     }
 
-     // ************** FUNCTION FOR INDIVIDUAL ASSIGNMENT L03 *****************
+    
     
       public void numSymbolsNeeded(int numCards, int matchingSymbols){
       int numOfSymbols;
@@ -223,14 +213,7 @@ public class Game {
       } 
       
       public void createSymbolArray(){
-          char [] small2 = new char[12];
-          char [] small4 = new char[12];
-          char [] med2 = new char[24];
-          char [] med4 = new char[24];
-          char [] large2 = new char[48];
-          char [] large4 = new char[48];
-          Random indexer = new Random(48);
-          
+                    
     
       }
 }
