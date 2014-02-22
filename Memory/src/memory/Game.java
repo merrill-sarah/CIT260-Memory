@@ -7,6 +7,7 @@
 package memory;
 
 import java.io.IOException;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -63,8 +64,10 @@ public class Game {
        +"\n\t*******************************************************************");
     }
     public void welcomePlayers(String player1, String player2){
-        System.out.println("\nHello " + player1 + " and " + 
-                player2 + "! Welcome to Memory!");
+        
+        System.out.println("\tWelcome to Memory!");
+        
+  
         
     }
 
@@ -197,7 +200,7 @@ public class Game {
            
             percentDone =  (percentDone * 100); 
 	    System.out.println(
-                "\n\tnow " + (int)percentDone + "% of cards are matched.");
+                (int)percentDone + "% of cards are matched now.");
         }
         
  
@@ -218,4 +221,16 @@ public class Game {
               System.out.println("\n" + player1.name + " and " + player2.name + "tied!");
             }
       } 
+      
+      public void createSymbolArray(){
+          char [] small2 = new char[12];
+          char [] small4 = new char[12];
+          char [] med2 = new char[24];
+          char [] med4 = new char[24];
+          char [] large2 = new char[48];
+          char [] large4 = new char[48];
+          Random indexer = new Random(48);
+          
+    
+      }
 }

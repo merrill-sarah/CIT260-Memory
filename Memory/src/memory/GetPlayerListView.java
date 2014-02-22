@@ -85,14 +85,14 @@ public class GetPlayerListView {
     }
     
     public void displayNameList(String[] names){
-        System.out.println("\tHere is an alphabetized list of players in the game");
+        System.out.println();//"\tHere is an alphabetized list of players in the game");
      
         for (int i = 0; i < names.length; i++) {
             if (names[i] == null) {
                 break;
             }
             
-            System.out.println("\t   " + names[i]);
+            System.out.println("\tHello, " + names[i]);
         }
     }
         
