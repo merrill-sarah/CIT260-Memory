@@ -67,9 +67,9 @@ public class GetPlayerListView {
             } 
             
             //add names to player list of names
-            this.listOfPlayerNames[nameIndex]= playersName + " is Player " + playerNum;
+            this.listOfPlayerNames[nameIndex]= playersName ;
            nameIndex++;
-           playerNum++;
+           
         }
             
             String[] newPlayerList = new String[nameIndex];
@@ -85,7 +85,7 @@ public class GetPlayerListView {
     }
     
     public void displayNameList(String[] names){
-        System.out.println("\tHere is the list of players in the game");
+        System.out.println("\tHere is an alphabetized list of players in the game");
      
         for (int i = 0; i < names.length; i++) {
             if (names[i] == null) {
