@@ -25,8 +25,7 @@ public class Game {
         //int numOfSymbols;
         int score; 
    
-        String leader; // will be determined through score comparison
-   // Board board;  Still needs to be created
+       
     }
     public void startGame() throws IOException{       
       
@@ -36,6 +35,11 @@ public class Game {
         player2.name=playerList.listOfPlayerNames[1];
         
         welcomePlayers(player1.name, player2.name);
+        playGame(player1,player2);
+    }
+    
+    
+        public void playGame(Player player1, Player player2) throws IOException{
         Board board = new Board();
         board.gridSize();
         numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
@@ -43,25 +47,16 @@ public class Game {
         playersTurns(board, player1, player2);
         displayScore(player1, player2);
          System.out.println("");
+         EndMenuView endMenuView = new EndMenuView();
+        endMenuView.getInput(player1, player2);
+        }
         
-   }
     
-   
-    public void displayLeader(){
-        System.out.println(
-        "\n\t*******************************************************************"
-       +"\n\tleader is in first place! Congratulations"  // will replace "leader" with leader variable
-       +"\n\t*******************************************************************");
-    }
     public void welcomePlayers(String player1, String player2){
         
         System.out.println("\tWelcome to Memory!");
         
-  
-        
     }
-
-    
     
       public void numSymbolsNeeded(int numCards, int matchingSymbols){
       //numOfSymbols;
@@ -148,11 +143,7 @@ public class Game {
         SymbolArray symbols = new SymbolArray(); 
         char[] fillSymbols = new char[24];// create array to hold symbols
         symbols.createArray(fillSymbols);      //createArray(fillSymbols);
-       // for(char q : fillSymbols){
-       // }
-          
-       // System.out.println();
-      
+             
         
         Scanner in = new Scanner(System.in);
         System.out.println(name + ", please enter the number of your card selection: ");
