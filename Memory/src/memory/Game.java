@@ -189,7 +189,10 @@ public class Game {
  
     }
       public void displayScore(Player player1, Player player2){
-          
+          int numPlayers=2; //until we add option to have more than 2 players
+          int index=0;
+          int[] numWins = new int[numPlayers];
+                    
           System.out.println("\n" + player1.name + " made a total of " + player1.matchedGame + " matches."
                   + "\n" + player2.name + " made a total of " + player2.matchedGame + " matches.");
           
@@ -207,6 +210,20 @@ public class Game {
               System.out.println("\n" + player1.name + " and " + player2.name + "tied!");
             }
          
+          while (index<numPlayers){
+              if (index==0){
+                  numWins[index]=player1.totalWins;
+                  index++;
+              }
+              else if (index==1){
+                  numWins[index]=player2.totalWins;
+                  index++;
+              }
+              
+          }
+          for(int x: numWins){
+              System.out.println("Value is: " + x);
+          }
           }
    
 }
