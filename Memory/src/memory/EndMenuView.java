@@ -13,24 +13,16 @@ import java.util.Scanner;
  *
  * @author Sarawr
  */
-public class MainMenuView {
+public class EndMenuView {
     private final static String[][] menuItems = {
-        {"N", "New Game"},
-        {"O", "Options Menu"}, 
-        {"H", "Help Menu"},
+        {"P", "Play Again"},
+        {"M", "Main Menu"},
         {"Q", "Quit Game"}
     };
-    
-    // Create instance of the MainMenuControl (action) class
-    private MainMenuControl mainMenuControl = new MainMenuControl();
-    
-    // default constructor
-    public MainMenuView() {
-        
-    } 
+     EndMenuControl endMenuControl = new EndMenuControl();
     
     // display the help menu and get the end users input selection
-    public void getInput() throws IOException {       
+    void getInput(Player player1, Player player2) throws IOException{      
               
         String command;
         Scanner inFile = new Scanner(System.in);
@@ -44,14 +36,11 @@ public class MainMenuView {
             command = command.trim().toUpperCase();
             
             switch (command) {
-                case "N":
-                    this.mainMenuControl.startGame();
+                case "P":
+                    this.endMenuControl.playAgain(player1, player2);
                     break;
-                case "O":
-                    this.mainMenuControl.displayOptionMenu();
-                    break;
-                case "H":
-                    this.mainMenuControl.displayHelpMenu();
+                case "M":
+                    this.endMenuControl.displayMainMenu();
                     break;
                 case "Q": 
                     break;
@@ -70,9 +59,10 @@ public class MainMenuView {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following:");
 
-        for (int i = 0; i < MainMenuView.menuItems.length; i++) {
+        for (int i = 0; i < EndMenuView.menuItems.length; i++) {
             System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
         System.out.println("\t===============================================================\n");
     }
+
 }

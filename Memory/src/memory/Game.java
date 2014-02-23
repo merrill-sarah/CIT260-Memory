@@ -7,7 +7,6 @@
 package memory;
 
 import java.io.IOException;
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -36,6 +35,10 @@ public class Game {
         player2.name=playerList.listOfPlayerNames[1];
         
         welcomePlayers(player1.name, player2.name);
+        playGame(player1,player2);
+        
+   }
+    public void playGame(Player player1, Player player2) throws IOException{
         Board board = new Board();
         board.gridSize();
         numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
@@ -43,26 +46,18 @@ public class Game {
         playersTurns(board, player1, player2);
         displayScore(player1, player2);
          System.out.println("");
+        EndMenuView endMenuView = new EndMenuView();
+        endMenuView.getInput(player1, player2);
         
-   }
-    
-   
-    public void displayLeader(){
-        System.out.println(
-        "\n\t*******************************************************************"
-       +"\n\tleader is in first place! Congratulations"  // will replace "leader" with leader variable
-       +"\n\t*******************************************************************");
+        
     }
+    
     public void welcomePlayers(String player1, String player2){
-        
-        System.out.println("\tWelcome to Memory!");
-        
-  
+        System.out.println("\nHello " + player1 + " and " + 
+                player2 + "! Welcome to Memory!");
         
     }
 
-    
-    
       public void numSymbolsNeeded(int numCards, int matchingSymbols){
       int numOfSymbols;
       String errorMessage;
@@ -94,6 +89,8 @@ public class Game {
         numCards = board.totalCards;
         String name;
         int counter = 1;
+        player1.matchedGame = 0;
+        player2.matchedGame = 0;
         
          while (totalMatchesMade < board.totalMatches){
              BoardView boardView = new BoardView();
@@ -190,30 +187,30 @@ public class Game {
            
             percentDone =  (percentDone * 100); 
 	    System.out.println(
-                (int)percentDone + "% of cards are matched now.");
+                "\n\tnow " + (int)percentDone + "% of cards are matched.");
         }
         
  
     }
       public void displayScore(Player player1, Player player2){
+          
           System.out.println("\n" + player1.name + " made a total of " + player1.matchedGame + " matches."
                   + "\n" + player2.name + " made a total of " + player2.matchedGame + " matches.");
           
           if (player1.matchedGame < player2.matchedGame){
               player2.totalWins += 1;
               System.out.println("\n" + player2.name + " is the winner!");
+              
           }
           else if (player1.matchedGame > player2.matchedGame){
               player1.totalWins +=1;
               System.out.println("\n" + player1.name + " is the winner!");
+              
             }
           else {
               System.out.println("\n" + player1.name + " and " + player2.name + "tied!");
             }
-      } 
-      
-      public void createSymbolArray(){
-                    
-    
-      }
+         
+          }
+   
 }
