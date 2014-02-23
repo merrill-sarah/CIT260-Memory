@@ -244,9 +244,9 @@ public class Game {
           int min, max;
           
           min = max = numWins[0];
-          for(int i =1; i<numPlayers; i++){
-              if(numWins[i]<min) min = numWins[i];
-              if(numWins[i]>max) max = numWins[i];
+          for(int x: numWins){
+              if(x<min) min = x;
+              if(x>max) max = x;
           }
           System.out.println("\nThe player with the most wins has " + max +
                   "\nThe player with the least amount of wins has " + min);
