@@ -21,11 +21,7 @@ public class Game {
     
     
     public Game(){
-  
-        int score; 
-   
-        String leader; // will be determined through score comparison
-   // Board board;  Still needs to be created
+        
     }
     public void startGame() throws IOException{       
       
