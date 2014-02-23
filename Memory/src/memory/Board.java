@@ -29,17 +29,17 @@ public class Board {
                 + "\n\"s\" for small, \"m\" for medium, or \"l\" for large:");
         this.size= input.next();
         
-        if(size.equals("s")){
-            rows = 3;
-            columns = 4;
+         if(size.equals("s")){
+            rows = 4;// 3;
+            columns = 6;//4;
         }
         else if(size.equals("m")){
             rows = 4;
             columns = 6;
         }
         else if(size.equals("l")){
-             rows = 6;
-             columns = 8;
+             rows = 4;//6;
+             columns = 6;//8;
                     }
         else {
              System.out.println("Invalid entry. Please enter: "

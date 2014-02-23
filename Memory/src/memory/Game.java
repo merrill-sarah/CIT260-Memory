@@ -18,10 +18,10 @@ public class Game {
     Player player1 = new Player();
     Player player2 = new Player();
     int numCards;
-    
+    int numOfSymbols;
     
     public Game(){
-        
+      int score;  
     }
     public void startGame() throws IOException{       
       
@@ -49,8 +49,7 @@ public class Game {
     }
     
     public void welcomePlayers(String player1, String player2){
-        System.out.println("\nHello " + player1 + " and " + 
-                player2 + "! Welcome to Memory!");
+        System.out.println("\t Welcome to Memory!");
         
     }
 
@@ -138,6 +137,10 @@ public class Game {
         int cardRow;
         int cardColumn; 
         
+        SymbolArray symbols = new SymbolArray(); 
+        char[] fillSymbols = new char[24];// create array to hold symbols
+        symbols.createArray(fillSymbols);      //createArray(fillSymbols);
+        
         Scanner in = new Scanner(System.in);
         System.out.println(name + ", please enter the number of your card selection: ");
         int cardSelection = in.nextInt();
@@ -176,14 +179,14 @@ public class Game {
         
 
 	if (numCards == gridSize){ 
-		System.out.println("0% of cards are matched");
+		System.out.println("\n\t0% of cards are matched");
         }
 	else {
             percentDone=((float)(gridSize - numCards)/gridSize);
            
             percentDone =  (percentDone * 100); 
 	    System.out.println(
-                "\n\tnow " + (int)percentDone + "% of cards are matched.");
+                "\n\t"+(int)percentDone + "% of cards are matched now.");
         }
         
  
