@@ -192,10 +192,12 @@ public class Game {
           int numPlayers=2; //until we add option to have more than 2 players
           int index=0;
           int[] numWins = new int[numPlayers];
-                    
+          
+          //displays who made how many matched in the game
           System.out.println("\n" + player1.name + " made a total of " + player1.matchedGame + " matches."
                   + "\n" + player2.name + " made a total of " + player2.matchedGame + " matches.");
           
+          //displays the winner and adds one to their running total of wins
           if (player1.matchedGame < player2.matchedGame){
               player2.totalWins += 1;
               System.out.println("\n" + player2.name + " is the winner!");
@@ -210,6 +212,7 @@ public class Game {
               System.out.println("\n" + player1.name + " and " + player2.name + "tied!");
             }
          
+          //sets up array to hold the number of wins for each player
           while (index<numPlayers){
               if (index==0){
                   numWins[index]=player1.totalWins;
@@ -221,9 +224,32 @@ public class Game {
               }
               
           }
+          
+          //displays numWins array
+          System.out.println("\nTotal Wins:");
+          int j = 1;
+          String name ="";
           for(int x: numWins){
-              System.out.println("Value is: " + x);
+              if(j==1){
+                  name = player1.name;
+              }
+              else if (j==2){
+                  name = player2.name;
+              }
+              System.out.println(name + ": " + x);
+              j++;
+              }
+          
+          //find min and max of the array
+          int min, max;
+          
+          min = max = numWins[0];
+          for(int i =1; i<numPlayers; i++){
+              if(numWins[i]<min) min = numWins[i];
+              if(numWins[i]>max) max = numWins[i];
           }
+          System.out.println("\nThe player with the most wins has " + max +
+                  "\nThe player with the least amount of wins has " + min);
           }
    
 }
