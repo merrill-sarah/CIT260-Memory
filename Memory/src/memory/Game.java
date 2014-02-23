@@ -20,8 +20,13 @@ public class Game {
     int numCards;
     int numOfSymbols;
     
+    
     public Game(){
-      int score;  
+        //int numOfSymbols;
+        int score; 
+   
+        String leader; // will be determined through score comparison
+   // Board board;  Still needs to be created
     }
     public void startGame() throws IOException{       
       
@@ -31,10 +36,6 @@ public class Game {
         player2.name=playerList.listOfPlayerNames[1];
         
         welcomePlayers(player1.name, player2.name);
-        playGame(player1,player2);
-        
-   }
-    public void playGame(Player player1, Player player2) throws IOException{
         Board board = new Board();
         board.gridSize();
         numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
@@ -42,19 +43,28 @@ public class Game {
         playersTurns(board, player1, player2);
         displayScore(player1, player2);
          System.out.println("");
-        EndMenuView endMenuView = new EndMenuView();
-        endMenuView.getInput(player1, player2);
         
-        
-    }
+   }
     
+   
+    public void displayLeader(){
+        System.out.println(
+        "\n\t*******************************************************************"
+       +"\n\tleader is in first place! Congratulations"  // will replace "leader" with leader variable
+       +"\n\t*******************************************************************");
+    }
     public void welcomePlayers(String player1, String player2){
-        System.out.println("\t Welcome to Memory!");
+        
+        System.out.println("\tWelcome to Memory!");
+        
+  
         
     }
 
+    
+    
       public void numSymbolsNeeded(int numCards, int matchingSymbols){
-      int numOfSymbols;
+      //numOfSymbols;
       String errorMessage;
       
       errorMessage = ("\n\tError. Please choose grid size and number of matching cards again.");
@@ -84,8 +94,6 @@ public class Game {
         numCards = board.totalCards;
         String name;
         int counter = 1;
-        player1.matchedGame = 0;
-        player2.matchedGame = 0;
         
          while (totalMatchesMade < board.totalMatches){
              BoardView boardView = new BoardView();
@@ -136,14 +144,21 @@ public class Game {
         int cardSymbol;
         int cardRow;
         int cardColumn; 
-        
+       
         SymbolArray symbols = new SymbolArray(); 
         char[] fillSymbols = new char[24];// create array to hold symbols
         symbols.createArray(fillSymbols);      //createArray(fillSymbols);
+       // for(char q : fillSymbols){
+       // }
+          
+       // System.out.println();
+      
         
         Scanner in = new Scanner(System.in);
         System.out.println(name + ", please enter the number of your card selection: ");
         int cardSelection = in.nextInt();
+        
+        System.out.println("The symbol on your card is :" +fillSymbols[cardSelection]);
       
         
        int gridNums = 1;
@@ -162,7 +177,7 @@ public class Game {
         
             cardSymbol = nums[cardRow][cardColumn];        
 
-            System.out.println("The symbol on the card is " + cardSymbol + ".");
+            //System.out.println("The symbol on the card is " + cardSymbol + ".");
         }
         else {        
             System.out.println("Not a valid card selection.");
@@ -179,80 +194,37 @@ public class Game {
         
 
 	if (numCards == gridSize){ 
-		System.out.println("\n\t0% of cards are matched");
+		System.out.println("0% of cards are matched");
         }
 	else {
             percentDone=((float)(gridSize - numCards)/gridSize);
            
             percentDone =  (percentDone * 100); 
 	    System.out.println(
-                "\n\t"+(int)percentDone + "% of cards are matched now.");
+                (int)percentDone + "% of cards are matched now.");
         }
         
  
     }
       public void displayScore(Player player1, Player player2){
-          int numPlayers=2; //until we add option to have more than 2 players
-          int index=0;
-          int[] numWins = new int[numPlayers];
-          
-          //displays who made how many matched in the game
           System.out.println("\n" + player1.name + " made a total of " + player1.matchedGame + " matches."
                   + "\n" + player2.name + " made a total of " + player2.matchedGame + " matches.");
           
-          //displays the winner and adds one to their running total of wins
           if (player1.matchedGame < player2.matchedGame){
               player2.totalWins += 1;
               System.out.println("\n" + player2.name + " is the winner!");
-              
           }
           else if (player1.matchedGame > player2.matchedGame){
               player1.totalWins +=1;
               System.out.println("\n" + player1.name + " is the winner!");
-              
             }
           else {
               System.out.println("\n" + player1.name + " and " + player2.name + "tied!");
             }
-         
-          //sets up array to hold the number of wins for each player
-          while (index<numPlayers){
-              if (index==0){
-                  numWins[index]=player1.totalWins;
-                  index++;
-              }
-              else if (index==1){
-                  numWins[index]=player2.totalWins;
-                  index++;
-              }
-              
-          }
-          
-          //displays numWins array
-          System.out.println("\nTotal Wins:");
-          int j = 1;
-          String name ="";
-          for(int x: numWins){
-              if(j==1){
-                  name = player1.name;
-              }
-              else if (j==2){
-                  name = player2.name;
-              }
-              System.out.println(name + ": " + x);
-              j++;
-              }
-          
-          //find min and max of the array
-          int min, max;
-          
-          min = max = numWins[0];
-          for(int x: numWins){
-              if(x<min) min = x;
-              if(x>max) max = x;
-          }
-          System.out.println("\nThe player with the most wins has " + max +
-                  "\nThe player with the least amount of wins has " + min);
-          }
-   
+      } 
+      
+      public void createSymbolArray(){
+                    
+    
+      }
 }
