@@ -134,22 +134,91 @@ public class Game {
              
          }
       }  
-     
-    public void selectCard(Board board, String name){
+
+    public void selectCard(Board board, String name) throws IOException{
         int cardSymbol;
         int cardRow;
         int cardColumn; 
-       
+       // boolean done = false;
+               
         SymbolArray symbols = new SymbolArray(); 
         char[] fillSymbols = new char[24];// create array to hold symbols
         symbols.createArray(fillSymbols);      //createArray(fillSymbols);
-             
+        // for (char x: fillSymbols)
+        //     System.out.print(" " + x); // to check if array is correct
         
         Scanner in = new Scanner(System.in);
-        System.out.println(name + ", please enter the number of your card selection: ");
+      //  while (!done){
+        
+        int index = 0;
+        int numOfHints = 0;
+        System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
         int cardSelection = in.nextInt();
         
-        System.out.println("The symbol on your card is :" +fillSymbols[cardSelection]);
+        while (cardSelection==0 ){
+          numOfHints++;  
+          char hintLetter;
+         System.out.println("What letter would you like to find? ");  
+          hintLetter = (char)System.in.read();
+          hintLetter = Character.toUpperCase(hintLetter);
+       
+          
+           while (hintLetter-65 > fillSymbols.length){
+              
+             System.out.println("Sorry your letter was not found"
+                     + "\nPlease enter a letter between "+ fillSymbols[0]+" and "+ fillSymbols[fillSymbols.length-1]);
+             hintLetter = (char)System.in.read();
+             hintLetter = Character.toUpperCase(hintLetter);
+             }      
+          
+          
+            for (char x :fillSymbols){
+             if (x == hintLetter){
+                 break;}
+             else{
+                 index++;}
+            }  
+            
+             if (hintLetter == fillSymbols[index]){
+                int card= (index +1);
+             System.out.println("Your letter is under card number: "+(card));
+            }
+                        
+             index = 0;
+             if (numOfHints >2){
+                 System.out.print("You have used all your hints. Please enter a card number");
+                 cardSelection = in.nextInt();
+                 while (cardSelection == 0){
+                     System.out.print("Sorry, You have used all your hints. Please enter a card number");
+                     cardSelection = in.nextInt();
+                 }
+             
+             }
+                 
+             else{
+                 System.out.print("Enter card number (or if you want a hint enter 0(zero)): ");
+                 cardSelection = in.nextInt();
+             }
+         
+        /*    System.out.println("you selected: " +cardSelection+ ""
+                    + "\n"
+                    + "Continue program as originally written");
+          */  
+         
+            
+            
+             
+             /*System.out.print(x + " ");
+             
+            //System.out.println("The index for " + fillSymbols[index]+ " is "+ index );
+             index++;*/
+            // if (x == )
+         
+        }
+        
+      
+        
+        System.out.println("The symbol on your card is :" +(char)(fillSymbols[cardSelection]-1));
       
         
        int gridNums = 1;
@@ -171,7 +240,7 @@ public class Game {
             //System.out.println("The symbol on the card is " + cardSymbol + ".");
         }
         else {        
-            System.out.println("Not a valid card selection.");
+          //  System.out.println("Not a valid card selection.");
         }
 } 
       public void getMatchedStatus(int gridSize, boolean match) throws IOException { 
