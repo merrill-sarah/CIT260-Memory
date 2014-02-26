@@ -5,7 +5,7 @@
  */
 
 package memory;
-import java.util.Collections;
+import java.util.*;
 
 /**
  *
@@ -28,6 +28,19 @@ public class SymbolArray {
                 j++;
             }
            }
-       System.out.println();
+       shuffleArray(getSymbols);
+     
+   }
+   
+   public void shuffleArray(char getSymbols[]){
+       Random rnd = new Random();
+    for (int i = getSymbols.length - 1; i > 0; i--)
+    {
+      int index = rnd.nextInt(i + 1);
+      // Simple swap
+      char a = getSymbols[index];
+      getSymbols[index] = getSymbols[i];
+      getSymbols[i] = a;
+    }
    }
 }
