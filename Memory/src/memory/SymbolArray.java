@@ -5,25 +5,29 @@
  */
 
 package memory;
+import java.util.Collections;
 
 /**
  *
  * @author Janis
  */
 public class SymbolArray {
-    
+
      public SymbolArray(){
        
    }
    
-   public void createArray(char getSymbols[]){
+   public void createArray(Board board, char getSymbols[]){
+       int j = 0;
        
-       char setSymbols[] = {'A','B','C','D','E','F','G','H','I','J','K','L','A','B','C','D','E','F','G','H','I','J','K','L'};
-       for(int i=0; i<getSymbols.length;i++ ){
-        getSymbols[i]= setSymbols[i];
-       }
-       
+       char setSymbols[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X'};
+       for(int i = 0; i<board.numSymbols;i++){
+           
+            for(int c = 0;c<board.numMatchingSymbols;c++){
+                getSymbols[j]=setSymbols[i];
+                j++;
+            }
+           }
        System.out.println();
    }
-    
-} // end SymbolArray class
+}

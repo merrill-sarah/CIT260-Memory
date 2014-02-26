@@ -9,6 +9,7 @@ package memory;
 import java.io.IOException;
 import java.util.Scanner;
 
+
 /**
  *
  * @author Janis
@@ -21,10 +22,7 @@ public class Game {
     int numOfSymbols;
     
     
-    public Game(){
-        //int numOfSymbols;
-        int score; 
-   
+    public Game(){  
        
     }
     public void startGame() throws IOException{       
@@ -42,12 +40,16 @@ public class Game {
         public void playGame(Player player1, Player player2) throws IOException{
         Board board = new Board();
         board.gridSize();
-        numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
+        board.matchDifficulty();
+        SymbolArray symbols = new SymbolArray();
+        char getSymbols [] = new char [board.totalCards];
+        symbols.createArray(board, getSymbols);
+        //numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
         
-        playersTurns(board, player1, player2);
+        playersTurns(board, getSymbols, player1, player2);
         displayScore(player1, player2);
-         System.out.println("");
-         EndMenuView endMenuView = new EndMenuView();
+        System.out.println("");
+        EndMenuView endMenuView = new EndMenuView();
         endMenuView.getInput(player1, player2);
         }
         
@@ -82,7 +84,7 @@ public class Game {
       
      
       }
-     public void playersTurns(Board board, Player player1, Player player2) throws IOException{
+     public void playersTurns(Board board, char getSymbols [], Player player1, Player player2) throws IOException{
         char response;
         boolean match = false;
         int totalMatchesMade = 0;
@@ -104,7 +106,7 @@ public class Game {
              
              //have player select two cards
              for (int i=0; i<2; i++){
-                 selectCard(board, name);
+                 selectCard(board, getSymbols, name);
                  }
              
              /*determine if a match was made and distribute point to player1 or 
@@ -135,17 +137,7 @@ public class Game {
          }
       }  
 
-    public void selectCard(Board board, String name) throws IOException{
-        int cardSymbol;
-        int cardRow;
-        int cardColumn; 
-       // boolean done = false;
-               
-        SymbolArray symbols = new SymbolArray(); 
-        char[] fillSymbols = new char[24];// create array to hold symbols
-        symbols.createArray(fillSymbols);      //createArray(fillSymbols);
-        // for (char x: fillSymbols)
-        //     System.out.print(" " + x); // to check if array is correct
+    public void selectCard(Board board, char getSymbols[], String name) throws IOException{
         
         Scanner in = new Scanner(System.in);
       //  while (!done){
@@ -155,7 +147,7 @@ public class Game {
         System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
         int cardSelection = in.nextInt();
         
-        while (cardSelection==0 ){
+        /*while (cardSelection==0 ){
           numOfHints++;  
           char hintLetter;
          System.out.println("What letter would you like to find? ");  
@@ -163,23 +155,23 @@ public class Game {
           hintLetter = Character.toUpperCase(hintLetter);
        
           
-           while (hintLetter-65 > fillSymbols.length){
+           while (hintLetter-65 > getSymbols.length){
               
              System.out.println("Sorry your letter was not found"
-                     + "\nPlease enter a letter between "+ fillSymbols[0]+" and "+ fillSymbols[fillSymbols.length-1]);
+                     + "\nPlease enter a letter between "+ getSymbols[0]+" and "+ getSymbols[getSymbols.length-1]);
              hintLetter = (char)System.in.read();
              hintLetter = Character.toUpperCase(hintLetter);
              }      
           
           
-            for (char x :fillSymbols){
+            for (char x :getSymbols){
              if (x == hintLetter){
                  break;}
              else{
                  index++;}
             }  
             
-             if (hintLetter == fillSymbols[index]){
+             if (hintLetter == getSymbols[index]){
                 int card= (index +1);
              System.out.println("Your letter is under card number: "+(card));
             }
@@ -214,33 +206,21 @@ public class Game {
              index++;*/
             // if (x == )
          
-        }
+        /*}
         
       
         
-        System.out.println("The symbol on your card is :" +(char)(fillSymbols[cardSelection]-1));
+        System.out.println("The symbol on your card is :" +(char)(getSymbols[cardSelection]-1));
+                */
       
         
-       int gridNums = 1;
-       int rows= board.rows; //  pass these values in
-       int columns=board.columns ;//  pass these values in
-       int nums [][] = new int [rows][columns]; 
-        
-        for (int i=0; i<rows; i++){
-            for (int j=0; j<columns; j++)
-             nums[i][j] = gridNums++;
-        } 
-        
-        if (cardSelection >= 1 && cardSelection <= board.totalCards){
-            cardRow = (cardSelection-1)/board.columns;
-            cardColumn = (cardSelection - 1)%board.columns;
-        
-            cardSymbol = nums[cardRow][cardColumn];        
+        if (cardSelection >= 1 && cardSelection <= board.totalCards){      
 
-            //System.out.println("The symbol on the card is " + cardSymbol + ".");
+            System.out.println("The symbol on the card is " + getSymbols[cardSelection-1] + ".");
         }
         else {        
-          //  System.out.println("Not a valid card selection.");
+          System.out.println("Not a valid card selection.");
+          selectCard(board, getSymbols, name);
         }
 } 
       public void getMatchedStatus(int gridSize, boolean match) throws IOException { 

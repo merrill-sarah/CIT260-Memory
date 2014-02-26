@@ -18,6 +18,8 @@ public class Board {
     String size;
     public int totalCards;
     float totalMatches;
+    float numSymbols;
+    public int numMatchingSymbols;
     
     public Board(){
     }        
@@ -30,16 +32,16 @@ public class Board {
         this.size= input.next();
         
          if(size.equals("s")){
-            rows = 4;// 3;
-            columns = 6;//4;
+            rows = 3;
+            columns = 4;
         }
         else if(size.equals("m")){
             rows = 4;
             columns = 6;
         }
         else if(size.equals("l")){
-             rows = 4;//6;
-             columns = 6;//8;
+             rows = 6;
+             columns = 8;
                     }
         else {
              System.out.println("Invalid entry. Please enter: "
@@ -49,24 +51,32 @@ public class Board {
         totalCards = rows * columns;
         totalMatches = /*(float)*/totalCards/2;
         
-        System.out.println("\nThe board is " + rows + " by " + columns + ". "
-                + "There are a total of " + (int)totalMatches + " matches to find.");
+        System.out.println("\n\tThe board is " + rows + " by " + columns + "."
+                + " There are a total of " + (int)totalMatches + " matches to find.");
         }
     
     
     
-    public int matchDifficulty(){
-        int numMatchingSymbols;
-        System.out.println("\n\tYou can change the difficulty by choosing whether there are 4 "
+    public void matchDifficulty(){
+        System.out.println("\nYou can change the difficulty by choosing whether there are 4 "
                 + "of each kind of card, or 2 of each");
         
         
           Scanner matchChoice = new Scanner(System.in);
           
-          System.out.println("\n\tEnter how many of each kind of card 2 or 4: ");
-         
+          System.out.println("Enter how many of each kind of card 2 or 4: ");
           numMatchingSymbols = matchChoice.nextInt();
           
-          return numMatchingSymbols;
+         if (numMatchingSymbols == 2){
+             numSymbols = totalMatches;
+         }
+         else if (numMatchingSymbols == 4){
+             numSymbols = totalMatches/2;
+         }
+         else{
+             System.out.println("\tInvalid entry. Please enter '2' or '4'");
+             matchDifficulty();
+         }
+           
      }  
 }
