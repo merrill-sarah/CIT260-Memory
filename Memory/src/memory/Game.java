@@ -151,56 +151,56 @@ public class Game {
                         cardSymbol = getSymbols[cardSelection-1];
                          System.out.println("The symbol on the card is " + cardSymbol + ".");
                     }
+                    else if (cardSelection==0){
+                        numOfHints++;  
+                        char hintLetter;
+                            System.out.println("What letter would you like to find? ");  
+                            hintLetter = (char)System.in.read();
+                            hintLetter = Character.toUpperCase(hintLetter);
+       
+          
+                        while (hintLetter-65 > getSymbols.length){
+              
+                             System.out.println("Sorry your letter was not found"
+                            + "\nPlease enter a letter between "+ getSymbols[0]+" and "+ getSymbols[getSymbols.length-1]);
+                            hintLetter = (char)System.in.read();
+                            hintLetter = Character.toUpperCase(hintLetter);
+                        }      
+          
+          
+                        for (char x :getSymbols){
+                            if (x == hintLetter){
+                                break;}
+                            else{
+                            index++;}
+                        }  
+            
+                        if (hintLetter == getSymbols[index]){
+                            int card= (index +1);
+                            System.out.println("Your letter is under card number: "+(card));
+                        }
+                        
+                        index = 0;
+                        if (numOfHints >2){
+                            System.out.print("You have used all your hints. Please enter a card number");
+                            cardSelection = in.nextInt();
+                            while (cardSelection == 0){
+                                System.out.print("Sorry, You have used all your hints. Please enter a card number");
+                                cardSelection = in.nextInt();
+                            }
+             
+                        }
+                 
+                        else{
+                        selectCard(board, getSymbols, name);
+                         }
+                    }
                     else {        
                         System.out.println("Not a valid card selection.");
                         selectCard(board, getSymbols, name); 
                     }
- 
-        
-        /*while (cardSelection==0 ){
-          numOfHints++;  
-          char hintLetter;
-         System.out.println("What letter would you like to find? ");  
-          hintLetter = (char)System.in.read();
-          hintLetter = Character.toUpperCase(hintLetter);
-       
+
           
-           while (hintLetter-65 > getSymbols.length){
-              
-             System.out.println("Sorry your letter was not found"
-                     + "\nPlease enter a letter between "+ getSymbols[0]+" and "+ getSymbols[getSymbols.length-1]);
-             hintLetter = (char)System.in.read();
-             hintLetter = Character.toUpperCase(hintLetter);
-             }      
-          
-          
-            for (char x :getSymbols){
-             if (x == hintLetter){
-                 break;}
-             else{
-                 index++;}
-            }  
-            
-             if (hintLetter == getSymbols[index]){
-                int card= (index +1);
-             System.out.println("Your letter is under card number: "+(card));
-            }
-                        
-             index = 0;
-             if (numOfHints >2){
-                 System.out.print("You have used all your hints. Please enter a card number");
-                 cardSelection = in.nextInt();
-                 while (cardSelection == 0){
-                     System.out.print("Sorry, You have used all your hints. Please enter a card number");
-                     cardSelection = in.nextInt();
-                 }
-             
-             }
-                 
-             else{
-                 System.out.print("Enter card number (or if you want a hint enter 0(zero)): ");
-                 cardSelection = in.nextInt();
-             }
          
         /*    System.out.println("you selected: " +cardSelection+ ""
                     + "\n"
