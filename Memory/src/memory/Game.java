@@ -111,7 +111,19 @@ public class Game {
              selectCard(board, getSymbols, name);
                 card1=cardSymbol;
              selectCard(board, getSymbols, name);
-                card2=cardSymbol;
+                
+             card2=cardSymbol;
+             boolean done = false;
+                while (!done)
+                    if (card2 == card1){
+                    System.out.println("You've selected the same card");
+                    selectCard(board, getSymbols, name);
+                    card2=cardSymbol;
+                    }
+                    else{
+                    done = true;
+                    }
+                
              
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
@@ -179,7 +191,7 @@ public class Game {
                             int card= (index +1);
                             System.out.println("Your letter is under card number: "+(card));
                         }
-                        
+                        System.out.println("numOfHints = " + numOfHints);
                         index = 0;
                         if (numOfHints >2){
                             System.out.print("You have used all your hints. Please enter a card number");
@@ -202,26 +214,6 @@ public class Game {
 
           
          
-        /*    System.out.println("you selected: " +cardSelection+ ""
-                    + "\n"
-                    + "Continue program as originally written");
-          */  
-         
-            
-            
-             
-             /*System.out.print(x + " ");
-             
-            //System.out.println("The index for " + fillSymbols[index]+ " is "+ index );
-             index++;*/
-            // if (x == )
-         
-        /*}
-        
-      
-        
-        System.out.println("The symbol on your card is :" +(char)(getSymbols[cardSelection]-1));
-                */
         
         
       
