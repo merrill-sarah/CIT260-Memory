@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
+
 /**
  *
  * @author Janis
@@ -20,15 +21,14 @@ public class Game {
     Player player2 = new Player();
     int numCards;
     int numOfSymbols;
+    char cardSymbol;
     
     
     public Game(){  
        
     }
     public void startGame() throws IOException{       
-      
         playerList.getInputNames();
-        
         player1.name=playerList.listOfPlayerNames[0];
         player2.name=playerList.listOfPlayerNames[1];
         
@@ -38,8 +38,10 @@ public class Game {
     
     
         public void playGame(Player player1, Player player2) throws IOException{
+        
         Board board = new Board();
         board.gridSize();
+        board.displayGridInfo();
         board.matchDifficulty();
         SymbolArray symbols = new SymbolArray();
         char getSymbols [] = new char [board.totalCards];
@@ -85,12 +87,13 @@ public class Game {
      
       }
      public void playersTurns(Board board, char getSymbols [], Player player1, Player player2) throws IOException{
-        char response;
         boolean match = false;
         int totalMatchesMade = 0;
         numCards = board.totalCards;
         String name;
         int counter = 1;
+        char card1;
+        char card2;
         
          while (totalMatchesMade < board.totalMatches){
              BoardView boardView = new BoardView();
@@ -105,47 +108,54 @@ public class Game {
              }
              
              //have player select two cards
-             for (int i=0; i<2; i++){
-                 selectCard(board, getSymbols, name);
-                 }
+             selectCard(board, getSymbols, name);
+                card1=cardSymbol;
+             selectCard(board, getSymbols, name);
+                card2=cardSymbol;
              
              /*determine if a match was made and distribute point to player1 or 
-                     player2 based on who's turn it is */
-            System.out.println(name +", "
-                + "Enter 't' if you made a match, or 'f' if you didn't; ");
-            response = (char)System.in.read();
-                                    
-            if (response == 't' && counter % 2 != 0) {
-                match = true;
-                totalMatchesMade += 1;
-                player1.matchedGame += 1;
-            }
-            else if (response == 't' && counter % 2 == 0){
-                match = true;
-                totalMatchesMade += 1;
-                player2.matchedGame += 1;
-            }
-            else if(response == 'f'){
-                    match = false;
-                    counter += 1;
-                   }
-            else {
-                    System.out.println("ERROR! Invalid Entry: please enter 't' or 'f' (without quotes)");
-           }    
+                     player2 based on who's turn it is */   
+             if (card1 == card2 && counter % 2 != 0){
+                 match = true;
+                 totalMatchesMade += 1;
+                 player1.matchedGame += 1;
+                 System.out.println("You made a match!");
+             } 
+             else if (card1 == card2 && counter % 2 == 0){
+                 match = true;
+                 totalMatchesMade += 1;
+                 player2.matchedGame += 1;
+                 System.out.println("You made a match!");
+             }
+             else{
+                 match = false;
+                 counter += 1;
+                 System.out.println("Sorry, not a match.");
+             }
+             
             getMatchedStatus(board.totalCards, match);
              
          }
       }  
 
     public void selectCard(Board board, char getSymbols[], String name) throws IOException{
-        
         Scanner in = new Scanner(System.in);
+        
       //  while (!done){
         
         int index = 0;
         int numOfHints = 0;
         System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
         int cardSelection = in.nextInt();
+                    if (cardSelection >= 1 && cardSelection <= board.totalCards){ 
+                        cardSymbol = getSymbols[cardSelection-1];
+                         System.out.println("The symbol on the card is " + cardSymbol + ".");
+                    }
+                    else {        
+                        System.out.println("Not a valid card selection.");
+                        selectCard(board, getSymbols, name); 
+                    }
+ 
         
         /*while (cardSelection==0 ){
           numOfHints++;  
@@ -212,17 +222,11 @@ public class Game {
         
         System.out.println("The symbol on your card is :" +(char)(getSymbols[cardSelection]-1));
                 */
+        
+        
       
         
-        if (cardSelection >= 1 && cardSelection <= board.totalCards){      
-
-            System.out.println("The symbol on the card is " + getSymbols[cardSelection-1] + ".");
-        }
-        else {        
-          System.out.println("Not a valid card selection.");
-          selectCard(board, getSymbols, name);
-        }
-} 
+    }   
       public void getMatchedStatus(int gridSize, boolean match) throws IOException { 
         float percentDone;	
 
@@ -247,24 +251,68 @@ public class Game {
  
     }
       public void displayScore(Player player1, Player player2){
-          System.out.println("\n" + player1.name + " made a total of " + player1.matchedGame + " matches."
-                  + "\n" + player2.name + " made a total of " + player2.matchedGame + " matches.");
+          int numPlayers=2; //until we add option to have more than 2 players
+          int index=0;
+          int[] numWins = new int[numPlayers];
           
-          if (player1.matchedGame < player2.matchedGame){
-              player2.totalWins += 1;
-              System.out.println("\n" + player2.name + " is the winner!");
+          //displays who made how many matched in the game
+            System.out.println("\n" + player1.name + " made a total of " + player1.matchedGame + " matches."
+                    + "\n" + player2.name + " made a total of " + player2.matchedGame + " matches.");
+            
+          //displays the winner and adds one to their running total of wins
+            if (player1.matchedGame < player2.matchedGame){
+                player2.totalWins += 1;
+                System.out.println("\n" + player2.name + " is the winner!");
+              
+            }
+            else if (player1.matchedGame > player2.matchedGame){
+                player1.totalWins +=1;
+                System.out.println("\n" + player1.name + " is the winner!");
+              
+              }
+            else {
+                System.out.println("\n" + player1.name + " and " + player2.name + "tied!");
+              }
+         
+          //sets up array to hold the number of wins for each player
+          while (index<numPlayers){
+              if (index==0){
+                  numWins[index]=player1.totalWins;
+                  index++;
+              }
+              else if (index==1){
+                  numWins[index]=player2.totalWins;
+                  index++;
+              }
+              
           }
-          else if (player1.matchedGame > player2.matchedGame){
-              player1.totalWins +=1;
-              System.out.println("\n" + player1.name + " is the winner!");
-            }
-          else {
-              System.out.println("\n" + player1.name + " and " + player2.name + "tied!");
-            }
+          
+          //displays numWins array
+          System.out.println("\nTotal Wins:");
+          int j = 1;
+          String name ="";
+          for(int x: numWins){
+              if(j==1){
+                  name = player1.name;
+              }
+              else if (j==2){
+                  name = player2.name;
+              }
+              System.out.println(name + ": " + x);
+              j++;
+              }
+          
+          //find min and max of the array
+          int min, max;
+          
+          min = max = numWins[0];
+          for(int x: numWins){
+              if(x<min) min = x;
+              if(x>max) max = x;
+          }
+          System.out.println("\nThe player with the most wins has " + max +
+                  "\nThe player with the least amount of wins has " + min);
+          }
+   
       } 
       
-      public void createSymbolArray(){
-                    
-    
-      }
-}

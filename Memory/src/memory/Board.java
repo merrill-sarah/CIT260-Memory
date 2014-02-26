@@ -46,17 +46,19 @@ public class Board {
         else {
              System.out.println("Invalid entry. Please enter: "
                      + "\"s\" \"m\" or \"l\" (without quotes):");
+             gridSize();
                     }
         
         totalCards = rows * columns;
         totalMatches = /*(float)*/totalCards/2;
-        
-        System.out.println("\n\tThe board is " + rows + " by " + columns + "."
-                + " There are a total of " + (int)totalMatches + " matches to find.");
         }
     
     
-    
+    public void displayGridInfo(){
+        System.out.println("\n\tThe board is " + rows + " by " + columns + "."
+                + " There are a total of " + (int)totalMatches + " matches to find.");
+        
+    }
     public void matchDifficulty(){
         System.out.println("\nYou can change the difficulty by choosing whether there are 4 "
                 + "of each kind of card, or 2 of each");
