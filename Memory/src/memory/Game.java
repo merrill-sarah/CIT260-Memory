@@ -22,8 +22,8 @@ public class Game {
     int numCards;
     int numOfSymbols;
     char cardSymbol;
-    
-    
+    int cardSelection;
+    int dupCheck = -1;
     public Game(){  
        
     }
@@ -111,20 +111,8 @@ public class Game {
              selectCard(board, getSymbols, name);
                 card1=cardSymbol;
              selectCard(board, getSymbols, name);
-                
              card2=cardSymbol;/*
-             boolean done = false;
-                while (!done)
-                    if (card2 == card1){
-                    System.out.println("You've selected the same card");
-                    selectCard(board, getSymbols, name);
-                    card2=cardSymbol;
-                    }
-                    else{
-                    done = true;
-                    }*/
-                
-             
+            
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
              if (card1 == card2 && counter % 2 != 0){
@@ -154,13 +142,24 @@ public class Game {
         Scanner in = new Scanner(System.in);
         
         Card cardObj = new Card();
-        
+        boolean notDup = false;
       //  while (!done){
         
         int index = 0;
         int numOfHints = 0;
         System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
-        int cardSelection = in.nextInt();
+        cardSelection = in.nextInt();
+        while(!notDup)                 //Checks for card number duplication
+        if (cardSelection== dupCheck){
+            System.out.println("ERROR: card number duplication");
+            System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
+            cardSelection = in.nextInt();
+        }
+        else{
+        notDup=true;
+        }
+        dupCheck = cardSelection;
+        
                     if (cardSelection >= 1 && cardSelection <= board.totalCards){ 
                         cardSymbol = getSymbols[cardSelection-1];
                          System.out.println("The symbol on the card is " + cardSymbol + ".");
