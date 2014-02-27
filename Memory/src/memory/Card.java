@@ -12,15 +12,16 @@ package memory;
  */
 public class Card {
     
-    int number = 5; // for now to use until graphics can be added
+   // int number = 5; // for now to use until graphics can be added
     String shape = ""; 
     String color = "";
-    boolean flipped = false; // indicates which side of the card is showing, True is face-up
-    boolean matched = false;
+   boolean flipped;// = false; // indicates which side of the card is showing, True is face-up
+   boolean matched;// = false;
     
     
     public Card(){
-    
+    boolean flipped = false; // indicates which side of the card is showing, True is face-up
+    boolean matched = false;
     }
     public void status(){
         if (flipped){

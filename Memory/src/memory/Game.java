@@ -19,13 +19,15 @@ public class Game {
     GetPlayerListView playerList= new GetPlayerListView();
     Player player1 = new Player();
     Player player2 = new Player();
+   // Card card = new Card();
     int numCards;
     int numOfSymbols;
     char cardSymbol;
     int cardSelection;
     int dupCheck = -1;
+    int numOfHints = 0;
     public Game(){  
-       
+     Card card = new Card();  
     }
     public void startGame() throws IOException{       
         playerList.getInputNames();
@@ -146,7 +148,7 @@ public class Game {
       
         
         int index = 0;
-        int numOfHints = 0;
+        
         System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
         cardSelection = in.nextInt();
         while(!notDup)                 //Checks for card number duplication
