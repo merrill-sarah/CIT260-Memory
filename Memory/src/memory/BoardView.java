@@ -14,6 +14,7 @@ import java.util.Scanner;
  */
 public class BoardView {
    Board board;
+   Card card;
    
     public void displayBoard(Board board) {
         this.board = board;
@@ -41,9 +42,10 @@ public class BoardView {
         //Use method here for making the lines
         this.horizontalLn();
                                 
-         for (int x[] : nums){
-             for (int y : x){
-                 if (y%columns!=0){
+        /* for (int x[] : nums){
+             for (int y : x){*/
+        for (int y = 1; y<= (rows*columns); y++){
+             if (y%columns!=0){
                  System.out.print("\t|\t"+ y);
                  }
                  else{
@@ -55,7 +57,7 @@ public class BoardView {
                
              }      
          }
-    }
+    
                  
        public void horizontalLn(){  
            int columns=board.columns;

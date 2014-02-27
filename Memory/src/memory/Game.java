@@ -141,9 +141,9 @@ public class Game {
     public void selectCard(Board board, char getSymbols[], String name) throws IOException{
         Scanner in = new Scanner(System.in);
         
-        Card cardObj = new Card();
+       
         boolean notDup = false;
-      //  while (!done){
+      
         
         int index = 0;
         int numOfHints = 0;
