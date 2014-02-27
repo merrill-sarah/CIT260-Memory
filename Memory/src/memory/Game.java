@@ -112,7 +112,7 @@ public class Game {
                 card1=cardSymbol;
              selectCard(board, getSymbols, name);
                 
-             card2=cardSymbol;
+             card2=cardSymbol;/*
              boolean done = false;
                 while (!done)
                     if (card2 == card1){
@@ -122,7 +122,7 @@ public class Game {
                     }
                     else{
                     done = true;
-                    }
+                    }*/
                 
              
              /*determine if a match was made and distribute point to player1 or 
@@ -152,6 +152,8 @@ public class Game {
 
     public void selectCard(Board board, char getSymbols[], String name) throws IOException{
         Scanner in = new Scanner(System.in);
+        
+        Card cardObj = new Card();
         
       //  while (!done){
         
