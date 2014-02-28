@@ -17,7 +17,7 @@ public class SymbolArray {
        
    }
    
-   public void createArray(Board board, char getSymbols[]){
+   public char[] createArray(Board board, char getSymbols[]){
        int j = 0;
        
        char setSymbols[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X'};
@@ -29,6 +29,7 @@ public class SymbolArray {
             }
            }
        shuffleArray(getSymbols);
+       return getSymbols;
      
    }
    

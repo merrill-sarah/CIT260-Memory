@@ -14,12 +14,14 @@ import java.util.Scanner;
  */
 public class BoardView {
    Board board;
-   Card card;
+   Card cards[][];
    
-    public void displayBoard(Board board) {
-        this.board = board;
-        
-       int gridNums = 1;
+   
+   
+   public BoardView(Board board,char getSymbols[]){
+   this.board = board;
+   
+        int gridNums = 1;
        int rows= board.rows; 
        int columns=board.columns;
        
@@ -30,23 +32,32 @@ public class BoardView {
                    board.gridSize();
                    } 
        
-       int nums [][] = new int [rows][columns]; 
+       this.cards = new Card [rows][columns]; 
+              
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        for ( i=0; i<rows; i++){
+            for ( j=0; j<columns; j++){
+             Card inPlay = new Card();
+             inPlay.symbol = getSymbols[k];
+             k++;
+             cards[i][j]=inPlay;
+            }
         
-        for (int i=0; i<rows; i++){
-            for (int j=0; j<columns; j++)
-             nums[i][j] = gridNums++;
         }
+   }
    
-        System.out.print("\t|");
-        
-        //Use method here for making the lines
-        this.horizontalLn();
-                                
-        /* for (int x[] : nums){
-             for (int y : x){*/
+    public void displayBoard(Board board) {
+       int rows= board.rows; 
+       int columns=board.columns;
+       
+         System.out.print("\t|"); 
+         this.horizontalLn();
         for (int y = 1; y<= (rows*columns); y++){
+           
              if (y%columns!=0){
-                 System.out.print("\t|\t"+ y);
+                System.out.print("\t|\t"+ y);
                  }
                  else{
                      System.out.print("\t|\t" +y + "\t|");
@@ -55,8 +66,9 @@ public class BoardView {
                      
                  } 
                
-             }      
-         }
+             }  
+        }    
+         
     
                  
        public void horizontalLn(){  

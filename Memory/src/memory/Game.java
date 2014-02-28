@@ -97,9 +97,10 @@ public class Game {
         char card1;
         char card2;
         
+        BoardView boardView = new BoardView(board, getSymbols);
          while (totalMatchesMade < board.totalMatches){
-             BoardView boardView = new BoardView();
-             boardView.displayBoard(board);
+             
+            boardView.displayBoard(board);
              
              //determine player1 or player2
              if (counter % 2 != 0){
