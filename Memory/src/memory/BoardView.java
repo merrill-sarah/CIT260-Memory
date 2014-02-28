@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * PROJECT  - MEMORY
+ * TEAM     - Sarah Merrill and Janis Felsted
+ * COURSE   -  CIT 260 ~ 03 online
  */
 
 package memory;
@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class BoardView {
    Board board;
-   Card cards[][];
+   Card deck[];
    
    
    
@@ -32,20 +32,16 @@ public class BoardView {
                    board.gridSize();
                    } 
        
-       this.cards = new Card [rows][columns]; 
-              
-        int i = 0;
-        int j = 0;
-        int k = 0;
-        for ( i=0; i<rows; i++){
-            for ( j=0; j<columns; j++){
-             Card inPlay = new Card();
-             inPlay.symbol = getSymbols[k];
-             k++;
-             cards[i][j]=inPlay;
+       this.deck = new Card [rows *columns]; 
+       
+        for ( int i =0; i<rows; i++){
+             Card card = new Card();
+             card.symbol = getSymbols[i];
+            
+             deck[i]=card;
             }
         
-        }
+        
    }
    
     public void displayBoard(Board board) {
