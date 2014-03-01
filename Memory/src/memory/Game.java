@@ -157,7 +157,7 @@ public class Game {
                  counter += 1;
                  System.out.println("Sorry, not a match.");
              }
-             
+             boardView.displayBoard(board, getSymbols);
             getMatchedStatus(board.totalCards, match);
              
          }
