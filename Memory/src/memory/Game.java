@@ -98,8 +98,10 @@ public class Game {
         numCards = board.totalCards;
         String name;
         int counter = 1;
-        Card card1 = new Card();
-        Card card2 = new Card();
+        Card card1;
+        Card card2;
+        int selection1;
+        int selection2;
         
          while (totalMatchesMade < board.totalMatches){
              BoardView boardView = new BoardView(board, getSymbols);
@@ -117,67 +119,35 @@ public class Game {
              
              //have player select two cards
              selectCard(board, getSymbols, name);
+                selection1 = cardSelection;
                 card1=boardView.deck[cardSelection-1];
                 boardView.deck[cardSelection-1].flipped = true;
                 
                 //*****************************************************
-       int rows= board.rows; 
-       int columns=board.columns;
        
-         System.out.print("\t|"); 
-         boardView.horizontalLn();
-         int i = 0;
-        for (int y = 1; y<= (rows*columns); y++){ 
-            if (y%columns!=0){
-                System.out.print("\t|\t");
-                if (boardView.deck[i].flipped){
-                    System.out.print(boardView.deck[i].symbol);
-                }
-                else if (boardView.deck[i].matched){
-                    System.out.print(" ");
-                }
-                else{ 
-                    System.out.print(boardView.deck[i].cardNumber);
-                }
-                i++;}
-            else{
-                 System.out.print("\t|\t");// +getSymbols[i] +
-                 if (boardView.deck[i].flipped){
-                    System.out.print(boardView.deck[i].symbol);
-                }
-                else if (boardView.deck[i].matched){
-                    System.out.print(" ");
-                }
-                else{ 
-                    System.out.print(boardView.deck[i].cardNumber);
-                }
-                 System.out.print("\t|");
-                 i++;
-                 System.out.print("\n\t|");
-                 boardView.horizontalLn();
-                 } 
-             }  
-            
+        boardView.displayBoard(board, getSymbols);       
 
-
-
-
-
+        
                 //******************************************************
              selectCard(board, getSymbols, name);
+                selection2 = cardSelection;
                 card2 = boardView.deck[cardSelection-1];
                 boardView.deck[cardSelection-1].flipped = true;
             
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
-             if (card1 == card2 && counter % 2 != 0){
+             if (card1.symbol == card2.symbol && counter % 2 != 0){
                  match = true;
+                 boardView.deck[selection1-1].matched=true;
+                 boardView.deck[selection2-1].matched=true;
                  totalMatchesMade += 1;
                  player1.matchedGame += 1;
                  System.out.println("You made a match!");
              } 
-             else if (card1 == card2 && counter % 2 == 0){
+             else if (card1.symbol == card2.symbol && counter % 2 == 0){
                  match = true;
+                 boardView.deck[selection1-1].matched=true;
+                 boardView.deck[selection2-1].matched=true;
                  totalMatchesMade += 1;
                  player2.matchedGame += 1;
                  System.out.println("You made a match!");

@@ -62,13 +62,12 @@ public class BoardView {
        int columns=board.columns;
        
          System.out.print("\t|"); 
-         this.horizontalLn();
+         horizontalLn();
          int i = 0;
-        for (int y = 1; y<= (rows*columns); y++){
-          
-             if (y%columns!=0){
-                System.out.print("\t|\t"/*);//*/+ y);
-         /*     if (deck[i].flipped){
+        for (int y = 1; y<= (rows*columns); y++){ 
+            if (y%columns!=0){
+                System.out.print("\t|\t");
+                if (deck[i].flipped){
                     System.out.print(deck[i].symbol);
                 }
                 else if (deck[i].matched){
@@ -76,14 +75,23 @@ public class BoardView {
                 }
                 else{ 
                     System.out.print(deck[i].cardNumber);
-                }*/
-                i++;
-                 }
-             else{
-                 System.out.print("\t|\t" + y + "\t|");
+                }
+                i++;}
+            else{
+                 System.out.print("\t|\t");// +getSymbols[i] +
+                 if (deck[i].flipped){
+                    System.out.print(deck[i].symbol);
+                }
+                else if (deck[i].matched){
+                    System.out.print(" ");
+                }
+                else{ 
+                    System.out.print(deck[i].cardNumber);
+                }
+                 System.out.print("\t|");
                  i++;
                  System.out.print("\n\t|");
-                 this.horizontalLn();
+                 horizontalLn();
                  } 
              }  
         }    
