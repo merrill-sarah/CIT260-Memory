@@ -24,7 +24,7 @@ public class Game {
     char cardSymbol;
     int cardSelection;
     int dupCheck = -1;
-    BoardView boardview;
+ //   BoardView boardview;
     
     
     public Game(){  
@@ -37,6 +37,7 @@ public class Game {
         
         welcomePlayers(player1.name, player2.name);
         playGame(player1,player2);
+       
     }
     
     
@@ -47,9 +48,11 @@ public class Game {
         board.displayGridInfo();
         board.matchDifficulty();
         SymbolArray symbols = new SymbolArray();
-        char getSymbols [] = new char [board.totalCards];
-        symbols.createArray(board, getSymbols);
         
+        char getSymbols [] = new char [board.totalCards]; //create foundation array
+        symbols.createArray(board, getSymbols); //'sends' getSymbols changed by Reference
+        
+        //numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
         
         playersTurns(board, getSymbols, player1, player2);
         displayScore(player1, player2);
@@ -95,14 +98,15 @@ public class Game {
         numCards = board.totalCards;
         String name;
         int counter = 1;
-        char card1;
-        char card2;
+        Card card1;
+        Card card2;
         
          while (totalMatchesMade < board.totalMatches){
              BoardView boardView = new BoardView(board, getSymbols);
-             Card[] deck = new Card[board.totalCards];
-             boardView.displayBoard(board, getSymbols, deck);
-             
+           //  Card[] deck = new Card[board.totalCards];
+             boardView.displayBoard(board, getSymbols);
+           //  System.out.println("trying to print deck[1]"/* + deck[1]*/);
+            // boardView.deck
              //determine player1 or player2
              if (counter % 2 != 0){
                  name = player1.name;
@@ -113,14 +117,58 @@ public class Game {
              
              //have player select two cards
              selectCard(board, getSymbols, name);
-                card1=getSymbols[cardSelection];
-                boardview.deck[cardSelection].flipped = true;
+                card1=boardView.deck[cardSelection];
+                boardView.deck[cardSelection].flipped = true;
+                //*****************************************************
+       int rows= board.rows; 
+       int columns=board.columns;
+       
+         System.out.print("\t|"); 
+         boardView.horizontalLn();
+         int i = 0;
+        for (int y = 1; y<= (rows*columns); y++){ 
+            if (y%columns!=0){
+                System.out.print("\t|\t");
+                if (boardView.deck[i].flipped){
+                    System.out.print(boardView.deck[i].symbol);
+                }
+                else if (boardView.deck[i].matched){
+                    System.out.print(" ");
+                }
+                else{ 
+                    System.out.print(boardView.deck[i].cardNumber);
+                }
+                i++;}
+            else{
+                 System.out.print("\t|\t");// +getSymbols[i] +
+                 if (boardView.deck[i].flipped){
+                    System.out.print(boardView.deck[i].symbol);
+                }
+                else if (boardView.deck[i].matched){
+                    System.out.print(" ");
+                }
+                else{ 
+                    System.out.print(boardView.deck[i].cardNumber);
+                }
+                 System.out.print("\t|");
+                 i++;
+                 System.out.print("\n\t|");
+                 boardView.horizontalLn();
+                 } 
+             }  
+            
+
+
+
+
+
+                //******************************************************
              selectCard(board, getSymbols, name);
-             card2=cardSymbol;/*
+           //  card2=cardSymbol;/*
             
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
-             if (card1 == card2 && counter % 2 != 0){
+         /*    if (card1 == card2 && counter % 2 != 0){
                  match = true;
                  totalMatchesMade += 1;
                  player1.matchedGame += 1;
@@ -136,7 +184,7 @@ public class Game {
                  match = false;
                  counter += 1;
                  System.out.println("Sorry, not a match.");
-             }
+             }*/
              
             getMatchedStatus(board.totalCards, match);
              
@@ -154,7 +202,8 @@ public class Game {
         int numOfHints = 0;
         System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
         cardSelection = in.nextInt();
-        while(!notDup)                 //Checks for card number duplication
+        
+      /*  while(!notDup)                 //Checks for card number duplication
         if (cardSelection== dupCheck){
             System.out.println("ERROR: card number duplication");
             System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
@@ -163,7 +212,7 @@ public class Game {
         else{
         notDup=true;
         }
-        dupCheck = cardSelection;
+        dupCheck = cardSelection;*/
         
         if (cardSelection >= 1 && cardSelection <= board.totalCards){ 
             cardSymbol = getSymbols[cardSelection-1];
@@ -218,7 +267,7 @@ public class Game {
             selectCard(board, getSymbols, name); 
         }
 
-
+          
          
         
         
