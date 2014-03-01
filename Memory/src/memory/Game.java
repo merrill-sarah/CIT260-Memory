@@ -106,7 +106,7 @@ public class Game {
          while (totalMatchesMade < board.totalMatches){
              BoardView boardView = new BoardView(board, getSymbols);
            //  Card[] deck = new Card[board.totalCards];
-             boardView.displayBoard(board, getSymbols);
+             boardView.displayBoard(board, getSymbols,boardView.deck);
            //  System.out.println("trying to print deck[1]"/* + deck[1]*/);
             // boardView.deck
              //determine player1 or player2
@@ -125,7 +125,7 @@ public class Game {
                 
                 //*****************************************************
        
-        boardView.displayBoard(board, getSymbols);       
+        boardView.displayBoard(board, getSymbols,boardView.deck);       
 
         
                 //******************************************************
@@ -157,7 +157,7 @@ public class Game {
                  counter += 1;
                  System.out.println("Sorry, not a match.");
              }
-             boardView.displayBoard(board, getSymbols);
+             boardView.displayBoard(board, getSymbols,boardView.deck);
             getMatchedStatus(board.totalCards, match);
              
          }
