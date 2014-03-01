@@ -98,8 +98,8 @@ public class Game {
         numCards = board.totalCards;
         String name;
         int counter = 1;
-        Card card1;
-        Card card2;
+        Card card1 = new Card();
+        Card card2 = new Card();
         
          while (totalMatchesMade < board.totalMatches){
              BoardView boardView = new BoardView(board, getSymbols);
@@ -117,8 +117,9 @@ public class Game {
              
              //have player select two cards
              selectCard(board, getSymbols, name);
-                card1=boardView.deck[cardSelection];
-                boardView.deck[cardSelection].flipped = true;
+                card1=boardView.deck[cardSelection-1];
+                boardView.deck[cardSelection-1].flipped = true;
+                
                 //*****************************************************
        int rows= board.rows; 
        int columns=board.columns;
@@ -164,12 +165,12 @@ public class Game {
 
                 //******************************************************
              selectCard(board, getSymbols, name);
-           //  card2boardView.deck[cardSelection];
-                boardView.deck[cardSelection].flipped = true;
+                card2 = boardView.deck[cardSelection-1];
+                boardView.deck[cardSelection-1].flipped = true;
             
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
-         /*    if (card1 == card2 && counter % 2 != 0){
+             if (card1 == card2 && counter % 2 != 0){
                  match = true;
                  totalMatchesMade += 1;
                  player1.matchedGame += 1;
@@ -185,7 +186,7 @@ public class Game {
                  match = false;
                  counter += 1;
                  System.out.println("Sorry, not a match.");
-             }*/
+             }
              
             getMatchedStatus(board.totalCards, match);
              

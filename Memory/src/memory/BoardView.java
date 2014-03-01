@@ -67,7 +67,7 @@ public class BoardView {
         for (int y = 1; y<= (rows*columns); y++){
           
              if (y%columns!=0){
-                System.out.print("\t|\t"/*);//*/+ getSymbols[i]);
+                System.out.print("\t|\t"/*);//*/+ y);
          /*     if (deck[i].flipped){
                     System.out.print(deck[i].symbol);
                 }
@@ -80,7 +80,7 @@ public class BoardView {
                 i++;
                  }
              else{
-                 System.out.print("\t|\t" +getSymbols[i] + "\t|");
+                 System.out.print("\t|\t" + y + "\t|");
                  i++;
                  System.out.print("\n\t|");
                  this.horizontalLn();
