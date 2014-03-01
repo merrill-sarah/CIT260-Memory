@@ -164,7 +164,8 @@ public class Game {
 
                 //******************************************************
              selectCard(board, getSymbols, name);
-           //  card2=cardSymbol;/*
+           //  card2boardView.deck[cardSelection];
+                boardView.deck[cardSelection].flipped = true;
             
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
