@@ -100,11 +100,10 @@ public class Game {
         int counter = 1;
         Card card1;
         Card card2;
-        int selection1;
-        int selection2;
+        BoardView boardView = new BoardView(board, getSymbols);
+      
         
          while (totalMatchesMade < board.totalMatches){
-             BoardView boardView = new BoardView(board, getSymbols);
            //  Card[] deck = new Card[board.totalCards];
              boardView.displayBoard(board, getSymbols);
            //  System.out.println("trying to print deck[1]"/* + deck[1]*/);
@@ -119,9 +118,8 @@ public class Game {
              
              //have player select two cards
              selectCard(board, getSymbols, name);
-                selection1 = cardSelection;
                 card1=boardView.deck[cardSelection-1];
-                boardView.deck[cardSelection-1].flipped = true;
+                card1.flipped = true;
                 
                 //*****************************************************
        
@@ -130,24 +128,23 @@ public class Game {
         
                 //******************************************************
              selectCard(board, getSymbols, name);
-                selection2 = cardSelection;
                 card2 = boardView.deck[cardSelection-1];
-                boardView.deck[cardSelection-1].flipped = true;
+                card2.flipped = true;
             
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
              if (card1.symbol == card2.symbol && counter % 2 != 0){
                  match = true;
-                 boardView.deck[selection1-1].matched=true;
-                 boardView.deck[selection2-1].matched=true;
+                 card1.matched=true;
+                 card2.matched=true;
                  totalMatchesMade += 1;
                  player1.matchedGame += 1;
                  System.out.println("You made a match!");
              } 
              else if (card1.symbol == card2.symbol && counter % 2 == 0){
                  match = true;
-                 boardView.deck[selection1-1].matched=true;
-                 boardView.deck[selection2-1].matched=true;
+                 card1.matched=true;
+                 card2.matched=true;
                  totalMatchesMade += 1;
                  player2.matchedGame += 1;
                  System.out.println("You made a match!");
@@ -159,6 +156,8 @@ public class Game {
              }
              boardView.displayBoard(board, getSymbols);
             getMatchedStatus(board.totalCards, match);
+            card1.flipped=false;
+            card2.flipped=false;
              
          }
       }  

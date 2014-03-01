@@ -105,8 +105,10 @@ public class BoardView {
            }
            System.out.print("\n");
        }
+                    
+       }
 
-}
+
        
 
  
