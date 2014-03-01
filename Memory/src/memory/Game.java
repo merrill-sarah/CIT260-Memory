@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * PROJECT  - MEMORY
+ * TEAM     - Sarah Merrill and Janis Felsted
+ * COURSE   -  CIT 260 ~ 03 online
  */
 
 package memory;
@@ -24,6 +24,9 @@ public class Game {
     char cardSymbol;
     int cardSelection;
     int dupCheck = -1;
+    BoardView boardview;
+    
+    
     public Game(){  
        
     }
@@ -46,7 +49,7 @@ public class Game {
         SymbolArray symbols = new SymbolArray();
         char getSymbols [] = new char [board.totalCards];
         symbols.createArray(board, getSymbols);
-        //numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
+        
         
         playersTurns(board, getSymbols, player1, player2);
         displayScore(player1, player2);
@@ -97,7 +100,8 @@ public class Game {
         
          while (totalMatchesMade < board.totalMatches){
              BoardView boardView = new BoardView(board, getSymbols);
-             boardView.displayBoard(board);
+             Card[] deck = new Card[board.totalCards];
+             boardView.displayBoard(board, getSymbols, deck);
              
              //determine player1 or player2
              if (counter % 2 != 0){
@@ -109,7 +113,8 @@ public class Game {
              
              //have player select two cards
              selectCard(board, getSymbols, name);
-                card1=cardSymbol;
+                card1=getSymbols[cardSelection];
+                boardview.deck[cardSelection].flipped = true;
              selectCard(board, getSymbols, name);
              card2=cardSymbol;/*
             
@@ -160,60 +165,60 @@ public class Game {
         }
         dupCheck = cardSelection;
         
-                    if (cardSelection >= 1 && cardSelection <= board.totalCards){ 
-                        cardSymbol = getSymbols[cardSelection-1];
-                         System.out.println("The symbol on the card is " + cardSymbol + ".");
-                    }
-                    else if (cardSelection==0){
-                        numOfHints++;  
-                        char hintLetter;
-                            System.out.println("What letter would you like to find? ");  
-                            hintLetter = (char)System.in.read();
-                            hintLetter = Character.toUpperCase(hintLetter);
-       
-          
-                        while (hintLetter-65 > getSymbols.length){
-              
-                             System.out.println("Sorry your letter was not found"
-                            + "\nPlease enter a letter between "+ getSymbols[0]+" and "+ getSymbols[getSymbols.length-1]);
-                            hintLetter = (char)System.in.read();
-                            hintLetter = Character.toUpperCase(hintLetter);
-                        }      
-          
-          
-                        for (char x :getSymbols){
-                            if (x == hintLetter){
-                                break;}
-                            else{
-                            index++;}
-                        }  
-            
-                        if (hintLetter == getSymbols[index]){
-                            int card= (index +1);
-                            System.out.println("Your letter is under card number: "+(card));
-                        }
-                        System.out.println("numOfHints = " + numOfHints);
-                        index = 0;
-                        if (numOfHints >2){
-                            System.out.print("You have used all your hints. Please enter a card number");
-                            cardSelection = in.nextInt();
-                            while (cardSelection == 0){
-                                System.out.print("Sorry, You have used all your hints. Please enter a card number");
-                                cardSelection = in.nextInt();
-                            }
-             
-                        }
-                 
-                        else{
-                        selectCard(board, getSymbols, name);
-                         }
-                    }
-                    else {        
-                        System.out.println("Not a valid card selection.");
-                        selectCard(board, getSymbols, name); 
-                    }
+        if (cardSelection >= 1 && cardSelection <= board.totalCards){ 
+            cardSymbol = getSymbols[cardSelection-1];
+             System.out.println("The symbol on the card is " + cardSymbol + ".");
+        }
+        else if (cardSelection==0){
+            numOfHints++;  
+            char hintLetter;
+                System.out.println("What letter would you like to find? ");  
+                hintLetter = (char)System.in.read();
+                hintLetter = Character.toUpperCase(hintLetter);
 
-          
+
+            while (hintLetter-65 > getSymbols.length){
+
+                 System.out.println("Sorry your letter was not found"
+                + "\nPlease enter a letter between "+ getSymbols[0]+" and "+ getSymbols[getSymbols.length-1]);
+                hintLetter = (char)System.in.read();
+                hintLetter = Character.toUpperCase(hintLetter);
+            }      
+
+
+            for (char x :getSymbols){
+                if (x == hintLetter){
+                    break;}
+                else{
+                index++;}
+            }  
+
+            if (hintLetter == getSymbols[index]){
+                int card= (index +1);
+                System.out.println("Your letter is under card number: "+(card));
+            }
+            System.out.println("numOfHints = " + numOfHints);
+            index = 0;
+            if (numOfHints >2){
+                System.out.print("You have used all your hints. Please enter a card number");
+                cardSelection = in.nextInt();
+                while (cardSelection == 0){
+                    System.out.print("Sorry, You have used all your hints. Please enter a card number");
+                    cardSelection = in.nextInt();
+                }
+
+            }
+
+            else{
+            selectCard(board, getSymbols, name);
+             }
+        }
+        else {        
+            System.out.println("Not a valid card selection.");
+            selectCard(board, getSymbols, name); 
+        }
+
+
          
         
         

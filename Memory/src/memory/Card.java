@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * PROJECT  - MEMORY
+ * TEAM     - Sarah Merrill and Janis Felsted
+ * COURSE   -  CIT 260 ~ 03 online
  */
 
 package memory;
@@ -19,12 +19,19 @@ public class Card {
    boolean matched;
    char symbol;
    int cardNumber;
-    
+   BoardView boardview; 
     
     public Card(){
     boolean flipped = false; // indicates which side of the card is showing, True is face-up
     boolean matched = false;
     }
+    
+    public Card(char symbol ){
+   flipped = false; // indicates which side of the card is showing, True is face-up
+   matched = false;
+   this.symbol = symbol;
+    }
+    
     public void status(){
         if (flipped){
            // System.out.println("Card display is " +number);

@@ -37,31 +37,40 @@ public class BoardView {
         for ( int i =0; i<rows; i++){
              Card card = new Card();
              card.symbol = getSymbols[i];
-            
+            card.cardNumber= i+1;
              deck[i]=card;
             }
-        
-        
+               
    }
    
-    public void displayBoard(Board board) {
+    public void displayBoard(Board board,char getSymbols[], Card deck[]) {
        int rows= board.rows; 
        int columns=board.columns;
        
          System.out.print("\t|"); 
          this.horizontalLn();
+         int i = 0;
         for (int y = 1; y<= (rows*columns); y++){
-           
+          
              if (y%columns!=0){
-                System.out.print("\t|\t"+ y);
+                System.out.print("\t|\t"+ getSymbols[i]);
+             /* if (deck[i].flipped){
+                    System.out.print(deck[i].symbol);
+                }
+                else if (deck[i].matched){
+                    System.out.print(" ");
+                }
+                else{ 
+                    System.out.print(deck[i].cardNumber);
+                }*/
+                i++;
                  }
-                 else{
-                     System.out.print("\t|\t" +y + "\t|");
-                     System.out.print("\n\t|");
-                     this.horizontalLn();
-                     
+             else{
+                 System.out.print("\t|\t" +getSymbols[i] + "\t|");
+                 i++;
+                 System.out.print("\n\t|");
+                 this.horizontalLn();
                  } 
-               
              }  
         }    
          
