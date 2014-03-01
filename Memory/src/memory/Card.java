@@ -17,6 +17,7 @@ public class Card {
     String color = "";
    boolean flipped;
    boolean matched;
+   String matchString;
    char symbol;
    int cardNumber;
    BoardView boardview; 

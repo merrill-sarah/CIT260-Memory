@@ -40,6 +40,7 @@ public class BoardView {
              Card card = new Card();
              card.symbol = getSymbols[i];
              card.cardNumber= i+1;
+             card.matchString = " ";
              deck[i]=card;
             }
        /* ERROR CHECKING
@@ -57,7 +58,7 @@ public class BoardView {
      
    }  //end of constructor: BoardView(Board board,char getSymbols[]
    
-    public void displayBoard(Board board,char getSymbols[]/*, Card deck[]*/) {
+    public void displayBoard(Board board,char getSymbols[], Card deck[]) {
        int rows= board.rows; 
        int columns=board.columns;
        
@@ -71,10 +72,11 @@ public class BoardView {
                     System.out.print(deck[i].symbol);
                 }
                 else if (deck[i].matched){
-                    System.out.print(" ");
+                    System.out.print(deck[i].matchString);
                 }
                 else{ 
                     System.out.print(deck[i].cardNumber);
+                    
                 }
                 i++;}
             else{
@@ -83,7 +85,7 @@ public class BoardView {
                     System.out.print(deck[i].symbol);
                 }
                 else if (deck[i].matched){
-                    System.out.print(" ");
+                    System.out.print(deck[i].matchString);
                 }
                 else{ 
                     System.out.print(deck[i].cardNumber);
