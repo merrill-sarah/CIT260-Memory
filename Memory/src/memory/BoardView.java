@@ -58,7 +58,7 @@ public class BoardView {
      
    }  //end of constructor: BoardView(Board board,char getSymbols[]
    
-    public void displayBoard(Board board,char getSymbols[], Card deck[]) {
+    public void displayBoard(Board board,char getSymbols[]) {
        int rows= board.rows; 
        int columns=board.columns;
        

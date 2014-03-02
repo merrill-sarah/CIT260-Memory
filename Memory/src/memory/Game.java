@@ -105,7 +105,7 @@ public class Game {
         
          while (totalMatchesMade < board.totalMatches){
            //  Card[] deck = new Card[board.totalCards];
-             boardView.displayBoard(board, getSymbols,boardView.deck);
+             boardView.displayBoard(board, getSymbols);
            //  System.out.println("trying to print deck[1]"/* + deck[1]*/);
             // boardView.deck
              //determine player1 or player2
@@ -123,7 +123,7 @@ public class Game {
                 
                 //*****************************************************
        
-        boardView.displayBoard(board, getSymbols,boardView.deck);       
+        boardView.displayBoard(board, getSymbols);       
 
         
                 //******************************************************
@@ -154,7 +154,7 @@ public class Game {
                  counter += 1;
                  System.out.println("Sorry, not a match.");
              }
-             boardView.displayBoard(board, getSymbols,boardView.deck);
+             boardView.displayBoard(board, getSymbols);
             getMatchedStatus(board.totalCards, match);
             card1.flipped=false;
             card2.flipped=false;
