@@ -36,10 +36,10 @@ public class Memory {
         
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.getInput();
-        
+        /*
         Card card1 = new Card();
         card1.status();
-        card1.symbolsNeeded();
+        card1.symbolsNeeded();*/
         
     }
     

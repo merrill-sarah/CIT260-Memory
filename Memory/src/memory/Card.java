@@ -17,7 +17,7 @@ public class Card {
     String color = "";
    boolean flipped;
    boolean matched;
-   String matchString;
+  // String matchString;
    char symbol;
    int cardNumber;
    BoardView boardview; 
@@ -38,11 +38,11 @@ public class Card {
            // System.out.println("Card display is " +number);
         }
     }
-    
+    /*
     public void symbolsNeeded(){
       int numSymbols;
       int numMatching;
       int numCards;
             
-    }
+    }*/
 }

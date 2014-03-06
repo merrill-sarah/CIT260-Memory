@@ -17,9 +17,9 @@ public class Board {
     int columns;
     String size;
     public int totalCards;
-    float totalMatches;
-    float numSymbols;
-    public int numMatchingSymbols;
+    float totalMatches;//?  game?
+    float numSymbols; // symbolsArray?
+    public int numMatchingSymbols;// symbolsArray?
     
     public Board(){
     }        
@@ -59,7 +59,7 @@ public class Board {
                 + " There are a total of " + (int)totalMatches + " matches to find.");
         
     }
-    public void matchDifficulty(){
+    public void matchDifficulty(){//this..should it be in the options menu?
         System.out.println("\nYou can change the difficulty by choosing whether there are 4 "
                 + "of each kind of card, or 2 of each");
         

@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class BoardView {
    Board board;
-   Card deck[];
+   Card deck[]; // does this belong here? in Card? in Game?
   // 
    
    
@@ -40,7 +40,7 @@ public class BoardView {
              Card card = new Card();
              card.symbol = getSymbols[i];
              card.cardNumber= i+1;
-             card.matchString = " ";
+            // card.matchString = " ";
              deck[i]=card;
             }
        /* ERROR CHECKING
@@ -72,7 +72,7 @@ public class BoardView {
                     System.out.print(deck[i].symbol);
                 }
                 else if (deck[i].matched){
-                    System.out.print(deck[i].matchString);
+                    System.out.print(" ");//(deck[i].matchString);
                 }
                 else{ 
                     System.out.print(deck[i].cardNumber);
@@ -85,7 +85,7 @@ public class BoardView {
                     System.out.print(deck[i].symbol);
                 }
                 else if (deck[i].matched){
-                    System.out.print(deck[i].matchString);
+                    System.out.print(" ");//(deck[i].matchString);
                 }
                 else{ 
                     System.out.print(deck[i].cardNumber);

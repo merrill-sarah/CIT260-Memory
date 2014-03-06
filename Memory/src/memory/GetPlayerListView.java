@@ -7,7 +7,7 @@
 package memory;
 
 import java.util.Scanner;
-import java.util.Arrays;
+//import java.util.Arrays;
 
 /**
  *
@@ -28,7 +28,7 @@ public class GetPlayerListView {
     public String[] getInputNames(){
         int nameIndex =0;
         int playerNum =1;
-        int numPlayers =2; // Change this to a variable if we add more players option
+       /* int */numPlayers =2; // Change this to a variable if we add more players option
         boolean finished = false;
         MemoryError errorMsg = new MemoryError();
         Scanner inFile = new Scanner(System.in);

@@ -68,7 +68,7 @@ public class Game {
         
     }
     
-      public void numSymbolsNeeded(int numCards, int matchingSymbols){
+      public void numSymbolsNeeded(int numCards, int matchingSymbols){// does this belong here?
       //numOfSymbols;
       String errorMessage;
       
@@ -88,7 +88,7 @@ public class Game {
             
       numOfSymbols = numCards / matchingSymbols;
       
-      System.out.println( "\n\tYou need a total of " + numOfSymbols + " different symbols.");
+      System.out.println( "\n\tYou need a total of " + numOfSymbols + " different symbols.");//necessary at all?
       
      
       }
@@ -121,19 +121,16 @@ public class Game {
                 card1=boardView.deck[cardSelection-1];
                 card1.flipped = true;
                 
-                //*****************************************************
-       
+               
         boardView.displayBoard(board, getSymbols);       
-
-        
-                //******************************************************
-             selectCard(board, getSymbols, name);
+       
+        selectCard(board, getSymbols, name);
                 card2 = boardView.deck[cardSelection-1];
                 card2.flipped = true;
             
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
-             if (card1.symbol == card2.symbol && counter % 2 != 0){
+             if (card1.symbol == card2.symbol && counter % 2 != 0){//should be using player1 and player 2 here as objects... not as evaluated values
                  match = true;
                  card1.matched=true;
                  card2.matched=true;
@@ -268,7 +265,7 @@ public class Game {
         
  
     }
-      public void displayScore(Player player1, Player player2){
+      public void displayScore(Player player1, Player player2){ //move to Player class?
           int numPlayers=2; //until we add option to have more than 2 players
           int index=0;
           int[] numWins = new int[numPlayers];
@@ -289,7 +286,7 @@ public class Game {
               
               }
             else {
-                System.out.println("\n" + player1.name + " and " + player2.name + "tied!");
+                System.out.println("\n" + player1.name + " and " + player2.name + " tied!");
               }
          
           //sets up array to hold the number of wins for each player
