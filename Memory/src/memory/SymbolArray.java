@@ -31,7 +31,7 @@ public class SymbolArray {
               
             }
            }
-       int j = 0;
+       int j = 0;  //duplicates the symbols in getSymbols depending on whether the user chooses 2 or 4 matching cards.
        int grid = (board.columns * board.rows);
        while (j<grid){
            for (int i = 0; i<board.numSymbols;i++,j++){

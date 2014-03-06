@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class GetPlayerListView {
     
 
-    int numPlayers=2;
+    int numPlayers=2;//player or game
    
     
      public String[] listOfPlayerNames = new String[numPlayers];
@@ -25,7 +25,7 @@ public class GetPlayerListView {
         
     }
     
-    public String[] getInputNames(){
+    public String[] getInputNames(){ // player?
         int nameIndex =0;
         int playerNum =1;
        /* int */numPlayers =2; // Change this to a variable if we add more players option

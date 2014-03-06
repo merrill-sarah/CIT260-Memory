@@ -17,7 +17,7 @@ public class Board {
     int columns;
     String size;
     public int totalCards;
-    float totalMatches;//?  game?
+    float totalMatches;//?  game or symbolsArray?
     float numSymbols; // symbolsArray?
     public int numMatchingSymbols;// symbolsArray?
     
@@ -50,13 +50,13 @@ public class Board {
                     }
         
         totalCards = rows * columns;
-        totalMatches = /*(float)*/totalCards/2;
+        totalMatches = totalCards/2;
         }
     
     
     public void displayGridInfo(){
         System.out.println("\n\tThe board is " + rows + " by " + columns + "."
-                + " There are a total of " + (int)totalMatches + " matches to find.");
+                + " There are a total of " + totalMatches + " matches to find.");
         
     }
     public void matchDifficulty(){//this..should it be in the options menu?

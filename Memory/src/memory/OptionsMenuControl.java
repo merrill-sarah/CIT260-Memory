@@ -29,9 +29,9 @@ public class OptionsMenuControl {
     }   
         
     public void displayNumPlayersOption()/*Case N*/{
-        System.out.println("You will get to choose 2 players, or to play against the computer."
-                + "\nThis method is still under construction."
-                + "\nBut THE MENU WORKS!!");
+      //  System.out.println("You will get to choose 2 players, or to play against the computer."
+      //          + "\nThis method is still under construction."
+      //          + "\nBut THE MENU WORKS!!");
                      
     }   
     

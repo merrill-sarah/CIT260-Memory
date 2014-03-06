@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class BoardView {
    Board board;
-   Card deck[]; // does this belong here? in Card? in Game?
+   Card deck[]; // does this belong here? in Board? in Game?
   // 
    
    
@@ -43,18 +43,6 @@ public class BoardView {
             // card.matchString = " ";
              deck[i]=card;
             }
-       /* ERROR CHECKING
-        for(Card d: deck){
-            System.out.print(" " +d.cardNumber);
-        }
-        for (int i = 0; i<deck.length; i++){
-            if (deck[i].flipped){
-            System.out.print(deck[i].symbol);}
-            else{
-            System.out.print("-ha-");
-            }
-        }*/
-        
      
    }  //end of constructor: BoardView(Board board,char getSymbols[]
    
