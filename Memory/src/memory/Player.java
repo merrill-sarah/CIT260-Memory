@@ -20,16 +20,7 @@ public class Player {
     public Player(){
         
     }
-    public void getName1() { 
-        Scanner input = new Scanner(System.in);
-        System.out.println("First Player, enter your name: ");
-        this.setName(input.next());
-    }
-    public void getName2() { 
-        Scanner input = new Scanner(System.in);
-        System.out.println("Second Player, enter your name: ");
-        this.setName(input.next());
-    }
+
     public void displayScore(){
         System.out.println( getName() + ": " + getMatchedGame() );
     }

@@ -37,7 +37,6 @@ public class OptionsMenuControl {
     }   
     
     public void displayPlayerNamesOption()/*Case P*/{
-       this.player.getName1();
-       this.player.getName2();
+       
     }   
 }
