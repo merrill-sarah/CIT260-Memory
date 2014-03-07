@@ -119,14 +119,14 @@ public class Game {
              
              //have player select two cards
              selectCard(board, getSymbols, name);
-                card1=boardView.deck[cardSelection-1];
+                card1=board.deck[cardSelection-1];
                 card1.flipped = true;
                 
                
         boardView.displayBoard(board, getSymbols);       
        
         selectCard(board, getSymbols, name);
-                card2 = boardView.deck[cardSelection-1];
+                card2 = board.deck[cardSelection-1];
                 card2.flipped = true;
             
              /*determine if a match was made and distribute point to player1 or 

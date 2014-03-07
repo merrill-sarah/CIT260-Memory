@@ -18,6 +18,7 @@ public class Board {
     String size;
     public int totalCards;
     SymbolArray symbolArr;
+    Card deck[];
     
     public Board(){
         symbolArr = new SymbolArray();

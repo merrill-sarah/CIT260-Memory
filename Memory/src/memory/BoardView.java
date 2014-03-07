@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class BoardView {
    Board board;
-   Card deck[]; // does this belong here? in Board? in Game?
+    // does this belong here? in Board? in Game?
   // 
    
    
@@ -33,7 +33,7 @@ public class BoardView {
                    board.gridSize();
                    } 
        
-       this.deck = new Card [gridNums]; 
+       board.deck = new Card [gridNums]; 
        
        
         for ( int i =0; i<gridNums; i++){
@@ -41,7 +41,7 @@ public class BoardView {
              card.symbol = getSymbols[i];
              card.cardNumber= i+1;
             // card.matchString = " ";
-             deck[i]=card;
+             board.deck[i]=card;
             }
      
    }  //end of constructor: BoardView(Board board,char getSymbols[]
@@ -56,27 +56,27 @@ public class BoardView {
         for (int y = 1; y<= (rows*columns); y++){ 
             if (y%columns!=0){
                 System.out.print("\t|\t");
-                if (deck[i].flipped){
-                    System.out.print(deck[i].symbol);
+                if (board.deck[i].flipped){
+                    System.out.print(board.deck[i].symbol);
                 }
-                else if (deck[i].matched){
+                else if (board.deck[i].matched){
                     System.out.print(" ");//(deck[i].matchString);
                 }
                 else{ 
-                    System.out.print(deck[i].cardNumber);
+                    System.out.print(board.deck[i].cardNumber);
                     
                 }
                 i++;}
             else{
                  System.out.print("\t|\t");// +getSymbols[i] +
-                 if (deck[i].flipped){
-                    System.out.print(deck[i].symbol);
+                 if (board.deck[i].flipped){
+                    System.out.print(board.deck[i].symbol);
                 }
-                else if (deck[i].matched){
+                else if (board.deck[i].matched){
                     System.out.print(" ");//(deck[i].matchString);
                 }
                 else{ 
-                    System.out.print(deck[i].cardNumber);
+                    System.out.print(board.deck[i].cardNumber);
                 }
                  System.out.print("\t|");
                  i++;
