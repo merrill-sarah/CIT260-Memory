@@ -24,6 +24,7 @@ public class Game {
     char cardSymbol;
     int cardSelection;
     int dupCheck = -1;
+    int numPlayers=2;
  //   BoardView boardview;
     
     
@@ -31,7 +32,7 @@ public class Game {
        
     }
     public void startGame() throws IOException{       
-        playerList.getInputNames();
+        playerList.getInputNames(numPlayers);
         player1.name=playerList.listOfPlayerNames[0];
         player2.name=playerList.listOfPlayerNames[1];
         
@@ -53,7 +54,7 @@ public class Game {
         char getSymbols [] = new char [board.totalCards]; //create foundation array
         symbols.createArray(board, getSymbols); //'sends' getSymbols changed by Reference
         
-        //numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
+        
         
         playersTurns(board, symbols, getSymbols, player1, player2);
         displayScore(player1, player2);
@@ -69,30 +70,7 @@ public class Game {
         
     }
     
-      public void numSymbolsNeeded(int numCards, int matchingSymbols){// does this belong here?
-      //numOfSymbols;
-      String errorMessage;
       
-      errorMessage = ("\n\tError. Please choose grid size and number of matching cards again.");
-     
-      // ******** error checking of parameters***********
-        if ((numCards != 12) & (numCards != 24) & (numCards != 48)){
-            System.out.println("\n\tInvalid entry. Please enter board size again");
-           // board.gridSize(); for re-entering choice
-           }   
-
-       // using short-circuit operators
-        if ((numCards % matchingSymbols !=0) ||(matchingSymbols % 3==0)) {
-            System.out.println(errorMessage);
-                // use function for repeating choices here
-        }
-            
-      numOfSymbols = numCards / matchingSymbols;
-      
-      System.out.println( "\n\tYou need a total of " + numOfSymbols + " different symbols.");//necessary at all?
-      
-     
-      }
      public void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException{
         boolean match = false;
         int totalMatchesMade = 0;

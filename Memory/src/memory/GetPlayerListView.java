@@ -14,18 +14,14 @@ import java.util.Scanner;
  * @author Janis
  */
 public class GetPlayerListView {
-    
-
-    int numPlayers=2;//player or game
-   
-    
-     public String[] listOfPlayerNames = new String[numPlayers];
+    public String[] listOfPlayerNames; 
     
     public GetPlayerListView() {
         
     }
     
-    public String[] getInputNames(){ // player?
+    public String[] getInputNames(int numPlayers){ // player?
+        listOfPlayerNames = new String[numPlayers];
         int nameIndex =0;
         int playerNum =1;
        /* int */numPlayers =2; // Change this to a variable if we add more players option

@@ -16,10 +16,7 @@ import java.util.Scanner;
  * @authors Sarah M and Janis F
  */
 public class Memory {
-    
-     Player player1;
-     Player player2;        
-     
+          
      String instructions = " Welcome to a game of Memory!"
             + "\n\tYou may play against the computer or"
              + " another player."
