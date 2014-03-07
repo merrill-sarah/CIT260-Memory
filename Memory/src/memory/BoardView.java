@@ -14,8 +14,6 @@ import java.util.Scanner;
  */
 public class BoardView {
    Board board;
-    // does this belong here? in Board? in Game?
-  // 
    
    
    public BoardView(Board board,char getSymbols[]){  
