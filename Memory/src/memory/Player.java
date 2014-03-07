@@ -6,20 +6,23 @@
 
 package memory;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author - Sarawr
  */
-public class Player {
+public class Player implements Serializable {
     private String name;
     private int matchedGame = 0; 
     private int totalWins = 0; 
     
-    public Player(){
-        
+    
+    public Player() {
     }
+        
+    
     public void getName1() { 
         Scanner input = new Scanner(System.in);
         System.out.println("First Player, enter your name: ");
