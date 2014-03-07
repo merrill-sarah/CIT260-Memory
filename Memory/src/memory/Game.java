@@ -33,10 +33,10 @@ public class Game {
     }
     public void startGame() throws IOException{       
         playerList.getInputNames(numPlayers);
-        player1.name=playerList.listOfPlayerNames[0];
-        player2.name=playerList.listOfPlayerNames[1];
+        player1.setName(playerList.listOfPlayerNames[0]);
+        player2.setName(playerList.listOfPlayerNames[1]);
         
-        welcomePlayers(player1.name, player2.name);
+        welcomePlayers(player1.getName(), player2.getName());
         playGame(player1,player2);
        
     }
@@ -89,10 +89,10 @@ public class Game {
             // boardView.deck
              //determine player1 or player2
              if (counter % 2 != 0){
-                 name = player1.name;
+                 name = player1.getName();
              }
              else {
-                 name = player2.name;
+                 name = player2.getName();
              }
              
              //have player select two cards
@@ -114,7 +114,7 @@ public class Game {
                  card1.matched=true;
                  card2.matched=true;
                  totalMatchesMade += 1;
-                 player1.matchedGame += 1;
+                 player1.setMatchedGame(player1.getMatchedGame() + 1);
                  System.out.println("You made a match!");
              } 
              else if (card1.symbol == card2.symbol && counter % 2 == 0){
@@ -122,7 +122,7 @@ public class Game {
                  card1.matched=true;
                  card2.matched=true;
                  totalMatchesMade += 1;
-                 player2.matchedGame += 1;
+                 player2.setMatchedGame(player2.getMatchedGame() + 1);
                  System.out.println("You made a match!");
              }
              else{
@@ -250,32 +250,32 @@ public class Game {
           int[] numWins = new int[numPlayers];
           
           //displays who made how many matched in the game
-            System.out.println("\n" + player1.name + " made a total of " + player1.matchedGame + " matches."
-                    + "\n" + player2.name + " made a total of " + player2.matchedGame + " matches.");
+            System.out.println("\n" + player1.getName() + " made a total of " + player1.getMatchedGame() + " matches."
+                    + "\n" + player2.getName() + " made a total of " + player2.getMatchedGame() + " matches.");
             
           //displays the winner and adds one to their running total of wins
-            if (player1.matchedGame < player2.matchedGame){
-                player2.totalWins += 1;
-                System.out.println("\n" + player2.name + " is the winner!");
+            if (player1.getMatchedGame() < player2.getMatchedGame()){
+                player2.setTotalWins(player2.getTotalWins() + 1);
+                System.out.println("\n" + player2.getName() + " is the winner!");
               
             }
-            else if (player1.matchedGame > player2.matchedGame){
-                player1.totalWins +=1;
-                System.out.println("\n" + player1.name + " is the winner!");
+            else if (player1.getMatchedGame() > player2.getMatchedGame()){
+                player1.setTotalWins(player1.getTotalWins() + 1);
+                System.out.println("\n" + player1.getName() + " is the winner!");
               
               }
             else {
-                System.out.println("\n" + player1.name + " and " + player2.name + " tied!");
+                System.out.println("\n" + player1.getName() + " and " + player2.getName() + " tied!");
               }
          
           //sets up array to hold the number of wins for each player
           while (index<numPlayers){
               if (index==0){
-                  numWins[index]=player1.totalWins;
+                  numWins[index]=player1.getTotalWins();
                   index++;
               }
               else if (index==1){
-                  numWins[index]=player2.totalWins;
+                  numWins[index]=player2.getTotalWins();
                   index++;
               }
               
@@ -287,10 +287,10 @@ public class Game {
           String name ="";
           for(int x: numWins){
               if(j==1){
-                  name = player1.name;
+                  name = player1.getName();
               }
               else if (j==2){
-                  name = player2.name;
+                  name = player2.getName();
               }
               System.out.println(name + ": " + x);
               j++;
