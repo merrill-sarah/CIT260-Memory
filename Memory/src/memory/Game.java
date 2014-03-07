@@ -46,15 +46,16 @@ public class Game {
         Board board = new Board();
         board.gridSize();
         board.displayGridInfo();
-        board.matchDifficulty();
         SymbolArray symbols = new SymbolArray();
+        symbols.matchDifficulty(board);
+
         
         char getSymbols [] = new char [board.totalCards]; //create foundation array
         symbols.createArray(board, getSymbols); //'sends' getSymbols changed by Reference
         
         //numSymbolsNeeded(board.totalCards, board.matchDifficulty()); // calls the function and passes totalCards and matchDifficulty from board
         
-        playersTurns(board, getSymbols, player1, player2);
+        playersTurns(board, symbols, getSymbols, player1, player2);
         displayScore(player1, player2);
         System.out.println("");
         EndMenuView endMenuView = new EndMenuView();
@@ -92,7 +93,7 @@ public class Game {
       
      
       }
-     public void playersTurns(Board board, char getSymbols [], Player player1, Player player2) throws IOException{
+     public void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException{
         boolean match = false;
         int totalMatchesMade = 0;
         numCards = board.totalCards;
@@ -103,7 +104,7 @@ public class Game {
         BoardView boardView = new BoardView(board, getSymbols);
       
         
-         while (totalMatchesMade < board.totalMatches){
+         while (totalMatchesMade < symbols.totalMatches){
            //  Card[] deck = new Card[board.totalCards];
              boardView.displayBoard(board, getSymbols);
            //  System.out.println("trying to print deck[1]"/* + deck[1]*/);

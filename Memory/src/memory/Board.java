@@ -17,11 +17,10 @@ public class Board {
     int columns;
     String size;
     public int totalCards;
-    float totalMatches;//?  game or symbolsArray?
-    float numSymbols; // symbolsArray?
-    public int numMatchingSymbols;// symbolsArray?
+    SymbolArray symbolArr;
     
     public Board(){
+        symbolArr = new SymbolArray();
     }        
     
     public void gridSize(){
@@ -50,35 +49,14 @@ public class Board {
                     }
         
         totalCards = rows * columns;
-        totalMatches = totalCards/2;
+        symbolArr.totalMatches = totalCards/2;
         }
     
     
     public void displayGridInfo(){
         System.out.println("\n\tThe board is " + rows + " by " + columns + "."
-                + " There are a total of " + totalMatches + " matches to find.");
+                + " There are a total of " + symbolArr.totalMatches + " matches to find.");
         
     }
-    public void matchDifficulty(){//this..should it be in the options menu?
-        System.out.println("\nYou can change the difficulty by choosing whether there are 4 "
-                + "of each kind of card, or 2 of each");
-        
-        
-          Scanner matchChoice = new Scanner(System.in);
-          
-          System.out.println("Enter how many of each kind of card 2 or 4: ");
-          numMatchingSymbols = matchChoice.nextInt();
-          
-         if (numMatchingSymbols == 2){
-             numSymbols = totalMatches;
-         }
-         else if (numMatchingSymbols == 4){
-             numSymbols = totalMatches/2;
-         }
-         else{
-             System.out.println("\tInvalid entry. Please enter '2' or '4'");
-             matchDifficulty();
-         }
-           
-     }  
+    
 }

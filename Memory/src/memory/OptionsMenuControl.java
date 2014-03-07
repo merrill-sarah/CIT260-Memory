@@ -13,6 +13,7 @@ package memory;
 public class OptionsMenuControl {
     Board board = new Board();
     Player player = new Player();
+    SymbolArray symbolArr = new SymbolArray();
     
     
     public OptionsMenuControl(){
@@ -25,7 +26,7 @@ public class OptionsMenuControl {
     }
     
     public void displayMatchingOption()/*Case M*/{
-        this.board.matchDifficulty();
+        this.symbolArr.matchDifficulty(board);
     }   
         
     public void displayNumPlayersOption()/*Case N*/{
