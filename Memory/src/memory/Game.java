@@ -20,11 +20,11 @@ public class Game {
     Player player1 = new Player();
     Player player2 = new Player();
     int numCards;
-    int numOfSymbols;
+  //  int numOfSymbols;
     char cardSymbol;
     int cardSelection;
     int dupCheck = -1;
-    int numPlayers=2;
+   int numPlayers=2;
  //   BoardView boardview;
     
     
@@ -85,8 +85,7 @@ public class Game {
          while (totalMatchesMade < symbols.totalMatches){
            //  Card[] deck = new Card[board.totalCards];
              boardView.displayBoard(board, getSymbols);
-           //  System.out.println("trying to print deck[1]"/* + deck[1]*/);
-            // boardView.deck
+           
              //determine player1 or player2
              if (counter % 2 != 0){
                  name = player1.getName();
