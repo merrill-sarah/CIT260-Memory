@@ -7,7 +7,6 @@
 package memory;
 
 import java.io.Serializable;
-import java.util.Scanner;
 
 /**
  *
@@ -20,10 +19,6 @@ public class Player implements Serializable {
     
     
     public Player() {
-    }
-
-    public void displayScore(){
-        System.out.println( getName() + ": " + getMatchedGame() );
     }
 
     /**
