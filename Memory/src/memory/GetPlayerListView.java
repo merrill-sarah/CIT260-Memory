@@ -20,11 +20,11 @@ public class GetPlayerListView {
         
     }
     
-    public String[] getInputNames(int numPlayers){ // player?
+    public String[] getInputNames(int numPlayers){ 
         listOfPlayerNames = new String[numPlayers];
         int nameIndex =0;
         int playerNum =1;
-       /* int */numPlayers =2; // Change this to a variable if we add more players option
+       numPlayers =2; 
         boolean finished = false;
         MemoryError errorMsg = new MemoryError();
         Scanner inFile = new Scanner(System.in);

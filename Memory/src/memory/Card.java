@@ -12,7 +12,7 @@ package memory;
  */
 public class Card {
     
-   // int number = 5; // for now to use until graphics can be added
+   
     String shape = ""; 
     String color = "";
    boolean flipped;
@@ -32,11 +32,6 @@ public class Card {
    matched = false;
    this.symbol = symbol;
     }
-   /* 
-    public void status(){
-        if (flipped){
-            System.out.println("status() from Card shows up here... ");
-        }
-    }*/
+   
 
 }

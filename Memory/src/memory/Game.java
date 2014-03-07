@@ -83,7 +83,7 @@ public class Game {
       
         
          while (totalMatchesMade < symbols.totalMatches){
-           //  Card[] deck = new Card[board.totalCards];
+           
              boardView.displayBoard(board, getSymbols);
            
              //determine player1 or player2
