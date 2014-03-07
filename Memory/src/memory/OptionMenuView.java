@@ -17,7 +17,7 @@ public class OptionMenuView {
         {"B", "Choose Board Size"},
         {"M", "Matching Difficulty"},
         {"N", "Number of Players"},
-        {"P", "Player Names"},
+        
         {"X", "Exit Option Menu"}
     };
     
@@ -36,7 +36,6 @@ public class OptionMenuView {
         Scanner inFile = new Scanner(System.in);
         
         do {
-            
             this.display(); // display the menu
             
             // get commaned entered
@@ -53,9 +52,7 @@ public class OptionMenuView {
                 case "N":
                     this.optionsMenuControl.displayNumPlayersOption();
                     break;                  
-                case "P":
-                    this.optionsMenuControl.displayPlayerNamesOption();
-                    break;
+               
                 case "X": 
                     break;
                 default: 

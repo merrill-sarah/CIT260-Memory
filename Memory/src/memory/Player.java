@@ -20,45 +20,29 @@ public class Player implements Serializable {
     
     public Player() {
     }
-
-    /**
-     * @return the name
-     */
+    
+    //return the name
     public String getName() {
         return name;
     }
-
-    /**
-     * @param name the name to set
-     */
+    
+    //receives the name to set
     public void setName(String name) {
         this.name = name;
     }
-
-    /**
-     * @return the matchedGame
-     */
+    //returns when a matched is made
     public int getMatchedGame() {
         return matchedGame;
     }
-
-    /**
-     * @param matchedGame the matchedGame to set
-     */
+    //sets that a match was made
     public void setMatchedGame(int matchedGame) {
         this.matchedGame = matchedGame;
     }
-
-    /**
-     * @return the totalWins
-     */
+    //returns totalWins
     public int getTotalWins() {
         return totalWins;
     }
-
-    /**
-     * @param totalWins the totalWins to set
-     */
+    //sets for the player that won the game
     public void setTotalWins(int totalWins) {
         this.totalWins = totalWins;
     }
