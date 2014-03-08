@@ -6,15 +6,15 @@
 
 package memory;
 
+import java.io.Serializable;
 import java.util.Scanner;
-//import java.util.Arrays;
 
 /**
  *
  * @author Janis
  */
-public class GetPlayerListView {
-    public String[] listOfPlayerNames; 
+public class GetPlayerListView implements Serializable{
+    private String[] listOfPlayerNames; 
     
     public GetPlayerListView() {
         
@@ -92,7 +92,7 @@ public class GetPlayerListView {
         }
     }
         
-        private boolean alreadyUsed(String[] list, String newID) {
+   private boolean alreadyUsed(String[] list, String newID) {
         for (String alreadyInList : list) {
             if (newID.equals(alreadyInList)) {
                 return true;
@@ -100,7 +100,7 @@ public class GetPlayerListView {
         }
         return false;
     }
- public static void sortFunction( String x[ ] ){
+    private static void sortFunction( String x[ ] ){
         int i, j;
         String temp;
 
@@ -117,6 +117,16 @@ public class GetPlayerListView {
                    } 
             } 
       } 
+
+ //getter and setter function
+    public String[] getListOfPlayerNames() {
+        return listOfPlayerNames;
+    }
+
+    public void setListOfPlayerNames(String[] listOfPlayerNames) {
+        this.listOfPlayerNames = listOfPlayerNames;
+    }
+ 
     }
     
     

@@ -32,8 +32,8 @@ public class Game implements Serializable{
     }
     public void startGame() throws IOException{       
         playerList.getInputNames(numPlayers);
-        player1.setName(playerList.listOfPlayerNames[0]);
-        player2.setName(playerList.listOfPlayerNames[1]);
+        player1.setName(playerList.getListOfPlayerNames()[0]);
+        player2.setName(playerList.getListOfPlayerNames()[1]);
         
         welcomePlayers(player1.getName(), player2.getName());
         playGame(player1,player2);
