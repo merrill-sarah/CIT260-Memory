@@ -7,13 +7,12 @@
 package memory;
 
 import java.io.IOException;
-import java.io.Serializable;
 
 /**
  *
  * @author Sarawr
  */
-public class EndMenuControl implements Serializable{
+public class EndMenuControl {
     public void playAgain(Player player1, Player player2) throws IOException {
         Game anotherGame = new Game();
          anotherGame.playGame(player1, player2);

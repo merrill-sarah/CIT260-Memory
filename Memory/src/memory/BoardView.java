@@ -6,14 +6,13 @@
 
 package memory;
 
-import java.io.Serializable;
 
 
 /**
  *
  * @author Janis
  */
-public class BoardView implements Serializable {
+public class BoardView {
    
    public BoardView(Board board,char getSymbols[]){    
    

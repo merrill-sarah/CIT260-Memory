@@ -7,13 +7,12 @@
 package memory;
 
 import java.io.IOException;
-import java.io.Serializable;
 
 /**
  *
  * @author Sarawr
  */
-public class MainMenuControl implements Serializable{
+public class MainMenuControl {
     public MainMenuControl() {
         
     } 
