@@ -7,13 +7,14 @@
 package memory;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
   * @author Sarawr
 */
-public class EndMenuView {
+public class EndMenuView implements Serializable {
     private final static String[][] menuItems = {
         {"P", "Play Again"},
         {"M", "Main Menu"},
@@ -22,7 +23,7 @@ public class EndMenuView {
      EndMenuControl endMenuControl = new EndMenuControl();
     
     // display the help menu and get the end users input selection
-    void getInput(Player player1, Player player2) throws IOException {
+    public void getInput(Player player1, Player player2) throws IOException {
               
         String command;
         Scanner inFile = new Scanner(System.in);
