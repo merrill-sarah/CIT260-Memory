@@ -6,13 +6,14 @@
 
 package memory;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Janis
  */
-public class OptionMenuView {
+public class OptionMenuView implements Serializable {
     private final static String[][] menuItems = {
         {"B", "Choose Board Size"},
         {"M", "Matching Difficulty"},
@@ -20,6 +21,13 @@ public class OptionMenuView {
         
         {"X", "Exit Option Menu"}
     };
+
+    /**
+     * @return the menuItems
+     */
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }
     
     // Create instance of the OptionsMenuControl (action) class
     private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
@@ -44,13 +52,13 @@ public class OptionMenuView {
             
             switch (command) {
                 case "B":
-                    this.optionsMenuControl.displayBoardOption();
+                    this.getOptionsMenuControl().displayBoardOption();
                     break;
                 case "M":
-                    this.optionsMenuControl.displayMatchingOption();
+                    this.getOptionsMenuControl().displayMatchingOption();
                     break;
                 case "N":
-                    this.optionsMenuControl.displayNumPlayersOption();
+                    this.getOptionsMenuControl().displayNumPlayersOption();
                     break;                  
                
                 case "X": 
@@ -70,10 +78,24 @@ public class OptionMenuView {
         System.out.println("\t*** OPTIONS MENU **************************************"
                 + "\n\tEnter the letter to change one of the following options:");
 
-        for (int i = 0; i < OptionMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        for (int i = 0; i < OptionMenuView.getMenuItems().length; i++) {
+            System.out.println("\t   " + getMenuItems()[i][0] + "\t" + getMenuItems()[i][1]);
         }
         System.out.println("\t===============================================================\n");
+    }
+
+    /**
+     * @return the optionsMenuControl
+     */
+    public OptionsMenuControl getOptionsMenuControl() {
+        return optionsMenuControl;
+    }
+
+    /**
+     * @param optionsMenuControl the optionsMenuControl to set
+     */
+    public void setOptionsMenuControl(OptionsMenuControl optionsMenuControl) {
+        this.optionsMenuControl = optionsMenuControl;
     }
     
 }

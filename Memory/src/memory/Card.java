@@ -6,21 +6,23 @@
 
 package memory;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Janis
  */
-public class Card {
+public class Card implements Serializable{
     
    
-    String shape = ""; 
-    String color = "";
-   boolean flipped;
-   boolean matched;
+    private String shape = ""; 
+    private String color = "";
+   private boolean flipped;
+   private boolean matched;
   // String matchString;
-   char symbol;
-   int cardNumber;
-   BoardView boardview; 
+   private char symbol;
+   private int cardNumber;
+   private BoardView boardview; 
     
     public Card(){
      flipped = false; // indicates which side of the card is showing, True is face-up
@@ -31,6 +33,104 @@ public class Card {
    flipped = false; 
    matched = false;
    this.symbol = symbol;
+    }
+
+    /**
+     * @return the shape
+     */
+    public String getShape() {
+        return shape;
+    }
+
+    /**
+     * @param shape the shape to set
+     */
+    public void setShape(String shape) {
+        this.shape = shape;
+    }
+
+    /**
+     * @return the color
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * @param color the color to set
+     */
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    /**
+     * @return the flipped
+     */
+    public boolean isFlipped() {
+        return flipped;
+    }
+
+    /**
+     * @param flipped the flipped to set
+     */
+    public void setFlipped(boolean flipped) {
+        this.flipped = flipped;
+    }
+
+    /**
+     * @return the matched
+     */
+    public boolean isMatched() {
+        return matched;
+    }
+
+    /**
+     * @param matched the matched to set
+     */
+    public void setMatched(boolean matched) {
+        this.matched = matched;
+    }
+
+    /**
+     * @return the symbol
+     */
+    public char getSymbol() {
+        return symbol;
+    }
+
+    /**
+     * @param symbol the symbol to set
+     */
+    public void setSymbol(char symbol) {
+        this.symbol = symbol;
+    }
+
+    /**
+     * @return the cardNumber
+     */
+    public int getCardNumber() {
+        return cardNumber;
+    }
+
+    /**
+     * @param cardNumber the cardNumber to set
+     */
+    public void setCardNumber(int cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    /**
+     * @return the boardview
+     */
+    public BoardView getBoardview() {
+        return boardview;
+    }
+
+    /**
+     * @param boardview the boardview to set
+     */
+    public void setBoardview(BoardView boardview) {
+        this.boardview = boardview;
     }
    
 

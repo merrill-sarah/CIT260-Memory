@@ -48,6 +48,7 @@ public class Game implements Serializable{
         board.displayGridInfo();
         SymbolArray symbols = new SymbolArray();
         symbols.matchDifficulty(board);
+        
 
         
         char getSymbols [] = new char [board.getTotalCards()]; //create foundation array
@@ -81,7 +82,7 @@ public class Game implements Serializable{
         BoardView boardView = new BoardView(board, getSymbols);
       
         
-         while (totalMatchesMade < symbols.totalMatches){
+         while (totalMatchesMade < symbols.getTotalMatches()){
            
              boardView.displayBoard(board, getSymbols);
            
@@ -96,21 +97,21 @@ public class Game implements Serializable{
              //have player select two cards
              selectCard(board, getSymbols, name);
                 card1=board.getDeck()[cardSelection-1];
-                card1.flipped = true;
+                card1.setFlipped(true);
                 
                
         boardView.displayBoard(board, getSymbols);       
        
         selectCard(board, getSymbols, name);
                 card2 = board.getDeck()[cardSelection-1];
-                card2.flipped = true;
+                card2.setFlipped(true);
             
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
-             if (card1.symbol == card2.symbol){//should be using player1 and player 2 here as objects... not as evaluated values
+             if (card1.getSymbol() == card2.getSymbol()){//should be using player1 and player 2 here as objects... not as evaluated values
                  match = true;
-                 card1.matched=true;
-                 card2.matched=true;
+                 card1.setMatched(true);
+                 card2.setMatched(true);
                  totalMatchesMade += 1;
                  System.out.println("You made a match!");
                  if (counter%2 !=0){
@@ -127,23 +128,32 @@ public class Game implements Serializable{
              }
              boardView.displayBoard(board, getSymbols);
             getMatchedStatus(board.getTotalCards(), match);
-            card1.flipped=false;
-            card2.flipped=false;
+            card1.setFlipped(false);
+            card2.setFlipped(false);
              
          }
       }  
 
     private void selectCard(Board board, char getSymbols[], String name) throws IOException{
         Scanner in = new Scanner(System.in);
-        
-       
         boolean notDup = false;
       
         
         int index = 0;
         int numOfHints = 0;
+        boolean validateInt = false;
+        
+        while (!validateInt){
         System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
-        cardSelection = in.nextInt();
+            if (in.hasNextInt()){
+            cardSelection = in.nextInt();
+            validateInt = true;}
+
+            else{
+                in.nextLine();
+                new MemoryError().displayError("Not a valid entry.");
+            }
+        } 
         
       /*  while(!notDup)                 //Checks for card number duplication
         if (cardSelection== dupCheck){
@@ -208,14 +218,8 @@ public class Game implements Serializable{
             System.out.println("Not a valid card selection.");
             selectCard(board, getSymbols, name); 
         }
-
-          
-         
-        
-        
-      
-        
-    }   
+    }
+    
       private void getMatchedStatus(int gridSize, boolean match) throws IOException { 
         float percentDone;	
 

@@ -51,13 +51,13 @@ public class Board implements Serializable {
                     }
         
         totalCards = rows * columns;
-        symbolArr.totalMatches = totalCards/2;
+        symbolArr.setTotalMatches(totalCards/2);
         }
     
     
     public void displayGridInfo(){
         System.out.println("\n\tThe board is " + rows + " by " + columns + "."
-                + " There are a total of " + symbolArr.totalMatches + " matches to find.");
+                + " There are a total of " + (int)symbolArr.getTotalMatches() + " matches to find.");
         
     }
 

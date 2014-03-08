@@ -6,13 +6,14 @@
 
 package memory;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Janis
  */
-public class HelpMenuView {
+public class HelpMenuView implements Serializable {
  
   private final static String[][] menuItems = {
         {"B", "The Board"},
@@ -22,6 +23,13 @@ public class HelpMenuView {
         {"P", "Choosing Players"},        
         {"X", "Exit Help Menu"}        
     };
+
+    /**
+     * @return the menuItems
+     */
+    public static String[][] getMenuItems() {
+        return menuItems;
+    }
     
     // Create instance of the HelpMenuControl (action) class
     private HelpMenuControl helpMenuControl = new HelpMenuControl();
@@ -47,19 +55,19 @@ public class HelpMenuView {
             
             switch (command) {
                 case "B":
-                    this.helpMenuControl.displayBoardHelp();
+                    this.getHelpMenuControl().displayBoardHelp();
                     break;
                 case "C":
-                    this.helpMenuControl.displayCardChoiceHelp();
+                    this.getHelpMenuControl().displayCardChoiceHelp();
                     break;
                 case "H":
-                    this.helpMenuControl.displayGameHelp();
+                    this.getHelpMenuControl().displayGameHelp();
                     break;                  
                 case "O":
-                    this.helpMenuControl.displayOptionsHelp();
+                    this.getHelpMenuControl().displayOptionsHelp();
                     break;
                  case "P":
-                    this.helpMenuControl.displayPlayersHelp();
+                     this.getHelpMenuControl().displayPlayersHelp();
                     break; 
                 case "X": 
                     break;
@@ -77,10 +85,24 @@ public class HelpMenuView {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following Help Menus:");
 
-        for (int i = 0; i < HelpMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        for (int i = 0; i < HelpMenuView.getMenuItems().length; i++) {
+            System.out.println("\t   " + getMenuItems()[i][0] + "\t" + getMenuItems()[i][1]);
         }
         System.out.println("\t===============================================================\n");
+    }
+
+    /**
+     * @return the helpMenuControl
+     */
+    public HelpMenuControl getHelpMenuControl() {
+        return helpMenuControl;
+    }
+
+    /**
+     * @param helpMenuControl the helpMenuControl to set
+     */
+    public void setHelpMenuControl(HelpMenuControl helpMenuControl) {
+        this.helpMenuControl = helpMenuControl;
     }
     
 }
