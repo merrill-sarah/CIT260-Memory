@@ -7,6 +7,7 @@
 package memory;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Scanner;
 
 
@@ -15,9 +16,9 @@ import java.util.Scanner;
  *
  * @authors Sarah M and Janis F
  */
-public class Memory {
+public class Memory implements Serializable {
           
-     String instructions = " Welcome to a game of Memory!"
+    private final static String instructions = " Welcome to a game of Memory!"
             + "\n\tYou may play against the computer or"
              + " another player."
             + "\n\tBegin by choosing the options menu where "
@@ -37,6 +38,6 @@ public class Memory {
     }
     
     public void displayHelp(){
-       System.out.println(this.instructions);        
+       System.out.println(Memory.instructions);        
     }
 }
