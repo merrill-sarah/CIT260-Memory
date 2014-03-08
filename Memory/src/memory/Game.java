@@ -7,6 +7,7 @@
 package memory;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Scanner;
 
 
@@ -15,17 +16,15 @@ import java.util.Scanner;
  *
  * @author Janis
  */
-public class Game {
-    GetPlayerListView playerList= new GetPlayerListView();
-    Player player1 = new Player();
-    Player player2 = new Player();
-    int numCards;
-  //  int numOfSymbols;
-    char cardSymbol;
-    int cardSelection;
-    int dupCheck = -1;
-   int numPlayers=2;
- //   BoardView boardview;
+public class Game implements Serializable{
+    private GetPlayerListView playerList= new GetPlayerListView();
+    private Player player1 = new Player();
+    private Player player2 = new Player();
+    private int numCards;
+    private char cardSymbol;
+    private int cardSelection;
+    private int dupCheck = -1;
+    private int numPlayers=2;
     
     
     public Game(){  
@@ -64,14 +63,14 @@ public class Game {
         }
         
     
-    public void welcomePlayers(String player1, String player2){
+    private void welcomePlayers(String player1, String player2){
         
         System.out.println("\tWelcome to Memory!");
         
     }
     
       
-     public void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException{
+     private void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException{
         boolean match = false;
         int totalMatchesMade = 0;
         numCards = board.getTotalCards();
@@ -134,7 +133,7 @@ public class Game {
          }
       }  
 
-    public void selectCard(Board board, char getSymbols[], String name) throws IOException{
+    private void selectCard(Board board, char getSymbols[], String name) throws IOException{
         Scanner in = new Scanner(System.in);
         
        
@@ -217,7 +216,7 @@ public class Game {
       
         
     }   
-      public void getMatchedStatus(int gridSize, boolean match) throws IOException { 
+      private void getMatchedStatus(int gridSize, boolean match) throws IOException { 
         float percentDone;	
 
 	if (match){ 
@@ -240,7 +239,7 @@ public class Game {
         
  
     }
-      public void displayScore(Player player1, Player player2){ //move to Player class?
+      private void displayScore(Player player1, Player player2){ //move to Player class?
           int numPlayers=2; //until we add option to have more than 2 players
           int index=0;
           int[] numWins = new int[numPlayers];
@@ -303,6 +302,71 @@ public class Game {
           System.out.println("\nThe player with the most wins has " + max +
                   "\nThe player with the least amount of wins has " + min);
           }
+      //getter and setter functions
+    public GetPlayerListView getPlayerList() {
+        return playerList;
+    }
+
+    public void setPlayerList(GetPlayerListView playerList) {
+        this.playerList = playerList;
+    }
+
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public void setPlayer1(Player player1) {
+        this.player1 = player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+
+    public void setPlayer2(Player player2) {
+        this.player2 = player2;
+    }
+
+    public int getNumCards() {
+        return numCards;
+    }
+
+    public void setNumCards(int numCards) {
+        this.numCards = numCards;
+    }
+
+    public char getCardSymbol() {
+        return cardSymbol;
+    }
+
+    public void setCardSymbol(char cardSymbol) {
+        this.cardSymbol = cardSymbol;
+    }
+
+    public int getCardSelection() {
+        return cardSelection;
+    }
+
+    public void setCardSelection(int cardSelection) {
+        this.cardSelection = cardSelection;
+    }
+
+    public int getDupCheck() {
+        return dupCheck;
+    }
+
+    public void setDupCheck(int dupCheck) {
+        this.dupCheck = dupCheck;
+    }
+
+    public int getNumPlayers() {
+        return numPlayers;
+    }
+
+    public void setNumPlayers(int numPlayers) {
+        this.numPlayers = numPlayers;
+    }
+      
    
       } 
       
