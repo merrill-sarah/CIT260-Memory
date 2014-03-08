@@ -108,21 +108,18 @@ public class Game {
             
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
-             if (card1.symbol == card2.symbol && counter % 2 != 0){//should be using player1 and player 2 here as objects... not as evaluated values
+             if (card1.symbol == card2.symbol){//should be using player1 and player 2 here as objects... not as evaluated values
                  match = true;
                  card1.matched=true;
                  card2.matched=true;
                  totalMatchesMade += 1;
-                 player1.setMatchedGame(player1.getMatchedGame() + 1);
                  System.out.println("You made a match!");
-             } 
-             else if (card1.symbol == card2.symbol && counter % 2 == 0){
-                 match = true;
-                 card1.matched=true;
-                 card2.matched=true;
-                 totalMatchesMade += 1;
+                 if (counter%2 !=0){
+                     player1.setMatchedGame(player1.getMatchedGame() + 1);                     
+                 }
+                 else{
                  player2.setMatchedGame(player2.getMatchedGame() + 1);
-                 System.out.println("You made a match!");
+             }
              }
              else{
                  match = false;
