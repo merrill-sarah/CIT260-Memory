@@ -51,7 +51,7 @@ public class Game {
         symbols.matchDifficulty(board);
 
         
-        char getSymbols [] = new char [board.totalCards]; //create foundation array
+        char getSymbols [] = new char [board.getTotalCards()]; //create foundation array
         symbols.createArray(board, getSymbols); //'sends' getSymbols changed by Reference
         
         
@@ -74,7 +74,7 @@ public class Game {
      public void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException{
         boolean match = false;
         int totalMatchesMade = 0;
-        numCards = board.totalCards;
+        numCards = board.getTotalCards();
         String name;
         int counter = 1;
         Card card1;
@@ -96,14 +96,14 @@ public class Game {
              
              //have player select two cards
              selectCard(board, getSymbols, name);
-                card1=board.deck[cardSelection-1];
+                card1=board.getDeck()[cardSelection-1];
                 card1.flipped = true;
                 
                
         boardView.displayBoard(board, getSymbols);       
        
         selectCard(board, getSymbols, name);
-                card2 = board.deck[cardSelection-1];
+                card2 = board.getDeck()[cardSelection-1];
                 card2.flipped = true;
             
              /*determine if a match was made and distribute point to player1 or 
@@ -127,7 +127,7 @@ public class Game {
                  System.out.println("Sorry, not a match.");
              }
              boardView.displayBoard(board, getSymbols);
-            getMatchedStatus(board.totalCards, match);
+            getMatchedStatus(board.getTotalCards(), match);
             card1.flipped=false;
             card2.flipped=false;
              
@@ -157,7 +157,7 @@ public class Game {
         }
         dupCheck = cardSelection;*/
         
-        if (cardSelection >= 1 && cardSelection <= board.totalCards){ 
+        if (cardSelection >= 1 && cardSelection <= board.getTotalCards()){ 
             cardSymbol = getSymbols[cardSelection-1];
              System.out.println("The symbol on the card is " + cardSymbol + ".");
         }

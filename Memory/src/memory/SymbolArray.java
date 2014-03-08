@@ -21,7 +21,7 @@ public class SymbolArray {
        
    }
    public void matchDifficulty(Board board){
-       totalMatches = board.totalCards/2;
+       totalMatches = board.getTotalCards()/2;
        System.out.println("\nYou can change the difficulty by choosing whether there are 4 "
                 + "of each kind of card, or 2 of each");
         
@@ -57,7 +57,7 @@ public class SymbolArray {
             }
            }
        int j = 0;  //duplicates the symbols in getSymbols depending on whether the user chooses 2 or 4 matching cards.
-       int grid = (board.columns * board.rows);
+       int grid = (board.getColumns() * board.getRows());
        while (j<grid){
            for (int i = 0; i<numSymbols;i++,j++){
                getSymbols[j]=getSymbols[i];

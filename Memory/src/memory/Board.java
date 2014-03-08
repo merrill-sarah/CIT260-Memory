@@ -7,18 +7,19 @@
 package memory;
 
 import java.util.Scanner;
+import java.io.Serializable;
 
 /**
  *
  * @author Sarawr
  */
-public class Board {
-    int rows;
-    int columns;
-    String size;
-    public int totalCards;
-    SymbolArray symbolArr;
-    Card deck[];
+public class Board implements Serializable {
+    private int rows;
+    private int columns;
+    private String size;
+    private int totalCards;
+    private SymbolArray symbolArr;
+    private Card deck[];
     
     public Board(){
         symbolArr = new SymbolArray();
@@ -59,5 +60,54 @@ public class Board {
                 + " There are a total of " + symbolArr.totalMatches + " matches to find.");
         
     }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public void setRows(int rows) {
+        this.rows = rows;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
+
+    public void setColumns(int columns) {
+        this.columns = columns;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public int getTotalCards() {
+        return totalCards;
+    }
+
+    public void setTotalCards(int totalCards) {
+        this.totalCards = totalCards;
+    }
+
+    public SymbolArray getSymbolArr() {
+        return symbolArr;
+    }
+
+    public void setSymbolArr(SymbolArray symbolArr) {
+        this.symbolArr = symbolArr;
+    }
+
+    public Card[] getDeck() {
+        return deck;
+    }
+
+    public void setDeck(Card[] deck) {
+        this.deck = deck;
+    }
+    
     
 }
