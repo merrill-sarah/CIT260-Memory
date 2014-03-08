@@ -6,20 +6,18 @@
 
 package memory;
 
-import java.util.Scanner;
+import java.io.Serializable;
+
 
 /**
  *
  * @author Janis
  */
-public class BoardView {
-   Board board;
+public class BoardView implements Serializable {
    
-   public BoardView(Board board,char getSymbols[]){  
-   this.board = board;
+   public BoardView(Board board,char getSymbols[]){    
    
-   
-        //int gridNums = 1;
+       
        int rows= board.getRows(); 
        int columns=board.getColumns();
        int gridNums = (rows * columns);
@@ -48,7 +46,7 @@ public class BoardView {
        int columns=board.getColumns();
        
          System.out.print("\t|"); 
-         horizontalLn();
+         horizontalLn(board);
          int i = 0;
         for (int y = 1; y<= (rows*columns); y++){ 
             if (y%columns!=0){
@@ -78,14 +76,14 @@ public class BoardView {
                  System.out.print("\t|");
                  i++;
                  System.out.print("\n\t|");
-                 horizontalLn();
+                 horizontalLn(board);
                  } 
              }  
         }    
          
     
                  
-       public void horizontalLn(){  
+       private void horizontalLn(Board board){  
            int columns=board.getColumns();
            for (int i=0; i<columns; i++){
                          System.out.print("---------------|");
