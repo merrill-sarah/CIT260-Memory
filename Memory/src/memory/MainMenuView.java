@@ -7,13 +7,14 @@
 package memory;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Sarawr
  */
-public class MainMenuView {
+public class MainMenuView implements Serializable{
     private final static String[][] menuItems = {
         {"N", "New Game"},
         {"O", "Options Menu"}, 
