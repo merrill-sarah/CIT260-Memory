@@ -21,6 +21,11 @@ public class MainMenuView extends Menu{
         {"Q", "Quit Game"}
     };
     
+     @Override
+    public String executeCommands(Object object){
+     return "WIP";
+    } 
+    
     // Create instance of the MainMenuControl (action) class
     private MainMenuControl mainMenuControl = new MainMenuControl();
     

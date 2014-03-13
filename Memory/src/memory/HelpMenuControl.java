@@ -20,7 +20,7 @@ public class HelpMenuControl {
         this.displayHelpBorder();             
         System.out.println( 
                 "\t*** Memory Game Board ***"
-                + "\n\tIn the Option Menu select from the following board sizes: "
+                + "\n\tAt the start of a new game select from the following board sizes: "
                 + "\n\tsmall(12 cards), medium(24 cards), or large(48 cards)");
         displayHelpBorder();
     }
@@ -46,10 +46,10 @@ public class HelpMenuControl {
         displayHelpBorder();     
         System.out.println( 
                 "\t*** Choosing Cards ***"
-                + "\n\tClick a card to choose it, the card will flip over to reveal the symbol on the other side. "
-                + "\n\tThen click the card that you think will match it, and it will flip over too."
-                + "\n\tIf they match you will get a point, if they don't the "
-                + "cards will turn back over."
+                + "\n\tClick a card to choose it, the card will flip over to reveal a symbol. "
+                + "\n\tThen click the card that you think will match it, and it will flip over."
+                + "\n\tIf they match you will get a match point, and their places will be blank"
+                + "\n\tif they don't match the cards will turn back over to show their number."
                 ); 
         displayHelpBorder();
     }
@@ -59,16 +59,9 @@ public class HelpMenuControl {
         displayHelpBorder();     
         System.out.println( 
                "\t*** Options Menu ***"
-                       + "\n\tThe Options Menu lets you choose:"
-                       + "\n"
-                       + "\n\t\t~ Number of Players: 1 or 2."
-                       + "\n"
-                       + "\n\t\t~ Player Names."
-                       + "\n"
-                       + "\n\t\t~ Board Size: 12,24 or 48 Cards"
-                       + "\n"
-                       + "\n\t\t~ Matching Difficulty: 2 of each symbol or 4 of each symbol"
-                ); 
+                       + "\n\tThe Options Menu describes your choices:"
+                       + "\n\t   Board Size"
+                       + "\n\t   Difficulty Levels" ); 
         displayHelpBorder();
     }
                  
@@ -77,7 +70,7 @@ public class HelpMenuControl {
         displayHelpBorder();     
         System.out.println( 
                "\t*** Choosing Players ***"
-                       + "\n\tIn the Option Menu you can choose how many players (1 or 2)"
+                       + "\n\tAt the start of a new game you can choose how many players (1 or 2)"
                        + "\n\tand enter the player's names. "
                 ); 
         displayHelpBorder();

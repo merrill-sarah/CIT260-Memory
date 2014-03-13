@@ -10,7 +10,7 @@ package memory;
  *
  * @author Janis
  */
-public class Menu {
+public abstract class Menu {
     
     private String[][] menuItems = null;
 
@@ -21,6 +21,8 @@ public class Menu {
         this();
         this.menuItems = menuItems;
     }
+    
+    public abstract String executeCommands(Object object);
     
      public String[][] getMenuItems() {
         return menuItems;

@@ -20,7 +20,10 @@ public class OptionMenuView extends Menu {
         
         {"X", "Exit Option Menu"}
     };
-    
+ @Override
+    public String executeCommands(Object object){
+     return "WIP";
+    }   
     // Create instance of the OptionsMenuControl (action) class
     private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
     

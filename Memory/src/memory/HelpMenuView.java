@@ -14,30 +14,50 @@ import java.util.Scanner;
  * @author Janis
  */
 public class HelpMenuView extends Menu {
+    
+    public static final String BOARD = "BOARD";
+    public static final String CARDS = "CARDS";
+    public static final String HOW_TO = "HOW_TO";
+    public static final String OPTIONS = "OPTIONS";
+   // public static final String PLAYERS = "PLAYERS";
  
   private final static String[][] menuItems = {
         {"B", "The Board"},
         {"C", "Choosing Cards"}, 
         {"H", "How to Play"},
         {"O", "Options"},
-        {"P", "Choosing Players"},        
+       // {"P", "Choosing Players"},        
         {"X", "Exit Help Menu"}        
     };
-    
+  @Override
+    public String executeCommands(Object object){
+     return "WIP";}
+   //********************************************************************* 
     // Create instance of the HelpMenuControl (action) class
     private HelpMenuControl helpMenuControl = new HelpMenuControl();
+   //**********************************************************************
+    
     
     // default constructor
     public HelpMenuView() {
         super(HelpMenuView.menuItems);
+        
+        
     } 
     
+ 
+   //******************************************************************* 
     // display the help menu and get the end users input selection
     public void getInput() {       
               
         String command;
         Scanner inFile = new Scanner(System.in);
         
+    //***********************************************
+        
+        
+    
+       
         do {
             
             this.display(); // display the menu
@@ -48,20 +68,20 @@ public class HelpMenuView extends Menu {
             
             switch (command) {
                 case "B":
-                    this.getHelpMenuControl().displayBoardHelp();
+                    this.getHelpMenuControl(HelpMenuView.BOARD);
                     break;
                 case "C":
-                    this.getHelpMenuControl().displayCardChoiceHelp();
+                    this.getHelpMenuControl(HelpMenuView.CARDS).displayCardChoiceHelp();
                     break;
                 case "H":
-                    this.getHelpMenuControl().displayGameHelp();
+                    this.getHelpMenuControl(HelpMenuView.HOW_TO).displayGameHelp();
                     break;                  
                 case "O":
-                    this.getHelpMenuControl().displayOptionsHelp();
+                    this.getHelpMenuControl(HelpMenuView.OPTIONS).displayOptionsHelp();
                     break;
-                 case "P":
-                     this.getHelpMenuControl().displayPlayersHelp();
-                    break; 
+              //   case "P":
+               //      this.getHelpMenuControl().displayPlayersHelp();
+                //    break; 
                 case "X": 
                     break;
                 default: 
@@ -73,7 +93,7 @@ public class HelpMenuView extends Menu {
          return;
     }
 
-    public HelpMenuControl getHelpMenuControl() {
+    public HelpMenuControl getHelpMenuControl(String helpType) {
         return helpMenuControl;
     }
 
