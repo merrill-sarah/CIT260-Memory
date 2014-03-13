@@ -6,34 +6,27 @@
 
 package memory;
 
-import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Janis
  */
-public class OptionMenuView implements Serializable {
+public class OptionMenuView extends Menu {
     private final static String[][] menuItems = {
-        {"B", "Choose Board Size"},
-        {"M", "Matching Difficulty"},
-        {"N", "Number of Players"},
+        {"B", "Board Size Choices"},
+        {"M", "Matching Difficulty Levels"},
+     //   {"N", "Number of Players"},
         
         {"X", "Exit Option Menu"}
     };
-
-    /**
-     * @return the menuItems
-     */
-    public static String[][] getMenuItems() {
-        return menuItems;
-    }
     
     // Create instance of the OptionsMenuControl (action) class
     private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
     
     // default constructor
     public OptionMenuView() {
+        super(OptionMenuView.menuItems);
         
     } 
     
@@ -57,9 +50,9 @@ public class OptionMenuView implements Serializable {
                 case "M":
                     this.getOptionsMenuControl().displayMatchingOption();
                     break;
-                case "N":
+          /*      case "N":
                     this.getOptionsMenuControl().displayNumPlayersOption();
-                    break;                  
+                    break;    */              
                
                 case "X": 
                     break;
@@ -71,19 +64,7 @@ public class OptionMenuView implements Serializable {
         
          return;
     }
-
-        // displays the help menu
-    public final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\t*** OPTIONS MENU **************************************"
-                + "\n\tEnter the letter to change one of the following options:");
-
-        for (int i = 0; i < OptionMenuView.getMenuItems().length; i++) {
-            System.out.println("\t   " + getMenuItems()[i][0] + "\t" + getMenuItems()[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-    }
-
+    
     /**
      * @return the optionsMenuControl
      */

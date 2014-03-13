@@ -244,7 +244,7 @@ public class Game implements Serializable{
  
     }
       private void displayScore(Player player1, Player player2){ //move to Player class?
-          int numPlayers=2; //until we add option to have more than 2 players
+          numPlayers=2; //until we add option to have more than 2 players
           int index=0;
           int[] numWins = new int[numPlayers];
           

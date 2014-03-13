@@ -7,14 +7,13 @@
 package memory;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Sarawr
  */
-public class MainMenuView implements Serializable{
+public class MainMenuView extends Menu{
     private final static String[][] menuItems = {
         {"N", "New Game"},
         {"O", "Options Menu"}, 
@@ -27,7 +26,7 @@ public class MainMenuView implements Serializable{
     
     // default constructor
     public MainMenuView() {
-        
+        super(MainMenuView.menuItems);
     } 
     
     // display the help menu and get the end users input selection
@@ -66,14 +65,5 @@ public class MainMenuView implements Serializable{
                 ); 
     }
 
-        // displays the help menu
-    public final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following:");
-
-        for (int i = 0; i < MainMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-    }
+       
 }

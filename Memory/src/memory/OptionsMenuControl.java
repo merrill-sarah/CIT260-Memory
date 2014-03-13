@@ -21,12 +21,23 @@ public class OptionsMenuControl {
     }
     
     public void displayBoardOption()/*Case B*/{
-                  
-        this.board.gridSize();
+          System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                  + "\n\t~ You have a choice of three board sizes. ~"
+                  + "\n\t~     Small has 12 cards ( 6 matches)     ~"
+                  + "\n\t~    Medium has 24 cards (12 matches)     ~"
+                  + "\n\t~     Large has 48 cards (24 matches)     ~"
+                  + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");        
+        //this.board.gridSize();
     }
     
     public void displayMatchingOption()/*Case M*/{
-        this.symbolArr.matchDifficulty(board);
+        System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                + "\n\t~ You can change the difficulty of the game ~"
+                + "\n\t~      by choosing whether there are        ~"
+                + "\n\t~       2 or 4 of each kind of card.        ~"
+                + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        
+       // this.symbolArr.matchDifficulty(board);
     }   
         
     public void displayNumPlayersOption()/*Case N*/{

@@ -6,14 +6,14 @@
 
 package memory;
 
-import java.io.Serializable;
+
 import java.util.Scanner;
 
 /**
  *
  * @author Janis
  */
-public class HelpMenuView implements Serializable {
+public class HelpMenuView extends Menu {
  
   private final static String[][] menuItems = {
         {"B", "The Board"},
@@ -23,20 +23,13 @@ public class HelpMenuView implements Serializable {
         {"P", "Choosing Players"},        
         {"X", "Exit Help Menu"}        
     };
-
-    /**
-     * @return the menuItems
-     */
-    public static String[][] getMenuItems() {
-        return menuItems;
-    }
     
     // Create instance of the HelpMenuControl (action) class
     private HelpMenuControl helpMenuControl = new HelpMenuControl();
     
     // default constructor
     public HelpMenuView() {
-        
+        super(HelpMenuView.menuItems);
     } 
     
     // display the help menu and get the end users input selection
@@ -80,20 +73,6 @@ public class HelpMenuView implements Serializable {
          return;
     }
 
-        // displays the help menu
-    public final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following Help Menus:");
-
-        for (int i = 0; i < HelpMenuView.getMenuItems().length; i++) {
-            System.out.println("\t   " + getMenuItems()[i][0] + "\t" + getMenuItems()[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-    }
-
-    /**
-     * @return the helpMenuControl
-     */
     public HelpMenuControl getHelpMenuControl() {
         return helpMenuControl;
     }
