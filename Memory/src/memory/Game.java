@@ -80,6 +80,9 @@ public class Game implements Serializable{
         Card card1;
         Card card2;
         BoardView boardView = new BoardView(board, getSymbols);
+        player1.setMatchedGame(0);
+        player2.setMatchedGame(0);
+        
       
         
          while (totalMatchesMade < symbols.getTotalMatches()){
