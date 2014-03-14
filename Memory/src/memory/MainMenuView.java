@@ -40,10 +40,6 @@ public class MainMenuView extends Menu{
     
      @Override
     public String executeCommands(Object object){
-    // return "WIP";
-   // } 
-    // display the help menu and get the end users input selection
-   // public void getInput() throws IOException {       
               
         String command = "";
         Scanner inFile = new Scanner(System.in);

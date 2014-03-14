@@ -14,7 +14,11 @@ import java.util.Scanner;
  *
   * @author Sarawr
 */
-public class EndMenuView implements Serializable {
+public class EndMenuView {
+    public static final String PLAY_AGAIN = "PLAY_AGAIN";
+    public static final String MAIN_MENU = "MAIN_MENU";
+    
+    
     private final static String[][] menuItems = {
         {"P", "Play Again"},
         {"M", "Main Menu"},
@@ -24,7 +28,7 @@ public class EndMenuView implements Serializable {
     
     // display the help menu and get the end users input selection
     public void getInput(Player player1, Player player2) throws IOException {
-              
+             
         String command;
         Scanner inFile = new Scanner(System.in);
         

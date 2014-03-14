@@ -45,24 +45,15 @@ public class HelpMenuView extends Menu {
     
  @Override
     public String executeCommands(Object object){
-    // return "WIP";}
-   //******************************************************************* 
-    // display the help menu and get the end users input selection
-  //  public void getInput() {       
+         
               
         String command;
         Scanner inFile = new Scanner(System.in);
         
-    //***********************************************
-        
-        
-    
-       
         do {
             
             this.display(); // display the menu
-            
-            // get commaned entered
+           
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             

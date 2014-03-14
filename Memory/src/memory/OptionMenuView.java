@@ -21,32 +21,24 @@ public class OptionMenuView extends Menu {
         {"B", "Board Size Choices"},
         {"M", "Matching Difficulty Levels"},
      //   {"N", "Number of Players"},
-        
         {"X", "Exit Option Menu"}
     };
  
-    // Create instance of the OptionsMenuControl (action) class
     private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
     
-    // default constructor
+    
     public OptionMenuView() {
         super(OptionMenuView.menuItems);
-        
     } 
+    
     @Override
     public String executeCommands(Object object){
-     //return "WIP";
-   // }   
-    // display the help menu and get the end users input selection
-   // public void getInput() {       
-              
         String command;
         Scanner inFile = new Scanner(System.in);
         
         do {
-            this.display(); // display the menu
-            
-            // get commaned entered
+            this.display(); 
+                    
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             
@@ -65,7 +57,7 @@ public class OptionMenuView extends Menu {
                     break;
                 default: 
                     new MemoryError().displayError("Invalid command. Please enter a valid command.");
-                    continue;
+                    //continue;
             }
         } while (!command.equals("X"));  
         
