@@ -8,12 +8,19 @@ package memory;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Sarawr
  */
 public class MainMenuView extends Menu{
+    
+    public static final String NEW_GAME = "NEW_GAME";
+    public static final String OPTIONS = "OPTIONS" ;
+    public static final String HELP = "HELP";
+    
     private final static String[][] menuItems = {
         {"N", "New Game"},
         {"O", "Options Menu"}, 
@@ -21,10 +28,7 @@ public class MainMenuView extends Menu{
         {"Q", "Quit Game"}
     };
     
-     @Override
-    public String executeCommands(Object object){
-     return "WIP";
-    } 
+    
     
     // Create instance of the MainMenuControl (action) class
     private MainMenuControl mainMenuControl = new MainMenuControl();
@@ -34,40 +38,49 @@ public class MainMenuView extends Menu{
         super(MainMenuView.menuItems);
     } 
     
+     @Override
+    public String executeCommands(Object object){
+    // return "WIP";
+   // } 
     // display the help menu and get the end users input selection
-    public void getInput() throws IOException {       
+   // public void getInput() throws IOException {       
               
-        String command;
+        String command = "";
         Scanner inFile = new Scanner(System.in);
         
         do {
-            
-            this.display(); // display the menu
-            
-            // get command entered
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
-            
-            switch (command) {
-                case "N":
-                    this.mainMenuControl.startGame();
-                    break;
-                case "O":
-                    this.mainMenuControl.displayOptionMenu();
-                    break;
-                case "H":
-                    this.mainMenuControl.displayHelpMenu();
-                    break;
-                case "Q": 
-                    break;
-                default: 
-                    new MemoryError().displayError("Invalid command. Please enter a valid command.");
+            try {
+                this.display(); // display the menu
+                
+                // get command entered
+                
+                command = inFile.nextLine();
+                command = command.trim().toUpperCase();
+                
+                switch (command) {
+                    case "N":
+                        this.mainMenuControl.startGame();
+                        break;
+                    case "O":
+                        this.mainMenuControl.displayOptionMenu();
+                        break;
+                    case "H":
+                        this.mainMenuControl.displayHelpMenu();
+                        break;
+                    case "Q":
+                        break;
+                    default:
+                        new MemoryError().displayError("Invalid command. Please enter a valid command.");
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
         } while (!command.equals("Q"));  
         
          System.out.println( 
                 "\t-----Game Over----"
                 ); 
+         return "";
     }
 
        

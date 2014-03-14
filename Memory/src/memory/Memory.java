@@ -33,7 +33,7 @@ public class Memory implements Serializable {
         myGame.displayHelp();
         
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.getInput();
+        mainMenuView.executeCommands(myGame);
         
     }
     

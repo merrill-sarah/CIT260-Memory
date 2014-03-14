@@ -13,6 +13,10 @@ import java.util.Scanner;
  * @author Janis
  */
 public class OptionMenuView extends Menu {
+    public static final String BOARD = "BOARD"; 
+    public static final String DIFFICULTY = "DIFFICULTY"; 
+    public static final String PLAYERS = "PLAYERS";
+    
     private final static String[][] menuItems = {
         {"B", "Board Size Choices"},
         {"M", "Matching Difficulty Levels"},
@@ -20,10 +24,7 @@ public class OptionMenuView extends Menu {
         
         {"X", "Exit Option Menu"}
     };
- @Override
-    public String executeCommands(Object object){
-     return "WIP";
-    }   
+ 
     // Create instance of the OptionsMenuControl (action) class
     private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
     
@@ -32,9 +33,12 @@ public class OptionMenuView extends Menu {
         super(OptionMenuView.menuItems);
         
     } 
-    
+    @Override
+    public String executeCommands(Object object){
+     //return "WIP";
+   // }   
     // display the help menu and get the end users input selection
-    public void getInput() {       
+   // public void getInput() {       
               
         String command;
         Scanner inFile = new Scanner(System.in);
@@ -65,7 +69,7 @@ public class OptionMenuView extends Menu {
             }
         } while (!command.equals("X"));  
         
-         return;
+         return "";
     }
     
     /**

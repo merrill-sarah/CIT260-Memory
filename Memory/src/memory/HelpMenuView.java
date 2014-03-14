@@ -29,9 +29,7 @@ public class HelpMenuView extends Menu {
        // {"P", "Choosing Players"},        
         {"X", "Exit Help Menu"}        
     };
-  @Override
-    public String executeCommands(Object object){
-     return "WIP";}
+  
    //********************************************************************* 
     // Create instance of the HelpMenuControl (action) class
     private HelpMenuControl helpMenuControl = new HelpMenuControl();
@@ -45,10 +43,12 @@ public class HelpMenuView extends Menu {
         
     } 
     
- 
+ @Override
+    public String executeCommands(Object object){
+    // return "WIP";}
    //******************************************************************* 
     // display the help menu and get the end users input selection
-    public void getInput() {       
+  //  public void getInput() {       
               
         String command;
         Scanner inFile = new Scanner(System.in);
@@ -68,7 +68,7 @@ public class HelpMenuView extends Menu {
             
             switch (command) {
                 case "B":
-                    this.getHelpMenuControl(HelpMenuView.BOARD);
+                    this.getHelpMenuControl(HelpMenuView.BOARD).displayBoardHelp();
                     break;
                 case "C":
                     this.getHelpMenuControl(HelpMenuView.CARDS).displayCardChoiceHelp();
@@ -90,7 +90,7 @@ public class HelpMenuView extends Menu {
             }
         } while (!command.equals("X"));  
         
-         return;
+         return " ";
     }
 
     public HelpMenuControl getHelpMenuControl(String helpType) {
