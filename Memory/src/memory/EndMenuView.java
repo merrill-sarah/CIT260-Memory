@@ -36,7 +36,6 @@ public class EndMenuView {
             
             this.display(); // display the menu
             
-            // get command entered
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             
@@ -55,7 +54,8 @@ public class EndMenuView {
         } while (!command.equals("Q"));
         
          System.out.println(
-                "\t-----Game Over----"
+                "\t-----This Set of Games is Over----"
+              + "\n\t-----All Totals Will Be Reset-----"
                 );
     }
 

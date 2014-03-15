@@ -75,7 +75,19 @@ public class MainMenuView extends Menu{
         
          System.out.println( 
                 "\t-----Game Over----"
+             +"\n\tThank you for Playing!"
+             + "\n\t-----Game Over----"
                 ); 
+         
+         System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                 + "\n\t~~~~~~~~~~~~~~~CREDITS~~~~~~~~~~~~~~~~~~"
+                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+         
+         BioJ janis = new BioJ("Janis", "Felsted", "Web Design and Development", "Online",
+         "Senior", "127", "FALL", "2016", "She" );
+         janis.displayBio();
+         janis.getBio();
+         
          return "";
     }
 

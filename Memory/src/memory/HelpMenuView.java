@@ -30,13 +30,9 @@ public class HelpMenuView extends Menu {
         {"X", "Exit Help Menu"}        
     };
   
-   //********************************************************************* 
-    // Create instance of the HelpMenuControl (action) class
+    
     private HelpMenuControl helpMenuControl = new HelpMenuControl();
-   //**********************************************************************
-    
-    
-    // default constructor
+   
     public HelpMenuView() {
         super(HelpMenuView.menuItems);
         
