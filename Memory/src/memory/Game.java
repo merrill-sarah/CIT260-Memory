@@ -37,6 +37,7 @@ public class Game implements Serializable{
         
         welcomePlayers(player1.getName(), player2.getName());
         playGame(player1,player2);
+        
        
     }
     
@@ -61,7 +62,10 @@ public class Game implements Serializable{
         System.out.println("");
         EndMenuView endMenuView = new EndMenuView();
         endMenuView.getInput(player1, player2);
+       // this.rollCredits();
         }
+        
+        
         
     
     private void welcomePlayers(String player1, String player2){
@@ -372,6 +376,19 @@ public class Game implements Serializable{
 
     public void setNumPlayers(int numPlayers) {
         this.numPlayers = numPlayers;
+    }
+    
+    public void rollCredits(){
+    
+    System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                 + "\n\t~~~~~~~~~~~~~~~CREDITS~~~~~~~~~~~~~~~~~~"
+                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+         
+         BioJ janis = new BioJ("Janis", "Felsted", "Web Design and Development", "Online Bachelor's Degree",
+         "Senior", "127", "FALL", "2016", "She" );
+         janis.displayBio();
+         janis.getBio();
+    
     }
       
    

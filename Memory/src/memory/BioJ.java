@@ -20,7 +20,8 @@ public class BioJ extends Author{
     @Override
     public void getBio(){
     
-        System.out.println("\n\t*** \"I hope you've enjoyed our game! I had a lot of fun creating it with Sarah! ***\"");
+        System.out.println("\n\t \"I hope you've enjoyed our game! "
+                + "\n\tI had a lot of fun creating it with Sarah!\"");
        
         System.out.print("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     }

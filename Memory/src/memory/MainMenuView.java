@@ -20,7 +20,7 @@ public class MainMenuView extends Menu{
     public static final String NEW_GAME = "NEW_GAME";
     public static final String OPTIONS = "OPTIONS" ;
     public static final String HELP = "HELP";
-    
+      
     private final static String[][] menuItems = {
         {"N", "New Game"},
         {"O", "Options Menu"}, 
@@ -28,19 +28,18 @@ public class MainMenuView extends Menu{
         {"Q", "Quit Game"}
     };
     
-    
-    
     // Create instance of the MainMenuControl (action) class
     private MainMenuControl mainMenuControl = new MainMenuControl();
     
     // default constructor
     public MainMenuView() {
         super(MainMenuView.menuItems);
+        
     } 
     
      @Override
     public String executeCommands(Object object){
-              
+         Game game = new Game();     
         String command = "";
         Scanner inFile = new Scanner(System.in);
         
@@ -64,6 +63,12 @@ public class MainMenuView extends Menu{
                         this.mainMenuControl.displayHelpMenu();
                         break;
                     case "Q":
+                        System.out.println( 
+                            "\t-----Game Over----"
+                         +"\n\tThank you for Playing!"
+                         + "\n\t-----Game Over----"
+                            ); 
+                        game.rollCredits();   
                         break;
                     default:
                         new MemoryError().displayError("Invalid command. Please enter a valid command.");
@@ -71,22 +76,7 @@ public class MainMenuView extends Menu{
             } catch (IOException ex) {
                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } while (!command.equals("Q"));  
-        
-         System.out.println( 
-                "\t-----Game Over----"
-             +"\n\tThank you for Playing!"
-             + "\n\t-----Game Over----"
-                ); 
-         
-         System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                 + "\n\t~~~~~~~~~~~~~~~CREDITS~~~~~~~~~~~~~~~~~~"
-                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-         
-         BioJ janis = new BioJ("Janis", "Felsted", "Web Design and Development", "Online",
-         "Senior", "127", "FALL", "2016", "She" );
-         janis.displayBio();
-         janis.getBio();
+        } while (!command.equals("Q")); 
          
          return "";
     }

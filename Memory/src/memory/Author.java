@@ -40,11 +40,12 @@ public abstract class Author {
    public void displayBio(){ 
       
        System.out.print("\n\tIntroducing Memory Game Author " + firstName + " " + lastName+ ":"
-                 + "\n\t"+ firstName+ " is a " + major + " major in the "+ locale+ " program."
-               + "\n\t"+ pronoun+ " has currently completed " + credits+ " credits."
+                 + "\n\t"+ firstName+ " is a " + major + " major "
+               + "\n\tin the "+ locale+ " program."
+               + "\n\t"+ pronoun+ " is a "+classLvl+ " with " + credits+ " completed credits."
                + "\n\t" +firstName + " plans to graduate at the end of the "
                + gradSem+ " "+ gradYr+" semester."
-               + "\n\t"+ pronoun+ " has a message for you: ");
+               + "\n\t"+ pronoun+ " has a message for you: \n");
    }
    
    public abstract void getBio();
