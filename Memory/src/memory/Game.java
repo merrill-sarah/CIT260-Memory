@@ -18,8 +18,8 @@ import java.util.Scanner;
  */
 public class Game implements Serializable{
     private GetPlayerListView playerList= new GetPlayerListView();
-    private Player player1 = new Player();
-    private Player player2 = new Player();
+    private Player player1 = new Person(null, 0, 0);
+    private Player player2 = new Person(null, 0, 0);
     private int numCards;
     private char cardSymbol;
     private int cardSelection;
