@@ -4,9 +4,10 @@
  * COURSE   -  CIT 260 ~ 03 online
  */
 
-package memory;
+package citbyui.cit260.sarahjanis.memory.menus;
 
 import java.util.Scanner;
+import memory.MemoryError;
 
 /**
  *

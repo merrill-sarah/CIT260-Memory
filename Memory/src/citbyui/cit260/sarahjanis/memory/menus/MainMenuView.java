@@ -4,11 +4,14 @@
  * COURSE   -  CIT 260 ~ 03 online
  */
 
-package memory;
+package citbyui.cit260.sarahjanis.memory.menus;
 
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
+import memory.Game;
+import memory.MemoryError;
+
 import java.util.logging.Logger;
 
 /**
