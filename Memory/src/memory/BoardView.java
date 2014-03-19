@@ -25,6 +25,7 @@ public class BoardView {
            System.out.println("\t***********************************************************************************"
                    + "\n\tERROR: please enter \"s\" for small, \"m\" for medium, or \"l\" for large board size"
                    +"\n\t**************************************************************************************");
+                   board.getInput();
                    board.gridSize();
                    } 
        

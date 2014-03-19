@@ -6,6 +6,7 @@
 
 package citbyui.cit260.sarahjanis.memory.menus;
 
+import citbyui.cit260.sarahjanis.memory.interfeces.DisplayInfo;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
@@ -16,7 +17,7 @@ import memory.Player;
  *
   * @author Sarawr
 */
-public class EndMenuView {
+public class EndMenuView implements DisplayInfo {
     public static final String PLAY_AGAIN = "PLAY_AGAIN";
     public static final String MAIN_MENU = "MAIN_MENU";
     
@@ -62,6 +63,7 @@ public class EndMenuView {
     }
 
         // displays the help menu
+    @Override
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following:");

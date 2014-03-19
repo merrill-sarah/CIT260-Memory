@@ -14,7 +14,8 @@ public class BioJ extends Author{
     
     public BioJ(String fN, String lN, String m, String l, String cLvl,
            String cr, String gSem, String gYr, String pn){
-    super(fN, lN,  m, l, cLvl, cr,  gSem,  gYr,  pn);
+    super(fN, lN,  m, l, cLvl, cr,  gSem,  gYr,  pn);   
+    
     }
     
     @Override

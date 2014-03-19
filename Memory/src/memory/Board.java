@@ -6,6 +6,8 @@
 
 package memory;
 
+import citbyui.cit260.sarahjanis.memory.interfeces.DisplayInfo;
+import citbyui.cit260.sarahjanis.memory.interfeces.EnterInfo;
 import java.util.Scanner;
 import java.io.Serializable;
 
@@ -13,7 +15,7 @@ import java.io.Serializable;
  *
  * @author Sarawr
  */
-public class Board implements Serializable {
+public class Board implements Serializable, DisplayInfo,EnterInfo {
     private int rows;
     private int columns;
     private String size;
@@ -25,13 +27,16 @@ public class Board implements Serializable {
         symbolArr = new SymbolArray();
     }        
     
-    public void gridSize(){
+    @Override
+    public void getInput(){
         Scanner input = new Scanner(System.in);
         System.out.println("\nEnter the letter associated with the size board "
                 + "you would like to play: "
                 + "\n\"s\" for small, \"m\" for medium, or \"l\" for large:");
         this.size= input.next();
-        
+    }
+
+    public void gridSize(){
          if(size.equals("s")){
             rows = 3;
             columns = 4;
@@ -47,7 +52,7 @@ public class Board implements Serializable {
         else {
              System.out.println("Invalid entry. Please enter: "
                      + "\"s\" \"m\" or \"l\" (without quotes):");
-             gridSize();
+             getInput();
                     }
         
         totalCards = rows * columns;
@@ -55,7 +60,8 @@ public class Board implements Serializable {
         }
     
     
-    public void displayGridInfo(){
+    @Override
+    public void display(){
         System.out.println("\n\tThe board is " + rows + " by " + columns + "."
                 + " There are a total of " + (int)symbolArr.getTotalMatches() + " matches to find.");
         

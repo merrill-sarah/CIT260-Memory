@@ -5,6 +5,7 @@
  */
 
 package memory;
+import citbyui.cit260.sarahjanis.memory.interfeces.EnterInfo;
 import java.io.Serializable;
 import java.util.*;
 
@@ -12,7 +13,7 @@ import java.util.*;
  *
  * @author Janis
  */
-public class SymbolArray implements Serializable{
+public class SymbolArray implements Serializable, EnterInfo{
     private BoardView boardview;
     private float totalMatches;
     private float numSymbols;
@@ -21,8 +22,9 @@ public class SymbolArray implements Serializable{
      public SymbolArray(){
        
    }
-   public void matchDifficulty(Board board){
-        setTotalMatches(board.getTotalCards()/2);
+    @Override
+   public void getInput(){
+       
        System.out.println("\nYou can change the difficulty by choosing whether there are 4 "
                 + "of each kind of card, or 2 of each");
         
@@ -31,6 +33,10 @@ public class SymbolArray implements Serializable{
           
           System.out.println("Enter how many of each kind of card 2 or 4: ");
           setNumMatchingSymbols(matchChoice.nextInt());
+   }
+     
+   public void matchDifficulty(Board board){
+        setTotalMatches(board.getTotalCards()/2);
           
          if (getNumMatchingSymbols() == 2){
              setNumSymbols(getTotalMatches());
@@ -44,6 +50,7 @@ public class SymbolArray implements Serializable{
          }
            
      }  
+   
    public char[] createArray(Board board, char getSymbols[]){
       // int j = 0;
        

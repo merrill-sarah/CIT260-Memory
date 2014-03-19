@@ -17,7 +17,7 @@ import java.util.Scanner;
  *
  * @author Janis
  */
-public class Game implements Serializable{
+public class Game implements Serializable {
     private GetPlayerListView playerList= new GetPlayerListView();
     private Player player1 = new Person(null, 0, 0);
     private Player player2 = new Person(null, 0, 0);
@@ -46,9 +46,11 @@ public class Game implements Serializable{
         public void playGame(Player player1, Player player2) throws IOException{
         
         Board board = new Board();
+        board.getInput();
         board.gridSize();
-        board.displayGridInfo();
+        board.display();
         SymbolArray symbols = new SymbolArray();
+        symbols.getInput();
         symbols.matchDifficulty(board);
         
 
@@ -387,8 +389,12 @@ public class Game implements Serializable{
          
          BioJ janis = new BioJ("Janis", "Felsted", "Web Design and Development", "Online Bachelor's Degree",
          "Senior", "127", "FALL", "2016", "She" );
-         janis.displayBio();
+         janis.display();
          janis.getBio();
+         BioS sarah = new BioS("Sarah", "Merrill", "Web Design and Development", "Bachelor's Degree",
+         "Junior", "--", "FALL", "2015", "She" );
+         sarah.display();
+         sarah.getBio();
     
     }
       

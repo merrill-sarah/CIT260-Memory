@@ -26,7 +26,6 @@ public  abstract class Player implements Serializable {
         
     }
     
-    public abstract void showPersonStats();
     
     //return the name
     public String getName() {

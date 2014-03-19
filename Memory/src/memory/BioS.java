@@ -14,15 +14,6 @@ public class BioS extends Author{
 
     public BioS(String fN, String lN, String m, String l, String cLvl, String cr, String gSem, String gYr, String pn) {
         super(fN, lN, m, l, cLvl, cr, gSem, gYr, pn);
-        fN = "Sarah";
-        lN = "Merrill";
-        m = "Web Design and Development";
-        l = "";
-        cLvl = "Junior";
-        cr = "";
-        gSem = "";
-        gYr = "";
-        pn = "She";
         
     }
     

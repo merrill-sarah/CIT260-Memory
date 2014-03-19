@@ -6,11 +6,13 @@
 
 package memory;
 
+import citbyui.cit260.sarahjanis.memory.interfeces.DisplayInfo;
+
 /**
  *
  * @author Janis
  */
-public abstract class Author {
+public abstract class Author implements DisplayInfo {
    private final String firstName;
    private final String lastName;
    private final String major;
@@ -37,7 +39,8 @@ public abstract class Author {
    }
 
    
-   public void displayBio(){ 
+   @Override
+   public void display(){ 
       
        System.out.print("\n\tIntroducing Memory Game Author " + firstName + " " + lastName+ ":"
                  + "\n\t"+ firstName+ " is a " + major + " major "

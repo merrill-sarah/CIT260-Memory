@@ -6,11 +6,13 @@
 
 package citbyui.cit260.sarahjanis.memory.menus;
 
+import citbyui.cit260.sarahjanis.memory.interfeces.DisplayInfo;
+
 /**
  *
  * @author Janis
  */
-public abstract class Menu {
+public abstract class Menu implements DisplayInfo {
     
     private String[][] menuItems = null;
 
@@ -32,6 +34,8 @@ public abstract class Menu {
         this.menuItems = menuItems;
     }
     
+
+    @Override
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following:");
