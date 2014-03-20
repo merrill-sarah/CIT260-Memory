@@ -13,7 +13,7 @@ import java.util.*;
  *
  * @author Janis
  */
-public class SymbolArray implements Serializable, EnterInfo{
+public class SymbolArray implements Serializable{
     private BoardView boardview;
     private float totalMatches;
     private float numSymbols;
@@ -22,7 +22,7 @@ public class SymbolArray implements Serializable, EnterInfo{
      public SymbolArray(){
        
    }
-    @Override
+    
    public void getInput(){
        
        System.out.println("\nYou can change the difficulty by choosing whether there are 4 "

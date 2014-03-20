@@ -12,6 +12,6 @@ package citbyui.cit260.sarahjanis.memory.interfaces;
  */
 public interface EnterInfo {
     
-    void getInput();
+    Object getInput(Object object);
     
 }

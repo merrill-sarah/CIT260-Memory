@@ -12,7 +12,7 @@ import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
  *
  * @author Janis
  */
-public abstract class Menu implements DisplayInfo {
+public abstract class Menu  {
     
     private String[][] menuItems = null;
 
@@ -24,7 +24,7 @@ public abstract class Menu implements DisplayInfo {
         this.menuItems = menuItems;
     }
     
-    public abstract String executeCommands(Object object);
+   // public abstract String executeCommands(Object object);
     
      public String[][] getMenuItems() {
         return menuItems;
@@ -35,7 +35,7 @@ public abstract class Menu implements DisplayInfo {
     }
     
 
-    @Override
+    
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following:");

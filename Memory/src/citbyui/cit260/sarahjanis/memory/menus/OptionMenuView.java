@@ -8,12 +8,13 @@ package citbyui.cit260.sarahjanis.memory.menus;
 
 import java.util.Scanner;
 import memory.MemoryError;
+import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 
 /**
  *
  * @author Janis
  */
-public class OptionMenuView extends Menu {
+public class OptionMenuView extends Menu implements EnterInfo{
     public static final String BOARD = "BOARD"; 
     public static final String DIFFICULTY = "DIFFICULTY"; 
     public static final String PLAYERS = "PLAYERS";
@@ -32,8 +33,8 @@ public class OptionMenuView extends Menu {
         super(OptionMenuView.menuItems);
     } 
     
-    @Override
-    public String executeCommands(Object object){
+   
+    public String getInput(Object object){
         String command;
         Scanner inFile = new Scanner(System.in);
         

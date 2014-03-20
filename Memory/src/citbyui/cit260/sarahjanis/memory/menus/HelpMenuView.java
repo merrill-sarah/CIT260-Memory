@@ -7,7 +7,7 @@
 package citbyui.cit260.sarahjanis.memory.menus;
 
 
-import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
+import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;;
 import java.util.Scanner;
 import memory.MemoryError;
 
@@ -15,7 +15,7 @@ import memory.MemoryError;
  *
  * @author Janis
  */
-public class HelpMenuView extends Menu implements DisplayInfo {
+public class HelpMenuView extends Menu implements EnterInfo {
     
     public static final String BOARD = "BOARD";
     public static final String CARDS = "CARDS";
@@ -42,7 +42,7 @@ public class HelpMenuView extends Menu implements DisplayInfo {
     } 
     
  @Override
-    public String executeCommands(Object object){
+    public String getInput(Object object){
          
               
         String command;

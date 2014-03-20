@@ -7,7 +7,7 @@
 package memory;
 
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
-import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
+//import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.util.Scanner;
 import java.io.Serializable;
 
@@ -15,7 +15,7 @@ import java.io.Serializable;
  *
  * @author Sarawr
  */
-public class Board implements Serializable, DisplayInfo,EnterInfo {
+public class Board implements Serializable, DisplayInfo{
     private int rows;
     private int columns;
     private String size;
@@ -27,7 +27,7 @@ public class Board implements Serializable, DisplayInfo,EnterInfo {
         symbolArr = new SymbolArray();
     }        
     
-    @Override
+  
     public void getInput(){
         Scanner input = new Scanner(System.in);
         System.out.println("\nEnter the letter associated with the size board "

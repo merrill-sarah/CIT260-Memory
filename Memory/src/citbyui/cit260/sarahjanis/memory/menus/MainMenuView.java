@@ -6,7 +6,8 @@
 
 package citbyui.cit260.sarahjanis.memory.menus;
 
-import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
+//import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
+import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -19,7 +20,7 @@ import java.util.logging.Logger;
  *
  * @author Sarawr
  */
-public class MainMenuView extends Menu implements DisplayInfo {
+public class MainMenuView extends Menu implements EnterInfo {
     
     public static final String NEW_GAME = "NEW_GAME";
     public static final String OPTIONS = "OPTIONS" ;
@@ -41,8 +42,9 @@ public class MainMenuView extends Menu implements DisplayInfo {
         
     } 
     
-     @Override
-    public String executeCommands(Object object){
+   
+    @Override
+    public String getInput(Object object){
          Game game = new Game();     
         String command = "";
         Scanner inFile = new Scanner(System.in);

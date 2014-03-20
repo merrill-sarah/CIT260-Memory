@@ -26,11 +26,11 @@ public class MainMenuControl {
     
     public void displayOptionMenu()/*Case O*/ {
         OptionMenuView optionMenuView = new OptionMenuView();
-        optionMenuView.executeCommands(null);
+        optionMenuView.getInput(null);
     }
     public void displayHelpMenu()/*Case H*/ {     
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.executeCommands(null);
+        helpMenuView.getInput(null);
     }
                             
 }
