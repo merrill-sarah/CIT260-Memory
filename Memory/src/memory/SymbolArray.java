@@ -5,7 +5,7 @@
  */
 
 package memory;
-import citbyui.cit260.sarahjanis.memory.interfeces.EnterInfo;
+import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.io.Serializable;
 import java.util.*;
 

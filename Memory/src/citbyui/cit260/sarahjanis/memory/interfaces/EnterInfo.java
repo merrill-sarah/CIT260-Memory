@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package citbyui.cit260.sarahjanis.memory.interfeces;
+package citbyui.cit260.sarahjanis.memory.interfaces;
 
 /**
  *

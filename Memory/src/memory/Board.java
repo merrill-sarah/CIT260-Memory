@@ -6,8 +6,8 @@
 
 package memory;
 
-import citbyui.cit260.sarahjanis.memory.interfeces.DisplayInfo;
-import citbyui.cit260.sarahjanis.memory.interfeces.EnterInfo;
+import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
+import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.util.Scanner;
 import java.io.Serializable;
 

@@ -6,7 +6,7 @@
 
 package memory;
 
-import citbyui.cit260.sarahjanis.memory.interfeces.DisplayInfo;
+import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 
 /**
  *

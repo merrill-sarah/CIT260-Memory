@@ -6,7 +6,7 @@
 
 package citbyui.cit260.sarahjanis.memory.menus;
 
-import citbyui.cit260.sarahjanis.memory.interfeces.DisplayInfo;
+import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
