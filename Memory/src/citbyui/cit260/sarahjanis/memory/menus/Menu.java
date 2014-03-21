@@ -14,6 +14,7 @@ import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
  * @author Janis
  */
 public abstract class Menu implements DisplayInfo, EnterInfo {
+//display(), getInput(Object object)
     
     private String[][] menuItems = null;
 
@@ -39,6 +40,7 @@ public abstract class Menu implements DisplayInfo, EnterInfo {
    public abstract String getInput(Object object); 
    
     
+    @Override
     public void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following:");

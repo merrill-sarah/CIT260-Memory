@@ -34,22 +34,24 @@ public class Board implements Serializable, DisplayInfo{
                 + "you would like to play: "
                 + "\n\"s\" for small, \"m\" for medium, or \"l\" for large:");
         this.size= input.next();
+        size = size.trim().toLowerCase();
     }
 
     public void gridSize(){
-         if(size.equals("s")){
-            rows = 3;
-            columns = 4;
-        }
-        else if(size.equals("m")){
-            rows = 4;
-            columns = 6;
-        }
-        else if(size.equals("l")){
-             rows = 6;
-             columns = 8;
-                    }
-        else {
+          switch (size){
+            case "s":
+                 rows = 3;
+                 columns = 4;
+                 break;
+            case "m":
+                rows = 4;
+                columns = 6;
+                break;
+            case "l":
+               rows = 6;
+               columns = 8; 
+                break;
+            default: 
              System.out.println("Invalid entry. Please enter: "
                      + "\"s\" \"m\" or \"l\" (without quotes):");
              getInput();

@@ -7,6 +7,7 @@
 package citbyui.cit260.sarahjanis.memory.menus;
 
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
+import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ import citbyui.cit260.sarahjanis.memory.models.Player;
  *
   * @author Sarawr
 */
-public class EndMenuView implements DisplayInfo {
+public class EndMenuView implements DisplayInfo {//doesn't implement Menu or implement EnterInfo because getInput() has different parameters
     public static final String PLAY_AGAIN = "PLAY_AGAIN";
     public static final String MAIN_MENU = "MAIN_MENU";
     

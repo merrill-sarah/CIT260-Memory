@@ -14,7 +14,7 @@ import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
  *
  * @author Janis
  */
-public class OptionMenuView extends Menu implements EnterInfo{
+public class OptionMenuView extends Menu /*implements EnterInfo -unnecessary- inherits from Menu*/{
     public static final String BOARD = "BOARD"; 
     public static final String DIFFICULTY = "DIFFICULTY"; 
     public static final String PLAYERS = "PLAYERS";
@@ -34,6 +34,7 @@ public class OptionMenuView extends Menu implements EnterInfo{
     } 
     
    
+    @Override
     public String getInput(Object object){
         String command;
         Scanner inFile = new Scanner(System.in);
