@@ -6,8 +6,8 @@
 
 package citbyui.cit260.sarahjanis.memory.menus; 
 
-import memory.Board;
-import memory.SymbolArray;
+import citbyui.cit260.sarahjanis.memory.models.Board;
+import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 
 
 /**

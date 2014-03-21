@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package memory;
+package citbyui.cit260.sarahjanis.memory.models;
 
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 

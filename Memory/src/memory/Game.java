@@ -6,6 +6,13 @@
 
 package memory;
 
+import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
+import citbyui.cit260.sarahjanis.memory.models.Person;
+import citbyui.cit260.sarahjanis.memory.models.Player;
+import citbyui.cit260.sarahjanis.memory.models.Card;
+import citbyui.cit260.sarahjanis.memory.models.Board;
+import citbyui.cit260.sarahjanis.memory.models.BioS;
+import citbyui.cit260.sarahjanis.memory.models.BioJ;
 import citbyui.cit260.sarahjanis.memory.menus.EndMenuView;
 import java.io.IOException;
 import java.io.Serializable;

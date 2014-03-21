@@ -6,6 +6,9 @@
 
 package memory;
 
+import citbyui.cit260.sarahjanis.memory.models.Card;
+import citbyui.cit260.sarahjanis.memory.models.Board;
+
 
 
 /**

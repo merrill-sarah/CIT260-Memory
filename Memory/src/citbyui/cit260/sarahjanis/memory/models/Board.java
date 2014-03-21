@@ -4,7 +4,7 @@
  * COURSE   -  CIT 260 ~ 03 online
  */
 
-package memory;
+package citbyui.cit260.sarahjanis.memory.models;
 
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 //import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;

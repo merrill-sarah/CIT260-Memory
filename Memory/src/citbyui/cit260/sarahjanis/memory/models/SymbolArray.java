@@ -4,10 +4,12 @@
  * COURSE   -  CIT 260 ~ 03 online
  */
 
-package memory;
+package citbyui.cit260.sarahjanis.memory.models;
+import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.io.Serializable;
 import java.util.*;
+import memory.BoardView;
 
 /**
  *
