@@ -16,14 +16,13 @@ import memory.BoardView;
 public class Card implements Serializable{
     
    
-    private String shape = ""; 
-    private String color = "";
-   private boolean flipped;
-   private boolean matched;
-  // String matchString;
-   private char symbol;
-   private int cardNumber;
-   private BoardView boardview; 
+     private String shape; 
+     private String color;
+     private boolean flipped;
+     private boolean matched;
+     private char symbol;
+     private int cardNumber;
+ //  private BoardView boardview; 
     
     public Card(){
      flipped = false; // indicates which side of the card is showing, True is face-up
@@ -119,20 +118,20 @@ public class Card implements Serializable{
     public void setCardNumber(int cardNumber) {
         this.cardNumber = cardNumber;
     }
-
+/*
     /**
      * @return the boardview
-     */
+     *//*
     public BoardView getBoardview() {
         return boardview;
     }
 
     /**
      * @param boardview the boardview to set
-     */
+     *//*
     public void setBoardview(BoardView boardview) {
         this.boardview = boardview;
     }
-   
+   */
 
 }

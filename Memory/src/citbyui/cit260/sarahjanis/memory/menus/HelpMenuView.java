@@ -45,42 +45,42 @@ public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
  @Override
     public String getInput(Object object){
          
-              
-        String command;
-        Scanner inFile = new Scanner(System.in);
-        
-        do {
-            
-            this.display(); // display the menu
-           
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
-            
-            switch (command) {
-                case "B":
-                    this.getHelpMenuControl(HelpMenuView.BOARD).displayBoardHelp();
-                    break;
-                case "C":
-                    this.getHelpMenuControl(HelpMenuView.CARDS).displayCardChoiceHelp();
-                    break;
-                case "H":
-                    this.getHelpMenuControl(HelpMenuView.HOW_TO).displayGameHelp();
-                    break;                  
-                case "O":
-                    this.getHelpMenuControl(HelpMenuView.OPTIONS).displayOptionsHelp();
-                    break;
-              //   case "P":
-               //      this.getHelpMenuControl().displayPlayersHelp();
-                //    break; 
-                case "X": 
-                    break;
-                default: 
-                    new MemoryError().displayError("Invalid command. Please enter a valid command.");
-                    continue;
-            }
-        } while (!command.equals("X"));  
-        
-         return " ";
+
+    String command;
+    Scanner inFile = new Scanner(System.in);
+
+    do {
+
+        this.display(); // display the menu
+
+        command = inFile.nextLine();
+        command = command.trim().toUpperCase();
+
+        switch (command) {
+            case "B":
+                this.getHelpMenuControl(HelpMenuView.BOARD).displayBoardHelp();
+                break;
+            case "C":
+                this.getHelpMenuControl(HelpMenuView.CARDS).displayCardChoiceHelp();
+                break;
+            case "H":
+                this.getHelpMenuControl(HelpMenuView.HOW_TO).displayGameHelp();
+                break;                  
+            case "O":
+                this.getHelpMenuControl(HelpMenuView.OPTIONS).displayOptionsHelp();
+                break;
+          //   case "P":
+           //      this.getHelpMenuControl().displayPlayersHelp();
+            //    break; 
+            case "X": 
+                break;
+            default: 
+                new MemoryError().displayError("Invalid command. Please enter a valid command.");
+                continue;
+        }
+    } while (!command.equals("X"));  
+
+     return " ";
     }
 
     public HelpMenuControl getHelpMenuControl(String helpType) {
