@@ -6,6 +6,9 @@
 
 package memory;
 
+import citbyui.cit260.sarahjanis.memory.AssignW10.Dogs;
+import citbyui.cit260.sarahjanis.memory.AssignW10.Horses;
+import citbyui.cit260.sarahjanis.memory.AssignW10.HouseCats;
 import citbyui.cit260.sarahjanis.memory.menus.MainMenuView;
 import java.io.IOException;
 import java.io.Serializable;
@@ -36,6 +39,27 @@ public class Memory implements Serializable {
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.getInput(myGame);
         
+      Horses horsey = new Horses("horse");
+      System.out.println("I am a "+horsey.getType("horse")+" and " +horsey.getRun());
+       horsey.coat();
+       horsey.eat();
+       horsey.work();
+       System.out.println();
+       
+       HouseCats kitty = new HouseCats("cat");
+       System.out.println("I am a " +kitty.getType("cat")+ " and " +kitty.getRun());
+       kitty.coat();       
+       kitty.eat();
+       kitty.stalk();
+       kitty.spoiled();
+       System.out.println();
+       
+       Dogs dog = new Dogs("dog");
+       System.out.println("I am a " +dog.getType("dog")+ " and " +dog.getRun());
+       dog.coat();
+       dog.eat();
+       dog.work();
+       System.out.println();
     }
     
     public void displayHelp(){
