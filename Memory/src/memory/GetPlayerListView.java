@@ -6,6 +6,7 @@
 
 package memory;
 
+import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import java.io.Serializable;
 import java.util.Scanner;
 

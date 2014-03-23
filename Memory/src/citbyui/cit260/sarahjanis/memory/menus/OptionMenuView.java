@@ -8,7 +8,7 @@ package citbyui.cit260.sarahjanis.memory.menus;
 
 import citbyui.cit260.sarahjanis.memory.controls.OptionsMenuControl;
 import java.util.Scanner;
-import memory.MemoryError;
+import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 
 /**

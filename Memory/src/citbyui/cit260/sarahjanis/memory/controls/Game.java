@@ -4,7 +4,7 @@
  * COURSE   -  CIT 260 ~ 03 online
  */
 
-package memory;
+package citbyui.cit260.sarahjanis.memory.controls;
 
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import citbyui.cit260.sarahjanis.memory.models.Person;
@@ -17,6 +17,9 @@ import citbyui.cit260.sarahjanis.memory.menus.EndMenuView;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
+import memory.BoardView;
+import memory.GetPlayerListView;
+import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 
 
 

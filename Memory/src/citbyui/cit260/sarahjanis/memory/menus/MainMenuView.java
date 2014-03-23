@@ -12,8 +12,8 @@ import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
-import memory.Game;
-import memory.MemoryError;
+import citbyui.cit260.sarahjanis.memory.controls.Game;
+import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 
 import java.util.logging.Logger;
 

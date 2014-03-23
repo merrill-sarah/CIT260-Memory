@@ -4,7 +4,7 @@
  * COURSE   -  CIT 260 ~ 03 online
  */
 
-package memory;
+package citbyui.cit260.sarahjanis.memory.controls;
 
 import citbyui.cit260.sarahjanis.memory.AssignW10.Dogs;
 import citbyui.cit260.sarahjanis.memory.AssignW10.Horses;

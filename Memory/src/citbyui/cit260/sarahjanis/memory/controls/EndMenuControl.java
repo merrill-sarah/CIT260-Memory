@@ -7,7 +7,6 @@
 package citbyui.cit260.sarahjanis.memory.controls;
 
 import java.io.IOException;
-import memory.Game;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 
 /**
