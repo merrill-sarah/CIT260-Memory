@@ -7,7 +7,7 @@
 package citbyui.cit260.sarahjanis.memory.models;
 
 import java.io.Serializable;
-import memory.BoardView;
+import citbyui.cit260.sarahjanis.memory.views.BoardView;
 
 /**
  *

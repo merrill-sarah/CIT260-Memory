@@ -17,8 +17,8 @@ import citbyui.cit260.sarahjanis.memory.menus.EndMenuView;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
-import memory.BoardView;
-import memory.GetPlayerListView;
+import citbyui.cit260.sarahjanis.memory.views.BoardView;
+import citbyui.cit260.sarahjanis.memory.views.GetPlayerListView;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 
 

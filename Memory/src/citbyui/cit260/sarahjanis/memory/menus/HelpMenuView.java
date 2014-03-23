@@ -8,6 +8,7 @@ package citbyui.cit260.sarahjanis.memory.menus;
 
 
 import citbyui.cit260.sarahjanis.memory.controls.HelpMenuControl;
+import citbyui.cit260.sarahjanis.memory.enums.HelpType;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 import java.util.Scanner;
