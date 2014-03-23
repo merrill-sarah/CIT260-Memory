@@ -22,7 +22,7 @@ public class Card implements Serializable{
      private boolean matched;
      private char symbol;
      private int cardNumber;
- //  private BoardView boardview; 
+  
     
     public Card(){
      flipped = false; // indicates which side of the card is showing, True is face-up

@@ -4,9 +4,11 @@
  * COURSE   -  CIT 260 ~ 03 online
  */
 
-package citbyui.cit260.sarahjanis.memory.menus;
+package citbyui.cit260.sarahjanis.memory.controls;
 
 import citbyui.cit260.sarahjanis.memory.menus.HelpMenuView;
+import citbyui.cit260.sarahjanis.memory.menus.HelpMenuView;
+import citbyui.cit260.sarahjanis.memory.menus.OptionMenuView;
 import java.io.IOException;
 import memory.Game;
 

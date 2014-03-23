@@ -6,6 +6,7 @@
 
 package citbyui.cit260.sarahjanis.memory.menus;
 
+import citbyui.cit260.sarahjanis.memory.controls.EndMenuControl;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.io.IOException;

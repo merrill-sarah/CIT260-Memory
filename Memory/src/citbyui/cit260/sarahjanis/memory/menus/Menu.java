@@ -14,8 +14,7 @@ import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
  * @author Janis
  */
 public abstract class Menu implements DisplayInfo, EnterInfo {
-//display(), getInput(Object object)
-    
+
     private String[][] menuItems = null;
 
     public Menu() {
@@ -25,8 +24,6 @@ public abstract class Menu implements DisplayInfo, EnterInfo {
         this();
         this.menuItems = menuItems;
     }
-    
-   // public abstract String executeCommands(Object object);
     
      public String[][] getMenuItems() {
         return menuItems;

@@ -7,6 +7,7 @@
 package citbyui.cit260.sarahjanis.memory.menus;
 
 
+import citbyui.cit260.sarahjanis.memory.controls.HelpMenuControl;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 import java.util.Scanner;
@@ -45,7 +46,6 @@ public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
  @Override
     public String getInput(Object object){
          
-
     String command;
     Scanner inFile = new Scanner(System.in);
 
