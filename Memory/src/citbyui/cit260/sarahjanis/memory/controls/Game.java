@@ -6,6 +6,8 @@
 
 package citbyui.cit260.sarahjanis.memory.controls;
 
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
+import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import citbyui.cit260.sarahjanis.memory.models.Person;
 import citbyui.cit260.sarahjanis.memory.models.Player;
@@ -41,7 +43,7 @@ public class Game implements Serializable {
     public Game(){  
        
     }
-    public void startGame() throws IOException{       
+    public void startGame() throws IOException, CardException{       
         playerList.getInputNames(numPlayers);
         player1.setName(playerList.getListOfPlayerNames()[0]);
         player2.setName(playerList.getListOfPlayerNames()[1]);
@@ -53,7 +55,7 @@ public class Game implements Serializable {
     }
     
     
-        public void playGame(Player player1, Player player2) throws IOException{
+        public void playGame(Player player1, Player player2) throws IOException, CardException{
         
         Board board = new Board();
         board.getInput();
@@ -88,7 +90,7 @@ public class Game implements Serializable {
     }
     
       
-     private void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException{
+     private void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException, CardException{
         boolean match = false;
         int totalMatchesMade = 0;
         numCards = board.getTotalCards();
@@ -154,7 +156,7 @@ public class Game implements Serializable {
          }
       }  
 
-    private void selectCard(Board board, char getSymbols[], String name) throws IOException{
+    private void selectCard(Board board, char getSymbols[], String name) throws IOException, CardException{
         Scanner in = new Scanner(System.in);
         boolean notDup = false;
       
@@ -165,14 +167,20 @@ public class Game implements Serializable {
         
         while (!validateInt){
         System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
-            if (in.hasNextInt()){
+      //      if (in.hasNextInt())
+        try{
             cardSelection = in.nextInt();
-            validateInt = true;}
-
+            validateInt = true;
+        }
+        catch (NumberFormatException i){
+            throw new CardException(ErrorType.ERROR103.getMessage());
+        }
+           
+/*
             else{
                 in.nextLine();
                 new MemoryError().displayError("Not a valid entry.");
-            }
+            }*/
         } 
         
       /*  while(!notDup)                 //Checks for card number duplication
