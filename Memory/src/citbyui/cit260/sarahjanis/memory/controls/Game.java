@@ -178,7 +178,7 @@ public class Game implements Serializable {
             
             validateInt = true;
         }
-        catch (NumberFormatException  e){ //to catch if a letter is entered instead of a number
+        catch (NumberFormatException e){ //to catch if a letter is entered instead of a number
             System.out.println();
             System.out.println(ErrorType.ERROR103.getMessage());
         }
