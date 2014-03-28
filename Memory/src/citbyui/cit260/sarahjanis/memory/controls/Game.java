@@ -181,6 +181,7 @@ public class Game implements Serializable {
         catch (NumberFormatException  e){ //to catch if a letter is entered instead of a number
             System.out.println();
             System.out.println(ErrorType.ERROR103.getMessage());
+        }
             
           // ex.printStackTrace();
           /* System.out.println(ex.getMessage());
