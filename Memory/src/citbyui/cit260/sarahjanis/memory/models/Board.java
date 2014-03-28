@@ -29,29 +29,29 @@ public class Board implements Serializable, DisplayInfo{
     }        
     
   
-    public void getInput() throws BoardException{
+    public void getInput() {
       //  boolean valid = false;
      //   while (!valid){
-        try{
+    //    try{
         Scanner input = new Scanner(System.in);
         System.out.println("\nEnter the letter associated with the size board "
                 + "you would like to play: "
                 + "\n\"s\" for small, \"m\" for medium, or \"l\" for large:");
         this.size= input.next();
         size = size.trim().toLowerCase();
-        if ("l".equals(size)){
-        int size1 = Integer.parseInt(size);}
+     //   if ("l".equals(size)){
+     //   int size1 = Integer.parseInt(size);}
       //  valid = true;
         
-    }
-        catch(NumberFormatException e){
-            throw new BoardException("please enter \"s\" \"m\" or \"l\""); 
-        }
+   // }
+     //   catch(NumberFormatException e){
+      //      throw new BoardException("please enter \"s\" \"m\" or \"l\""); 
+      //  }
         
         
     }
 
-    public void gridSize() throws BoardException{
+    public void gridSize(){
           switch (size){
             case "s":
                  rows = 3;

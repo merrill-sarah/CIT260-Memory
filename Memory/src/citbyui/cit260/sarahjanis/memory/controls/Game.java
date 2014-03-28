@@ -167,13 +167,19 @@ public class Game implements Serializable {
         boolean validateInt = false;
         
         while (!validateInt){
-       System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
+
+        System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
       //      if (in.hasNextInt())
         try{
-            cardSelection = in.nextInt();
+            String x =in.next();
+            //cardSelection = in.nextInt();
+            cardSelection = Integer.parseInt(x);
+            
+            
             validateInt = true;
         }
-        catch (InputMismatchException e){ //to catch if a letter is entered instead of a number
+        //f you changed it to use Integer.ParseInt() rather than the in.nextInt(), you could catch a NumberFormatException.
+        catch (NumberFormatException  |InputMismatchException e){ //to catch if a letter is entered instead of a number
             
             System.out.println(ErrorType.ERROR103.displayError(e));
         }

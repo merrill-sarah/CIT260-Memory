@@ -40,16 +40,8 @@ public abstract class Author implements DisplayInfo {
 
    
    @Override
-   public void display() throws NumberFormatException{ 
-       try{
-           int degreeIn = Integer.parseInt(major);
-           System.out.println("major is" + degreeIn);
-       }
-       catch(NumberFormatException yr){
-           System.out.println("Major is a string");
-       
-       }
-      
+   public void display(){ 
+            
        System.out.print("\n\tIntroducing Memory Game Author " + firstName + " " + lastName+ ":"
                  + "\n\t"+ firstName+ " is a " + major + " major "
                + "\n\tin the "+ locale+ " program."

@@ -56,7 +56,7 @@ public class Memory implements Serializable {
         } 
         finally {
             Memory.inFile.close();
-           // System.out.println("Ya'll come back now, hear?!");
+           // System.out.println("Ya'll come back now, hear?!"); // testing 
         }
     }
     
