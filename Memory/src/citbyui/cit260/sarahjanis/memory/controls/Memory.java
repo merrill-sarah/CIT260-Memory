@@ -10,7 +10,6 @@ import citbyui.cit260.sarahjanis.memory.AssignW10.Dogs;
 import citbyui.cit260.sarahjanis.memory.AssignW10.Horses;
 import citbyui.cit260.sarahjanis.memory.AssignW10.HouseCats;
 import citbyui.cit260.sarahjanis.memory.menus.MainMenuView;
-import citbyui.cit260.sarahjanis.memory.menus.Menu;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import java.io.IOException;
 import java.io.Serializable;
@@ -49,8 +48,7 @@ public class Memory implements Serializable {
             Memory memory = new Memory();
             MainMenuView mainMenuView = new MainMenuView();
             mainMenuView.getInput(memory);
-          //  memory.;
-            
+          
         }
         catch(Throwable e) {
             MemoryError.displayError("Unexpected Error: " + e.getMessage());
@@ -58,7 +56,39 @@ public class Memory implements Serializable {
         } 
         finally {
             Memory.inFile.close();
+           // System.out.println("Ya'll come back now, hear?!");
         }
+    }
+    
+    public static Scanner getInputFile() {
+        return Memory.inFile;
+            }
+    
+    public void displayHelp(){
+       System.out.println(Memory.instructions);        
+    }
+}
+
+
+
+
+
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
      /* Horses horsey = new Horses("horse");
       System.out.println("I am a "+horsey.getType("horse")+" and " +horsey.getRun());
@@ -81,14 +111,3 @@ public class Memory implements Serializable {
        dog.eat();
        dog.work();
        System.out.println();*/
-    }
-    
-    public static Scanner getInputFile() {
-        
-        return Memory.inFile;
-            }
-    
-    public void displayHelp(){
-       System.out.println(Memory.instructions);        
-    }
-}

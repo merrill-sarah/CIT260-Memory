@@ -6,6 +6,7 @@
 
 package citbyui.cit260.sarahjanis.memory.views;
 
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 
@@ -17,7 +18,7 @@ import citbyui.cit260.sarahjanis.memory.models.Board;
  */
 public class BoardView {
    
-   public BoardView(Board board,char getSymbols[]){    
+   public BoardView(Board board,char getSymbols[]) throws BoardException{    
    
        
        int rows= board.getRows(); 

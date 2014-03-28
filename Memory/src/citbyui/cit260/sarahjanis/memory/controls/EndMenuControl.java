@@ -6,6 +6,7 @@
 
 package citbyui.cit260.sarahjanis.memory.controls;
 
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import java.io.IOException;
 import citbyui.cit260.sarahjanis.memory.models.Player;
@@ -15,7 +16,7 @@ import citbyui.cit260.sarahjanis.memory.models.Player;
  * @author Sarawr
  */
 public class EndMenuControl {
-    public void playAgain(Player player1, Player player2) throws IOException, CardException {
+    public void playAgain(Player player1, Player player2) throws IOException, CardException, BoardException {
         Game anotherGame = new Game();
          anotherGame.playGame(player1, player2);
      }

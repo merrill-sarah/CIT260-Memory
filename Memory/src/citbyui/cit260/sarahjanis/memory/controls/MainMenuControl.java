@@ -6,6 +6,8 @@
 
 package citbyui.cit260.sarahjanis.memory.controls;
 
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
+import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.menus.HelpMenuView;
 import citbyui.cit260.sarahjanis.memory.menus.HelpMenuView;
 import citbyui.cit260.sarahjanis.memory.menus.OptionMenuView;
@@ -20,9 +22,12 @@ public class MainMenuControl {
         
     } 
 
-    public void startGame() throws IOException /*Case S*/{
-        Game newGame = new Game();
-        newGame.startGame();
+    public void startGame() throws IOException, CardException, BoardException /*Case S*/{
+      try{  Game newGame = new Game();
+        newGame.startGame();}
+        catch (NumberFormatException ex){
+                throw new NumberFormatException("please enter a number janis");
+                }
     }
     
     public void displayOptionMenu()/*Case O*/ {

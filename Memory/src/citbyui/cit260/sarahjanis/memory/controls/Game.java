@@ -7,6 +7,7 @@
 package citbyui.cit260.sarahjanis.memory.controls;
 
 import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import citbyui.cit260.sarahjanis.memory.models.Person;
@@ -18,7 +19,7 @@ import citbyui.cit260.sarahjanis.memory.models.BioJ;
 import citbyui.cit260.sarahjanis.memory.menus.EndMenuView;
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.Scanner;
+import java.util.*;
 import citbyui.cit260.sarahjanis.memory.views.BoardView;
 import citbyui.cit260.sarahjanis.memory.views.GetPlayerListView;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
@@ -43,7 +44,7 @@ public class Game implements Serializable {
     public Game(){  
        
     }
-    public void startGame() throws IOException, CardException{       
+    public void startGame() throws IOException, CardException, BoardException{       
         playerList.getInputNames(numPlayers);
         player1.setName(playerList.getListOfPlayerNames()[0]);
         player2.setName(playerList.getListOfPlayerNames()[1]);
@@ -55,7 +56,7 @@ public class Game implements Serializable {
     }
     
     
-        public void playGame(Player player1, Player player2) throws IOException, CardException{
+        public void playGame(Player player1, Player player2) throws IOException, CardException, BoardException{
         
         Board board = new Board();
         board.getInput();
@@ -90,7 +91,7 @@ public class Game implements Serializable {
     }
     
       
-     private void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException, CardException{
+     private void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException, CardException, BoardException{
         boolean match = false;
         int totalMatchesMade = 0;
         numCards = board.getTotalCards();
@@ -166,15 +167,22 @@ public class Game implements Serializable {
         boolean validateInt = false;
         
         while (!validateInt){
-        System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
+       System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
       //      if (in.hasNextInt())
         try{
             cardSelection = in.nextInt();
             validateInt = true;
         }
-        catch (NumberFormatException i){
-            throw new CardException(ErrorType.ERROR103.getMessage());
+        catch (InputMismatchException e){ //to catch if a letter is entered instead of a number
+            
+            System.out.println(ErrorType.ERROR103.displayError(e));
         }
+            
+          // ex.printStackTrace();
+          /* System.out.println(ex.getMessage());
+            //throw new CardException(ex.getMessage());
+            System.out.println(ErrorType.ERROR103.getMessage());*/
+        
            
 /*
             else{

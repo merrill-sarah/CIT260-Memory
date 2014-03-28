@@ -6,6 +6,7 @@
 
 package citbyui.cit260.sarahjanis.memory.models;
 
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 //import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.util.Scanner;
@@ -28,16 +29,28 @@ public class Board implements Serializable, DisplayInfo{
     }        
     
   
-    public void getInput(){
+    public void getInput() throws BoardException{
+        boolean valid = false;
+        while (!valid){
+        try{
         Scanner input = new Scanner(System.in);
         System.out.println("\nEnter the letter associated with the size board "
                 + "you would like to play: "
                 + "\n\"s\" for small, \"m\" for medium, or \"l\" for large:");
         this.size= input.next();
         size = size.trim().toLowerCase();
+        int size1 = Integer.parseInt(size);
+        valid = true;
+        
+    }
+        catch(NumberFormatException e){
+            throw new BoardException("please enter \"s\" \"m\" or \"l\""); 
+        }
+        
+        }
     }
 
-    public void gridSize(){
+    public void gridSize() throws BoardException{
           switch (size){
             case "s":
                  rows = 3;

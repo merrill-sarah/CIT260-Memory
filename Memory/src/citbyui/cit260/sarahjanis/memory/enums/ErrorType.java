@@ -17,7 +17,7 @@ public enum ErrorType {
     ERROR102 ("You entered an invalid letter"
             + "\nplease enter \"s\" for small, \"m\" for medium, or \"l\" for large board size"),
     
-    ERROR103 ("Your entry is not valid."
+    ERROR103 ("ERROR 103: Your entry is not valid."
             + "\nPlease enter a card number or 0 for a hint."),
     
     ERROR104("A name must be at least one character long"
