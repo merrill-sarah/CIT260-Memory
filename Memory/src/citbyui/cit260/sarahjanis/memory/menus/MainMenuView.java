@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import citbyui.cit260.sarahjanis.memory.controls.Game;
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 
@@ -62,7 +63,11 @@ public class MainMenuView extends Menu implements EnterInfo, DisplayInfo {
                  
                  switch (command) {
                      case "N":
-                         this.mainMenuControl.startGame();
+                 try {
+                     this.mainMenuControl.startGame();
+                 } catch (BoardException ex) {
+                     Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                 }
                          break;
                      case "O":
                          this.mainMenuControl.displayOptionMenu();

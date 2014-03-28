@@ -7,6 +7,7 @@
 package citbyui.cit260.sarahjanis.memory.menus;
 
 import citbyui.cit260.sarahjanis.memory.controls.EndMenuControl;
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
@@ -33,7 +34,7 @@ public class EndMenuView implements DisplayInfo {//doesn't implement Menu or imp
      EndMenuControl endMenuControl = new EndMenuControl();
     
     // display the help menu and get the end users input selection
-    public void getInput(Player player1, Player player2) throws IOException, CardException {
+    public void getInput(Player player1, Player player2) throws IOException, CardException, BoardException {
              
         String command;
         Scanner inFile = new Scanner(System.in);
