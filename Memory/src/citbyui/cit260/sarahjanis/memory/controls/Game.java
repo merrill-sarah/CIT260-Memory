@@ -178,11 +178,9 @@ public class Game implements Serializable {
             
             validateInt = true;
         }
-        //f you changed it to use Integer.ParseInt() rather than the in.nextInt(), you could catch a NumberFormatException.
-        catch (NumberFormatException  |InputMismatchException e){ //to catch if a letter is entered instead of a number
-            
-            System.out.println(ErrorType.ERROR103.displayError(e));
-        }
+        catch (NumberFormatException  e){ //to catch if a letter is entered instead of a number
+            System.out.println();
+            System.out.println(ErrorType.ERROR103.getMessage());
             
           // ex.printStackTrace();
           /* System.out.println(ex.getMessage());
