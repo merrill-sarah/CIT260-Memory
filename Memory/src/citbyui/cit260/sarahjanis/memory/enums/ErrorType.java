@@ -11,20 +11,22 @@ package citbyui.cit260.sarahjanis.memory.enums;
  * @author Janis
  */
 public enum ErrorType {
-    ERROR_101 ("You entered an invalid letter"
+    ERROR101 ("You entered an invalid letter"
             + "\nPlease enter one of the letters in the menu."),
     
     ERROR102 ("You entered an invalid letter"
             + "\nplease enter \"s\" for small, \"m\" for medium, or \"l\" for large board size"),
     
-    ERROR103 ("ERROR 103: Your entry is not valid."
-            + "\nPlease enter a card number or 0 for a hint."),
+    ERROR103 ("Your entry is not valid."
+           // + "\nPlease enter a card number or 0 for a hint."
+            + "\n *** ERROR 103 *** "),
     
     ERROR104("A name must be at least one character long"
             + "\nPlease enter your name again."),
     ERROR105("That name was already entered."
             + "\nPlease enter another name"),
-    
+    ERROR_106("Your entry is invalid"
+            + "\nPlease try again."),
    
     
     ERROR201 ("That card was already selected"

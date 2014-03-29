@@ -4,7 +4,7 @@
  * COURSE   -  CIT 260 ~ 03 online
  */
 
-package citbyui.cit260.sarahjanis.memory.menus;
+package citbyui.cit260.sarahjanis.memory.views;
 
 import citbyui.cit260.sarahjanis.memory.controls.EndMenuControl;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;

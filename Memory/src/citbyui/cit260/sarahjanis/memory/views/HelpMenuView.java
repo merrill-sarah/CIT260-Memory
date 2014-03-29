@@ -4,11 +4,12 @@
  * COURSE   -  CIT 260 ~ 03 online
  */
 
-package citbyui.cit260.sarahjanis.memory.menus;
+package citbyui.cit260.sarahjanis.memory.views;
 
 
 import citbyui.cit260.sarahjanis.memory.controls.HelpMenuControl;
 import citbyui.cit260.sarahjanis.memory.enums.HelpType;
+import citbyui.cit260.sarahjanis.memory.exceptions.MenuException;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 import java.util.Scanner;

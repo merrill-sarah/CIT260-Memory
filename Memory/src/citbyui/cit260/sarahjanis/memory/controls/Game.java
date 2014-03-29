@@ -16,7 +16,7 @@ import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.BioS;
 import citbyui.cit260.sarahjanis.memory.models.BioJ;
-import citbyui.cit260.sarahjanis.memory.menus.EndMenuView;
+import citbyui.cit260.sarahjanis.memory.views.EndMenuView;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.*;
@@ -167,8 +167,8 @@ public class Game implements Serializable {
         boolean validateInt = false;
         
         while (!validateInt){
-
-        System.out.println(name + ", please enter the card number, or for a hint enter 0(zero): ");
+            System.out.println();
+            System.out.println(name +", Please enter the card number, or for a hint enter 0(zero): ");
       //      if (in.hasNextInt())
         try{
             String x =in.next();
@@ -180,7 +180,8 @@ public class Game implements Serializable {
         }
         catch (NumberFormatException e){ //to catch if a letter is entered instead of a number
             System.out.println();
-            System.out.println(ErrorType.ERROR103.getMessage());
+            
+            System.out.println(name +", "+ ErrorType.ERROR103.getMessage());
         }
             
           // ex.printStackTrace();

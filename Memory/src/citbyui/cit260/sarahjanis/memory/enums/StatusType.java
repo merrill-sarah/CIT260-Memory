@@ -18,12 +18,15 @@ public enum StatusType {
     EXIT ("EXIT"),
     WINNER("WINNER"),
     WINS ("WINS"),
-    TIE ("TIE"),
-    ERROR ("ERROR");
+    TIE ("TIE");
+    
     
     String value;
     
     StatusType(String value){
         this.value = value;
+    }
+    public String getValue() {
+        return value;
     }
 }
