@@ -40,7 +40,7 @@ public class Game implements Serializable {
     private char cardSymbol;
     private int cardSelection;
     private int dupCheck;
-    private int numPlayers;
+    private int numPlayers=2;
     private StatusType status;
     
     
@@ -106,7 +106,7 @@ public class Game implements Serializable {
         BoardView boardView = new BoardView(board, getSymbols);
         player1.setMatchedGame(0);
         player2.setMatchedGame(0);
-        
+       
         if (this.getStatus() != StatusType.START &&
                 this.getStatus() != StatusType.PLAYING){
             throw new MemoryException(ErrorType.ERROR107.getMessage());
