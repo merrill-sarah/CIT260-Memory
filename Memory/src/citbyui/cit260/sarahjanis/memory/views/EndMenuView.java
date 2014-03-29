@@ -7,15 +7,16 @@
 package citbyui.cit260.sarahjanis.memory.views;
 
 import citbyui.cit260.sarahjanis.memory.controls.EndMenuControl;
+import citbyui.cit260.sarahjanis.memory.controls.Memory;
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
+import citbyui.cit260.sarahjanis.memory.enums.StatusType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+import citbyui.cit260.sarahjanis.memory.exceptions.MenuException;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
-import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.Scanner;
-import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 
 /**
@@ -33,19 +34,16 @@ public class EndMenuView implements DisplayInfo {//doesn't implement Menu or imp
         {"Q", "Quit Game"}
     };
      EndMenuControl endMenuControl = new EndMenuControl();
+     private StatusType gameStatus;
     
     // display the help menu and get the end users input selection
-    public void getInput(Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException {
-             
-        String command;
-        Scanner inFile = new Scanner(System.in);
+    public StatusType getInput(Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException {
         
         do {
-            
+            try {
             this.display(); // display the menu
             
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
+            String command = this.getCommand();
             
             switch (command) {
                 case "P":
@@ -55,16 +53,16 @@ public class EndMenuView implements DisplayInfo {//doesn't implement Menu or imp
                     this.endMenuControl.displayMainMenu();
                     break;
                 case "Q":
-                    break;
-                default:
-                    new MemoryError().displayError("Invalid command. Please enter a valid command.");
+                    return StatusType.QUIT;
             }
-        } while (!command.equals("Q"));
+            }
+        catch(MenuException ex){
+                       System.out.println(ErrorType.ERROR101.getMessage());
+        }
+        }
+        while (gameStatus != StatusType.QUIT);  
         
-         System.out.println(
-                "\t-----This Set of Games is Over----"
-              + "\n\t-----All Totals Will Be Reset-----"
-                );
+         return gameStatus;
     }
 
         // displays the help menu
@@ -78,5 +76,30 @@ public class EndMenuView implements DisplayInfo {//doesn't implement Menu or imp
         }
         System.out.println("\t===============================================================\n");
     }
+    public final String getCommand() throws MenuException {
 
+        Scanner inFile = Memory.getInputFile();
+        String command;
+        boolean valid = false;
+        do {
+            command = inFile.nextLine();
+            command = command.trim().toUpperCase();
+            valid = validCommand(command);
+            if (!validCommand(command)) {
+                throw new MenuException(ErrorType.ERROR101.getMessage());//   
+            }
+            return command;
+                
+        } while (!valid);
+    }
+    private boolean validCommand(String command) {
+        String[][] items = this.menuItems;
+
+        for (String[] item : this.menuItems) {
+            if (item[0].equals(command)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
