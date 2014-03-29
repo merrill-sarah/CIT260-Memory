@@ -45,12 +45,12 @@ public class Memory implements Serializable {
       //  MainMenuView mainMenuView = new MainMenuView();
       //  mainMenuView.getInput(myGame);
         
-       /* try{*/
+        try{
             Memory memory = new Memory();
             MainMenuView mainMenuView = new MainMenuView();
             mainMenuView.getInput(memory);
           
-      /*  }
+        }
         catch(Throwable e) {
             MemoryError.displayError("Unexpected Error: " + e.getMessage());
             MemoryError.displayError(Arrays.toString(e.getStackTrace()));
@@ -58,7 +58,7 @@ public class Memory implements Serializable {
         finally {
             Memory.inFile.close();
            // System.out.println("Ya'll come back now, hear?!"); // testing 
-        }*/
+        }
     }
     
     public static Scanner getInputFile() {

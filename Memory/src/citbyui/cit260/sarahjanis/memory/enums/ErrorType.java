@@ -22,7 +22,8 @@ public enum ErrorType {
             + "\n *** ERROR 103 *** "),
     
     ERROR104("A name must be at least one character long"
-            + "\nPlease enter your name again."),
+            + "\nPlease enter your name again."
+            + "\n *** ERROR 104 *** "),
     ERROR105("That name was already entered."
             + "\nPlease enter another name"),
     ERROR106("Your entry is invalid"
