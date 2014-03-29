@@ -8,7 +8,9 @@ package citbyui.cit260.sarahjanis.memory.views;
 
 
 import citbyui.cit260.sarahjanis.memory.controls.HelpMenuControl;
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.enums.HelpType;
+import citbyui.cit260.sarahjanis.memory.enums.StatusType;
 import citbyui.cit260.sarahjanis.memory.exceptions.MenuException;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
@@ -38,6 +40,7 @@ public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
   
     
     private HelpMenuControl helpMenuControl = new HelpMenuControl();
+    private StatusType gameStatus;
    
     public HelpMenuView() {
         super(HelpMenuView.menuItems);
@@ -46,18 +49,22 @@ public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
     } 
     
  @Override
-    public String getInput(Object object){
+    public Object getInput(Object object){
          
-    String command;
-    Scanner inFile = new Scanner(System.in);
+    //String command;
+  //  Scanner inFile = new Scanner(System.in);
 
     do {
+        try {
 
         this.display(); // display the menu
 
-        command = inFile.nextLine();
-        command = command.trim().toUpperCase();
-
+        // get command entered
+                 String command = this.getCommand();
+                 
+               //  command = inFile.nextLine();
+               //  command = command.trim().toUpperCase();
+                 
         switch (command) {
             case "B":
                 this.getHelpMenuControl(HelpMenuView.BOARD).displayBoardHelp();
@@ -75,14 +82,18 @@ public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
            //      this.getHelpMenuControl().displayPlayersHelp();
             //    break; 
             case "X": 
-                break;
-            default: 
-                new MemoryError().displayError("Invalid command. Please enter a valid command.");
-                continue;
+                    return StatusType.QUIT;
+              //  default: 
+              //      new MemoryError().displayError("Invalid command. Please enter a valid command.");
+                    //continue;
+            }
+            }
+            catch(MenuException ex){
+                       System.out.println(ErrorType.ERROR101.getMessage());
         }
-    } while (!command.equals("X"));  
-
-     return " ";
+        }while (gameStatus != StatusType.QUIT);  
+        
+         return gameStatus;
     }
 
     public HelpMenuControl getHelpMenuControl(String helpType) {

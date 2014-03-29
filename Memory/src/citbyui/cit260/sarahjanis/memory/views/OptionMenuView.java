@@ -7,6 +7,9 @@
 package citbyui.cit260.sarahjanis.memory.views;
 
 import citbyui.cit260.sarahjanis.memory.controls.OptionsMenuControl;
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
+import citbyui.cit260.sarahjanis.memory.enums.StatusType;
+import citbyui.cit260.sarahjanis.memory.exceptions.MenuException;
 import java.util.Scanner;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
@@ -28,7 +31,7 @@ public class OptionMenuView extends Menu /*implements EnterInfo -unnecessary- in
     };
  
     private OptionsMenuControl optionsMenuControl = new OptionsMenuControl();
-    
+    private StatusType gameStatus;
     
     public OptionMenuView() {
         super(OptionMenuView.menuItems);
@@ -36,15 +39,18 @@ public class OptionMenuView extends Menu /*implements EnterInfo -unnecessary- in
     
    
     @Override
-    public String getInput(Object object){
-        String command;
-        Scanner inFile = new Scanner(System.in);
+    public Object getInput(Object object){
+      //  String command;
+      //  Scanner inFile = new Scanner(System.in);
         
         do {
-            this.display(); 
+            try{
+              this.display(); 
+               // get command entered
+                 String command = this.getCommand();
                     
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
+            //command = inFile.nextLine();
+           // command = command.trim().toUpperCase();
             
             switch (command) {
                 case "B":
@@ -58,14 +64,18 @@ public class OptionMenuView extends Menu /*implements EnterInfo -unnecessary- in
                     break;    */              
                
                 case "X": 
-                    break;
-                default: 
-                    new MemoryError().displayError("Invalid command. Please enter a valid command.");
+                    return StatusType.QUIT;
+              //  default: 
+              //      new MemoryError().displayError("Invalid command. Please enter a valid command.");
                     //continue;
             }
-        } while (!command.equals("X"));  
+            }
+            catch(MenuException ex){
+                       System.out.println(ErrorType.ERROR101.getMessage());
+        }
+        } while (gameStatus != StatusType.QUIT);  
         
-         return "";
+         return gameStatus;
     }
     
     /**

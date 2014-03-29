@@ -37,7 +37,7 @@ public class MainMenuControl {
     }
     public void displayHelpMenu()/*Case H*/ {     
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.getInput(null);
+        helpMenuView.getInput(this);
     }
                             
 }

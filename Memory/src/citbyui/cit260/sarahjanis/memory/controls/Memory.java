@@ -9,6 +9,7 @@ package citbyui.cit260.sarahjanis.memory.controls;
 import citbyui.cit260.sarahjanis.memory.AssignW10.Dogs;
 import citbyui.cit260.sarahjanis.memory.AssignW10.Horses;
 import citbyui.cit260.sarahjanis.memory.AssignW10.HouseCats;
+import citbyui.cit260.sarahjanis.memory.exceptions.MenuException;
 import citbyui.cit260.sarahjanis.memory.views.MainMenuView;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class Memory implements Serializable {
     
     private final static Scanner inFile = new Scanner(System.in);
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, MenuException {
        //Memory myGame = new Memory();
       //  myGame.displayHelp();
        
