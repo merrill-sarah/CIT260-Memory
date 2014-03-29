@@ -6,9 +6,6 @@
 
 package citbyui.cit260.sarahjanis.memory.views;
 
-import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
-import citbyui.cit260.sarahjanis.memory.enums.StatusType;
-import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import java.io.Serializable;
 import java.util.Scanner;
@@ -19,13 +16,12 @@ import java.util.Scanner;
  */
 public class GetPlayerListView implements Serializable{
     private String[] listOfPlayerNames; 
-    private StatusType status;
     
     public GetPlayerListView() {
         
     }
     
-    public String[] getInputNames(int numPlayers) throws MemoryException{ 
+    public String[] getInputNames(int numPlayers){ 
         listOfPlayerNames = new String[numPlayers];
         int nameIndex =0;
         int playerNum =1;
@@ -34,7 +30,7 @@ public class GetPlayerListView implements Serializable{
         MemoryError errorMsg = new MemoryError();
         Scanner inFile = new Scanner(System.in);
         
-        while  (nameIndex < numPlayers && status != StatusType.QUIT){//finished){
+        while  (nameIndex < numPlayers && !finished){
             System.out.println("Player #" +(nameIndex+1)+ " please enter your name "
                     + "(or enter \"Q\" to quit}: ");
             String playersName;
@@ -42,13 +38,10 @@ public class GetPlayerListView implements Serializable{
             playersName = playersName.trim();
             
             if (playersName.length() < 1){
-                throw new MemoryException(ErrorType.ERROR104.getMessage());
-                
-                /*
               errorMsg.displayError("A name must be at least one character long."
                       + "Try again."
                       + "\n\t or enter \"Q\" to quit.");
-              continue;*/
+              continue;
             }
             
             if ((playersName.equals("Computer"))||(playersName.equals("computer"))) {
@@ -66,7 +59,7 @@ public class GetPlayerListView implements Serializable{
             }
             
             if (playersName.toUpperCase().equals("Q")) { // quit?
-                status = StatusType.QUIT;// = true;
+                finished = true;
                 break;
             } 
             

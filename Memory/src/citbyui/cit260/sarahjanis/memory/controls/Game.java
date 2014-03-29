@@ -49,16 +49,7 @@ public class Game implements Serializable {
        
     }
     public void startGame() throws IOException, CardException, BoardException, MemoryException{       
-     boolean validName = false;
-     while (!validName){
-        try{  
-            playerList.getInputNames(numPlayers);
-              }
-      catch(MemoryException ex){
-          System.out.println(ErrorType.ERROR104.getMessage());
-          playerList.getInputNames(numPlayers);
-      validName=true;}
-     }
+        playerList.getInputNames(numPlayers);
         player1.setName(playerList.getListOfPlayerNames()[0]);
         player2.setName(playerList.getListOfPlayerNames()[1]);
         this.setStatus(StatusType.START);
