@@ -40,8 +40,8 @@ public class EndMenuView implements DisplayInfo {//doesn't implement Menu or imp
     public StatusType getInput(Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException {
         
         do {
-            try {
-            this.display(); // display the menu
+            try { 
+            this.display();
             
             String command = this.getCommand();
             
