@@ -9,6 +9,7 @@ package citbyui.cit260.sarahjanis.memory.controls;
 import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
+import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.views.HelpMenuView;
 import citbyui.cit260.sarahjanis.memory.views.OptionMenuView;
 import java.io.IOException;
@@ -22,11 +23,11 @@ public class MainMenuControl {
         
     } 
 
-    public void startGame() throws IOException, CardException, BoardException /*Case S*/{
+    public void startGame() throws IOException, CardException, BoardException, MemoryException /*Case S*/{
       try{  Game newGame = new Game();
         newGame.startGame();}
         catch (NumberFormatException ex){
-                throw new NumberFormatException(ErrorType.ERROR_106.getMessage());
+                throw new NumberFormatException(ErrorType.ERROR106.getMessage());
                 }
     }
     

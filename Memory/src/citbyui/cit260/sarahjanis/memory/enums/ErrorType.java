@@ -14,8 +14,8 @@ public enum ErrorType {
     ERROR101 ("You entered an invalid letter"
             + "\nPlease enter one of the letters in the menu."),
     
-    ERROR102 ("You entered an invalid letter"
-            + "\nplease enter \"s\" for small, \"m\" for medium, or \"l\" for large board size"),
+    ERROR102 ("Your entry is invalid."
+            + "\nPlease enter \"s\" for small, \"m\" for medium, or \"l\" for large board size"),
     
     ERROR103 ("Your entry is not valid."
            // + "\nPlease enter a card number or 0 for a hint."
@@ -25,7 +25,10 @@ public enum ErrorType {
             + "\nPlease enter your name again."),
     ERROR105("That name was already entered."
             + "\nPlease enter another name"),
-    ERROR_106("Your entry is invalid"
+    ERROR106("Your entry is invalid"
+            + "\nPlease try again."),
+    
+    ERROR107("You must start a new game first."
             + "\nPlease try again."),
    
     

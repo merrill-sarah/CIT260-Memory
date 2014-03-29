@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import citbyui.cit260.sarahjanis.memory.controls.Game;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
+import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 
 import java.util.logging.Logger;
@@ -66,6 +67,8 @@ public class MainMenuView extends Menu implements EnterInfo, DisplayInfo {
                  try {
                      this.mainMenuControl.startGame();
                  } catch (BoardException ex) {
+                     Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                 } catch (MemoryException ex) {
                      Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
                  }
                          break;

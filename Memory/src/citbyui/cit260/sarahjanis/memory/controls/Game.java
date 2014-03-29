@@ -7,8 +7,10 @@
 package citbyui.cit260.sarahjanis.memory.controls;
 
 import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
+import citbyui.cit260.sarahjanis.memory.enums.StatusType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
+import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import citbyui.cit260.sarahjanis.memory.models.Person;
 import citbyui.cit260.sarahjanis.memory.models.Player;
@@ -37,18 +39,20 @@ public class Game implements Serializable {
     private int numCards;
     private char cardSymbol;
     private int cardSelection;
-    private int dupCheck = -1;
-    private int numPlayers=2;
+    private int dupCheck;
+    private int numPlayers;
+    private StatusType status;
+    
     
     
     public Game(){  
        
     }
-    public void startGame() throws IOException, CardException, BoardException{       
+    public void startGame() throws IOException, CardException, BoardException, MemoryException{       
         playerList.getInputNames(numPlayers);
         player1.setName(playerList.getListOfPlayerNames()[0]);
         player2.setName(playerList.getListOfPlayerNames()[1]);
-        
+        this.setStatus(StatusType.START);
         welcomePlayers(player1.getName(), player2.getName());
         playGame(player1,player2);
         
@@ -56,7 +60,7 @@ public class Game implements Serializable {
     }
     
     
-        public void playGame(Player player1, Player player2) throws IOException, CardException, BoardException{
+        public void playGame(Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{
         
         Board board = new Board();
         board.getInput();
@@ -91,7 +95,7 @@ public class Game implements Serializable {
     }
     
       
-     private void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException, CardException, BoardException{
+     private void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{
         boolean match = false;
         int totalMatchesMade = 0;
         numCards = board.getTotalCards();
@@ -102,6 +106,11 @@ public class Game implements Serializable {
         BoardView boardView = new BoardView(board, getSymbols);
         player1.setMatchedGame(0);
         player2.setMatchedGame(0);
+        
+        if (this.getStatus() != StatusType.START &&
+                this.getStatus() != StatusType.PLAYING){
+            throw new MemoryException(ErrorType.ERROR107.getMessage());
+        }
         
       
         
@@ -428,6 +437,20 @@ public class Game implements Serializable {
          sarah.display();
          sarah.getBio();
     
+    }
+
+    /**
+     * @return the status
+     */
+    public StatusType getStatus() {
+        return status;
+    }
+
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(StatusType status) {
+        this.status = status;
     }
       
    
