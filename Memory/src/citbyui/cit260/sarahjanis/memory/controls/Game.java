@@ -27,6 +27,7 @@ import citbyui.cit260.sarahjanis.memory.views.GetPlayerListView;
 
 
 
+
 /**
  *
  * @author Janis
@@ -58,7 +59,7 @@ public class Game implements Serializable {
           playerList.getInputNames(numPlayers);
       }
         
-        playerList.getInputNames(numPlayers);
+       // playerList.getInputNames(numPlayers);
         player1.setName(playerList.getListOfPlayerNames()[0]);
         player2.setName(playerList.getListOfPlayerNames()[1]);
         this.setStatus(StatusType.START);
