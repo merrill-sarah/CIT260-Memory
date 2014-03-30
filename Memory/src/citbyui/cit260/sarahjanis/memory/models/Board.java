@@ -6,9 +6,9 @@
 
 package citbyui.cit260.sarahjanis.memory.models;
 
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
-//import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.util.Scanner;
 import java.io.Serializable;
 
@@ -16,7 +16,7 @@ import java.io.Serializable;
  *
  * @author Sarawr
  */
-public class Board implements Serializable, DisplayInfo{
+public class Board implements Serializable, DisplayInfo {
     private int rows;
     private int columns;
     private String size;
@@ -30,28 +30,15 @@ public class Board implements Serializable, DisplayInfo{
     
   
     public void getInput() {
-      //  boolean valid = false;
-     //   while (!valid){
-    //    try{
+        MemoryError errorMsg = new MemoryError();
+  
         Scanner input = new Scanner(System.in);
         System.out.println("\nEnter the letter associated with the size board "
                 + "you would like to play: "
                 + "\n\"s\" for small, \"m\" for medium, or \"l\" for large:");
         this.size= input.next();
         size = size.trim().toLowerCase();
-     //   if ("l".equals(size)){
-     //   int size1 = Integer.parseInt(size);}
-      //  valid = true;
-        
-   // }
-     //   catch(NumberFormatException e){
-      //      throw new BoardException("please enter \"s\" \"m\" or \"l\""); 
-      //  }
-        
-        
-    }
-
-    public void gridSize(){
+       
           switch (size){
             case "s":
                  rows = 3;
@@ -66,9 +53,8 @@ public class Board implements Serializable, DisplayInfo{
                columns = 8; 
                 break;
             default: 
-             System.out.println("Invalid entry. Please enter: "
-                     + "\"s\" \"m\" or \"l\" (without quotes):");
-             getInput();
+                errorMsg.displayError(ErrorType.ERROR102.getMessage());
+                getInput();
                     }
         
         totalCards = rows * columns;

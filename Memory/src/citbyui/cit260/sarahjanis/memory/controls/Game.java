@@ -24,7 +24,6 @@ import java.io.Serializable;
 import java.util.*;
 import citbyui.cit260.sarahjanis.memory.views.BoardView;
 import citbyui.cit260.sarahjanis.memory.views.GetPlayerListView;
-import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 
 
 
@@ -64,7 +63,6 @@ public class Game implements Serializable {
         
         Board board = new Board();
         board.getInput();
-        board.gridSize();
         board.display();
         SymbolArray symbols = new SymbolArray();
         symbols.getInput();
