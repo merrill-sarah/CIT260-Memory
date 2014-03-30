@@ -6,9 +6,11 @@
 
 package citbyui.cit260.sarahjanis.memory.views;
 
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Board;
+import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 
 
 
@@ -25,13 +27,12 @@ public class BoardView {
        int columns=board.getColumns();
        int gridNums = (rows * columns);
        
-       if (!(rows==3 && columns==4) & !(rows==4 && columns==6) & !(rows==6 && columns==8)){
-           System.out.println("\t***********************************************************************************"
-                   + "\n\tERROR: please enter \"s\" for small, \"m\" for medium, or \"l\" for large board size"
-                   +"\n\t**************************************************************************************");
+      if (!(rows==3 && columns==4) & !(rows==4 && columns==6) & !(rows==6 && columns==8)){
+            MemoryError errorMsg = new MemoryError();
+           errorMsg.displayError(ErrorType.ERROR102.getMessage());
                    board.getInput();
-                   board.gridSize();
                    } 
+            
        
        board.setDeck(new Card [gridNums]); 
        
