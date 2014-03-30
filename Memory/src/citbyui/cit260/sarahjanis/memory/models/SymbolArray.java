@@ -5,6 +5,8 @@
  */
 
 package citbyui.cit260.sarahjanis.memory.models;
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.io.Serializable;
@@ -30,14 +32,20 @@ public class SymbolArray implements Serializable{
        System.out.println("\nYou can change the difficulty by choosing whether there are 4 "
                 + "of each kind of card, or 2 of each");
         
-        
+        boolean validInt = false;
+         while (!validInt){
           Scanner matchChoice = new Scanner(System.in);
           
           System.out.println("Enter how many of each kind of card 2 or 4: ");
-          setNumMatchingSymbols(matchChoice.nextInt());
+          
+          if (!matchChoice.hasNextInt()){
+             throw new InputMismatchException(ErrorType.ERROR204.getMessage());}
+          else { setNumMatchingSymbols(matchChoice.nextInt());
+          validInt = true;}
+          }
    }
      
-   public void matchDifficulty(Board board){
+   public void matchDifficulty(Board board) throws BoardException{
         setTotalMatches(board.getTotalCards()/2);
           
          if (getNumMatchingSymbols() == 2){
@@ -47,8 +55,10 @@ public class SymbolArray implements Serializable{
              setNumSymbols(getTotalMatches() / 2);
          }
          else{
-             System.out.println("\tInvalid entry. Please enter '2' or '4'");
-             matchDifficulty(board);
+           throw new BoardException(ErrorType.ERROR204.getMessage());  
+             
+             /*System.out.println("\tInvalid entry. Please enter '2' or '4'");
+             matchDifficulty(board);*/
          }
            
      }  

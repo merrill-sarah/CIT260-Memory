@@ -38,17 +38,7 @@ public enum ErrorType {
     ERROR203 ("That card has already been matched. "
               + "\nPlease enter another card number or 0 for a hint."),
     
-    ERROR204 ("Enter a non-blank character for the player's marker."),
-    
-    ERROR205 ("Both players can not use the same character for a marker."),
-    
-    ERROR206 ("There is no active game. You must start a new game before "
-              + "you can take a turn"), 
-    
-    ERROR207 ("The number of rows must be between 3 - 9 and the "
-              + "number of columns must be between 3 - 9 "),
-    
-    ERROR209 ("GameCommands - takeTurn: invalidPlayerTYpe");
+    ERROR204 ("Enter a non-blank character for the player's marker.");
 
     
     String message;
