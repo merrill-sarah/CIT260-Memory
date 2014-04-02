@@ -6,12 +6,23 @@
 
 package citbyui.cit260.sarahjanis.memory.frames;
 
+import citbyui.cit260.sarahjanis.memory.controls.Game;
+import citbyui.cit260.sarahjanis.memory.controls.MainMenuControl;
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
+import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
+import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+import citbyui.cit260.sarahjanis.memory.views.OptionMenuView;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Janis
  */
 public class MainFrame extends javax.swing.JFrame {
-
+     MainMenuControl mainMenu = new MainMenuControl();
+    
     /**
      * Creates new form MainFrame
      */
@@ -43,7 +54,7 @@ public class MainFrame extends javax.swing.JFrame {
         setTitle("Memory");
 
         jpBody.setBackground(new java.awt.Color(204, 255, 255));
-        jpBody.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jpBody.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 102), 1, true));
 
         jpTitle.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -59,6 +70,11 @@ public class MainFrame extends javax.swing.JFrame {
         jbStart.setText("START");
         jbStart.setMaximumSize(new java.awt.Dimension(89, 25));
         jbStart.setPreferredSize(new java.awt.Dimension(89, 25));
+        jbStart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbStartActionPerformed(evt);
+            }
+        });
 
         jbHelp.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jbHelp.setForeground(new java.awt.Color(0, 102, 102));
@@ -75,6 +91,11 @@ public class MainFrame extends javax.swing.JFrame {
         jbOptions.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jbOptions.setForeground(new java.awt.Color(0, 102, 102));
         jbOptions.setText("OPTIONS");
+        jbOptions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbOptionsActionPerformed(evt);
+            }
+        });
 
         jbExit.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jbExit.setForeground(new java.awt.Color(0, 102, 102));
@@ -196,6 +217,27 @@ public class MainFrame extends javax.swing.JFrame {
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
         this.dispose();
     }//GEN-LAST:event_jbExitActionPerformed
+
+    private void jbOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOptionsActionPerformed
+        OptionMenuView optionMenuView = new OptionMenuView();
+        optionMenuView.getInput(null);
+    }//GEN-LAST:event_jbOptionsActionPerformed
+
+    private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
+        Game game = new Game();
+         try {
+             game.startGame();
+         } catch (IOException ex) {
+             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (CardException ex) {
+             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (BoardException ex) {
+             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (MemoryException ex) {
+             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+         }
+                
+    }//GEN-LAST:event_jbStartActionPerformed
 
     /**
      * @param args the command line arguments
