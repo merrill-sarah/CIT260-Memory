@@ -81,6 +81,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jtWelcome.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(153, 255, 255), new java.awt.Color(0, 102, 102)));
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
         jTextArea1.setLineWrap(true);
