@@ -10,7 +10,7 @@ import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
-import citbyui.cit260.sarahjanis.memory.views.HelpMenuView;
+//import citbyui.cit260.sarahjanis.memory.views.HelpMenuView;
 import citbyui.cit260.sarahjanis.memory.views.OptionMenuView;
 import java.io.IOException;
 
@@ -35,9 +35,9 @@ public class MainMenuControl {
         OptionMenuView optionMenuView = new OptionMenuView();
         optionMenuView.getInput(null);
     }
-    public void displayHelpMenu()/*Case H*/ {     
+   /* public void displayHelpMenu()/*Case H*/ /*{     
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.getInput(this);
-    }
+    }*/
                             
 }

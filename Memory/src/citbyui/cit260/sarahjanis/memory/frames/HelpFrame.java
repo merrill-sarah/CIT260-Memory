@@ -6,17 +6,40 @@
 
 package citbyui.cit260.sarahjanis.memory.frames;
 
+import citbyui.cit260.sarahjanis.memory.controls.HelpMenuControl;
+import citbyui.cit260.sarahjanis.memory.enums.HelpType;
+import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+
 /**
  *
  * @author Janis
  */
 public class HelpFrame extends javax.swing.JFrame {
+    HelpMenuControl helpCommands = new HelpMenuControl();
 
     /**
      * Creates new form HelpFrame
      */
     public HelpFrame() {
         initComponents();
+        setLocationRelativeTo(null);
+        
+    }
+    
+     public HelpMenuControl getHelpCommands() {
+        return helpCommands;
+    }
+
+
+    
+    private void displayHelpText(HelpType command) {
+        try {
+            String helpText = this.helpCommands.getHelpText(command);
+            this.jtHelpText.setText(helpText);
+        } catch (MemoryException ex) {
+            this.jtHelpText.setText(ex.getMessage());
+        }
+        
     }
 
     /**
@@ -32,11 +55,12 @@ public class HelpFrame extends javax.swing.JFrame {
         jpHelpTitle = new javax.swing.JPanel();
         jlHelpTitle = new javax.swing.JLabel();
         jpHelpMenuItems = new javax.swing.JPanel();
-        jbHelpOptions = new javax.swing.JButton();
+        jbHelpDifficultyLevels = new javax.swing.JButton();
         jbHelpGame = new javax.swing.JButton();
         jbHelpChoosingCards = new javax.swing.JButton();
+        jbReturnToMain = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtHelpText = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HELP MENU");
@@ -55,8 +79,8 @@ public class HelpFrame extends javax.swing.JFrame {
         jpHelpTitleLayout.setHorizontalGroup(
             jpHelpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpHelpTitleLayout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addComponent(jlHelpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(132, 132, 132)
+                .addComponent(jlHelpTitle)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpHelpTitleLayout.setVerticalGroup(
@@ -67,11 +91,33 @@ public class HelpFrame extends javax.swing.JFrame {
         jpHelpMenuItems.setBackground(new java.awt.Color(204, 255, 255));
         jpHelpMenuItems.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(153, 255, 255), new java.awt.Color(0, 102, 102)));
 
-        jbHelpOptions.setText("OPTIONS");
+        jbHelpDifficultyLevels.setText("DIFFICULTY");
+        jbHelpDifficultyLevels.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbHelpDifficultyLevelsActionPerformed(evt);
+            }
+        });
 
         jbHelpGame.setText("HOW TO PLAY");
+        jbHelpGame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbHelpGameActionPerformed(evt);
+            }
+        });
 
         jbHelpChoosingCards.setText("CHOOSING CARDS");
+        jbHelpChoosingCards.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbHelpChoosingCardsActionPerformed(evt);
+            }
+        });
+
+        jbReturnToMain.setText("RETURN TO MAIN");
+        jbReturnToMain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbReturnToMainActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpHelpMenuItemsLayout = new javax.swing.GroupLayout(jpHelpMenuItems);
         jpHelpMenuItems.setLayout(jpHelpMenuItemsLayout);
@@ -79,27 +125,36 @@ public class HelpFrame extends javax.swing.JFrame {
             jpHelpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpHelpMenuItemsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jbHelpOptions)
-                .addGap(18, 18, 18)
-                .addComponent(jbHelpGame)
-                .addGap(18, 18, 18)
-                .addComponent(jbHelpChoosingCards)
+                .addGroup(jpHelpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpHelpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jbHelpChoosingCards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbHelpDifficultyLevels, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbHelpGame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbReturnToMain))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpHelpMenuItemsLayout.setVerticalGroup(
             jpHelpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpHelpMenuItemsLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
-                .addGroup(jpHelpMenuItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbHelpOptions)
-                    .addComponent(jbHelpGame)
-                    .addComponent(jbHelpChoosingCards))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jbHelpGame)
+                .addGap(18, 18, 18)
+                .addComponent(jbHelpChoosingCards)
+                .addGap(18, 18, 18)
+                .addComponent(jbHelpDifficultyLevels)
+                .addGap(18, 18, 18)
+                .addComponent(jbReturnToMain)
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jtHelpText.setEditable(false);
+        jtHelpText.setColumns(20);
+        jtHelpText.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
+        jtHelpText.setLineWrap(true);
+        jtHelpText.setRows(5);
+        jtHelpText.setWrapStyleWord(true);
+        jtHelpText.setMargin(new java.awt.Insets(8, 8, 8, 8));
+        jScrollPane1.setViewportView(jtHelpText);
 
         javax.swing.GroupLayout jpHelpBodyLayout = new javax.swing.GroupLayout(jpHelpBody);
         jpHelpBody.setLayout(jpHelpBodyLayout);
@@ -107,20 +162,19 @@ public class HelpFrame extends javax.swing.JFrame {
             jpHelpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpHelpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpHelpBodyLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jpHelpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jpHelpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addComponent(jpHelpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jpHelpBodyLayout.setVerticalGroup(
             jpHelpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpHelpBodyLayout.createSequentialGroup()
                 .addComponent(jpHelpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpHelpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
+                .addGroup(jpHelpBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpHelpMenuItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
         );
 
@@ -144,50 +198,33 @@ public class HelpFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HelpFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HelpFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HelpFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HelpFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jbHelpGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpGameActionPerformed
+         displayHelpText(HelpType.INSTRUCTIONS);
+    }//GEN-LAST:event_jbHelpGameActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HelpFrame().setVisible(true);
-            }
-        });
-    }
+    private void jbHelpChoosingCardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpChoosingCardsActionPerformed
+         displayHelpText(HelpType.CHOOSE_CARDS);
+    }//GEN-LAST:event_jbHelpChoosingCardsActionPerformed
 
+    private void jbHelpDifficultyLevelsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpDifficultyLevelsActionPerformed
+         displayHelpText(HelpType.DIFFICULTY);
+    }//GEN-LAST:event_jbHelpDifficultyLevelsActionPerformed
+
+    private void jbReturnToMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbReturnToMainActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jbReturnToMainActionPerformed
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jbHelpChoosingCards;
+    private javax.swing.JButton jbHelpDifficultyLevels;
     private javax.swing.JButton jbHelpGame;
-    private javax.swing.JButton jbHelpOptions;
+    private javax.swing.JButton jbReturnToMain;
     private javax.swing.JLabel jlHelpTitle;
     private javax.swing.JPanel jpHelpBody;
     private javax.swing.JPanel jpHelpMenuItems;
     private javax.swing.JPanel jpHelpTitle;
+    private javax.swing.JTextArea jtHelpText;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,17 +6,35 @@
 
 package citbyui.cit260.sarahjanis.memory.controls;
 
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
+import citbyui.cit260.sarahjanis.memory.enums.HelpType;
+import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+
 /**
  *
  * @author Janis
  */
 public class HelpMenuControl {
   public HelpMenuControl() {
-        
     } 
-
+  
+   public String getHelpText(HelpType command) throws MemoryException {
+        String helpText = "";
+        
+        switch (command){
+            case INSTRUCTIONS:  
+            case DIFFICULTY:
+            case CHOOSE_CARDS:
+               helpText = command.getHelpText();
+                break;
+            default:
+                throw new MemoryException(ErrorType.ERROR106.getMessage());
+        }
+        return helpText;
+   }
+/*
     public void displayBoardHelp() /*Case B*/{
-        System.out.println();
+ /*       System.out.println();
         this.displayHelpBorder();             
         System.out.println( 
                 "\t*** Memory Game Board ***"
@@ -27,8 +45,8 @@ public class HelpMenuControl {
     
     
         
-    public void displayGameHelp()/*Case H*/ {
-        System.out.println();
+  //  public void displayGameHelp()/*Case H*/ //{
+  /*      System.out.println();
         displayHelpBorder();     
         System.out.println( 
                  "\t*** How To Play ***"
@@ -41,8 +59,8 @@ public class HelpMenuControl {
     }
             
                    
-    public void displayCardChoiceHelp()/*Case C*/  {
-        System.out.println();
+    public void displayCardChoiceHelp()/*Case C*/ // {
+  /*      System.out.println();
         displayHelpBorder();     
         System.out.println( 
                 "\t*** Choosing Cards ***"
@@ -53,20 +71,20 @@ public class HelpMenuControl {
                 ); 
         displayHelpBorder();
     }
-             
-    public void displayOptionsHelp() /*Case O*/ {
-        System.out.println();
+             */
+  //  public void displayOptionsHelp() /*Case O*/ {
+     /*   System.out.println();
         displayHelpBorder();     
         System.out.println( 
                "\t*** Options Menu ***"
                        + "\n\tThe Options Menu describes your choices:"
                        + "\n\t   Board Size"
                        + "\n\t   Difficulty Levels" ); 
-        displayHelpBorder();
+        displayHelpBorder();*/
     }
                  
-    public void displayPlayersHelp()/*Case P*/  {
-        System.out.println();
+  //  public void displayPlayersHelp()/*Case P*/  {
+     /*   System.out.println();
         displayHelpBorder();     
         System.out.println( 
                "\t*** Choosing Players ***"
@@ -81,6 +99,6 @@ public class HelpMenuControl {
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
-    
+    */
     
 }

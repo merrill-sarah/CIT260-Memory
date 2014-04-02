@@ -20,7 +20,7 @@ import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 /**
  *
  * @author Janis
- */
+ *//*
 public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
     
     public static final String BOARD = "BOARD";
@@ -47,7 +47,7 @@ public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
         
         
     } 
-    
+ /*   
  @Override
     public Object getInput(Object object){
          
@@ -65,7 +65,7 @@ public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
                //  command = inFile.nextLine();
                //  command = command.trim().toUpperCase();
                  
-        switch (command) {
+        switch (command) {/*
             case "B":
                 this.getHelpMenuControl(HelpMenuView.BOARD).displayBoardHelp();
                 break;
@@ -86,8 +86,8 @@ public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
               //  default: 
               //      new MemoryError().displayError("Invalid command. Please enter a valid command.");
                     //continue;
-            }
-            }
+            }*/
+      /*      }
             catch(MenuException ex){
                        System.out.println(ErrorType.ERROR101.getMessage());
         }
@@ -95,7 +95,7 @@ public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
         
          return gameStatus;
     }
-
+*//*
     public HelpMenuControl getHelpMenuControl(String helpType) {
         return helpMenuControl;
     }
@@ -103,8 +103,9 @@ public class HelpMenuView extends Menu implements EnterInfo, DisplayInfo {
     /**
      * @param helpMenuControl the helpMenuControl to set
      */
-    public void setHelpMenuControl(HelpMenuControl helpMenuControl) {
+ /*   public void setHelpMenuControl(HelpMenuControl helpMenuControl) {
         this.helpMenuControl = helpMenuControl;
-    }
+ //   }
     
 }
+*/

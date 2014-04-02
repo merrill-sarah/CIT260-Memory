@@ -75,7 +75,7 @@ public class MainMenuView extends Menu implements EnterInfo, DisplayInfo {
                      Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
                  } catch (MemoryException ex) {
                      Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                 }*/
+                 }*//*
                          break;
                      case "O":
                          this.mainMenuControl.displayOptionMenu();
