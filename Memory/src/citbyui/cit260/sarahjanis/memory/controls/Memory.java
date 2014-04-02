@@ -9,7 +9,9 @@ package citbyui.cit260.sarahjanis.memory.controls;
 import citbyui.cit260.sarahjanis.memory.AssignW10.Dogs;
 import citbyui.cit260.sarahjanis.memory.AssignW10.Horses;
 import citbyui.cit260.sarahjanis.memory.AssignW10.HouseCats;
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.MenuException;
+import citbyui.cit260.sarahjanis.memory.frames.MainFrame;
 import citbyui.cit260.sarahjanis.memory.views.MainMenuView;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import java.io.IOException;
@@ -23,7 +25,9 @@ import java.util.Scanner;
  *
  * @authors Sarah M and Janis F
  */
+
 public class Memory implements Serializable {
+     public static MainFrame mainFrame = null;
           
     private final static String instructions = " Welcome to a game of Memory!"
             + "\n\tYou may play against the computer or"
@@ -38,13 +42,40 @@ public class Memory implements Serializable {
     private final static Scanner inFile = new Scanner(System.in);
     
     public static void main(String[] args) throws IOException, MenuException {
+         Memory memory = null;
+        try {  
+            memory = new Memory();
+            
+              /* Create and display the form */
+            java.awt.EventQueue.invokeLater(new Runnable() {
+                @Override
+                public void run() {
+                    Memory.mainFrame = new MainFrame();
+                    Memory.mainFrame.setVisible(true);
+                }
+            });
+        } 
+
+        catch (Throwable ex) {     
+            ErrorType.ERROR100.getMessage();   
+            ex.getStackTrace();         
+        } 
+        finally {
+            if (Memory.mainFrame != null) {
+                Memory.mainFrame.dispose();
+            }
+        }
+        
+      
+    
+        
        //Memory myGame = new Memory();
       //  myGame.displayHelp();
        
         
       //  MainMenuView mainMenuView = new MainMenuView();
       //  mainMenuView.getInput(myGame);
-        
+      /*  
         try{
             Memory memory = new Memory();
             MainMenuView mainMenuView = new MainMenuView();
@@ -59,15 +90,15 @@ public class Memory implements Serializable {
             Memory.inFile.close();
            // System.out.println("Ya'll come back now, hear?!"); // testing 
         }
+    }*/
     }
-    
     public static Scanner getInputFile() {
         return Memory.inFile;
             }
     
     public void displayHelp(){
        System.out.println(Memory.instructions);        
-    }
+    }   
 }
 
 

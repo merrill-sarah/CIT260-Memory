@@ -11,6 +11,7 @@ package citbyui.cit260.sarahjanis.memory.enums;
  * @author Janis
  */
 public enum ErrorType {
+    ERROR100 ("Unexpected Error"),
     ERROR101 ("You entered an invalid letter"
             + "\nPlease enter one of the letters in the menu."),
     
