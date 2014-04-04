@@ -154,7 +154,8 @@ public class EnterPlayerNames extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfPlayer1NameActionPerformed
 
     private void jbContinueFromNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbContinueFromNamesActionPerformed
-        // TODO add your handling code here:
+        OptionFrame options = new OptionFrame();
+        options.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jbContinueFromNamesActionPerformed
 
     /**
