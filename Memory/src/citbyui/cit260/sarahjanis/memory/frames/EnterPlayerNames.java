@@ -30,12 +30,12 @@ public class EnterPlayerNames extends javax.swing.JFrame {
 
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jInternalFrame2 = new javax.swing.JInternalFrame();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jtfPlayer1Name = new javax.swing.JTextField();
+        jtfPlayer2Name = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jbContinueFromNames = new javax.swing.JButton();
 
         jInternalFrame1.setVisible(true);
 
@@ -60,9 +60,9 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jInternalFrame2.setFocusCycleRoot(false);
         jInternalFrame2.setVisible(true);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jtfPlayer1Name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jtfPlayer1NameActionPerformed(evt);
             }
         });
 
@@ -76,11 +76,16 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         jLabel3.setText("Player 2:");
 
-        jButton1.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 102));
-        jButton1.setText("CONTINUE");
-        jButton1.setMaximumSize(new java.awt.Dimension(89, 25));
-        jButton1.setMinimumSize(new java.awt.Dimension(59, 25));
+        jbContinueFromNames.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jbContinueFromNames.setForeground(new java.awt.Color(0, 102, 102));
+        jbContinueFromNames.setText("CONTINUE");
+        jbContinueFromNames.setMaximumSize(new java.awt.Dimension(89, 25));
+        jbContinueFromNames.setMinimumSize(new java.awt.Dimension(59, 25));
+        jbContinueFromNames.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbContinueFromNamesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
         jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
@@ -101,9 +106,9 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                                 .addComponent(jLabel2)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jtfPlayer1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbContinueFromNames, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfPlayer2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(0, 23, Short.MAX_VALUE))
         );
         jInternalFrame2Layout.setVerticalGroup(
@@ -114,14 +119,14 @@ public class EnterPlayerNames extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfPlayer1Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtfPlayer2Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addComponent(jbContinueFromNames, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -144,22 +149,26 @@ public class EnterPlayerNames extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jtfPlayer1NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfPlayer1NameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jtfPlayer1NameActionPerformed
+
+    private void jbContinueFromNamesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbContinueFromNamesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbContinueFromNamesActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton jbContinueFromNames;
+    private javax.swing.JTextField jtfPlayer1Name;
+    private javax.swing.JTextField jtfPlayer2Name;
     // End of variables declaration//GEN-END:variables
 }
