@@ -5,7 +5,7 @@
  */
 
 package citbyui.cit260.sarahjanis.memory.views;
-
+/*
 import citbyui.cit260.sarahjanis.memory.controls.MainMenuControl;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author Sarawr
- */
+ *//*
 public class MainMenuView extends Menu implements EnterInfo, DisplayInfo {
     
     public static final String NEW_GAME = "NEW_GAME";
@@ -69,7 +69,7 @@ public class MainMenuView extends Menu implements EnterInfo, DisplayInfo {
                  
                  switch (command) {
                      case "N":
-                /* try {*/
+                /* try {*//*
                      this.mainMenuControl.startGame();
                 /* } catch (BoardException ex) {
                      Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
@@ -99,21 +99,22 @@ public class MainMenuView extends Menu implements EnterInfo, DisplayInfo {
                  Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
              } catch (CardException ex) {
                  Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-             */}
+             *//*}
              }
-                 catch(MenuException ex){
+           /*      catch(MenuException ex){
                        System.out.println(ErrorType.ERROR101.getMessage());
-            } catch (IOException ex) { 
-                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-             } catch (CardException ex) {
-                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-             } catch (BoardException ex) {
-                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-             } catch (MemoryException ex) {
-                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-             } 
-        } while (gameStatus != StatusType.EXIT); 
-         
-         return StatusType.PLAYING;
-             }
-        }
+        //    } catch (IOException ex) { 
+         //        Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        //     } catch (CardException ex) {
+        //         Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        //     } catch (BoardException ex) {
+        //         Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        //     } catch (MemoryException ex) {
+        //         Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+       //      } 
+      //  } while (gameStatus != StatusType.EXIT); 
+       //  
+     //    return StatusType.PLAYING;
+     //        }
+     //   }
+*/
