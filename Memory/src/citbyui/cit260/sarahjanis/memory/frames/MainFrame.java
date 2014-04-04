@@ -209,7 +209,10 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbExitActionPerformed
 
     private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
-        Game game = new Game();
+       EnterPlayerNames playerNames = new EnterPlayerNames();
+       playerNames.setVisible(true);
+        
+        /* Game game = new Game();
          try {
              game.startGame();
          } catch (IOException ex) {
@@ -221,7 +224,7 @@ public class MainFrame extends javax.swing.JFrame {
          } catch (MemoryException ex) {
              Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
          }
-                
+                */
     }//GEN-LAST:event_jbStartActionPerformed
 
     /**
