@@ -12,7 +12,6 @@ import citbyui.cit260.sarahjanis.memory.frames.BoardLargeFrame;
 import citbyui.cit260.sarahjanis.memory.frames.BoardMediumFrame;
 import citbyui.cit260.sarahjanis.memory.frames.BoardSmallFrame;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
-import java.util.Scanner;
 import java.io.Serializable;
 
 /**
