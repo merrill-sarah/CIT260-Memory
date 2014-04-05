@@ -28,6 +28,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     public BoardSmallFrame(Player player1, Player player2) {
         initComponents();
         setLocationRelativeTo(null);
+        jlP1Name.setText(player1.getName());
+        jlP2Name.setText(player2.getName());
         createCards();
         
     }
@@ -43,6 +45,16 @@ public class BoardSmallFrame extends javax.swing.JFrame {
 
         jpTitle = new javax.swing.JPanel();
         jlTitle = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jlP1Name = new javax.swing.JLabel();
+        jlP2Name = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jlP1Matches = new javax.swing.JLabel();
+        jlP2Matches = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jlP1Wins = new javax.swing.JLabel();
+        jlP2Wins = new javax.swing.JLabel();
         jpSGameArea = new javax.swing.JPanel();
         jbSButton1 = new javax.swing.JButton();
         jbSButton2 = new javax.swing.JButton();
@@ -69,21 +81,92 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         jlTitle.setForeground(new java.awt.Color(0, 153, 153));
         jlTitle.setText("MEMORY");
 
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel1.setText("Player");
+
+        jlP1Name.setText("Player 1:");
+
+        jlP2Name.setText("Player 2:");
+
+        jLabel4.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel4.setText("Matches");
+
+        jlP1Matches.setText("0");
+
+        jlP2Matches.setText("0");
+
+        jLabel7.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel7.setText("Wins");
+
+        jlP1Wins.setText("0");
+
+        jlP2Wins.setText("0");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jlP1Name)
+                    .addComponent(jlP2Name))
+                .addGap(68, 68, 68)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jlP1Matches)
+                    .addComponent(jlP2Matches))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlP2Wins)
+                    .addComponent(jlP1Wins)
+                    .addComponent(jLabel7))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlP1Name)
+                    .addComponent(jlP1Matches)
+                    .addComponent(jlP1Wins))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlP2Name)
+                    .addComponent(jlP2Matches)
+                    .addComponent(jlP2Wins))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
         jpTitle.setLayout(jpTitleLayout);
         jpTitleLayout.setHorizontalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTitleLayout.createSequentialGroup()
-                .addGap(267, 267, 267)
+                .addContainerGap(253, Short.MAX_VALUE)
                 .addComponent(jlTitle)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8))
         );
         jpTitleLayout.setVerticalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpTitleLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jlTitle)
-                .addGap(28, 28, 28))
+            .addGroup(jpTitleLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlTitle)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jpSGameArea.setLayout(new java.awt.GridLayout(3, 4, 10, 10));
@@ -158,14 +241,14 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jpSGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(jpSGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpSGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))
+                .addComponent(jpSGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE))
         );
 
         pack();
@@ -188,6 +271,10 @@ public void createCards(){/*
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbSButton1;
     private javax.swing.JButton jbSButton10;
     private javax.swing.JButton jbSButton11;
@@ -200,6 +287,12 @@ public void createCards(){/*
     private javax.swing.JButton jbSButton7;
     private javax.swing.JButton jbSButton8;
     private javax.swing.JButton jbSButton9;
+    private javax.swing.JLabel jlP1Matches;
+    private javax.swing.JLabel jlP1Name;
+    private javax.swing.JLabel jlP1Wins;
+    private javax.swing.JLabel jlP2Matches;
+    private javax.swing.JLabel jlP2Name;
+    private javax.swing.JLabel jlP2Wins;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpSGameArea;
     private javax.swing.JPanel jpTitle;
