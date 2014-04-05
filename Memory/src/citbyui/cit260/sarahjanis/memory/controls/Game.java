@@ -74,13 +74,13 @@ public class Game implements Serializable {
         Board board = new Board();
         board.display();
         SymbolArray symbols = new SymbolArray();
-        symbols.getInput();
+        //symbols.getInput();
         symbols.matchDifficulty(board);
         
 
         
         char getSymbols [] = new char [board.getTotalCards()]; //create foundation array
-        symbols.createArray(board, getSymbols); //'sends' getSymbols changed by Reference
+        //symbols.createArray(board, getSymbols); //'sends' getSymbols changed by Reference
         
         
         

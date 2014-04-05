@@ -6,8 +6,12 @@
 
 package citbyui.cit260.sarahjanis.memory.frames;
 
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Player;
+import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,6 +19,7 @@ import citbyui.cit260.sarahjanis.memory.models.Player;
  */
 public class OptionFrame extends javax.swing.JFrame {
     Board board = new Board();
+    SymbolArray symbols = new SymbolArray();
     Player player1 = new Player();
     Player player2 = new Player();
     /**
@@ -39,8 +44,8 @@ public class OptionFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jbTwoCards = new javax.swing.JButton();
+        jbFourCards = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jbSmall = new javax.swing.JButton();
         jbMedium = new javax.swing.JButton();
@@ -94,9 +99,20 @@ public class OptionFrame extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setText("How many of each card?");
 
-        jButton2.setText("jButton2");
+        jbTwoCards.setText("2");
+        jbTwoCards.setActionCommand("2");
+        jbTwoCards.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbTwoCardsActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("jButton3");
+        jbFourCards.setText("4");
+        jbFourCards.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbFourCardsActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 102));
@@ -147,14 +163,14 @@ public class OptionFrame extends javax.swing.JFrame {
                                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jbSmall)
                                     .addComponent(jLabel3)
-                                    .addComponent(jButton2))
+                                    .addComponent(jbTwoCards))
                                 .addGap(18, 18, 18)
                                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jpOptionsLayout.createSequentialGroup()
                                         .addComponent(jbMedium)
                                         .addGap(18, 18, 18)
                                         .addComponent(jbLarge))
-                                    .addComponent(jButton3)
+                                    .addComponent(jbFourCards)
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel4)
                             .addGroup(jpOptionsLayout.createSequentialGroup()
@@ -189,8 +205,8 @@ public class OptionFrame extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(jbTwoCards)
+                    .addComponent(jbFourCards))
                 .addGap(30, 30, 30)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -222,6 +238,11 @@ public class OptionFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         player1.setName(jtfP1Name.getText());
         player2.setName(jtfP2Name.getText());
+        try {
+            symbols.createArray(board);
+        } catch (BoardException ex) {
+            Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         board.setUp(player1, player2);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -238,6 +259,14 @@ public class OptionFrame extends javax.swing.JFrame {
         board.setSize("l");
     }//GEN-LAST:event_jbLargeActionPerformed
 
+    private void jbTwoCardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTwoCardsActionPerformed
+        symbols.setNumMatchingSymbols(2);
+    }//GEN-LAST:event_jbTwoCardsActionPerformed
+
+    private void jbFourCardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFourCardsActionPerformed
+        symbols.setNumMatchingSymbols(4);
+    }//GEN-LAST:event_jbFourCardsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -245,8 +274,6 @@ public class OptionFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -254,9 +281,11 @@ public class OptionFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbFourCards;
     private javax.swing.JButton jbLarge;
     private javax.swing.JButton jbMedium;
     private javax.swing.JButton jbSmall;
+    private javax.swing.JButton jbTwoCards;
     private javax.swing.JPanel jpOptions;
     private javax.swing.JTextField jtfP1Name;
     private javax.swing.JTextField jtfP2Name;

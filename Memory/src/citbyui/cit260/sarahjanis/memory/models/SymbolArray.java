@@ -26,27 +26,16 @@ public class SymbolArray implements Serializable{
      public SymbolArray(){
        
    }
-    
-   public void getInput(){
-       
-       System.out.println("\nYou can change the difficulty by choosing whether there are 4 "
-                + "of each kind of card, or 2 of each");
-        
-        boolean validInt = false;
-         while (!validInt){
-          Scanner matchChoice = new Scanner(System.in);
-          
-          System.out.println("Enter how many of each kind of card 2 or 4: ");
-          
-          if (!matchChoice.hasNextInt()){
-             throw new InputMismatchException(ErrorType.ERROR204.getMessage());}
-          else { setNumMatchingSymbols(matchChoice.nextInt());
-          validInt = true;}
-          }
-   }
      
    public void matchDifficulty(Board board) throws BoardException{
-        setTotalMatches(board.getTotalCards()/2);
+          
+           
+     }  
+   
+   public char[] createArray(Board board) throws BoardException{
+      // int j = 0;
+       
+       setTotalMatches(board.getTotalCards()/2);
           
          if (getNumMatchingSymbols() == 2){
              setNumSymbols(getTotalMatches());
@@ -55,17 +44,9 @@ public class SymbolArray implements Serializable{
              setNumSymbols(getTotalMatches() / 2);
          }
          else{
-           throw new BoardException(ErrorType.ERROR204.getMessage());  
-             
-             /*System.out.println("\tInvalid entry. Please enter '2' or '4'");
-             matchDifficulty(board);*/
+           throw new BoardException(ErrorType.ERROR204.getMessage());
          }
-           
-     }  
-   
-   public char[] createArray(Board board, char getSymbols[]){
-      // int j = 0;
-       
+       char getSymbols [] = new char [board.getTotalCards()];
        char setSymbols[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X'};
        
              
