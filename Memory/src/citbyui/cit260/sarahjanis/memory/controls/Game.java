@@ -11,6 +11,9 @@ import citbyui.cit260.sarahjanis.memory.enums.StatusType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+import citbyui.cit260.sarahjanis.memory.frames.BoardLargeFrame;
+import citbyui.cit260.sarahjanis.memory.frames.BoardMediumFrame;
+import citbyui.cit260.sarahjanis.memory.frames.BoardSmallFrame;
 import citbyui.cit260.sarahjanis.memory.frames.OptionFrame;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import citbyui.cit260.sarahjanis.memory.models.Player;
@@ -18,6 +21,7 @@ import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.BioS;
 import citbyui.cit260.sarahjanis.memory.models.BioJ;
+import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import citbyui.cit260.sarahjanis.memory.views.EndMenuView;
 import java.io.IOException;
 import java.io.Serializable;
@@ -61,7 +65,25 @@ public class Game implements Serializable {
         options.setVisible(true);
       }
      }*/
-    board.setUp(player1, player2);
+    MemoryError errorMsg = new MemoryError();
+       
+          switch (board.getSize()){
+            case "s":
+                 BoardSmallFrame boardSm = new BoardSmallFrame(player1, player2);
+                 boardSm.setVisible(true);
+                 break;
+            case "m":
+                BoardMediumFrame boardMd = new BoardMediumFrame(player1, player2);
+                boardMd.setVisible(true);
+                break;
+            case "l":
+                BoardLargeFrame boardLg = new BoardLargeFrame(player1, player2);
+                boardLg.setVisible(true); 
+                break;
+            default: 
+                errorMsg.displayError(ErrorType.ERROR102.getMessage());
+            
+                    }
         
      
     }
