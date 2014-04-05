@@ -7,10 +7,12 @@
 package citbyui.cit260.sarahjanis.memory.frames;
 
 import citbyui.cit260.sarahjanis.memory.controls.Game;
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
+import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import java.io.IOException;
@@ -263,6 +265,13 @@ public class OptionFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         player1.setName(jtfP1Name.getText());
         player2.setName(jtfP2Name.getText());
+        
+        boolean check = inputCheck();
+        if (check == false){
+            OptionFrame options = new OptionFrame();
+             options.setVisible(true);
+        }
+        else        
         try {
             game.startGame(board, player1, player2, symbols);
         } catch (IOException ex) {
@@ -280,7 +289,6 @@ public class OptionFrame extends javax.swing.JFrame {
     private void jbSmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSmallActionPerformed
         board.setSize("s");
         jbMedium.setVisible(false);
-        
         jbLarge.setVisible(false);
     }//GEN-LAST:event_jbSmallActionPerformed
 
@@ -314,7 +322,46 @@ public class OptionFrame extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
+    
+private boolean inputCheck() {
+    
+    boolean namecheck = nameCheck(player1.getName());
+     if(namecheck == false){
+             return false;
+                }
+     else
+     return true;
+}
+    
+private boolean nameCheck(String name){ 
+     
+        MemoryError errorMsg = new MemoryError();
+        
+       //finished){
+            
+            name = name.trim();
+            
+            if (name.length() < 1){
+              errorMsg.displayError("This is a reserved name. You can not use it."
+                        + "\"Try again.");
+              return false;
+            }
+            
+            if ((name.equals("Computer"))||(name.equals("computer"))) {
+                errorMsg.displayError("This is a reserved name. You can not use it."
+                        + "\"Try again.");
+               return false; 
+            }
+            
+           /* if (alreadyUsed(listOfPlayerNames, name)){
+                errorMsg.displayError("This name was already entered"
+                        + "\"Try again.");
+                
+            }*/
+            else
+                return true;
+                   
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

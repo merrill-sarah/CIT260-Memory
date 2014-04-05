@@ -49,6 +49,7 @@ public class Game implements Serializable {
     private int dupCheck;
     private int numPlayers=2;
     private StatusType status;
+ 
     
     
     
@@ -56,18 +57,8 @@ public class Game implements Serializable {
        
     }
     public void startGame(Board board, Player player1, Player player2, SymbolArray symbols ) throws IOException, CardException, BoardException, MemoryException{ 
-         /*boolean validName = false;
-    while (!validName){
-        try{  
-            playerList.getInputNames(numPlayers);
-             validName=true; }
-      catch(MemoryException ex){
-          System.out.println(ErrorType.ERROR104.getMessage());
-          //playerList.getInputNames(numPlayers);
-          OptionFrame options = new OptionFrame();
-        options.setVisible(true);
-      }
-     }*/
+                 
+      
     board.setUp();
     char getSymbols [] = new char [0];
     symbols.createArray(board, getSymbols);    

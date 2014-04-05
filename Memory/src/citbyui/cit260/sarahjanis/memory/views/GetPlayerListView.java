@@ -20,73 +20,45 @@ import java.util.Scanner;
 public class GetPlayerListView implements Serializable{
     private String[] listOfPlayerNames; 
     private StatusType status;
+    public boolean validName;
+
+    
     
     public GetPlayerListView() {
         
     }
     
-    public String[] getInputNames(int numPlayers) throws MemoryException{ 
-        listOfPlayerNames = new String[numPlayers];
-        int nameIndex =0;
-        int playerNum =1;
-       numPlayers =2; 
-        boolean finished = false;
+    public boolean nameCheck(String name) throws MemoryException{ 
+     
         MemoryError errorMsg = new MemoryError();
-        Scanner inFile = new Scanner(System.in);
         
-       while  (nameIndex < numPlayers && status != StatusType.QUIT){//finished){
-            System.out.println("Player #" +(nameIndex+1)+ " please enter your name "
-                    + "(or enter \"Q\" to quit}: ");
-            String playersName;
-            playersName = inFile.nextLine();
-            playersName = playersName.trim();
+       //finished){
             
-            if (playersName.length() < 1){
-                throw new MemoryException(ErrorType.ERROR104.getMessage());
-                
-                /*
+            name = name.trim();
+            
+            if (name.length() < 1){
               errorMsg.displayError("A name must be at least one character long."
-                      + "Try again."
-                      + "\n\t or enter \"Q\" to quit.");
-              continue;*/
+                      + "Try again.");
+              return false;
             }
             
-            if ((playersName.equals("Computer"))||(playersName.equals("computer"))) {
+            if ((name.equals("Computer"))||(name.equals("computer"))) {
                 errorMsg.displayError("This is a reserved name. You can not use it."
-                        + "\"Try again."
-                        + "\n\t or enter \"Q\" to quit.");
-                continue;
+                        + "\"Try again.");
+               return false; 
             }
             
-            if (alreadyUsed(listOfPlayerNames, playersName)){
+           /* if (alreadyUsed(listOfPlayerNames, name)){
                 errorMsg.displayError("This name was already entered"
-                        + "\"Try again."
-                        + "\n\t or enter \"Q\" to quit.");
-                continue;
-            }
-            
-            if (playersName.toUpperCase().equals("Q")) { // quit?
-                status = StatusType.QUIT;// = true;
-                break;
-            } 
-            
-            //add names to player list of names
-            this.listOfPlayerNames[nameIndex]= playersName ;
-           nameIndex++;
-           
+                        + "\"Try again.");
+                
+            }*/
+            else
+                return true;
+                   
         }
-            
-            String[] newPlayerList = new String[nameIndex];
-            for (int i = 0; i< nameIndex;i++)
-                newPlayerList[i]=this.listOfPlayerNames[i];
-            
-            
-            sortFunction(newPlayerList);
-            this.displayNameList(newPlayerList);
-            
-            
-     return newPlayerList;      
-    }
+                 
+ 
     
     public void displayNameList(String[] names){
         System.out.println();//"\tHere is an alphabetized list of players in the game");
@@ -127,6 +99,8 @@ public class GetPlayerListView implements Serializable{
       } 
 
  //getter and setter function
+    
+    
     public String[] getListOfPlayerNames() {
         return listOfPlayerNames;
     }
