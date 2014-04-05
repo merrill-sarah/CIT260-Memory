@@ -342,8 +342,7 @@ private boolean nameCheck(String name){
             name = name.trim();
             
             if (name.length() < 1){
-              errorMsg.displayError("This is a reserved name. You can not use it."
-                        + "\"Try again.");
+              errorMsg.displayError(ErrorType.ERROR104.getMessage());
               return false;
             }
             
