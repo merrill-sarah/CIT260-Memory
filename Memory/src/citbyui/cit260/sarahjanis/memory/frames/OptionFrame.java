@@ -327,8 +327,8 @@ private boolean inputCheck() {
     
     boolean namecheck = nameCheck(player1.getName());
     boolean namecheck2 = nameCheck(player2.getName());
-    boolean boardSizeCheck = boardSizeCheck();
-    boolean matchSymCheck = matchSymCheck();
+    //boolean boardSizeCheck = boardSizeCheck();
+    //boolean matchSymCheck = matchSymCheck();
      if(namecheck == false){
              return false;
                 }
@@ -339,10 +339,10 @@ private boolean inputCheck() {
      /*else if (boardSizeCheck == false){
          return false;
      }
-     */
-     else if (matchSymCheck == false){
+     /*else if (matchSymCheck == false){
          return false;
      }
+     */
      else
      return true;
 }
@@ -384,7 +384,7 @@ private boolean boardSizeCheck(){
 private boolean matchSymCheck(){
     MemoryError errorMsg = new MemoryError();
     if (symbols.getNumMatchingSymbols() != 2 || symbols.getNumMatchingSymbols() != 4) {
-        errorMsg.displayError(ErrorType.ERROR102.getMessage());
+        errorMsg.displayError("oops");
         return false;
     }
     else
