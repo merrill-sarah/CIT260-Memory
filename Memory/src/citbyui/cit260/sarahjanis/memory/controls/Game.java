@@ -40,6 +40,9 @@ public class Game implements Serializable {
     private GetPlayerListView playerList= new GetPlayerListView();
     private Player player1 = new Player();
     private Player player2 = new Player();
+    BoardSmallFrame boardSm;
+    BoardMediumFrame boardMd;
+    BoardLargeFrame boardLg;
     private int numCards;
     private char cardSymbol;
     private int cardSelection;
@@ -69,16 +72,19 @@ public class Game implements Serializable {
        
           switch (board.getSize()){
             case "s":
-                 BoardSmallFrame boardSm = new BoardSmallFrame(player1, player2);
+                 boardSm = new BoardSmallFrame(player1, player2);
                  boardSm.setVisible(true);
+                 playGame(player1, player2, board);
                  break;
             case "m":
-                BoardMediumFrame boardMd = new BoardMediumFrame(player1, player2);
+                boardMd = new BoardMediumFrame(player1, player2);
                 boardMd.setVisible(true);
+                playGame(player1, player2, board);
                 break;
             case "l":
-                BoardLargeFrame boardLg = new BoardLargeFrame(player1, player2);
-                boardLg.setVisible(true); 
+                boardLg = new BoardLargeFrame(player1, player2);
+                boardLg.setVisible(true);
+                playGame(player1, player2, board);
                 break;
             default: 
                 errorMsg.displayError(ErrorType.ERROR102.getMessage());
@@ -89,10 +95,8 @@ public class Game implements Serializable {
     }
     
     
-        public void playGame(Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{
+        public void playGame(Player player1, Player player2, Board board) throws IOException, CardException, BoardException, MemoryException{
         
-        Board board = new Board();
-        board.display();
         SymbolArray symbols = new SymbolArray();
         //symbols.getInput();
         symbols.matchDifficulty(board);
