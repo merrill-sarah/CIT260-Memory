@@ -30,7 +30,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         jlP1Name.setText(player1.getName());
         jlP2Name.setText(player2.getName());
-        createCards();
+        jlFirstTurn.setText(player1.getName() + ", pick your first card.");
+        firstTurn(player1, player2);
         
     }
 
@@ -55,6 +56,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jlP1Wins = new javax.swing.JLabel();
         jlP2Wins = new javax.swing.JLabel();
+        jpGamePlayInstructions = new javax.swing.JPanel();
+        jlFirstTurn = new javax.swing.JLabel();
         jpSGameArea = new javax.swing.JPanel();
         jbSButton1 = new javax.swing.JButton();
         jbSButton2 = new javax.swing.JButton();
@@ -72,7 +75,6 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Memory Game Small Grid");
         setBackground(new java.awt.Color(204, 255, 255));
-        setPreferredSize(new java.awt.Dimension(730, 600));
 
         jpTitle.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -115,7 +117,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jlP1Name)
                     .addComponent(jlP2Name))
-                .addGap(68, 68, 68)
+                .addGap(66, 66, 66)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jlP1Matches)
@@ -148,14 +150,36 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        javax.swing.GroupLayout jpGamePlayInstructionsLayout = new javax.swing.GroupLayout(jpGamePlayInstructions);
+        jpGamePlayInstructions.setLayout(jpGamePlayInstructionsLayout);
+        jpGamePlayInstructionsLayout.setHorizontalGroup(
+            jpGamePlayInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpGamePlayInstructionsLayout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(jlFirstTurn)
+                .addContainerGap(223, Short.MAX_VALUE))
+        );
+        jpGamePlayInstructionsLayout.setVerticalGroup(
+            jpGamePlayInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpGamePlayInstructionsLayout.createSequentialGroup()
+                .addContainerGap(13, Short.MAX_VALUE)
+                .addComponent(jlFirstTurn)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
         jpTitle.setLayout(jpTitleLayout);
         jpTitleLayout.setHorizontalGroup(
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTitleLayout.createSequentialGroup()
-                .addContainerGap(253, Short.MAX_VALUE)
-                .addComponent(jlTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpTitleLayout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jlTitle))
+                    .addGroup(jpTitleLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8))
         );
@@ -164,7 +188,10 @@ public class BoardSmallFrame extends javax.swing.JFrame {
             .addGroup(jpTitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlTitle)
+                    .addGroup(jpTitleLayout.createSequentialGroup()
+                        .addComponent(jlTitle)
+                        .addGap(21, 21, 21)
+                        .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -257,8 +284,16 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jbSButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbSButton5ActionPerformed
-public void createCards(){/*
-    jpTitle.setVisible(true);
+
+    
+    public void firstTurn(Player player1, Player player2){
+        
+  //  jlFirstTurn.setText(player1.getName() + "pick your first card");
+  //  }
+    
+    
+   // public void createCards(){/*
+  /*  jpTitle.setVisible(true);
     JButton buttonT = new JButton("4 title panel");
     JButton buttonGB = new JButton("4 game panel");
     jpTitle.add(buttonT);
@@ -287,6 +322,7 @@ public void createCards(){/*
     private javax.swing.JButton jbSButton7;
     private javax.swing.JButton jbSButton8;
     private javax.swing.JButton jbSButton9;
+    private javax.swing.JLabel jlFirstTurn;
     private javax.swing.JLabel jlP1Matches;
     private javax.swing.JLabel jlP1Name;
     private javax.swing.JLabel jlP1Wins;
@@ -294,6 +330,7 @@ public void createCards(){/*
     private javax.swing.JLabel jlP2Name;
     private javax.swing.JLabel jlP2Wins;
     private javax.swing.JLabel jlTitle;
+    javax.swing.JPanel jpGamePlayInstructions;
     private javax.swing.JPanel jpSGameArea;
     private javax.swing.JPanel jpTitle;
     // End of variables declaration//GEN-END:variables
