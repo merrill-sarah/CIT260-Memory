@@ -32,7 +32,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         jlP1Name.setText(player1.getName());
         jlP2Name.setText(player2.getName());
-        jlFirstTurn.setText(player1.getName() + ", pick your first card.");
+       // jlFirstTurn.setText(player1.getName() + ", pick your first card.");
         firstTurn(player1, player2);
         
     }
@@ -152,6 +152,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        jpGamePlayInstructions.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout jpGamePlayInstructionsLayout = new javax.swing.GroupLayout(jpGamePlayInstructions);
         jpGamePlayInstructions.setLayout(jpGamePlayInstructionsLayout);
         jpGamePlayInstructionsLayout.setHorizontalGroup(
@@ -181,7 +183,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     .addGroup(jpTitleLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8))
         );
@@ -332,7 +334,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpSGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE))
+                .addComponent(jpSGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE))
         );
 
         pack();
@@ -389,8 +391,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     
     public void firstTurn(Player player1, Player player2){
         
-  //  jlFirstTurn.setText(player1.getName() + "pick your first card");
-  //  }
+   jlFirstTurn.setText(player1.getName() + ", pick your first card");
+  // }
     
     
    // public void createCards(){/*
