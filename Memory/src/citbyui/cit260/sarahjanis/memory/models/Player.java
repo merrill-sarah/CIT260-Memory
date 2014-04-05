@@ -12,17 +12,13 @@ import java.io.Serializable;
  *
  * @author - Sarawr
  */
-public  abstract class Player implements Serializable {
+public class Player implements Serializable {
     private String name;
     private int matchedGame = 0; 
     private int totalWins = 0; 
     
     
-    public Player(String n, int matches, int wins) {
-        name = n;
-        matchedGame = matches;
-        totalWins = wins;
-        
+    public Player() {      
         
     }
     

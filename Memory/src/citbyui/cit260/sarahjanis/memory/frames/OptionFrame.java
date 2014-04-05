@@ -7,6 +7,7 @@
 package citbyui.cit260.sarahjanis.memory.frames;
 
 import citbyui.cit260.sarahjanis.memory.models.Board;
+import citbyui.cit260.sarahjanis.memory.models.Player;
 
 /**
  *
@@ -14,6 +15,8 @@ import citbyui.cit260.sarahjanis.memory.models.Board;
  */
 public class OptionFrame extends javax.swing.JFrame {
     Board board = new Board();
+    Player player1 = new Player();
+    Player player2 = new Player();
     /**
      * Creates new form OptionFrame
      */
@@ -217,7 +220,9 @@ public class OptionFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        board.gridSize();
+        player1.setName(jtfP1Name.getText());
+        player2.setName(jtfP2Name.getText());
+        board.setUp(player1, player2);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

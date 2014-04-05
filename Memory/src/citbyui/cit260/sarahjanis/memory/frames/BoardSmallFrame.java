@@ -11,6 +11,7 @@ package citbyui.cit260.sarahjanis.memory.frames;
  * @author Janis
  */
 
+import citbyui.cit260.sarahjanis.memory.models.Player;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +25,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     /**
      * Creates new form GameBoardFrame
      */
-    public BoardSmallFrame() {
+    public BoardSmallFrame(Player player1, Player player2) {
         initComponents();
         setLocationRelativeTo(null);
         createCards();

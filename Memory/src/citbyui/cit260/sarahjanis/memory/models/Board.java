@@ -31,20 +31,20 @@ public class Board implements Serializable, DisplayInfo {
     }        
     
   
-    public void gridSize() {
+    public void setUp(Player player1, Player player2) {
         MemoryError errorMsg = new MemoryError();
        
           switch (size){
             case "s":
-                 BoardSmallFrame boardSm = new BoardSmallFrame();
+                 BoardSmallFrame boardSm = new BoardSmallFrame(player1, player2);
                  boardSm.setVisible(true);
                  break;
             case "m":
-                BoardMediumFrame boardMd = new BoardMediumFrame();
+                BoardMediumFrame boardMd = new BoardMediumFrame(player1, player2);
                 boardMd.setVisible(true);
                 break;
             case "l":
-                BoardLargeFrame boardLg = new BoardLargeFrame();
+                BoardLargeFrame boardLg = new BoardLargeFrame(player1, player2);
                 boardLg.setVisible(true); 
                 break;
             default: 

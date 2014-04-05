@@ -12,7 +12,6 @@ import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
-import citbyui.cit260.sarahjanis.memory.models.Person;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Board;
@@ -34,8 +33,8 @@ import citbyui.cit260.sarahjanis.memory.views.GetPlayerListView;
  */
 public class Game implements Serializable {
     private GetPlayerListView playerList= new GetPlayerListView();
-    private Player player1 = new Person(null, 0, 0);
-    private Player player2 = new Person(null, 0, 0);
+    private Player player1 = new Player();
+    private Player player2 = new Player();
     private int numCards;
     private char cardSymbol;
     private int cardSelection;
