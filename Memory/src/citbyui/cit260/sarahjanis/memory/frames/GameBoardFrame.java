@@ -17,6 +17,7 @@ public class GameBoardFrame extends javax.swing.JFrame {
      */
     public GameBoardFrame() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -28,18 +29,61 @@ public class GameBoardFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpTitle = new javax.swing.JPanel();
+        jlTitle = new javax.swing.JLabel();
+        jpGameArea = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Memory Game Board");
+
+        jpTitle.setBackground(new java.awt.Color(204, 255, 255));
+
+        jlTitle.setBackground(new java.awt.Color(204, 255, 255));
+        jlTitle.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
+        jlTitle.setForeground(new java.awt.Color(0, 153, 153));
+        jlTitle.setText("MEMORY");
+
+        javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
+        jpTitle.setLayout(jpTitleLayout);
+        jpTitleLayout.setHorizontalGroup(
+            jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpTitleLayout.createSequentialGroup()
+                .addGap(304, 304, 304)
+                .addComponent(jlTitle)
+                .addContainerGap(306, Short.MAX_VALUE))
+        );
+        jpTitleLayout.setVerticalGroup(
+            jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpTitleLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlTitle)
+                .addGap(28, 28, 28))
+        );
+
+        javax.swing.GroupLayout jpGameAreaLayout = new javax.swing.GroupLayout(jpGameArea);
+        jpGameArea.setLayout(jpGameAreaLayout);
+        jpGameAreaLayout.setHorizontalGroup(
+            jpGameAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jpGameAreaLayout.setVerticalGroup(
+            jpGameAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 408, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jpTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpGameArea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -48,5 +92,8 @@ public class GameBoardFrame extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jlTitle;
+    private javax.swing.JPanel jpGameArea;
+    private javax.swing.JPanel jpTitle;
     // End of variables declaration//GEN-END:variables
 }

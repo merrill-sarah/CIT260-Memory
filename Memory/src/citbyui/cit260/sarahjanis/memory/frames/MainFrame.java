@@ -211,6 +211,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
        EnterPlayerNames playerNames = new EnterPlayerNames();
        playerNames.setVisible(true);
+       this.dispose();
         
         /* Game game = new Game();
          try {

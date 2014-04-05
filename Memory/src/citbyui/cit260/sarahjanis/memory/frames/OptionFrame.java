@@ -17,6 +17,7 @@ public class OptionFrame extends javax.swing.JFrame {
      */
     public OptionFrame() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -163,7 +164,8 @@ public class OptionFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         GameBoardFrame board = new GameBoardFrame();
-        board.setVisible(true);     
+        board.setVisible(true);   
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
