@@ -154,9 +154,9 @@ public class BoardMediumFrame extends javax.swing.JFrame {
         jpMTitleLayout.setHorizontalGroup(
             jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMTitleLayout.createSequentialGroup()
-                .addGap(379, 379, 379)
+                .addContainerGap(335, Short.MAX_VALUE)
                 .addComponent(jlMTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addGap(167, 167, 167)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
