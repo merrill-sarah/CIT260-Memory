@@ -55,7 +55,7 @@ public class Game implements Serializable {
     public Game(){  
        
     }
-    public void startGame(Board board, Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{ 
+    public void startGame(Board board, Player player1, Player player2, SymbolArray symbols ) throws IOException, CardException, BoardException, MemoryException{ 
          /*boolean validName = false;
     while (!validName){
         try{  
@@ -68,7 +68,9 @@ public class Game implements Serializable {
         options.setVisible(true);
       }
      }*/
-        
+    board.setUp();
+    char getSymbols [] = new char [0];
+    symbols.createArray(board, getSymbols);    
     MemoryError errorMsg = new MemoryError();
        
           switch (board.getSize()){
@@ -88,12 +90,7 @@ public class Game implements Serializable {
                 errorMsg.displayError(ErrorType.ERROR102.getMessage());
             
                     }
-          SymbolArray symbols = new SymbolArray();
-          symbols.matchDifficulty(board);
-          char getSymbols [] = new char [board.getTotalCards()];
-          playersTurns(board, symbols, getSymbols, player1, player2);
         
-     
     }
     
     

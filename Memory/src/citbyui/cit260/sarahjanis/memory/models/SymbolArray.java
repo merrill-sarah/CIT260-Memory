@@ -31,7 +31,7 @@ public class SymbolArray implements Serializable{
      }  
    
    public char[] createArray(Board board, char getSymbols []) throws BoardException{
-       
+       getSymbols = new char [board.getTotalCards()];
        setTotalMatches(board.getTotalCards()/2);
           
          if (getNumMatchingSymbols() == 2){

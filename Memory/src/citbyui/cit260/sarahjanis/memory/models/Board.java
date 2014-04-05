@@ -31,8 +31,8 @@ public class Board implements Serializable, DisplayInfo {
     }        
     
   
-    public void setUp(Player player1, Player player2) {
-        MemoryError errorMsg = new MemoryError();
+   public void setUp() {
+       /* MemoryError errorMsg = new MemoryError();
        
           switch (size){
             case "s":
@@ -51,11 +51,12 @@ public class Board implements Serializable, DisplayInfo {
                 errorMsg.displayError(ErrorType.ERROR102.getMessage());
             
                     }
+          */
         
         totalCards = rows * columns;
         symbolArr.setTotalMatches(totalCards/2);
         }
-    
+   
     
     @Override
     public void display(){

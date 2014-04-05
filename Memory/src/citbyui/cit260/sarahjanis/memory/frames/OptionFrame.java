@@ -244,7 +244,7 @@ public class OptionFrame extends javax.swing.JFrame {
         player1.setName(jtfP1Name.getText());
         player2.setName(jtfP2Name.getText());
         try {
-            game.startGame(board, player1, player2);
+            game.startGame(board, player1, player2, symbols);
         } catch (IOException ex) {
             Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (CardException ex) {
