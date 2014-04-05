@@ -6,12 +6,14 @@
 
 package citbyui.cit260.sarahjanis.memory.frames;
 
+import citbyui.cit260.sarahjanis.memory.models.Board;
+
 /**
  *
  * @author Janis
  */
 public class OptionFrame extends javax.swing.JFrame {
-
+    Board board = new Board();
     /**
      * Creates new form OptionFrame
      */
@@ -37,9 +39,9 @@ public class OptionFrame extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jbSmall = new javax.swing.JButton();
+        jbMedium = new javax.swing.JButton();
+        jbLarge = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,11 +94,26 @@ public class OptionFrame extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 102, 102));
         jLabel3.setText("What size grid?");
 
-        jButton4.setText("jButton4");
+        jbSmall.setText("SMALL");
+        jbSmall.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSmallActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("jButton5");
+        jbMedium.setText("MEDIUM");
+        jbMedium.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMediumActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("jButton6");
+        jbLarge.setText("LARGE");
+        jbLarge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbLargeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpOptionsLayout = new javax.swing.GroupLayout(jpOptions);
         jpOptions.setLayout(jpOptionsLayout);
@@ -112,7 +129,7 @@ public class OptionFrame extends javax.swing.JFrame {
                             .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel2)
                                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton4)
+                                    .addComponent(jbSmall)
                                     .addComponent(jLabel3))))
                         .addGroup(jpOptionsLayout.createSequentialGroup()
                             .addGap(57, 57, 57)
@@ -120,11 +137,11 @@ public class OptionFrame extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jpOptionsLayout.createSequentialGroup()
-                                    .addComponent(jButton5)
+                                    .addComponent(jbMedium)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jButton6))
+                                    .addComponent(jbLarge))
                                 .addComponent(jButton3)))))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
         jpOptionsLayout.setVerticalGroup(
             jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,9 +157,9 @@ public class OptionFrame extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(jbSmall)
+                    .addComponent(jbMedium)
+                    .addComponent(jbLarge))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
@@ -163,10 +180,21 @@ public class OptionFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        BoardLargeFrame boardLg = new BoardLargeFrame();
-        boardLg.setVisible(true);   
+        board.gridSize();
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jbSmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSmallActionPerformed
+        board.setSize("s");
+    }//GEN-LAST:event_jbSmallActionPerformed
+
+    private void jbMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMediumActionPerformed
+        board.setSize("m");
+    }//GEN-LAST:event_jbMediumActionPerformed
+
+    private void jbLargeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLargeActionPerformed
+        board.setSize("l");
+    }//GEN-LAST:event_jbLargeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,13 +205,13 @@ public class OptionFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton jbLarge;
+    private javax.swing.JButton jbMedium;
+    private javax.swing.JButton jbSmall;
     private javax.swing.JPanel jpOptions;
     // End of variables declaration//GEN-END:variables
 }

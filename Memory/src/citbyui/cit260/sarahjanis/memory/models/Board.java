@@ -8,6 +8,9 @@ package citbyui.cit260.sarahjanis.memory.models;
 
 import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
+import citbyui.cit260.sarahjanis.memory.frames.BoardLargeFrame;
+import citbyui.cit260.sarahjanis.memory.frames.BoardMediumFrame;
+import citbyui.cit260.sarahjanis.memory.frames.BoardSmallFrame;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 import java.util.Scanner;
 import java.io.Serializable;
@@ -29,32 +32,25 @@ public class Board implements Serializable, DisplayInfo {
     }        
     
   
-    public void getInput() {
+    public void gridSize() {
         MemoryError errorMsg = new MemoryError();
-  
-        Scanner input = new Scanner(System.in);
-        System.out.println("\nEnter the letter associated with the size board "
-                + "you would like to play: "
-                + "\n\"s\" for small, \"m\" for medium, or \"l\" for large:");
-        this.size= input.next();
-        size = size.trim().toLowerCase();
        
           switch (size){
             case "s":
-                 rows = 3;
-                 columns = 4;
+                 BoardSmallFrame boardSm = new BoardSmallFrame();
+                 boardSm.setVisible(true);
                  break;
             case "m":
-                rows = 4;
-                columns = 6;
+                BoardMediumFrame boardMd = new BoardMediumFrame();
+                boardMd.setVisible(true);
                 break;
             case "l":
-               rows = 6;
-               columns = 8; 
+                BoardLargeFrame boardLg = new BoardLargeFrame();
+                boardLg.setVisible(true); 
                 break;
             default: 
                 errorMsg.displayError(ErrorType.ERROR102.getMessage());
-                getInput();
+            
                     }
         
         totalCards = rows * columns;

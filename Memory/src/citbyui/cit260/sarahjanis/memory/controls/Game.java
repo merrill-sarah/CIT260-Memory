@@ -73,7 +73,6 @@ public class Game implements Serializable {
         public void playGame(Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{
         
         Board board = new Board();
-        board.getInput();
         board.display();
         SymbolArray symbols = new SymbolArray();
         symbols.getInput();

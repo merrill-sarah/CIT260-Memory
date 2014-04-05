@@ -30,7 +30,7 @@ public class BoardView {
       if (!(rows==3 && columns==4) & !(rows==4 && columns==6) & !(rows==6 && columns==8)){
             MemoryError errorMsg = new MemoryError();
            errorMsg.displayError(ErrorType.ERROR102.getMessage());
-                   board.getInput();
+                   //board.getInput();
                    } 
             
        
