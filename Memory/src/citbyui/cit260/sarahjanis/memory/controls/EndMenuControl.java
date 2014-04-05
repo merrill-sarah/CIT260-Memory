@@ -19,7 +19,7 @@ import citbyui.cit260.sarahjanis.memory.models.Player;
 public class EndMenuControl {
     public void playAgain(Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException {
         Game anotherGame = new Game();
-         anotherGame.playGame(player1, player2);
+         //anotherGame.playGame(player1, player2);
      }
  
      public void displayMainMenu() {
