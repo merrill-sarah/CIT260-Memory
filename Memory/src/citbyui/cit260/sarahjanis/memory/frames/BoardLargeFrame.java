@@ -31,6 +31,16 @@ public class BoardLargeFrame extends javax.swing.JFrame {
 
         jpMTitle = new javax.swing.JPanel();
         jlMTitle = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jlP1Name = new javax.swing.JLabel();
+        jlP2Name = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jlP1Matches = new javax.swing.JLabel();
+        jlP2Matches = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jlP1Wins = new javax.swing.JLabel();
+        jlP2Wins = new javax.swing.JLabel();
         jpMGameArea = new javax.swing.JPanel();
         jbLButton1 = new javax.swing.JButton();
         jbLButton2 = new javax.swing.JButton();
@@ -91,6 +101,73 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jlMTitle.setForeground(new java.awt.Color(0, 153, 153));
         jlMTitle.setText("MEMORY");
 
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel1.setText("Player");
+
+        jlP1Name.setText("Player 1:");
+
+        jlP2Name.setText("Player 2:");
+
+        jLabel4.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel4.setText("Matches");
+
+        jlP1Matches.setText("0");
+
+        jlP2Matches.setText("0");
+
+        jLabel7.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel7.setText("Wins");
+
+        jlP1Wins.setText("0");
+
+        jlP2Wins.setText("0");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jlP1Name)
+                    .addComponent(jlP2Name))
+                .addGap(68, 68, 68)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jlP1Matches)
+                    .addComponent(jlP2Matches))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlP2Wins)
+                    .addComponent(jlP1Wins)
+                    .addComponent(jLabel7))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlP1Name)
+                    .addComponent(jlP1Matches)
+                    .addComponent(jlP1Wins))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlP2Name)
+                    .addComponent(jlP2Matches)
+                    .addComponent(jlP2Wins))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jpMTitleLayout = new javax.swing.GroupLayout(jpMTitle);
         jpMTitle.setLayout(jpMTitleLayout);
         jpMTitleLayout.setHorizontalGroup(
@@ -98,14 +175,18 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             .addGroup(jpMTitleLayout.createSequentialGroup()
                 .addGap(440, 440, 440)
                 .addComponent(jlMTitle)
-                .addContainerGap(476, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jpMTitleLayout.setVerticalGroup(
             jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMTitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlMTitle)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGroup(jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlMTitle)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jpMGameArea.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
@@ -387,25 +468,19 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpMTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jpMTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpMGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 1061, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jpMGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 1061, Short.MAX_VALUE)
-                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpMTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(592, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(88, 88, 88)
-                    .addComponent(jpMGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpMGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -471,6 +546,10 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbLButton1;
     private javax.swing.JButton jbLButton10;
     private javax.swing.JButton jbLButton11;
@@ -520,6 +599,12 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private javax.swing.JButton jbLButton8;
     private javax.swing.JButton jbLButton9;
     private javax.swing.JLabel jlMTitle;
+    private javax.swing.JLabel jlP1Matches;
+    private javax.swing.JLabel jlP1Name;
+    private javax.swing.JLabel jlP1Wins;
+    private javax.swing.JLabel jlP2Matches;
+    private javax.swing.JLabel jlP2Name;
+    private javax.swing.JLabel jlP2Wins;
     private javax.swing.JPanel jpMGameArea;
     private javax.swing.JPanel jpMTitle;
     // End of variables declaration//GEN-END:variables
