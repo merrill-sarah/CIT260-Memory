@@ -11,6 +11,7 @@ package citbyui.cit260.sarahjanis.memory.frames;
  * @author Janis
  */
 
+import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -21,7 +22,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class BoardSmallFrame extends javax.swing.JFrame {
-
+    Card card1;
+    Card card2;
     /**
      * Creates new form GameBoardFrame
      */
@@ -337,7 +339,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton1ActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jbSButton1ActionPerformed
 
     private void jbSButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton2ActionPerformed
