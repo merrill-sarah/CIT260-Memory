@@ -25,7 +25,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     /**
      * Creates new form GameBoardFrame
      */
-    public BoardSmallFrame(Player player1, Player player2) {
+    public BoardSmallFrame(Player player1, Player player2, char getSymbols[]) {
         initComponents();
         setLocationRelativeTo(null);
         jlP1Name.setText(player1.getName());

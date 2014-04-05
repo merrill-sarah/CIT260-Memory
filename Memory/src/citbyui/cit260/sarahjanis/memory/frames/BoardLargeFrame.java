@@ -17,7 +17,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     /**
      * Creates new form BoardLargeFrame
      */
-    public BoardLargeFrame(Player player1, Player player2) {
+    public BoardLargeFrame(Player player1, Player player2, char getSymbols[]) {
         initComponents();
         setLocationRelativeTo(null);
         jlP1Name.setText(player1.getName());

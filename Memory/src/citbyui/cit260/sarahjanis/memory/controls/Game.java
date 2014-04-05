@@ -75,15 +75,15 @@ public class Game implements Serializable {
        
           switch (board.getSize()){
             case "s":
-                 boardSm = new BoardSmallFrame(player1, player2);
+                 boardSm = new BoardSmallFrame(player1, player2, getSymbols);
                  boardSm.setVisible(true);
                  break;
             case "m":
-                boardMd = new BoardMediumFrame(player1, player2);
+                boardMd = new BoardMediumFrame(player1, player2, getSymbols);
                 boardMd.setVisible(true);
                 break;
             case "l":
-                boardLg = new BoardLargeFrame(player1, player2);
+                boardLg = new BoardLargeFrame(player1, player2, getSymbols);
                 boardLg.setVisible(true);
                 break;
             default: 
