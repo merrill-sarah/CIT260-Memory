@@ -326,19 +326,30 @@ public class OptionFrame extends javax.swing.JFrame {
 private boolean inputCheck() {
     
     boolean namecheck = nameCheck(player1.getName());
+    boolean namecheck2 = nameCheck(player2.getName());
+    boolean boardSizeCheck = boardSizeCheck();
+    boolean matchSymCheck = matchSymCheck();
      if(namecheck == false){
              return false;
                 }
+     else if(namecheck2 == false){
+             return false;
+                }     
+     
+     /*else if (boardSizeCheck == false){
+         return false;
+     }
+     */
+     else if (matchSymCheck == false){
+         return false;
+     }
      else
      return true;
 }
     
 private boolean nameCheck(String name){ 
-     
         MemoryError errorMsg = new MemoryError();
         
-       //finished){
-            
             name = name.trim();
             
             if (name.length() < 1){
@@ -358,9 +369,27 @@ private boolean nameCheck(String name){
                 
             }*/
             else
-                return true;
-                   
+                return true;       
         }
+
+private boolean boardSizeCheck(){
+     MemoryError errorMsg = new MemoryError();
+    if (!"s".equals(board.getSize()) || !"m".equals(board.getSize()) || !"l".equals(board.getSize())){
+        errorMsg.displayError(ErrorType.ERROR102.getMessage());
+        return false;
+    }
+    else
+        return true;
+}
+private boolean matchSymCheck(){
+    MemoryError errorMsg = new MemoryError();
+    if (symbols.getNumMatchingSymbols() != 2 || symbols.getNumMatchingSymbols() != 4) {
+        errorMsg.displayError(ErrorType.ERROR102.getMessage());
+        return false;
+    }
+    else
+        return true;
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
