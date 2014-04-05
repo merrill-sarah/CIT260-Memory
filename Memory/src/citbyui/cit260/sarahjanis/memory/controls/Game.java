@@ -11,6 +11,7 @@ import citbyui.cit260.sarahjanis.memory.enums.StatusType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+import citbyui.cit260.sarahjanis.memory.frames.OptionFrame;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.Card;
@@ -47,8 +48,8 @@ public class Game implements Serializable {
     public Game(){  
        
     }
-    public void startGame() throws IOException, CardException, BoardException, MemoryException{ 
-         boolean validName = false;
+    public void startGame(Board board, Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{ 
+         /*boolean validName = false;
     while (!validName){
         try{  
             playerList.getInputNames(numPlayers);
@@ -56,14 +57,11 @@ public class Game implements Serializable {
       catch(MemoryException ex){
           System.out.println(ErrorType.ERROR104.getMessage());
           //playerList.getInputNames(numPlayers);
-          startGame();
+          OptionFrame options = new OptionFrame();
+        options.setVisible(true);
       }
-     }
-        player1.setName(playerList.getListOfPlayerNames()[0]);
-        player2.setName(playerList.getListOfPlayerNames()[1]);
-        this.setStatus(StatusType.START);
-        welcomePlayers(player1.getName(), player2.getName());
-        playGame(player1,player2);
+     }*/
+    board.setUp(player1, player2);
         
      
     }

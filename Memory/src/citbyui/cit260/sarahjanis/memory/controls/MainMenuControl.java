@@ -24,11 +24,11 @@ public class MainMenuControl {
     } 
 
     public void startGame() throws IOException, CardException, BoardException, MemoryException /*Case S*/{
-      try{  Game newGame = new Game();
-        newGame.startGame();}
-        catch (NumberFormatException ex){
-                throw new NumberFormatException(ErrorType.ERROR106.getMessage());
-                }
+      //try{  Game newGame = new Game();
+        //newGame.startGame();}
+        //catch (NumberFormatException ex){
+                //throw new NumberFormatException(ErrorType.ERROR106.getMessage());
+                //}
     }
     
     public void displayOptionMenu()/*Case O*/ {

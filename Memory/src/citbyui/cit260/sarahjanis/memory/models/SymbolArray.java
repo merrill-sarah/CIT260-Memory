@@ -7,8 +7,6 @@
 package citbyui.cit260.sarahjanis.memory.models;
 import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
-import citbyui.cit260.sarahjanis.memory.models.Board;
-import citbyui.cit260.sarahjanis.memory.interfaces.EnterInfo;
 import java.io.Serializable;
 import java.util.*;
 import citbyui.cit260.sarahjanis.memory.views.BoardView;

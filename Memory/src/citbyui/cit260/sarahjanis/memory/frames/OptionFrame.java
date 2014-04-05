@@ -6,10 +6,14 @@
 
 package citbyui.cit260.sarahjanis.memory.frames;
 
+import citbyui.cit260.sarahjanis.memory.controls.Game;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
+import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
+import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,6 +26,7 @@ public class OptionFrame extends javax.swing.JFrame {
     SymbolArray symbols = new SymbolArray();
     Player player1 = new Player();
     Player player2 = new Player();
+    Game game = new Game();
     /**
      * Creates new form OptionFrame
      */
@@ -239,11 +244,16 @@ public class OptionFrame extends javax.swing.JFrame {
         player1.setName(jtfP1Name.getText());
         player2.setName(jtfP2Name.getText());
         try {
-            symbols.createArray(board);
+            game.startGame(board, player1, player2);
+        } catch (IOException ex) {
+            Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (CardException ex) {
+            Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (BoardException ex) {
             Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MemoryException ex) {
+            Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-        board.setUp(player1, player2);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
