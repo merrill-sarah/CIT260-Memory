@@ -68,34 +68,36 @@ public class Game implements Serializable {
         options.setVisible(true);
       }
      }*/
+        
     MemoryError errorMsg = new MemoryError();
        
           switch (board.getSize()){
             case "s":
                  boardSm = new BoardSmallFrame(player1, player2);
                  boardSm.setVisible(true);
-                 playGame(player1, player2, board);
                  break;
             case "m":
                 boardMd = new BoardMediumFrame(player1, player2);
                 boardMd.setVisible(true);
-                playGame(player1, player2, board);
                 break;
             case "l":
                 boardLg = new BoardLargeFrame(player1, player2);
                 boardLg.setVisible(true);
-                playGame(player1, player2, board);
                 break;
             default: 
                 errorMsg.displayError(ErrorType.ERROR102.getMessage());
             
                     }
+          SymbolArray symbols = new SymbolArray();
+          symbols.matchDifficulty(board);
+          char getSymbols [] = new char [board.getTotalCards()];
+          playersTurns(board, symbols, getSymbols, player1, player2);
         
      
     }
     
     
-        public void playGame(Player player1, Player player2, Board board) throws IOException, CardException, BoardException, MemoryException{
+        /*public void playGame(Player player1, Player player2, Board board) throws IOException, CardException, BoardException, MemoryException{
         
         SymbolArray symbols = new SymbolArray();
         //symbols.getInput();
@@ -103,12 +105,12 @@ public class Game implements Serializable {
         
 
         
-        char getSymbols [] = new char [board.getTotalCards()]; //create foundation array
+         //create foundation array
         //symbols.createArray(board, getSymbols); //'sends' getSymbols changed by Reference
         
         
         
-        playersTurns(board, symbols, getSymbols, player1, player2);
+        //playersTurns(board, symbols, getSymbols, player1, player2);
         displayScore(player1, player2);
         System.out.println("");
         EndMenuView endMenuView = new EndMenuView();
@@ -123,7 +125,7 @@ public class Game implements Serializable {
         
         System.out.println("\tWelcome to Memory!");
         
-    }
+    }*/
     
       
      private void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{

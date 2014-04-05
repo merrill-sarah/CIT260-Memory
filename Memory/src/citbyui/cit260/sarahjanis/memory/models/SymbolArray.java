@@ -30,8 +30,7 @@ public class SymbolArray implements Serializable{
            
      }  
    
-   public char[] createArray(Board board) throws BoardException{
-      // int j = 0;
+   public char[] createArray(Board board, char getSymbols []) throws BoardException{
        
        setTotalMatches(board.getTotalCards()/2);
           
@@ -44,7 +43,7 @@ public class SymbolArray implements Serializable{
          else{
            throw new BoardException(ErrorType.ERROR204.getMessage());
          }
-       char getSymbols [] = new char [board.getTotalCards()];
+       
        char setSymbols[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X'};
        
              
