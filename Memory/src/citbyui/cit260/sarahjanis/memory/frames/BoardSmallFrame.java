@@ -27,14 +27,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class BoardSmallFrame extends javax.swing.JFrame {
-    Card card1;
-    Card card2;
+    Board board;
+    SymbolArray symbol;
+    
     /**
      * Creates new form GameBoardFrame
      */
-    public BoardSmallFrame(Player player1, Player player2, char getSymbols[]) {
+    public BoardSmallFrame(Player player1, Player player2, char getSymbols[]){
         initComponents();
         setLocationRelativeTo(null);
+      //  SymbolArray.createArray(board, getSymbols);
         jlP1Name.setText(player1.getName());
         jlP2Name.setText(player2.getName());
        // jlFirstTurn.setText(player1.getName() + ", pick your first card.");
