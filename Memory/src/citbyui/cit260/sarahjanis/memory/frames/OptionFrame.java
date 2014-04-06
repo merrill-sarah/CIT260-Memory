@@ -62,13 +62,12 @@ public class OptionFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jtfP1Name = new javax.swing.JTextField();
         jtfP2Name = new javax.swing.JTextField();
-        jbtnOptionReset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jpOptions.setBackground(new java.awt.Color(204, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(204, 255, 255));
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 102, 102));
         jButton1.setText("DEAL THE CARDS");
@@ -93,7 +92,7 @@ public class OptionFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(162, 162, 162)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,13 +159,6 @@ public class OptionFrame extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         jLabel6.setText("Player 2:");
 
-        jbtnOptionReset.setText("RESET OPTIONS");
-        jbtnOptionReset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnOptionResetActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jpOptionsLayout = new javax.swing.GroupLayout(jpOptions);
         jpOptions.setLayout(jpOptionsLayout);
         jpOptionsLayout.setHorizontalGroup(
@@ -175,44 +167,37 @@ public class OptionFrame extends javax.swing.JFrame {
             .addGroup(jpOptionsLayout.createSequentialGroup()
                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpOptionsLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
                         .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpOptionsLayout.createSequentialGroup()
-                                .addGap(35, 35, 35)
+                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jbSmall)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jbTwoCards))
+                                .addGap(18, 18, 18)
                                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jpOptionsLayout.createSequentialGroup()
-                                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jbSmall)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jbTwoCards))
+                                        .addComponent(jbMedium)
                                         .addGap(18, 18, 18)
-                                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jpOptionsLayout.createSequentialGroup()
-                                                .addComponent(jbMedium)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jbLarge))
-                                            .addComponent(jbFourCards)))
-                                    .addComponent(jLabel4)
-                                    .addGroup(jpOptionsLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel5))
-                                        .addGap(21, 21, 21)
-                                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(31, 31, 31))
+                                        .addComponent(jbLarge))
+                                    .addComponent(jbFourCards)))
+                            .addComponent(jLabel4)
                             .addGroup(jpOptionsLayout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(jLabel2))
-                            .addGroup(jpOptionsLayout.createSequentialGroup()
-                                .addGap(105, 105, 105)
-                                .addComponent(jbtnOptionReset, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 133, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpOptionsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                                .addGap(18, 18, 18)
+                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5))
+                                .addGap(21, 21, 21)
+                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel2))
+                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpOptionsLayout.setVerticalGroup(
             jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,11 +226,9 @@ public class OptionFrame extends javax.swing.JFrame {
                     .addComponent(jbSmall)
                     .addComponent(jbMedium)
                     .addComponent(jbLarge))
-                .addGap(18, 18, 18)
-                .addComponent(jbtnOptionReset)
-                .addGap(16, 16, 16)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(28, 28, 28)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -288,36 +271,37 @@ public class OptionFrame extends javax.swing.JFrame {
 
     private void jbSmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSmallActionPerformed
         board.setSize("s");
-        jbMedium.setVisible(false);
-        jbLarge.setVisible(false);
+        jbSmall.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
+        jbMedium.setFont(new java.awt.Font("Tahoma", 0, 11));
+        jbLarge.setFont(new java.awt.Font("Tahoma", 0, 11)); 
+       
     }//GEN-LAST:event_jbSmallActionPerformed
 
     private void jbMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMediumActionPerformed
         board.setSize("m");
-        jbSmall.setVisible(false);
-        jbLarge.setVisible(false);
+        jbMedium.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
+        jbSmall.setFont(new java.awt.Font("Tahoma", 0, 11));
+        jbLarge.setFont(new java.awt.Font("Tahoma", 0, 11));     
     }//GEN-LAST:event_jbMediumActionPerformed
 
     private void jbLargeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLargeActionPerformed
         board.setSize("l");
-        jbSmall.setVisible(false);
-        jbMedium.setVisible(false);
+        jbLarge.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
+        jbMedium.setFont(new java.awt.Font("Tahoma", 0, 11));
+        jbSmall.setFont(new java.awt.Font("Tahoma", 0, 11));
     }//GEN-LAST:event_jbLargeActionPerformed
 
     private void jbTwoCardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTwoCardsActionPerformed
         symbols.setNumMatchingSymbols(2);
-        jbFourCards.setVisible(false);
+        jbTwoCards.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
+        jbFourCards.setFont(new java.awt.Font("Tahoma", 0, 11));
     }//GEN-LAST:event_jbTwoCardsActionPerformed
 
     private void jbFourCardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFourCardsActionPerformed
         symbols.setNumMatchingSymbols(4);
-        jbTwoCards.setVisible(false);
+        jbFourCards.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
+        jbTwoCards.setFont(new java.awt.Font("Tahoma", 0, 11));
     }//GEN-LAST:event_jbFourCardsActionPerformed
-
-    private void jbtnOptionResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnOptionResetActionPerformed
-        OptionFrame options = new OptionFrame();
-       options.setVisible(true);
-    }//GEN-LAST:event_jbtnOptionResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -405,7 +389,6 @@ private boolean matchSymCheck(){
     private javax.swing.JButton jbMedium;
     private javax.swing.JButton jbSmall;
     private javax.swing.JButton jbTwoCards;
-    private javax.swing.JButton jbtnOptionReset;
     private javax.swing.JPanel jpOptions;
     private javax.swing.JTextField jtfP1Name;
     private javax.swing.JTextField jtfP2Name;

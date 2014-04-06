@@ -11,11 +11,16 @@ package citbyui.cit260.sarahjanis.memory.frames;
  * @author Janis
  */
 
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
+import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
+import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -341,7 +346,17 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton1ActionPerformed
-       
+       Board board = new Board();
+        SymbolArray symbols = new SymbolArray();
+        char getSymbols [] = new char [12]; //create foundation array
+        try { 
+            symbols.createArray(board, getSymbols);
+        } catch (BoardException ex) {
+            Logger.getLogger(BoardSmallFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       String symbol = Character.toString(getSymbols[0]);
+      
+       jbSButton1.setText(symbol);
     }//GEN-LAST:event_jbSButton1ActionPerformed
 
     private void jbSButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton2ActionPerformed
