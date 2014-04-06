@@ -347,10 +347,10 @@ public class BoardSmallFrame extends javax.swing.JFrame {
 
     private void jbSButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton1ActionPerformed
        Board board = new Board();
-        SymbolArray symbols = new SymbolArray();
+        SymbolArray symbolsAr = new SymbolArray();
         char getSymbols [] = new char [12]; //create foundation array
         try { 
-            symbols.createArray(board, getSymbols);
+            symbolsAr.createArray(board, getSymbols);
         } catch (BoardException ex) {
             Logger.getLogger(BoardSmallFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
