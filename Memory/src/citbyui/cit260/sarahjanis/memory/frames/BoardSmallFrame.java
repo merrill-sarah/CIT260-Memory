@@ -360,52 +360,62 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         }
         */
        String symbol = Character.toString(symbols[0]);
-      
        jbSButton1.setText(symbol);
     }//GEN-LAST:event_jbSButton1ActionPerformed
 
     private void jbSButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton2ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[1]);
+       jbSButton2.setText(symbol);
     }//GEN-LAST:event_jbSButton2ActionPerformed
 
     private void jbSButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton3ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[2]);
+       jbSButton3.setText(symbol);
     }//GEN-LAST:event_jbSButton3ActionPerformed
 
     private void jbSButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton4ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[3]);
+       jbSButton4.setText(symbol);
     }//GEN-LAST:event_jbSButton4ActionPerformed
 
     private void jbSButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton5ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[4]);
+       jbSButton5.setText(symbol);
     }//GEN-LAST:event_jbSButton5ActionPerformed
 
     private void jbSButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton6ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[5]);
+       jbSButton6.setText(symbol);
     }//GEN-LAST:event_jbSButton6ActionPerformed
 
     private void jbSButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton7ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[6]);
+       jbSButton7.setText(symbol);
     }//GEN-LAST:event_jbSButton7ActionPerformed
 
     private void jbSButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton8ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[7]);
+       jbSButton8.setText(symbol);
     }//GEN-LAST:event_jbSButton8ActionPerformed
 
     private void jbSButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton9ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[8]);
+       jbSButton9.setText(symbol);
     }//GEN-LAST:event_jbSButton9ActionPerformed
 
     private void jbSButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton10ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[9]);
+       jbSButton10.setText(symbol);
     }//GEN-LAST:event_jbSButton10ActionPerformed
 
     private void jbSButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton11ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[10]);
+       jbSButton11.setText(symbol);
     }//GEN-LAST:event_jbSButton11ActionPerformed
 
     private void jbSButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton12ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[11]);
+       jbSButton12.setText(symbol);
     }//GEN-LAST:event_jbSButton12ActionPerformed
 
     
