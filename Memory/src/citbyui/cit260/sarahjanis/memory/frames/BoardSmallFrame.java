@@ -29,7 +29,7 @@ import javax.swing.JPanel;
 public class BoardSmallFrame extends javax.swing.JFrame {
     Board board;
     
-    SymbolArray myArray = new SymbolArray();
+    //SymbolArray myArray = new SymbolArray();
     /**
      * Creates new form GameBoardFrame
      */
@@ -37,7 +37,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-        char[] mySymbols = myArray.createArray(board, getSymbols);
+        //char[] mySymbols = myArray.createArray(board, getSymbols);
         jlP1Name.setText(player1.getName());
         jlP2Name.setText(player2.getName());
        // jlFirstTurn.setText(player1.getName() + ", pick your first card.");
