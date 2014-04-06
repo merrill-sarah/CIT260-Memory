@@ -12,7 +12,6 @@ package citbyui.cit260.sarahjanis.memory.frames;
  */
 
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
-import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
@@ -27,7 +26,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class BoardSmallFrame extends javax.swing.JFrame {
-    private Board board;
     private char symbols[];
     
     //SymbolArray myArray = new SymbolArray();

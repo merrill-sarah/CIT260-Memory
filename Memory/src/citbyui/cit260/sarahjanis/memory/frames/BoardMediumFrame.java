@@ -13,13 +13,14 @@ import citbyui.cit260.sarahjanis.memory.models.Player;
  * @author Janis
  */
 public class BoardMediumFrame extends javax.swing.JFrame {
-
+    private char symbols[];
     /**
      * Creates new form BoardMediumFrame
      */
     public BoardMediumFrame(Player player1, Player player2, char getSymbols[]) {
         initComponents();
         setLocationRelativeTo(null);
+        symbols = getSymbols;
         jlP1Name.setText(player1.getName());
         jlP2Name.setText(player2.getName());
     }
@@ -176,11 +177,21 @@ public class BoardMediumFrame extends javax.swing.JFrame {
         jbMButton1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton1.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton1.setText("1");
+        jbMButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton1ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton1);
 
         jbMButton2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton2.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton2.setText("2");
+        jbMButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton2ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton2);
 
         jbMButton3.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
@@ -196,11 +207,21 @@ public class BoardMediumFrame extends javax.swing.JFrame {
         jbMButton4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton4.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton4.setText("4");
+        jbMButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton4ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton4);
 
         jbMButton5.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton5.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton5.setText("5");
+        jbMButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton5ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton5);
 
         jbMButton6.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
@@ -216,66 +237,131 @@ public class BoardMediumFrame extends javax.swing.JFrame {
         jbMButton7.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton7.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton7.setText("7");
+        jbMButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton7ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton7);
 
         jbMButton8.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton8.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton8.setText("8");
+        jbMButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton8ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton8);
 
         jbMButton9.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton9.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton9.setText("9");
+        jbMButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton9ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton9);
 
         jbMButton10.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton10.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton10.setText("10");
+        jbMButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton10ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton10);
 
         jbMButton11.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton11.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton11.setText("11");
+        jbMButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton11ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton11);
 
         jbMButton12.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton12.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton12.setText("12");
+        jbMButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton12ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton12);
 
         jbMButton13.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton13.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton13.setText("13");
+        jbMButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton13ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton13);
 
         jbMButton14.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton14.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton14.setText("14");
+        jbMButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton14ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton14);
 
         jbMButton15.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton15.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton15.setText("15");
+        jbMButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton15ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton15);
 
         jbMButton16.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton16.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton16.setText("16");
+        jbMButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton16ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton16);
 
         jbMButton17.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton17.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton17.setText("17");
+        jbMButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton17ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton17);
 
         jbMButton18.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton18.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton18.setText("18");
+        jbMButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton18ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton18);
 
         jbMButton19.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton19.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton19.setText("19");
+        jbMButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton19ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton19);
 
         jbMButton20.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
@@ -291,21 +377,41 @@ public class BoardMediumFrame extends javax.swing.JFrame {
         jbMButton21.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton21.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton21.setText("21");
+        jbMButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton21ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton21);
 
         jbMButton22.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton22.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton22.setText("22");
+        jbMButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton22ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton22);
 
         jbMButton23.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton23.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton23.setText("23");
+        jbMButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton23ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton23);
 
         jbMButton24.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
         jbMButton24.setForeground(new java.awt.Color(0, 153, 153));
         jbMButton24.setText("24");
+        jbMButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMButton24ActionPerformed(evt);
+            }
+        });
         jpMGameArea.add(jbMButton24);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -332,17 +438,125 @@ public class BoardMediumFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jbMButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton1ActionPerformed
+       String symbol = Character.toString(symbols[0]);
+       jbMButton1.setText(symbol);
+    }//GEN-LAST:event_jbMButton1ActionPerformed
+
+    private void jbMButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton2ActionPerformed
+        String symbol = Character.toString(symbols[1]);
+       jbMButton2.setText(symbol);
+    }//GEN-LAST:event_jbMButton2ActionPerformed
+
     private void jbMButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton3ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[2]);
+       jbMButton3.setText(symbol);
     }//GEN-LAST:event_jbMButton3ActionPerformed
 
+    private void jbMButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton4ActionPerformed
+        String symbol = Character.toString(symbols[3]);
+       jbMButton4.setText(symbol);
+    }//GEN-LAST:event_jbMButton4ActionPerformed
+
+    private void jbMButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton5ActionPerformed
+        String symbol = Character.toString(symbols[4]);
+       jbMButton5.setText(symbol);
+    }//GEN-LAST:event_jbMButton5ActionPerformed
+
     private void jbMButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton6ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[5]);
+       jbMButton6.setText(symbol);
     }//GEN-LAST:event_jbMButton6ActionPerformed
 
+    private void jbMButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton7ActionPerformed
+        String symbol = Character.toString(symbols[6]);
+       jbMButton7.setText(symbol);
+    }//GEN-LAST:event_jbMButton7ActionPerformed
+
+    private void jbMButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton8ActionPerformed
+        String symbol = Character.toString(symbols[7]);
+       jbMButton8.setText(symbol);
+    }//GEN-LAST:event_jbMButton8ActionPerformed
+
+    private void jbMButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton9ActionPerformed
+        String symbol = Character.toString(symbols[8]);
+       jbMButton9.setText(symbol);
+    }//GEN-LAST:event_jbMButton9ActionPerformed
+
+    private void jbMButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton10ActionPerformed
+        String symbol = Character.toString(symbols[9]);
+       jbMButton10.setText(symbol);
+    }//GEN-LAST:event_jbMButton10ActionPerformed
+
+    private void jbMButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton11ActionPerformed
+        String symbol = Character.toString(symbols[10]);
+       jbMButton11.setText(symbol);
+    }//GEN-LAST:event_jbMButton11ActionPerformed
+
+    private void jbMButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton12ActionPerformed
+        String symbol = Character.toString(symbols[11]);
+       jbMButton12.setText(symbol);
+    }//GEN-LAST:event_jbMButton12ActionPerformed
+
+    private void jbMButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton13ActionPerformed
+        String symbol = Character.toString(symbols[12]);
+       jbMButton13.setText(symbol);
+    }//GEN-LAST:event_jbMButton13ActionPerformed
+
+    private void jbMButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton14ActionPerformed
+        String symbol = Character.toString(symbols[13]);
+       jbMButton14.setText(symbol);
+    }//GEN-LAST:event_jbMButton14ActionPerformed
+
+    private void jbMButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton15ActionPerformed
+        String symbol = Character.toString(symbols[14]);
+       jbMButton15.setText(symbol);
+    }//GEN-LAST:event_jbMButton15ActionPerformed
+
+    private void jbMButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton16ActionPerformed
+        String symbol = Character.toString(symbols[15]);
+       jbMButton16.setText(symbol);
+    }//GEN-LAST:event_jbMButton16ActionPerformed
+
+    private void jbMButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton17ActionPerformed
+        String symbol = Character.toString(symbols[16]);
+       jbMButton17.setText(symbol);
+    }//GEN-LAST:event_jbMButton17ActionPerformed
+
+    private void jbMButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton18ActionPerformed
+        String symbol = Character.toString(symbols[17]);
+       jbMButton18.setText(symbol);
+    }//GEN-LAST:event_jbMButton18ActionPerformed
+
+    private void jbMButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton19ActionPerformed
+        String symbol = Character.toString(symbols[18]);
+       jbMButton19.setText(symbol);
+    }//GEN-LAST:event_jbMButton19ActionPerformed
+
     private void jbMButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton20ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[19]);
+       jbMButton20.setText(symbol);
     }//GEN-LAST:event_jbMButton20ActionPerformed
+
+    private void jbMButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton21ActionPerformed
+        String symbol = Character.toString(symbols[20]);
+       jbMButton21.setText(symbol);
+    }//GEN-LAST:event_jbMButton21ActionPerformed
+
+    private void jbMButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton22ActionPerformed
+        String symbol = Character.toString(symbols[21]);
+       jbMButton22.setText(symbol);
+    }//GEN-LAST:event_jbMButton22ActionPerformed
+
+    private void jbMButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton23ActionPerformed
+        String symbol = Character.toString(symbols[22]);
+       jbMButton23.setText(symbol);
+    }//GEN-LAST:event_jbMButton23ActionPerformed
+
+    private void jbMButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton24ActionPerformed
+        String symbol = Character.toString(symbols[23]);
+       jbMButton24.setText(symbol);
+    }//GEN-LAST:event_jbMButton24ActionPerformed
 
     /**
      * @param args the command line arguments

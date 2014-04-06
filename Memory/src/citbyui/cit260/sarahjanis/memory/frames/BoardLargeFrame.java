@@ -13,13 +13,14 @@ import citbyui.cit260.sarahjanis.memory.models.Player;
  * @author Janis
  */
 public class BoardLargeFrame extends javax.swing.JFrame {
-
+    private char symbols[];
     /**
      * Creates new form BoardLargeFrame
      */
     public BoardLargeFrame(Player player1, Player player2, char getSymbols[]) {
         initComponents();
         setLocationRelativeTo(null);
+        symbols = getSymbols;
         jlP1Name.setText(player1.getName());
         jlP2Name.setText(player2.getName());
         
