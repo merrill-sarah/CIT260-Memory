@@ -67,6 +67,10 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         jlP2Wins = new javax.swing.JLabel();
         jpGamePlayInstructions = new javax.swing.JPanel();
         jlFirstTurn = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jbMainMenu = new javax.swing.JButton();
+        jbHelp = new javax.swing.JButton();
+        jbQuit = new javax.swing.JButton();
         jpSGameArea = new javax.swing.JPanel();
         jbSButton1 = new javax.swing.JButton();
         jbSButton2 = new javax.swing.JButton();
@@ -178,6 +182,58 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+
+        jbMainMenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jbMainMenu.setForeground(new java.awt.Color(0, 153, 153));
+        jbMainMenu.setText("MAIN MENU");
+        jbMainMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMainMenuActionPerformed(evt);
+            }
+        });
+
+        jbHelp.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jbHelp.setForeground(new java.awt.Color(0, 153, 153));
+        jbHelp.setText("HELP");
+        jbHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbHelpActionPerformed(evt);
+            }
+        });
+
+        jbQuit.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jbQuit.setForeground(new java.awt.Color(0, 153, 153));
+        jbQuit.setText("QUIT");
+        jbQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbQuitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbQuit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jbMainMenu)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbHelp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbQuit)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jpTitleLayout = new javax.swing.GroupLayout(jpTitle);
         jpTitle.setLayout(jpTitleLayout);
         jpTitleLayout.setHorizontalGroup(
@@ -190,7 +246,9 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     .addGroup(jpTitleLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8))
         );
@@ -198,13 +256,14 @@ public class BoardSmallFrame extends javax.swing.JFrame {
             jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTitleLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jpTitleLayout.createSequentialGroup()
                         .addComponent(jlTitle)
                         .addGap(21, 21, 21)
                         .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jpSGameArea.setLayout(new java.awt.GridLayout(3, 4, 10, 10));
@@ -341,7 +400,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jpTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpSGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE))
+                .addComponent(jpSGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 399, Short.MAX_VALUE))
         );
 
         pack();
@@ -416,6 +475,21 @@ public class BoardSmallFrame extends javax.swing.JFrame {
        jbSButton12.setText(symbol);
     }//GEN-LAST:event_jbSButton12ActionPerformed
 
+    private void jbMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMainMenuActionPerformed
+        this.dispose();
+        MainFrame mainFrame =  new MainFrame();
+        mainFrame.setVisible(true);
+    }//GEN-LAST:event_jbMainMenuActionPerformed
+
+    private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed
+        HelpFrame helpFrame = new HelpFrame();
+        helpFrame.setVisible(true);
+    }//GEN-LAST:event_jbHelpActionPerformed
+
+    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jbQuitActionPerformed
+
     
     public void firstTurn(Player player1, Player player2){
         
@@ -441,6 +515,10 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton jbHelp;
+    private javax.swing.JButton jbMainMenu;
+    private javax.swing.JButton jbQuit;
     private javax.swing.JButton jbSButton1;
     private javax.swing.JButton jbSButton10;
     private javax.swing.JButton jbSButton11;

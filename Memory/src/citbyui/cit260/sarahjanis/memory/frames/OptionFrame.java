@@ -92,7 +92,7 @@ public class OptionFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(162, 162, 162)
                 .addComponent(jLabel1)
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,6 +167,9 @@ public class OptionFrame extends javax.swing.JFrame {
             .addGroup(jpOptionsLayout.createSequentialGroup()
                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpOptionsLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpOptionsLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpOptionsLayout.createSequentialGroup()
@@ -193,10 +196,7 @@ public class OptionFrame extends javax.swing.JFrame {
                                     .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jpOptionsLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jLabel2))
-                    .addGroup(jpOptionsLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpOptionsLayout.setVerticalGroup(
@@ -239,7 +239,7 @@ public class OptionFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jpOptions, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -251,8 +251,13 @@ public class OptionFrame extends javax.swing.JFrame {
         
         boolean check = inputCheck();
         if (check == false){
+            /*jlError.setText("ERORR"
+                     + "\nPlease make sure to enter and select all information."
+                     + "\nNames need to be at least one character long.");*/
             OptionFrame options = new OptionFrame();
              options.setVisible(true);
+             
+             
         }
         else        
         try {

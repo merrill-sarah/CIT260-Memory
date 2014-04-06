@@ -47,6 +47,10 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jlP1Wins = new javax.swing.JLabel();
         jlP2Wins = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jbMainMenu = new javax.swing.JButton();
+        jbHelp = new javax.swing.JButton();
+        jbQuit = new javax.swing.JButton();
         jpMGameArea = new javax.swing.JPanel();
         jbLButton1 = new javax.swing.JButton();
         jbLButton2 = new javax.swing.JButton();
@@ -174,14 +178,68 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+
+        jbMainMenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jbMainMenu.setForeground(new java.awt.Color(0, 153, 153));
+        jbMainMenu.setText("MAIN MENU");
+        jbMainMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbMainMenuActionPerformed(evt);
+            }
+        });
+
+        jbHelp.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jbHelp.setForeground(new java.awt.Color(0, 153, 153));
+        jbHelp.setText("HELP");
+        jbHelp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbHelpActionPerformed(evt);
+            }
+        });
+
+        jbQuit.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jbQuit.setForeground(new java.awt.Color(0, 153, 153));
+        jbQuit.setText("QUIT");
+        jbQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbQuitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jbHelp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbQuit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jbMainMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jbMainMenu)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbHelp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jbQuit)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jpMTitleLayout = new javax.swing.GroupLayout(jpMTitle);
         jpMTitle.setLayout(jpMTitleLayout);
         jpMTitleLayout.setHorizontalGroup(
             jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMTitleLayout.createSequentialGroup()
-                .addGap(440, 440, 440)
+                .addGap(127, 127, 127)
                 .addComponent(jlMTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -190,9 +248,13 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             .addGroup(jpMTitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlMTitle)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jpMTitleLayout.createSequentialGroup()
+                        .addGroup(jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlMTitle)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jpMGameArea.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
@@ -516,6 +578,21 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbLButton46ActionPerformed
 
+    private void jbMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMainMenuActionPerformed
+        this.dispose();
+        MainFrame mainFrame =  new MainFrame();
+        mainFrame.setVisible(true);
+    }//GEN-LAST:event_jbMainMenuActionPerformed
+
+    private void jbHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbHelpActionPerformed
+        HelpFrame helpFrame = new HelpFrame();
+        helpFrame.setVisible(true);
+    }//GEN-LAST:event_jbHelpActionPerformed
+
+    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jbQuitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -525,6 +602,8 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton jbHelp;
     private javax.swing.JButton jbLButton1;
     private javax.swing.JButton jbLButton10;
     private javax.swing.JButton jbLButton11;
@@ -573,6 +652,8 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private javax.swing.JButton jbLButton7;
     private javax.swing.JButton jbLButton8;
     private javax.swing.JButton jbLButton9;
+    private javax.swing.JButton jbMainMenu;
+    private javax.swing.JButton jbQuit;
     private javax.swing.JLabel jlMTitle;
     private javax.swing.JLabel jlP1Matches;
     private javax.swing.JLabel jlP1Name;

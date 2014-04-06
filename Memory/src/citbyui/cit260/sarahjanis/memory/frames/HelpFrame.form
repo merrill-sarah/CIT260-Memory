@@ -146,13 +146,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jbHelpChoosingCards" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jbHelpDifficultyLevels" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jbHelpGame" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jbReturnToMain" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jbHelpChoosingCards" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jbHelpDifficultyLevels" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jbHelpGame" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jbReturnToMain" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -201,7 +199,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jbReturnToMain">
               <Properties>
-                <Property name="text" type="java.lang.String" value="RETURN TO MAIN"/>
+                <Property name="text" type="java.lang.String" value="EXIT HELP"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbReturnToMainActionPerformed"/>
