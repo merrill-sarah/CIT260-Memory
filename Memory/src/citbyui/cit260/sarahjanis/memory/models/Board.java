@@ -32,28 +32,23 @@ public class Board implements Serializable, DisplayInfo {
     
   
    public void setUp() {
-       /* MemoryError errorMsg = new MemoryError();
+        MemoryError errorMsg = new MemoryError();
        
           switch (size){
             case "s":
-                 BoardSmallFrame boardSm = new BoardSmallFrame(player1, player2);
-                 boardSm.setVisible(true);
+                 setTotalCards(12);
                  break;
             case "m":
-                BoardMediumFrame boardMd = new BoardMediumFrame(player1, player2);
-                boardMd.setVisible(true);
+                setTotalCards(24);
                 break;
             case "l":
-                BoardLargeFrame boardLg = new BoardLargeFrame(player1, player2);
-                boardLg.setVisible(true); 
+                setTotalCards(48); 
                 break;
             default: 
                 errorMsg.displayError(ErrorType.ERROR102.getMessage());
             
                     }
-          */
         
-        totalCards = rows * columns;
         symbolArr.setTotalMatches(totalCards/2);
         }
    

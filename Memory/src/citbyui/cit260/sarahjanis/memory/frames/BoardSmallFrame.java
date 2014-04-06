@@ -28,6 +28,7 @@ import javax.swing.JPanel;
 
 public class BoardSmallFrame extends javax.swing.JFrame {
     Board board;
+    char symbols[];
     
     //SymbolArray myArray = new SymbolArray();
     /**
@@ -37,7 +38,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         
-        //char[] mySymbols = myArray.createArray(board, getSymbols);
+        symbols = getSymbols;
         jlP1Name.setText(player1.getName());
         jlP2Name.setText(player2.getName());
        // jlFirstTurn.setText(player1.getName() + ", pick your first card.");
@@ -349,7 +350,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton1ActionPerformed
-       Board board = new Board();
+       /*Board board = new Board();
         SymbolArray symbolsAr = new SymbolArray();
         char getSymbols [] = new char [12]; //create foundation array
         try { 
@@ -357,7 +358,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         } catch (BoardException ex) {
             Logger.getLogger(BoardSmallFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-       String symbol = Character.toString(getSymbols[0]);
+        */
+       String symbol = Character.toString(symbols[0]);
       
        jbSButton1.setText(symbol);
     }//GEN-LAST:event_jbSButton1ActionPerformed

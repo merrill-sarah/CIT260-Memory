@@ -60,8 +60,9 @@ public class Game implements Serializable {
                  
       
     board.setUp();
-    char getSymbols [] = new char [0];
-    symbols.createArray(board, getSymbols);    
+    char getSymbols [] = new char [board.getTotalCards()];
+    getSymbols = symbols.createArray(board, getSymbols); 
+    System.out.println(Arrays.toString(getSymbols));
     MemoryError errorMsg = new MemoryError();
        
           switch (board.getSize()){

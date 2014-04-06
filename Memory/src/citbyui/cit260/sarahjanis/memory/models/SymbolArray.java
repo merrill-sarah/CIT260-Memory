@@ -31,8 +31,7 @@ public class SymbolArray implements Serializable{
      }  
    
    public char[] createArray(Board board, char getSymbols []) throws BoardException{
-     getSymbols = new char [board.getTotalCards()];
-       setTotalMatches(board.getTotalCards()/2);
+        setTotalMatches(board.getTotalCards()/2);
           
          if (getNumMatchingSymbols() == 2){
              setNumSymbols(getTotalMatches());
@@ -55,7 +54,7 @@ public class SymbolArray implements Serializable{
             }
            }
        int j = 0;  //duplicates the symbols in getSymbols depending on whether the user chooses 2 or 4 matching cards.
-       int grid = (board.getColumns() * board.getRows());
+       int grid = (board.getTotalCards());
        while (j<grid){
            for (int i = 0; i<getNumSymbols();i++,j++){
                getSymbols[j]=getSymbols[i];
