@@ -24,11 +24,11 @@ import java.util.logging.Logger;
  * @author Janis
  */
 public class OptionFrame extends javax.swing.JFrame {
-    Board board = new Board();
-    SymbolArray symbols = new SymbolArray();
-    Player player1 = new Player();
-    Player player2 = new Player();
-    Game game = new Game();
+    private Board board = new Board();
+    private SymbolArray symbols = new SymbolArray();
+    private Player player1 = new Player();
+    private Player player2 = new Player();
+    private Game game = new Game();
     /**
      * Creates new form OptionFrame
      */

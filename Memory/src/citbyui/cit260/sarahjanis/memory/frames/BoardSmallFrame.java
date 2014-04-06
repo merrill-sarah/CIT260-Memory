@@ -27,8 +27,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class BoardSmallFrame extends javax.swing.JFrame {
-    Board board;
-    char symbols[];
+    private Board board;
+    private char symbols[];
     
     //SymbolArray myArray = new SymbolArray();
     /**
