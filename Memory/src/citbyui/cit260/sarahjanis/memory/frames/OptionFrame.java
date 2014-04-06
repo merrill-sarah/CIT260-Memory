@@ -311,22 +311,11 @@ private boolean inputCheck() {
     
     boolean namecheck = nameCheck(player1.getName());
     boolean namecheck2 = nameCheck(player2.getName());
-    //boolean boardSizeCheck = boardSizeCheck();
-    //boolean matchSymCheck = matchSymCheck();
-     if(namecheck == false){
+    boolean boardSizeCheck = boardSizeCheck();
+    boolean matchSymCheck = matchSymCheck();
+     if(namecheck == false || namecheck2 == false || boardSizeCheck == false || matchSymCheck == false){
              return false;
                 }
-     else if(namecheck2 == false){
-             return false;
-                }     
-     
-     /*else if (boardSizeCheck == false){
-         return false;
-     }
-     /*else if (matchSymCheck == false){
-         return false;
-     }
-     */
      else
      return true;
 }
@@ -358,7 +347,7 @@ private boolean nameCheck(String name){
 
 private boolean boardSizeCheck(){
      MemoryError errorMsg = new MemoryError();
-    if (!"s".equals(board.getSize()) || !"m".equals(board.getSize()) || !"l".equals(board.getSize())){
+    if (!"s".equals(board.getSize()) && !"m".equals(board.getSize()) && !"l".equals(board.getSize())){
         errorMsg.displayError(ErrorType.ERROR102.getMessage());
         return false;
     }
@@ -367,7 +356,7 @@ private boolean boardSizeCheck(){
 }
 private boolean matchSymCheck(){
     MemoryError errorMsg = new MemoryError();
-    if (symbols.getNumMatchingSymbols() != 2 || symbols.getNumMatchingSymbols() != 4) {
+    if (symbols.getNumMatchingSymbols() != 2 && symbols.getNumMatchingSymbols() != 4) {
         errorMsg.displayError("oops");
         return false;
     }
