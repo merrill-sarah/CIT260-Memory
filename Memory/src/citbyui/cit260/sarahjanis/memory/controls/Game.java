@@ -54,7 +54,7 @@ public class Game implements Serializable {
     
     
     public Game(){  
-       
+      
     }
     public void startGame(Board board, Player player1, Player player2, SymbolArray symbols ) throws IOException, CardException, BoardException, MemoryException{ 
                  
@@ -82,7 +82,7 @@ public class Game implements Serializable {
             
                     }
         
-    }
+    
     
     
         /*public void playGame(Player player1, Player player2, Board board) throws IOException, CardException, BoardException, MemoryException{
@@ -114,9 +114,49 @@ public class Game implements Serializable {
         System.out.println("\tWelcome to Memory!");
         
     }*/
-    
+    }
+       
+        public boolean cardStatus(char getSymbols[]){
+            Card card = new Card();
+            char []symbols = getSymbols;
+            //char symbol1;
+          //  char symbol2;
+            char [] matchCk = new char [2];
+            //int c = 0;
+            int y = 0;
+           while(y<2){
+            for (int i = 0; i<card.getCardArray().length; i++)
+                if(card.getCardArray()[i]== true){
+                 matchCk[y] = symbols[i]; 
+                 y++;
+                }
+           }
+            if (matchCk[0] == matchCk[1]){
+                return true;
+            }
+            else
+                return false;
+            
+        }
+            
+
+        
+        
+        
+        
+        
+       
+        
+   
+        
+                
+                
       
-     private void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{
+        public void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{
+        
+            
+            
+            
         boolean match = false;
         int totalMatchesMade = 0;
         numCards = board.getTotalCards();
@@ -148,7 +188,7 @@ public class Game implements Serializable {
              }
              
              //have player select two cards
-             selectCard(board, getSymbols, name);
+             selectCard(board, getSymbols, name);//just picks the card GUI replaces
                 card1=board.getDeck()[cardSelection-1];
                 card1.setFlipped(true);
                 
@@ -183,6 +223,7 @@ public class Game implements Serializable {
             getMatchedStatus(board.getTotalCards(), match);
             card1.setFlipped(false);
             card2.setFlipped(false);
+           
              
          }
       }  

@@ -407,15 +407,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton1ActionPerformed
-       /*Board board = new Board();
-        SymbolArray symbolsAr = new SymbolArray();
-        char getSymbols [] = new char [12]; //create foundation array
-        try { 
-            symbolsAr.createArray(board, getSymbols);
-        } catch (BoardException ex) {
-            Logger.getLogger(BoardSmallFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        */
+       
        String symbol = Character.toString(symbols[0]);
        jbSButton1.setText(symbol);
     }//GEN-LAST:event_jbSButton1ActionPerformed
@@ -423,6 +415,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jbSButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton2ActionPerformed
         String symbol = Character.toString(symbols[1]);
        jbSButton2.setText(symbol);
+     //  if (jbSButton1)
     }//GEN-LAST:event_jbSButton2ActionPerformed
 
     private void jbSButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSButton3ActionPerformed

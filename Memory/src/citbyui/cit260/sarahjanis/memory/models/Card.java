@@ -22,18 +22,30 @@ public class Card implements Serializable{
      private boolean matched;
      private char symbol;
      private int cardNumber;
+     private boolean [] cardArray;
   
     
     public Card(){
      flipped = false; // indicates which side of the card is showing, True is face-up
      matched = false;
+     cardArray = new boolean[48];
+     for (boolean b:cardArray){
+         b = false;
+     }
     }
     
     public Card(char symbol ){
    flipped = false; 
    matched = false;
    this.symbol = symbol;
+   cardArray = new boolean [48];
+   for (boolean b:cardArray){
+         b = false;
     }
+    }
+    
+    //public cardArray(){
+   // }
 
     /**
      * @return the shape
@@ -133,5 +145,19 @@ public class Card implements Serializable{
         this.boardview = boardview;
     }
    */
+
+    /**
+     * @return the cardArray
+     */
+    public boolean[] getCardArray() {
+        return cardArray;
+    }
+
+    /**
+     * @param cardArray the cardArray to set
+     */
+    public void setCardArray(boolean[] cardArray) {
+        this.cardArray = cardArray;
+    }
 
 }

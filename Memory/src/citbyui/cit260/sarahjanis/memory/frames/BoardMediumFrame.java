@@ -6,7 +6,16 @@
 
 package citbyui.cit260.sarahjanis.memory.frames;
 
+import citbyui.cit260.sarahjanis.memory.controls.Game;
+import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
+import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
+import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Player;
+import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,6 +23,11 @@ import citbyui.cit260.sarahjanis.memory.models.Player;
  */
 public class BoardMediumFrame extends javax.swing.JFrame {
     private char symbols[];
+    Game game;
+    Board board;
+    SymbolArray symArr;
+    Player player1;
+    Player player2;
     /**
      * Creates new form BoardMediumFrame
      */
@@ -23,6 +37,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
         symbols = getSymbols;
         jlP1Name.setText(player1.getName());
         jlP2Name.setText(player2.getName());
+        
     }
 
     /**
@@ -503,6 +518,19 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jbMButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton1ActionPerformed
        String symbol = Character.toString(symbols[0]);
        jbMButton1.setText(symbol);
+     /*  CLICK++;
+        try {
+            game.playersTurns(board, symArr, symbols, player1, player2);
+        } catch (IOException ex) {
+            Logger.getLogger(BoardMediumFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (CardException ex) {
+            Logger.getLogger(BoardMediumFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (BoardException ex) {
+            Logger.getLogger(BoardMediumFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MemoryException ex) {
+            Logger.getLogger(BoardMediumFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+       
     }//GEN-LAST:event_jbMButton1ActionPerformed
 
     private void jbMButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMButton2ActionPerformed
