@@ -39,7 +39,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     /**
      * Creates new form BoardMediumFrame
      */
-    public BoardMediumFrame(Player player1, Player player2, char getSymbols[]) {
+    public BoardMediumFrame(Player player1, Player player2, Board board, char getSymbols[]) {
         P1 = player1;
         P2 = player2;
         initComponents();

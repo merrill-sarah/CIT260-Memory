@@ -39,7 +39,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     /**
      * Creates new form BoardLargeFrame
      */
-    public BoardLargeFrame(Player player1, Player player2, char getSymbols[]) {
+    public BoardLargeFrame(Player player1, Player player2, Board board, char getSymbols[]) {
         P1 = player1;
         P2 = player2;
         initComponents();

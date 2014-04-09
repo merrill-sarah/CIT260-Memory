@@ -41,18 +41,20 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     //BoardLargeFrame lFrame;
     private int tCounter=  1;
     private int CLICKS;
-    private int matchedGame = 0;
+    private int matchedGame;
     
     //SymbolArray myArray = new SymbolArray();
     /**
      * Creates new form GameBoardFrame
      */
-    public BoardSmallFrame(Player player1, Player player2, char getSymbols[]) throws BoardException{
+    public BoardSmallFrame(Player player1, Player player2, Board setBoard, char getSymbols[]) throws BoardException{
         P1 = player1;
         P2 = player2;
+        board = setBoard;
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;
+        matchedGame = 0;
         CLICKS = 0;
         
         jlP1Name.setText(P1.getName());
@@ -592,8 +594,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                      jbNext.setVisible(true);
                         disableCards();
                      matchedGame++;
-                        //if (matchedGame == symbols.)
-                    
+                     
                     }
                 else {
                     jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
@@ -612,8 +613,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     jbNext.setVisible(true);
                         disableCards();
                     matchedGame++;
-            
-                    //jbLButton1.setText("");
+                    
                     }
                 else{
                     //jbLButton1.setText("1"); 
@@ -784,6 +784,11 @@ public class BoardSmallFrame extends javax.swing.JFrame {
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
         setBoard();
+        
+        //determines whether to show the end game stuff
+        if (matchedGame == board.getTotalMatches()){
+            jlInstructions.setText("The game is over!");
+        }
     }//GEN-LAST:event_jbNextActionPerformed
 
     
