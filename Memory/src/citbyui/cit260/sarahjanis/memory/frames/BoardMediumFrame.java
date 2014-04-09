@@ -917,9 +917,9 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                jb16.setText("16"); 
             }
             if (indexTurn[0]==17 || indexTurn[1]==17){
-               jb12.setText("12"); 
+               jb17.setText("17"); 
             }
-            if (indexTurn[0]==17 || indexTurn[1]==17){
+            if (indexTurn[0]==18 || indexTurn[1]==18){
                jb18.setText("18"); 
             }
             if (indexTurn[0]==19 || indexTurn[1]==19){
