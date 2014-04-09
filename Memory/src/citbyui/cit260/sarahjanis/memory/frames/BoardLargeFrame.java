@@ -17,6 +17,9 @@ import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  *
@@ -881,7 +884,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         else
             return false;
     }
-    private void afterClick(){
+    private void afterClick(/*JButton button*/){
         if (CLICKS == 2){
             matched = checkMatch();
             CLICKS =0;
@@ -892,7 +895,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                      jlInstructions.setText(P1.getName() + ": Yay, you made a match! You get another turn.");
                      jlP1Matches.setText(Integer.toString(P1.getMatchedGame()));
                      jbNext.setVisible(true);
-                        disableCards();
+                        disableCards(/*button*/);
             
                     //jbLButton1.setText("");
                     }
@@ -900,7 +903,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                     //jbLButton1.setText("1"); 
                     jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
-                        disableCards();
+                        disableCards(/*button*/);
             
                     //next player's turn
                     tCounter++;} 
@@ -912,7 +915,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                      jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
                      jlP2Matches.setText(Integer.toString(P2.getMatchedGame()));
                     jbNext.setVisible(true);
-                        disableCards();
+                        disableCards(/*button*/);
             
                     //jbLButton1.setText("");
                     }
@@ -920,7 +923,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                     //jbLButton1.setText("1"); 
                     jlInstructions.setText(P2.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
-                        disableCards();
+                        disableCards(/*button*/);
             
                     //next player's turn
                     tCounter++;} 
@@ -975,6 +978,117 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             if (indexTurn[0]==12 || indexTurn[1]==12){
                jb12.setText("12"); 
             }
+            if (indexTurn[0]==13 || indexTurn[1]==13){
+               jb13.setText("13"); 
+            }
+            if (indexTurn[0]==14 || indexTurn[1]==14){
+               jb14.setText("14"); 
+            }
+            if (indexTurn[0]==15 || indexTurn[1]==15){
+               jb15.setText("15"); 
+            }
+            if (indexTurn[0]==16 || indexTurn[1]==16){
+               jb16.setText("16"); 
+            }
+            if (indexTurn[0]==17 || indexTurn[1]==17){
+               jb17.setText("17"); 
+            }
+            if (indexTurn[0]==18 || indexTurn[1]==18){
+               jb18.setText("18"); 
+            }
+            if (indexTurn[0]==19 || indexTurn[1]==19){
+               jb19.setText("19"); 
+            }
+            if (indexTurn[0]==20 || indexTurn[1]==20){
+               jb20.setText("20"); 
+            }
+            if (indexTurn[0]==21 || indexTurn[1]==21){
+               jb21.setText("21"); 
+            }
+            if (indexTurn[0]==22 || indexTurn[1]==22){
+               jb22.setText("22"); 
+            }
+            if (indexTurn[0]==23 || indexTurn[1]==23){
+               jb23.setText("23"); 
+            }
+            if (indexTurn[0]==24 || indexTurn[1]==24){
+               jb24.setText("24"); 
+            }
+            if (indexTurn[0]==25 || indexTurn[1]==25){
+               jb25.setText("25"); 
+            }
+            if (indexTurn[0]==26 || indexTurn[1]==26){
+               jb26.setText("26"); 
+            }
+            if (indexTurn[0]==27 || indexTurn[1]==27){
+               jb27.setText("27"); 
+            }
+            if (indexTurn[0]==28 || indexTurn[1]==28){
+               jb28.setText("28"); 
+            }
+            if (indexTurn[0]==29 || indexTurn[1]==29){
+               jb29.setText("29"); 
+            }
+            if (indexTurn[0]==30 || indexTurn[1]==30){
+               jb30.setText("30"); 
+            }
+            if (indexTurn[0]==31 || indexTurn[1]==31){
+               jb31.setText("31"); 
+            }
+            if (indexTurn[0]==32 || indexTurn[1]==32){
+               jb32.setText("32"); 
+            }
+            if (indexTurn[0]==33 || indexTurn[1]==33){
+               jb33.setText("33"); 
+            }
+            if (indexTurn[0]==34 || indexTurn[1]==34){
+               jb34.setText("34"); 
+            }
+            if (indexTurn[0]==35 || indexTurn[1]==35){
+               jb35.setText("35"); 
+            }
+            if (indexTurn[0]==36 || indexTurn[1]==36){
+               jb36.setText("36"); 
+            }
+            if (indexTurn[0]==37 || indexTurn[1]==37){
+               jb37.setText("37"); 
+            }
+            if (indexTurn[0]==38 || indexTurn[1]==38){
+               jb38.setText("38"); 
+            }
+            if (indexTurn[0]==39 || indexTurn[1]==39){
+               jb39.setText("39"); 
+            }
+            if (indexTurn[0]==40 || indexTurn[1]==40){
+               jb40.setText("40"); 
+            }
+            if (indexTurn[0]==41 || indexTurn[1]==41){
+               jb41.setText("41"); 
+            }
+            if (indexTurn[0]==42 || indexTurn[1]==42){
+               jb42.setText("42"); 
+            }
+            if (indexTurn[0]==43 || indexTurn[1]==43){
+               jb43.setText("43"); 
+            }
+            if (indexTurn[0]==44 || indexTurn[1]==44){
+               jb44.setText("44"); 
+            }
+            if (indexTurn[0]==45 || indexTurn[1]==45){
+               jb45.setText("45"); 
+            }
+            if (indexTurn[0]==46 || indexTurn[1]==46){
+               jb46.setText("46"); 
+            }
+            if (indexTurn[0]==47 || indexTurn[1]==47){
+               jb47.setText("47"); 
+            }
+            if (indexTurn[0]==48 || indexTurn[1]==48){
+               jb48.setText("48"); 
+            }
+            
+            
+            
             matched = false;
             jbNext.setVisible(false); 
                 enableCards();
@@ -1024,6 +1138,114 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             if (indexTurn[0]==12 || indexTurn[1]==12){
                jb12.setVisible(false); 
             }
+            if (indexTurn[0]==13 || indexTurn[1]==13){
+               jb13.setVisible(false); 
+            }
+            if (indexTurn[0]==14 || indexTurn[1]==14){
+               jb14.setVisible(false); 
+            }
+            if (indexTurn[0]==15 || indexTurn[1]==15){
+               jb15.setVisible(false); 
+            }
+            if (indexTurn[0]==16 || indexTurn[1]==16){
+               jb16.setVisible(false); 
+            }
+            if (indexTurn[0]==17 || indexTurn[1]==17){
+               jb17.setVisible(false); 
+            }
+            if (indexTurn[0]==18 || indexTurn[1]==18){
+               jb18.setVisible(false); 
+            }
+            if (indexTurn[0]==19 || indexTurn[1]==19){
+               jb19.setVisible(false); 
+            }
+            if (indexTurn[0]==20 || indexTurn[1]==20){
+               jb20.setVisible(false); 
+            }
+            if (indexTurn[0]==21 || indexTurn[1]==21){
+               jb21.setVisible(false); 
+            }
+            if (indexTurn[0]==22 || indexTurn[1]==22){
+               jb22.setVisible(false); 
+            }
+            if (indexTurn[0]==23 || indexTurn[1]==23){
+               jb23.setVisible(false); 
+            }
+            if (indexTurn[0]==24 || indexTurn[1]==24){
+               jb24.setVisible(false); 
+            }
+            if (indexTurn[0]==25 || indexTurn[1]==25){
+               jb25.setVisible(false); 
+            }
+            if (indexTurn[0]==26 || indexTurn[1]==26){
+               jb26.setVisible(false); 
+            }
+            if (indexTurn[0]==27 || indexTurn[1]==27){
+               jb27.setVisible(false); 
+            }
+            if (indexTurn[0]==28 || indexTurn[1]==28){
+               jb28.setVisible(false); 
+            }
+            if (indexTurn[0]==29 || indexTurn[1]==29){
+               jb29.setVisible(false); 
+            }
+            if (indexTurn[0]==30 || indexTurn[1]==30){
+               jb30.setVisible(false); 
+            }
+            if (indexTurn[0]==31 || indexTurn[1]==31){
+               jb31.setVisible(false); 
+            }
+            if (indexTurn[0]==32 || indexTurn[1]==32){
+               jb32.setVisible(false); 
+            }
+            if (indexTurn[0]==33 || indexTurn[1]==33){
+               jb33.setVisible(false); 
+            }
+            if (indexTurn[0]==34 || indexTurn[1]==34){
+               jb34.setVisible(false); 
+            }
+            if (indexTurn[0]==35 || indexTurn[1]==35){
+               jb35.setVisible(false); 
+            }
+            if (indexTurn[0]==36 || indexTurn[1]==36){
+               jb36.setVisible(false); 
+            }
+            if (indexTurn[0]==37 || indexTurn[1]==37){
+               jb37.setVisible(false); 
+            }
+            if (indexTurn[0]==38 || indexTurn[1]==38){
+               jb38.setVisible(false); 
+            }
+            if (indexTurn[0]==39 || indexTurn[1]==39){
+               jb39.setVisible(false); 
+            }
+            if (indexTurn[0]==40 || indexTurn[1]==40){
+               jb40.setVisible(false); 
+            }
+            if (indexTurn[0]==41 || indexTurn[1]==41){
+               jb41.setVisible(false); 
+            }
+            if (indexTurn[0]==42 || indexTurn[1]==42){
+               jb42.setVisible(false); 
+            }
+            if (indexTurn[0]==43 || indexTurn[1]==43){
+               jb43.setVisible(false); 
+            }
+            if (indexTurn[0]==44 || indexTurn[1]==44){
+               jb44.setVisible(false); 
+            }
+            if (indexTurn[0]==45 || indexTurn[1]==45){
+               jb45.setVisible(false); 
+            }
+            if (indexTurn[0]==46 || indexTurn[1]==46){
+               jb46.setVisible(false); 
+            }
+            if (indexTurn[0]==47 || indexTurn[1]==47){
+               jb47.setVisible(false); 
+            }
+            if (indexTurn[0]==48 || indexTurn[1]==48){
+               jb48.setVisible(false); 
+            }
             jbNext.setVisible(false);
                 enableCards();
                 
@@ -1037,7 +1259,9 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                 }
         
     }
-    
+  //  private void disableCards(/*JButton button*/){
+       // button.setEnabled(false);
+   // }
     private void disableCards(){
         jb1.setEnabled(false);
         jb2.setEnabled(false);
@@ -1047,6 +1271,47 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jb6.setEnabled(false);
         jb7.setEnabled(false);
         jb8.setEnabled(false);
+        jb9.setEnabled(false);
+        jb10.setEnabled(false);
+        jb11.setEnabled(false);
+        jb12.setEnabled(false);
+        jb13.setEnabled(false);
+        jb14.setEnabled(false);
+        jb15.setEnabled(false);
+        jb16.setEnabled(false);
+        jb17.setEnabled(false);
+        jb18.setEnabled(false);
+        jb19.setEnabled(false);
+        jb20.setEnabled(false);
+        jb21.setEnabled(false);
+        jb22.setEnabled(false);
+        jb23.setEnabled(false);
+        jb24.setEnabled(false);
+        jb25.setEnabled(false);
+        jb26.setEnabled(false);
+        jb27.setEnabled(false);
+        jb28.setEnabled(false);
+        jb29.setEnabled(false);
+        jb30.setEnabled(false);
+        jb31.setEnabled(false);
+        jb32.setEnabled(false);
+        jb33.setEnabled(false);
+        jb34.setEnabled(false);
+        jb35.setEnabled(false);
+        jb36.setEnabled(false);
+        jb37.setEnabled(false);
+        jb38.setEnabled(false);
+        jb39.setEnabled(false);
+        jb40.setEnabled(false);
+        jb41.setEnabled(false);
+        jb42.setEnabled(false);
+        jb43.setEnabled(false);
+        jb44.setEnabled(false);
+        jb44.setEnabled(false);
+        jb45.setEnabled(false);
+        jb46.setEnabled(false);
+        jb47.setEnabled(false);
+        jb48.setEnabled(false);
     }
     private void enableCards(){
         jb1.setEnabled(true);
@@ -1057,6 +1322,47 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jb6.setEnabled(true);
         jb7.setEnabled(true);
         jb8.setEnabled(true);
+        jb9.setEnabled(true);
+        jb10.setEnabled(true);
+        jb11.setEnabled(true);
+        jb12.setEnabled(true);
+        jb13.setEnabled(true);
+        jb14.setEnabled(true);
+        jb15.setEnabled(true);
+        jb16.setEnabled(true);
+        jb17.setEnabled(true);
+        jb18.setEnabled(true);
+        jb19.setEnabled(true);
+        jb20.setEnabled(true);
+        jb21.setEnabled(true);
+        jb22.setEnabled(true);
+        jb23.setEnabled(true);
+        jb24.setEnabled(true);
+        jb25.setEnabled(true);
+        jb26.setEnabled(true);
+        jb27.setEnabled(true);
+        jb28.setEnabled(true);
+        jb29.setEnabled(true);
+        jb30.setEnabled(true);
+        jb31.setEnabled(true);
+        jb32.setEnabled(true);
+        jb33.setEnabled(true);
+        jb34.setEnabled(true);
+        jb35.setEnabled(true);
+        jb36.setEnabled(true);
+        jb37.setEnabled(true);
+        jb38.setEnabled(true);
+        jb39.setEnabled(true);
+        jb40.setEnabled(true);
+        jb41.setEnabled(true);
+        jb42.setEnabled(true);
+        jb43.setEnabled(true);
+        jb44.setEnabled(true);
+        jb45.setEnabled(true);
+        jb46.setEnabled(true);
+        jb47.setEnabled(true);
+        jb48.setEnabled(true);
+        
     }
     
     
@@ -1133,163 +1439,363 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jb8ActionPerformed
 
     private void jb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb9ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[8]); // index should be button#-1
+        jb9.setText(symbol);
+        CLICKS++;
+        
+        setIndices(9); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb9ActionPerformed
 
     private void jb10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb10ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[9]); // index should be button#-1
+        jb10.setText(symbol);
+        CLICKS++;
+        
+        setIndices(10); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb10ActionPerformed
 
     private void jb11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb11ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[10]); // index should be button#-1
+        jb11.setText(symbol);
+        CLICKS++;
+        
+        setIndices(11); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb11ActionPerformed
 
     private void jb12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb12ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[11]); // index should be button#-1
+        jb12.setText(symbol);
+        CLICKS++;
+        
+        setIndices(12); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb12ActionPerformed
 
     private void jb13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb13ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[12]); // index should be button#-1
+        jb13.setText(symbol);
+        CLICKS++;
+        
+        setIndices(13); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb13ActionPerformed
 
     private void jb14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb14ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[13]); // index should be button#-1
+        jb14.setText(symbol);
+        CLICKS++;
+        
+        setIndices(14); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb14ActionPerformed
 
     private void jb15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb15ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[14]); // index should be button#-1
+        jb15.setText(symbol);
+        CLICKS++;
+        
+        setIndices(15); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb15ActionPerformed
 
     private void jb16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb16ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[15]); // index should be button#-1
+        jb16.setText(symbol);
+        CLICKS++;
+        
+        setIndices(16); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb16ActionPerformed
 
     private void jb17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb17ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[16]); // index should be button#-1
+        jb17.setText(symbol);
+        CLICKS++;
+        
+        setIndices(17); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb17ActionPerformed
 
     private void jb18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb18ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[17]); // index should be button#-1
+        jb18.setText(symbol);
+        CLICKS++;
+        
+        setIndices(18); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb18ActionPerformed
 
     private void jb19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb19ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[18]); // index should be button#-1
+        jb19.setText(symbol);
+        CLICKS++;
+        
+        setIndices(19); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb19ActionPerformed
 
     private void jb20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb20ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[19]); // index should be button#-1
+        jb20.setText(symbol);
+        CLICKS++;
+        
+        setIndices(20); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb20ActionPerformed
 
     private void jb21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb21ActionPerformed
-        // TODO add your handling code here:
+       String symbol = Character.toString(symbols[20]); // index should be button#-1
+        jb21.setText(symbol);
+        CLICKS++;
+        
+        setIndices(21); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb21ActionPerformed
 
     private void jb22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb22ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[21]); // index should be button#-1
+        jb22.setText(symbol);
+        CLICKS++;
+        
+        setIndices(22); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb22ActionPerformed
 
     private void jb23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb23ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[22]); // index should be button#-1
+        jb23.setText(symbol);
+        CLICKS++;
+        
+        setIndices(23); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb23ActionPerformed
 
     private void jb24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb24ActionPerformed
-        // TODO add your handling code here:
+       String symbol = Character.toString(symbols[23]); // index should be button#-1
+        jb24.setText(symbol);
+        CLICKS++;
+        
+        setIndices(24); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb24ActionPerformed
 
     private void jb25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb25ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[24]); // index should be button#-1
+        jb25.setText(symbol);
+        CLICKS++;
+        
+        setIndices(25); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb25ActionPerformed
 
     private void jb26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb26ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[25]); // index should be button#-1
+        jb26.setText(symbol);
+        CLICKS++;
+        
+        setIndices(26); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb26ActionPerformed
 
     private void jb27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb27ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[26]); // index should be button#-1
+        jb27.setText(symbol);
+        CLICKS++;
+        
+        setIndices(27); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb27ActionPerformed
 
     private void jb28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb28ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[27]); // index should be button#-1
+        jb28.setText(symbol);
+        CLICKS++;
+        
+        setIndices(28); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb28ActionPerformed
 
     private void jb29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb29ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[28]); // index should be button#-1
+        jb29.setText(symbol);
+        CLICKS++;
+        
+        setIndices(29); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb29ActionPerformed
 
     private void jb30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb30ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[29]); // index should be button#-1
+        jb30.setText(symbol);
+        CLICKS++;
+        
+        setIndices(30); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb30ActionPerformed
 
     private void jb31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb31ActionPerformed
-        // TODO add your handling code here:
+       String symbol = Character.toString(symbols[30]); // index should be button#-1
+        jb31.setText(symbol);
+        CLICKS++;
+        
+        setIndices(31); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb31ActionPerformed
 
     private void jb32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb32ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[31]); // index should be button#-1
+        jb32.setText(symbol);
+        CLICKS++;
+        
+        setIndices(32); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb32ActionPerformed
 
     private void jb33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb33ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[32]); // index should be button#-1
+        jb33.setText(symbol);
+        CLICKS++;
+        
+        setIndices(33); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb33ActionPerformed
 
     private void jb34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb34ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[33]); // index should be button#-1
+        jb34.setText(symbol);
+        CLICKS++;
+        
+        setIndices(34); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb34ActionPerformed
 
     private void jb35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb35ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[34]); // index should be button#-1
+        jb35.setText(symbol);
+        CLICKS++;
+        
+        setIndices(35); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb35ActionPerformed
 
     private void jb36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb36ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[35]); // index should be button#-1
+        jb36.setText(symbol);
+        CLICKS++;
+        
+        setIndices(36); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb36ActionPerformed
 
     private void jb37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb37ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[36]); // index should be button#-1
+        jb37.setText(symbol);
+        CLICKS++;
+        
+        setIndices(37); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb37ActionPerformed
 
     private void jb38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb38ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[37]); // index should be button#-1
+        jb38.setText(symbol);
+        CLICKS++;
+        
+        setIndices(38); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb38ActionPerformed
 
     private void jb39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb39ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[38]); // index should be button#-1
+        jb39.setText(symbol);
+        CLICKS++;
+        
+        setIndices(39); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb39ActionPerformed
 
     private void jb40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb40ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[39]); // index should be button#-1
+        jb40.setText(symbol);
+        CLICKS++;
+        
+        setIndices(40); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb40ActionPerformed
 
     private void jb41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb41ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[40]); // index should be button#-1
+        jb41.setText(symbol);
+        CLICKS++;
+        
+        setIndices(41); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb41ActionPerformed
 
     private void jb42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb42ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[41]); // index should be button#-1
+        jb42.setText(symbol);
+        CLICKS++;
+        
+        setIndices(42); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb42ActionPerformed
 
     private void jb43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb43ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[42]); // index should be button#-1
+        jb43.setText(symbol);
+        CLICKS++;
+        
+        setIndices(43); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb43ActionPerformed
 
     private void jb44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb44ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[43]); // index should be button#-1
+        jb44.setText(symbol);
+        CLICKS++;
+        
+        setIndices(44); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb44ActionPerformed
 
     private void jb45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb45ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[44]); // index should be button#-1
+        jb45.setText(symbol);
+        CLICKS++;
+        
+        setIndices(45); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb45ActionPerformed
 
     private void jb46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb46ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[45]); // index should be button#-1
+        jb46.setText(symbol);
+        CLICKS++;
+        
+        setIndices(46); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb46ActionPerformed
 
     private void jb47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb47ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[46]); // index should be button#-1
+        jb47.setText(symbol);
+        CLICKS++;
+        
+        setIndices(47); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb47ActionPerformed
 
     private void jb48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb48ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[47]); // index should be button#-1
+        jb48.setText(symbol);
+        CLICKS++;
+        
+        setIndices(48); //save the index of this card to an array
+        afterClick();
     }//GEN-LAST:event_jb48ActionPerformed
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
