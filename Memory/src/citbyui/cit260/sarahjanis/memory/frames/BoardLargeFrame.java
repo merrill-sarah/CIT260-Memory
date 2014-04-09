@@ -45,14 +45,14 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;
+        CLICKS = 0;
+        
         jlP1Name.setText(P1.getName());
         jlP2Name.setText(P2.getName());
-        CLICKS = 0;
+        
+        jlInstructions.setText(P1.getName() + ": Choose a card.");        
         jbNext.setVisible(false);
-        
-        
-        
-        
+                  
     }
 
     /**
@@ -889,16 +889,18 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             if (tCounter % 2 != 0){
                 if (matched == true){
                      P1.setMatchedGame(P1.getMatchedGame()+1);
-                     jlInstructions.setText("Yay " + P1.getName() + ", you made a match! You get another turn.");
+                     jlInstructions.setText(P1.getName() + ": Yay, you made a match! You get another turn.");
                      jlP1Matches.setText(Integer.toString(P1.getMatchedGame()));
-                    jbNext.setVisible(true);
+                     jbNext.setVisible(true);
+                        disableCards();
             
                     //jbLButton1.setText("");
                     }
                 else {
                     //jbLButton1.setText("1"); 
-                    jlInstructions.setText("Sorry, not a match. Next player's turn.");
+                    jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
+                        disableCards();
             
                     //next player's turn
                     tCounter++;} 
@@ -907,23 +909,32 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             else {
                 if (matched == true){
                      P2.setMatchedGame(P2.getMatchedGame()+1);
-                     jlInstructions.setText("Yay " + P2.getName() + ", you made a match! You get another turn.");
+                     jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
                      jlP2Matches.setText(Integer.toString(P2.getMatchedGame()));
                     jbNext.setVisible(true);
+                        disableCards();
             
                     //jbLButton1.setText("");
                     }
                 else{
                     //jbLButton1.setText("1"); 
-                    jlInstructions.setText("Sorry, not a match. Next player's turn.");
+                    jlInstructions.setText(P2.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
+                        disableCards();
             
                     //next player's turn
                     tCounter++;} 
             }
         }
-        else
-            jlInstructions.setText("");
+        else{
+            if (tCounter % 2 != 0){
+              jlInstructions.setText(P1.getName() + ": Choose another card.");  
+            }
+            else{
+              jlInstructions.setText(P2.getName() + ": Choose another card.");
+            }
+        }
+            
     }
     private void setBoard(){
         //make this fix cards somehow
@@ -954,7 +965,16 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             }
             matched = false;
             jbNext.setVisible(false); 
-        }
+                enableCards();
+                
+                //player instructions
+                if (tCounter % 2 != 0){
+                    jlInstructions.setText(P1.getName() + ": Choose a card.");  
+                    }
+                else{
+                    jlInstructions.setText(P2.getName() + ": Choose a card.");
+                    }
+                }
         else if (matched == true){
             if (indexTurn[0]==0 || indexTurn[1]==0){
                jbLButton1.setVisible(false); 
@@ -981,7 +1001,38 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                jbLButton8.setVisible(false); 
             }
             jbNext.setVisible(false);
-        }
+                enableCards();
+                
+                //player instructions
+                if (tCounter % 2 != 0){
+                    jlInstructions.setText(P1.getName() + ": Choose a card.");  
+                    }
+                else{
+                    jlInstructions.setText(P2.getName() + ": Choose a card.");
+                    }
+                }
+        
+    }
+    
+    private void disableCards(){
+        jbLButton1.setEnabled(false);
+        jbLButton2.setEnabled(false);
+        jbLButton3.setEnabled(false);
+        jbLButton4.setEnabled(false);
+        jbLButton5.setEnabled(false);
+        jbLButton6.setEnabled(false);
+        jbLButton7.setEnabled(false);
+        jbLButton8.setEnabled(false);
+    }
+    private void enableCards(){
+        jbLButton1.setEnabled(true);
+        jbLButton2.setEnabled(true);
+        jbLButton3.setEnabled(true);
+        jbLButton4.setEnabled(true);
+        jbLButton5.setEnabled(true);
+        jbLButton6.setEnabled(true);
+        jbLButton7.setEnabled(true);
+        jbLButton8.setEnabled(true);
     }
     
     
