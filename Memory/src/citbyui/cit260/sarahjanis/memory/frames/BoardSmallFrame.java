@@ -442,6 +442,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
        String symbol = Character.toString(symbols[0]);
        jb1.setText(symbol);
+       jb1.setEnabled(false);
        CLICKS++;
        
         setIndices(1); //save the index of this card to an array
@@ -451,6 +452,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2ActionPerformed
         String symbol = Character.toString(symbols[1]);
        jb2.setText(symbol);
+       jb2.setEnabled(false);
        CLICKS++;
        
         setIndices(2);
@@ -460,6 +462,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb3ActionPerformed
         String symbol = Character.toString(symbols[2]);
        jb3.setText(symbol);
+       jb3.setEnabled(false);
        CLICKS++;
        
         setIndices(3);
@@ -469,6 +472,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb4ActionPerformed
         String symbol = Character.toString(symbols[3]);
        jb4.setText(symbol);
+       jb4.setEnabled(false);
        CLICKS++;
        
         setIndices(4);
@@ -478,6 +482,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb5ActionPerformed
         String symbol = Character.toString(symbols[4]);
        jb5.setText(symbol);
+       jb5.setEnabled(false);
        CLICKS++;
        
         setIndices(5);
@@ -487,6 +492,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb6ActionPerformed
         String symbol = Character.toString(symbols[5]);
        jb6.setText(symbol);
+       jb6.setEnabled(false);
        CLICKS++;
        
         setIndices(6);
@@ -496,6 +502,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb7ActionPerformed
         String symbol = Character.toString(symbols[6]);
        jb7.setText(symbol);
+       jb7.setEnabled(false);
        CLICKS++;
        
         setIndices(7);
@@ -505,6 +512,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb8ActionPerformed
         String symbol = Character.toString(symbols[7]);
        jb8.setText(symbol);
+       jb8.setEnabled(false);
        CLICKS++;
        
         setIndices(8);
@@ -514,6 +522,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb9ActionPerformed
         String symbol = Character.toString(symbols[8]);
        jb9.setText(symbol);
+       jb9.setEnabled(false);
        CLICKS++;
        
         setIndices(9);
@@ -523,6 +532,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb10ActionPerformed
         String symbol = Character.toString(symbols[9]);
        jb10.setText(symbol);
+       jb10.setEnabled(false);
        CLICKS++;
        
         setIndices(10);
@@ -532,6 +542,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb11ActionPerformed
         String symbol = Character.toString(symbols[10]);
        jb11.setText(symbol);
+       jb11.setEnabled(false);
        CLICKS++;
        
         setIndices(11);
@@ -541,6 +552,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private void jb12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb12ActionPerformed
         String symbol = Character.toString(symbols[11]);
        jb12.setText(symbol);
+       jb12.setEnabled(false);
        CLICKS++;
        
         setIndices(12);
