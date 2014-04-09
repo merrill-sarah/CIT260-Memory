@@ -28,23 +28,25 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     Game game;
     Board board;
     SymbolArray symArr;
-    Player player1;
-    Player player2;
+    Player P1;
+    Player P2;
     Card card1;
     Card card2;
     boolean matched = false;
     //BoardLargeFrame lFrame;
-    
+    private int tCounter=1;
     private int CLICKS;
     /**
      * Creates new form BoardLargeFrame
      */
     public BoardLargeFrame(Player player1, Player player2, char getSymbols[]) {
+        P1 = player1;
+        P2 = player2;
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;
-        jlP1Name.setText(player1.getName());
-        jlP2Name.setText(player2.getName());
+        jlP1Name.setText(P1.getName());
+        jlP2Name.setText(P2.getName());
         CLICKS = 0;
         jbNext.setVisible(false);
         
@@ -883,16 +885,42 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         if (CLICKS == 2){
             matched = checkMatch();
             CLICKS =0;
+            
+            if (tCounter % 2 != 0){
+                if (matched == true){
+                     P1.setMatchedGame(P1.getMatchedGame()+1);
+                     jlInstructions.setText("Yay " + P1.getName() + ", you made a match! You get another turn.");
+                     jlP1Matches.setText(Integer.toString(P1.getMatchedGame()));
+                    jbNext.setVisible(true);
+            
+                    //jbLButton1.setText("");
+                    }
+                else {
+                    //jbLButton1.setText("1"); 
+                    jlInstructions.setText("Sorry, not a match. Next player's turn.");
+                    jbNext.setVisible(true);
+            
+                    //next player's turn
+                    tCounter++;} 
+        }
              
-        if (matched == true){
-            jlInstructions.setText("Yay, you made a match! You get another turn.");
-            jbNext.setVisible(true);
-            //jbLButton1.setText("");
+            else {
+                if (matched == true){
+                     P2.setMatchedGame(P2.getMatchedGame()+1);
+                     jlInstructions.setText("Yay " + P2.getName() + ", you made a match! You get another turn.");
+                     jlP2Matches.setText(Integer.toString(P2.getMatchedGame()));
+                    jbNext.setVisible(true);
+            
+                    //jbLButton1.setText("");
+                    }
+                else{
+                    //jbLButton1.setText("1"); 
+                    jlInstructions.setText("Sorry, not a match. Next player's turn.");
+                    jbNext.setVisible(true);
+            
+                    //next player's turn
+                    tCounter++;} 
             }
-        else if (matched == false)
-          //jbLButton1.setText("1"); 
-            jlInstructions.setText("Sorry, not a match. Next player's turn.");
-            jbNext.setVisible(true);
         }
         else
             jlInstructions.setText("");
