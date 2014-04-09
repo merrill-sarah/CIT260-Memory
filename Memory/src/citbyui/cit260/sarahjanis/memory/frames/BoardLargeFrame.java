@@ -864,6 +864,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         
         if (CLICKS == 1){
             indexTurn[0]= index;
+            
         }
         else if (CLICKS ==2){
           indexTurn[1]= index;
@@ -887,7 +888,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             jlInstructions.setText("Yay, you made a match! You get another turn.");
             jbNext.setVisible(true);
             //jbLButton1.setText("");
-            matched = false;}
+            }
         else if (matched == false)
           //jbLButton1.setText("1"); 
             jlInstructions.setText("Sorry, not a match. Next player's turn.");
@@ -899,10 +900,60 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void setBoard(){
         //make this fix cards somehow
         if (matched == false){
-           jbNext.setVisible(false); 
+            if (indexTurn[0]==0 || indexTurn[1]==0){
+               jbLButton1.setText("1"); 
+            }
+            if (indexTurn[0]==1 || indexTurn[1]==1){
+               jbLButton2.setText("2"); 
+            }
+            if (indexTurn[0]==2 || indexTurn[1]==2){
+               jbLButton3.setText("3"); 
+            }
+            if (indexTurn[0]==3 || indexTurn[1]==3){
+               jbLButton4.setText("4"); 
+            }
+            if (indexTurn[0]==4 || indexTurn[1]==4){
+               jbLButton5.setText("5"); 
+            }
+            if (indexTurn[0]==5 || indexTurn[1]==5){
+               jbLButton6.setText("6"); 
+            }
+            if (indexTurn[0]==6 || indexTurn[1]==6){
+               jbLButton7.setText("7"); 
+            }
+            if (indexTurn[0]==7 || indexTurn[1]==7){
+               jbLButton8.setText("8"); 
+            }
+            matched = false;
+            jbNext.setVisible(false); 
         }
-        else
+        else if (matched == true){
+            if (indexTurn[0]==0 || indexTurn[1]==0){
+               jbLButton1.setVisible(false); 
+            }
+            if (indexTurn[0]==1 || indexTurn[1]==1){
+               jbLButton2.setVisible(false); 
+            }
+            if (indexTurn[0]==2 || indexTurn[1]==2){
+               jbLButton3.setVisible(false); 
+            }
+            if (indexTurn[0]==3 || indexTurn[1]==3){
+               jbLButton4.setVisible(false); 
+            }
+            if (indexTurn[0]==4 || indexTurn[1]==4){
+               jbLButton5.setVisible(false); 
+            }
+            if (indexTurn[0]==5 || indexTurn[1]==5){
+               jbLButton6.setVisible(false); 
+            }
+            if (indexTurn[0]==6 || indexTurn[1]==6){
+               jbLButton7.setVisible(false); 
+            }
+            if (indexTurn[0]==7 || indexTurn[1]==7){
+               jbLButton8.setVisible(false); 
+            }
             jbNext.setVisible(false);
+        }
     }
     
     
