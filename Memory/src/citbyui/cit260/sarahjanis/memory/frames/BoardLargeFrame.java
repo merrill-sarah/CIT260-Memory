@@ -1,4 +1,4 @@
-/*
+/*-
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -24,7 +24,7 @@ import java.util.logging.Logger;
  */
 public class BoardLargeFrame extends javax.swing.JFrame {
      private char symbols[];
-     private int indexTurn[];
+     private int indexTurn[] = new int[2];
     Game game;
     Board board;
     SymbolArray symArr;
@@ -32,9 +32,10 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     Player player2;
     Card card1;
     Card card2;
-    BoardLargeFrame lFrame;
+    boolean matched = false;
+    //BoardLargeFrame lFrame;
     
-    static int CLICKS;
+    private int CLICKS;
     /**
      * Creates new form BoardLargeFrame
      */
@@ -45,6 +46,9 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jlP1Name.setText(player1.getName());
         jlP2Name.setText(player2.getName());
         CLICKS = 0;
+        
+        
+        
         
     }
 
@@ -73,6 +77,9 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jbHelp = new javax.swing.JButton();
         jbQuit = new javax.swing.JButton();
         jbMainMenu = new javax.swing.JButton();
+        jpGamePlayInstructions = new javax.swing.JPanel();
+        jlFirstTurn = new javax.swing.JLabel();
+        jlInstructions = new javax.swing.JLabel();
         jpMGameArea = new javax.swing.JPanel();
         jbLButton1 = new javax.swing.JButton();
         jbLButton2 = new javax.swing.JButton();
@@ -252,13 +259,40 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jpGamePlayInstructions.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout jpGamePlayInstructionsLayout = new javax.swing.GroupLayout(jpGamePlayInstructions);
+        jpGamePlayInstructions.setLayout(jpGamePlayInstructionsLayout);
+        jpGamePlayInstructionsLayout.setHorizontalGroup(
+            jpGamePlayInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpGamePlayInstructionsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlFirstTurn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpGamePlayInstructionsLayout.setVerticalGroup(
+            jpGamePlayInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpGamePlayInstructionsLayout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addComponent(jlFirstTurn)
+                .addContainerGap())
+            .addComponent(jlInstructions, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jpMTitleLayout = new javax.swing.GroupLayout(jpMTitle);
         jpMTitle.setLayout(jpMTitleLayout);
         jpMTitleLayout.setHorizontalGroup(
             jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMTitleLayout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(jlMTitle)
+                .addGroup(jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpMTitleLayout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jlMTitle))
+                    .addGroup(jpMTitleLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -270,6 +304,9 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMTitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpMTitleLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpMTitleLayout.createSequentialGroup()
                         .addGroup(jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -642,84 +679,121 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbQuitActionPerformed
     
     private void jbLButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton1ActionPerformed
-        lFrame.
-        CLICKS++;
-        boolean matched = false;
-       
         String symbol = Character.toString(symbols[0]); // index should be button#-1
         jbLButton1.setText(symbol);
+        CLICKS++;
+       
         setIndices(0); //save the index of this card to an array
-        if (CLICKS ==2){
-            matched = checkMatch();
-            CLICKS =0;
-            } 
-        if (matched == true){
-            jbLButton1.setText("");}
-        else if (matched == false)
-          jbLButton1.setText("1");  
+        afterClick();
+            
     }//GEN-LAST:event_jbLButton1ActionPerformed
     void setIndices(int index){
         
-        int [] indexTurn = new int[2];
         if (CLICKS == 1){
-            indexTurn[0]= indexTurn[index];
+            indexTurn[0]= index;
         }
         else if (CLICKS ==2){
-          indexTurn[1]= indexTurn[index];
+          indexTurn[1]= index;
         }
       
     }
     
     boolean checkMatch(){
         
-        if (symbols[getIndexTurn()[0]]== symbols[getIndexTurn()[1]])
+        if (symbols[indexTurn[0]]== symbols[indexTurn[1]])
           return true;
         else
             return false;
+    }
+    private void afterClick(){
+        if (CLICKS == 2){
+            matched = checkMatch();
+            CLICKS =0;
+             
+        if (matched == true){
+            jlInstructions.setText("Yay, you made a match! You get another turn.");
+            //jbLButton1.setText("");
+            matched = false;}
+        else if (matched == false)
+          //jbLButton1.setText("1"); 
+            jlInstructions.setText("Sorry, not a match. Next player's turn.");
+        }
+        else
+            jlInstructions.setText("");
     }
     
     
     
     private void jbLButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton2ActionPerformed
-         CLICKS++;
-        boolean matched = false;
-       
-        String symbol = Character.toString(symbols[1]);// index should be button#-1
+        String symbol = Character.toString(symbols[1]); // index should be button#-1
         jbLButton2.setText(symbol);
-        setIndices(1); //save the index of this card to an array -- index should be button#-1
-        if (CLICKS ==2){
-            matched = checkMatch();
-            CLICKS =0;
-            } 
-        if (matched == true){
-            jbLButton2.setText("");}
-        else if (matched == false)
-          jbLButton2.setText("2");  
+        CLICKS++;
+        
+        setIndices(1); //save the index of this card to an array
+        afterClick();
+        
        
     }//GEN-LAST:event_jbLButton2ActionPerformed
 
     private void jbLButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton3ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[2]); // index should be button#-1
+        jbLButton3.setText(symbol);
+        CLICKS++;
+
+        setIndices(2); //save the index of this card to an array
+        afterClick();
+     
     }//GEN-LAST:event_jbLButton3ActionPerformed
 
     private void jbLButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton4ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[3]); // index should be button#-1
+        jbLButton4.setText(symbol);
+        CLICKS++;
+
+        setIndices(3); //save the index of this card to an array
+        afterClick();
+     
     }//GEN-LAST:event_jbLButton4ActionPerformed
 
     private void jbLButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton5ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[4]); // index should be button#-1
+        jbLButton5.setText(symbol);
+        CLICKS++;
+
+        setIndices(4); //save the index of this card to an array
+        afterClick();
+    
     }//GEN-LAST:event_jbLButton5ActionPerformed
 
     private void jbLButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton6ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[5]); // index should be button#-1
+        jbLButton6.setText(symbol);
+        CLICKS++;
+
+        setIndices(5);
+        afterClick();//save the index of this card to an array
+     
     }//GEN-LAST:event_jbLButton6ActionPerformed
 
     private void jbLButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton7ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[6]); // index should be button#-1
+        jbLButton7.setText(symbol);
+        CLICKS++;
+
+        setIndices(6);
+        afterClick();//save the index of this card to an array
+       
+       
     }//GEN-LAST:event_jbLButton7ActionPerformed
 
     private void jbLButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton8ActionPerformed
-        // TODO add your handling code here:
+        String symbol = Character.toString(symbols[7]); // index should be button#-1
+        jbLButton8.setText(symbol);
+        CLICKS++;
+        
+        setIndices(7); //save the index of this card to an array
+        afterClick();
+     
     }//GEN-LAST:event_jbLButton8ActionPerformed
 
     private void jbLButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton9ActionPerformed
@@ -822,6 +896,8 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private javax.swing.JButton jbLButton9;
     private javax.swing.JButton jbMainMenu;
     private javax.swing.JButton jbQuit;
+    private javax.swing.JLabel jlFirstTurn;
+    private javax.swing.JLabel jlInstructions;
     private javax.swing.JLabel jlMTitle;
     private javax.swing.JLabel jlP1Matches;
     private javax.swing.JLabel jlP1Name;
@@ -829,6 +905,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jlP2Matches;
     private javax.swing.JLabel jlP2Name;
     private javax.swing.JLabel jlP2Wins;
+    javax.swing.JPanel jpGamePlayInstructions;
     private javax.swing.JPanel jpMGameArea;
     private javax.swing.JPanel jpMTitle;
     // End of variables declaration//GEN-END:variables
