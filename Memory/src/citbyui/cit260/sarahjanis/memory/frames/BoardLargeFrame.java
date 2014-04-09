@@ -85,54 +85,54 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jlInstructions = new javax.swing.JLabel();
         jbNext = new javax.swing.JButton();
         jpMGameArea = new javax.swing.JPanel();
-        jbLButton1 = new javax.swing.JButton();
-        jbLButton2 = new javax.swing.JButton();
-        jbLButton3 = new javax.swing.JButton();
-        jbLButton4 = new javax.swing.JButton();
-        jbLButton5 = new javax.swing.JButton();
-        jbLButton6 = new javax.swing.JButton();
-        jbLButton7 = new javax.swing.JButton();
-        jbLButton8 = new javax.swing.JButton();
-        jbLButton9 = new javax.swing.JButton();
-        jbLButton10 = new javax.swing.JButton();
-        jbLButton11 = new javax.swing.JButton();
-        jbLButton12 = new javax.swing.JButton();
-        jbLButton13 = new javax.swing.JButton();
-        jbLButton14 = new javax.swing.JButton();
-        jbLButton15 = new javax.swing.JButton();
-        jbLButton16 = new javax.swing.JButton();
-        jbLButton17 = new javax.swing.JButton();
-        jbLButton18 = new javax.swing.JButton();
-        jbLButton19 = new javax.swing.JButton();
-        jbLButton20 = new javax.swing.JButton();
-        jbLButton21 = new javax.swing.JButton();
-        jbLButton22 = new javax.swing.JButton();
-        jbLButton23 = new javax.swing.JButton();
-        jbLButton24 = new javax.swing.JButton();
-        jbLButton25 = new javax.swing.JButton();
-        jbLButton26 = new javax.swing.JButton();
-        jbLButton27 = new javax.swing.JButton();
-        jbLButton28 = new javax.swing.JButton();
-        jbLButton29 = new javax.swing.JButton();
-        jbLButton30 = new javax.swing.JButton();
-        jbLButton31 = new javax.swing.JButton();
-        jbLButton32 = new javax.swing.JButton();
-        jbLButton33 = new javax.swing.JButton();
-        jbLButton34 = new javax.swing.JButton();
-        jbLButton35 = new javax.swing.JButton();
-        jbLButton36 = new javax.swing.JButton();
-        jbLButton37 = new javax.swing.JButton();
-        jbLButton38 = new javax.swing.JButton();
-        jbLButton39 = new javax.swing.JButton();
-        jbLButton40 = new javax.swing.JButton();
-        jbLButton41 = new javax.swing.JButton();
-        jbLButton42 = new javax.swing.JButton();
-        jbLButton43 = new javax.swing.JButton();
-        jbLButton44 = new javax.swing.JButton();
-        jbLButton45 = new javax.swing.JButton();
-        jbLButton46 = new javax.swing.JButton();
-        jbLButton47 = new javax.swing.JButton();
-        jbLButton48 = new javax.swing.JButton();
+        jb1 = new javax.swing.JButton();
+        jb2 = new javax.swing.JButton();
+        jb3 = new javax.swing.JButton();
+        jb4 = new javax.swing.JButton();
+        jb5 = new javax.swing.JButton();
+        jb6 = new javax.swing.JButton();
+        jb7 = new javax.swing.JButton();
+        jb8 = new javax.swing.JButton();
+        jb9 = new javax.swing.JButton();
+        jb10 = new javax.swing.JButton();
+        jb11 = new javax.swing.JButton();
+        jb12 = new javax.swing.JButton();
+        jb13 = new javax.swing.JButton();
+        jb14 = new javax.swing.JButton();
+        jb15 = new javax.swing.JButton();
+        jb16 = new javax.swing.JButton();
+        jb17 = new javax.swing.JButton();
+        jb18 = new javax.swing.JButton();
+        jb19 = new javax.swing.JButton();
+        jb20 = new javax.swing.JButton();
+        jb21 = new javax.swing.JButton();
+        jb22 = new javax.swing.JButton();
+        jb23 = new javax.swing.JButton();
+        jb24 = new javax.swing.JButton();
+        jb25 = new javax.swing.JButton();
+        jb26 = new javax.swing.JButton();
+        jb27 = new javax.swing.JButton();
+        jb28 = new javax.swing.JButton();
+        jb29 = new javax.swing.JButton();
+        jb30 = new javax.swing.JButton();
+        jb31 = new javax.swing.JButton();
+        jb32 = new javax.swing.JButton();
+        jb33 = new javax.swing.JButton();
+        jb34 = new javax.swing.JButton();
+        jb35 = new javax.swing.JButton();
+        jb36 = new javax.swing.JButton();
+        jb37 = new javax.swing.JButton();
+        jb38 = new javax.swing.JButton();
+        jb39 = new javax.swing.JButton();
+        jb40 = new javax.swing.JButton();
+        jb41 = new javax.swing.JButton();
+        jb42 = new javax.swing.JButton();
+        jb43 = new javax.swing.JButton();
+        jb44 = new javax.swing.JButton();
+        jb45 = new javax.swing.JButton();
+        jb46 = new javax.swing.JButton();
+        jb47 = new javax.swing.JButton();
+        jb48 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -334,485 +334,485 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jpMGameArea.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
         jpMGameArea.setLayout(new java.awt.GridLayout(6, 8, 10, 10));
 
-        jbLButton1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton1.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton1.setText("1");
-        jbLButton1.addActionListener(new java.awt.event.ActionListener() {
+        jb1.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb1.setForeground(new java.awt.Color(0, 153, 153));
+        jb1.setText("1");
+        jb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton1ActionPerformed(evt);
+                jb1ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton1);
+        jpMGameArea.add(jb1);
 
-        jbLButton2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton2.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton2.setText("2");
-        jbLButton2.addActionListener(new java.awt.event.ActionListener() {
+        jb2.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb2.setForeground(new java.awt.Color(0, 153, 153));
+        jb2.setText("2");
+        jb2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton2ActionPerformed(evt);
+                jb2ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton2);
+        jpMGameArea.add(jb2);
 
-        jbLButton3.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton3.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton3.setText("3");
-        jbLButton3.addActionListener(new java.awt.event.ActionListener() {
+        jb3.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb3.setForeground(new java.awt.Color(0, 153, 153));
+        jb3.setText("3");
+        jb3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton3ActionPerformed(evt);
+                jb3ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton3);
+        jpMGameArea.add(jb3);
 
-        jbLButton4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton4.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton4.setText("4");
-        jbLButton4.addActionListener(new java.awt.event.ActionListener() {
+        jb4.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb4.setForeground(new java.awt.Color(0, 153, 153));
+        jb4.setText("4");
+        jb4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton4ActionPerformed(evt);
+                jb4ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton4);
+        jpMGameArea.add(jb4);
 
-        jbLButton5.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton5.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton5.setText("5");
-        jbLButton5.addActionListener(new java.awt.event.ActionListener() {
+        jb5.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb5.setForeground(new java.awt.Color(0, 153, 153));
+        jb5.setText("5");
+        jb5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton5ActionPerformed(evt);
+                jb5ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton5);
+        jpMGameArea.add(jb5);
 
-        jbLButton6.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton6.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton6.setText("6");
-        jbLButton6.addActionListener(new java.awt.event.ActionListener() {
+        jb6.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb6.setForeground(new java.awt.Color(0, 153, 153));
+        jb6.setText("6");
+        jb6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton6ActionPerformed(evt);
+                jb6ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton6);
+        jpMGameArea.add(jb6);
 
-        jbLButton7.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton7.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton7.setText("7");
-        jbLButton7.addActionListener(new java.awt.event.ActionListener() {
+        jb7.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb7.setForeground(new java.awt.Color(0, 153, 153));
+        jb7.setText("7");
+        jb7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton7ActionPerformed(evt);
+                jb7ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton7);
+        jpMGameArea.add(jb7);
 
-        jbLButton8.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton8.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton8.setText("8");
-        jbLButton8.addActionListener(new java.awt.event.ActionListener() {
+        jb8.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb8.setForeground(new java.awt.Color(0, 153, 153));
+        jb8.setText("8");
+        jb8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton8ActionPerformed(evt);
+                jb8ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton8);
+        jpMGameArea.add(jb8);
 
-        jbLButton9.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton9.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton9.setText("9");
-        jbLButton9.addActionListener(new java.awt.event.ActionListener() {
+        jb9.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb9.setForeground(new java.awt.Color(0, 153, 153));
+        jb9.setText("9");
+        jb9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton9ActionPerformed(evt);
+                jb9ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton9);
+        jpMGameArea.add(jb9);
 
-        jbLButton10.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton10.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton10.setText("10");
-        jbLButton10.addActionListener(new java.awt.event.ActionListener() {
+        jb10.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb10.setForeground(new java.awt.Color(0, 153, 153));
+        jb10.setText("10");
+        jb10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton10ActionPerformed(evt);
+                jb10ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton10);
+        jpMGameArea.add(jb10);
 
-        jbLButton11.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton11.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton11.setText("11");
-        jbLButton11.addActionListener(new java.awt.event.ActionListener() {
+        jb11.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb11.setForeground(new java.awt.Color(0, 153, 153));
+        jb11.setText("11");
+        jb11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton11ActionPerformed(evt);
+                jb11ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton11);
+        jpMGameArea.add(jb11);
 
-        jbLButton12.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton12.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton12.setText("12");
-        jbLButton12.addActionListener(new java.awt.event.ActionListener() {
+        jb12.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb12.setForeground(new java.awt.Color(0, 153, 153));
+        jb12.setText("12");
+        jb12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton12ActionPerformed(evt);
+                jb12ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton12);
+        jpMGameArea.add(jb12);
 
-        jbLButton13.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton13.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton13.setText("13");
-        jbLButton13.addActionListener(new java.awt.event.ActionListener() {
+        jb13.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb13.setForeground(new java.awt.Color(0, 153, 153));
+        jb13.setText("13");
+        jb13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton13ActionPerformed(evt);
+                jb13ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton13);
+        jpMGameArea.add(jb13);
 
-        jbLButton14.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton14.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton14.setText("14");
-        jbLButton14.addActionListener(new java.awt.event.ActionListener() {
+        jb14.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb14.setForeground(new java.awt.Color(0, 153, 153));
+        jb14.setText("14");
+        jb14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton14ActionPerformed(evt);
+                jb14ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton14);
+        jpMGameArea.add(jb14);
 
-        jbLButton15.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton15.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton15.setText("15");
-        jbLButton15.addActionListener(new java.awt.event.ActionListener() {
+        jb15.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb15.setForeground(new java.awt.Color(0, 153, 153));
+        jb15.setText("15");
+        jb15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton15ActionPerformed(evt);
+                jb15ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton15);
+        jpMGameArea.add(jb15);
 
-        jbLButton16.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton16.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton16.setText("16");
-        jbLButton16.addActionListener(new java.awt.event.ActionListener() {
+        jb16.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb16.setForeground(new java.awt.Color(0, 153, 153));
+        jb16.setText("16");
+        jb16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton16ActionPerformed(evt);
+                jb16ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton16);
+        jpMGameArea.add(jb16);
 
-        jbLButton17.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton17.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton17.setText("17");
-        jbLButton17.addActionListener(new java.awt.event.ActionListener() {
+        jb17.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb17.setForeground(new java.awt.Color(0, 153, 153));
+        jb17.setText("17");
+        jb17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton17ActionPerformed(evt);
+                jb17ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton17);
+        jpMGameArea.add(jb17);
 
-        jbLButton18.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton18.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton18.setText("18");
-        jbLButton18.addActionListener(new java.awt.event.ActionListener() {
+        jb18.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb18.setForeground(new java.awt.Color(0, 153, 153));
+        jb18.setText("18");
+        jb18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton18ActionPerformed(evt);
+                jb18ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton18);
+        jpMGameArea.add(jb18);
 
-        jbLButton19.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton19.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton19.setText("19");
-        jbLButton19.addActionListener(new java.awt.event.ActionListener() {
+        jb19.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb19.setForeground(new java.awt.Color(0, 153, 153));
+        jb19.setText("19");
+        jb19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton19ActionPerformed(evt);
+                jb19ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton19);
+        jpMGameArea.add(jb19);
 
-        jbLButton20.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton20.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton20.setText("20");
-        jbLButton20.addActionListener(new java.awt.event.ActionListener() {
+        jb20.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb20.setForeground(new java.awt.Color(0, 153, 153));
+        jb20.setText("20");
+        jb20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton20ActionPerformed(evt);
+                jb20ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton20);
+        jpMGameArea.add(jb20);
 
-        jbLButton21.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton21.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton21.setText("21");
-        jbLButton21.addActionListener(new java.awt.event.ActionListener() {
+        jb21.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb21.setForeground(new java.awt.Color(0, 153, 153));
+        jb21.setText("21");
+        jb21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton21ActionPerformed(evt);
+                jb21ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton21);
+        jpMGameArea.add(jb21);
 
-        jbLButton22.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton22.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton22.setText("22");
-        jbLButton22.addActionListener(new java.awt.event.ActionListener() {
+        jb22.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb22.setForeground(new java.awt.Color(0, 153, 153));
+        jb22.setText("22");
+        jb22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton22ActionPerformed(evt);
+                jb22ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton22);
+        jpMGameArea.add(jb22);
 
-        jbLButton23.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton23.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton23.setText("23");
-        jbLButton23.addActionListener(new java.awt.event.ActionListener() {
+        jb23.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb23.setForeground(new java.awt.Color(0, 153, 153));
+        jb23.setText("23");
+        jb23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton23ActionPerformed(evt);
+                jb23ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton23);
+        jpMGameArea.add(jb23);
 
-        jbLButton24.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton24.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton24.setText("24");
-        jbLButton24.addActionListener(new java.awt.event.ActionListener() {
+        jb24.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb24.setForeground(new java.awt.Color(0, 153, 153));
+        jb24.setText("24");
+        jb24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton24ActionPerformed(evt);
+                jb24ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton24);
+        jpMGameArea.add(jb24);
 
-        jbLButton25.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton25.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton25.setText("25");
-        jbLButton25.addActionListener(new java.awt.event.ActionListener() {
+        jb25.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb25.setForeground(new java.awt.Color(0, 153, 153));
+        jb25.setText("25");
+        jb25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton25ActionPerformed(evt);
+                jb25ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton25);
+        jpMGameArea.add(jb25);
 
-        jbLButton26.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton26.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton26.setText("26");
-        jbLButton26.addActionListener(new java.awt.event.ActionListener() {
+        jb26.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb26.setForeground(new java.awt.Color(0, 153, 153));
+        jb26.setText("26");
+        jb26.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton26ActionPerformed(evt);
+                jb26ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton26);
+        jpMGameArea.add(jb26);
 
-        jbLButton27.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton27.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton27.setText("27");
-        jbLButton27.addActionListener(new java.awt.event.ActionListener() {
+        jb27.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb27.setForeground(new java.awt.Color(0, 153, 153));
+        jb27.setText("27");
+        jb27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton27ActionPerformed(evt);
+                jb27ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton27);
+        jpMGameArea.add(jb27);
 
-        jbLButton28.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton28.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton28.setText("28");
-        jbLButton28.addActionListener(new java.awt.event.ActionListener() {
+        jb28.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb28.setForeground(new java.awt.Color(0, 153, 153));
+        jb28.setText("28");
+        jb28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton28ActionPerformed(evt);
+                jb28ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton28);
+        jpMGameArea.add(jb28);
 
-        jbLButton29.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton29.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton29.setText("29");
-        jbLButton29.addActionListener(new java.awt.event.ActionListener() {
+        jb29.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb29.setForeground(new java.awt.Color(0, 153, 153));
+        jb29.setText("29");
+        jb29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton29ActionPerformed(evt);
+                jb29ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton29);
+        jpMGameArea.add(jb29);
 
-        jbLButton30.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton30.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton30.setText("30");
-        jbLButton30.addActionListener(new java.awt.event.ActionListener() {
+        jb30.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb30.setForeground(new java.awt.Color(0, 153, 153));
+        jb30.setText("30");
+        jb30.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton30ActionPerformed(evt);
+                jb30ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton30);
+        jpMGameArea.add(jb30);
 
-        jbLButton31.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton31.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton31.setText("31");
-        jbLButton31.addActionListener(new java.awt.event.ActionListener() {
+        jb31.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb31.setForeground(new java.awt.Color(0, 153, 153));
+        jb31.setText("31");
+        jb31.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton31ActionPerformed(evt);
+                jb31ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton31);
+        jpMGameArea.add(jb31);
 
-        jbLButton32.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton32.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton32.setText("32");
-        jbLButton32.addActionListener(new java.awt.event.ActionListener() {
+        jb32.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb32.setForeground(new java.awt.Color(0, 153, 153));
+        jb32.setText("32");
+        jb32.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton32ActionPerformed(evt);
+                jb32ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton32);
+        jpMGameArea.add(jb32);
 
-        jbLButton33.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton33.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton33.setText("33");
-        jbLButton33.addActionListener(new java.awt.event.ActionListener() {
+        jb33.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb33.setForeground(new java.awt.Color(0, 153, 153));
+        jb33.setText("33");
+        jb33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton33ActionPerformed(evt);
+                jb33ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton33);
+        jpMGameArea.add(jb33);
 
-        jbLButton34.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton34.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton34.setText("34");
-        jbLButton34.addActionListener(new java.awt.event.ActionListener() {
+        jb34.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb34.setForeground(new java.awt.Color(0, 153, 153));
+        jb34.setText("34");
+        jb34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton34ActionPerformed(evt);
+                jb34ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton34);
+        jpMGameArea.add(jb34);
 
-        jbLButton35.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton35.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton35.setText("35");
-        jbLButton35.addActionListener(new java.awt.event.ActionListener() {
+        jb35.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb35.setForeground(new java.awt.Color(0, 153, 153));
+        jb35.setText("35");
+        jb35.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton35ActionPerformed(evt);
+                jb35ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton35);
+        jpMGameArea.add(jb35);
 
-        jbLButton36.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton36.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton36.setText("36");
-        jbLButton36.addActionListener(new java.awt.event.ActionListener() {
+        jb36.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb36.setForeground(new java.awt.Color(0, 153, 153));
+        jb36.setText("36");
+        jb36.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton36ActionPerformed(evt);
+                jb36ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton36);
+        jpMGameArea.add(jb36);
 
-        jbLButton37.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton37.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton37.setText("37");
-        jbLButton37.addActionListener(new java.awt.event.ActionListener() {
+        jb37.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb37.setForeground(new java.awt.Color(0, 153, 153));
+        jb37.setText("37");
+        jb37.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton37ActionPerformed(evt);
+                jb37ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton37);
+        jpMGameArea.add(jb37);
 
-        jbLButton38.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton38.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton38.setText("38");
-        jbLButton38.addActionListener(new java.awt.event.ActionListener() {
+        jb38.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb38.setForeground(new java.awt.Color(0, 153, 153));
+        jb38.setText("38");
+        jb38.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton38ActionPerformed(evt);
+                jb38ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton38);
+        jpMGameArea.add(jb38);
 
-        jbLButton39.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton39.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton39.setText("39");
-        jbLButton39.addActionListener(new java.awt.event.ActionListener() {
+        jb39.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb39.setForeground(new java.awt.Color(0, 153, 153));
+        jb39.setText("39");
+        jb39.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton39ActionPerformed(evt);
+                jb39ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton39);
+        jpMGameArea.add(jb39);
 
-        jbLButton40.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton40.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton40.setText("40");
-        jbLButton40.addActionListener(new java.awt.event.ActionListener() {
+        jb40.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb40.setForeground(new java.awt.Color(0, 153, 153));
+        jb40.setText("40");
+        jb40.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton40ActionPerformed(evt);
+                jb40ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton40);
+        jpMGameArea.add(jb40);
 
-        jbLButton41.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton41.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton41.setText("41");
-        jbLButton41.addActionListener(new java.awt.event.ActionListener() {
+        jb41.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb41.setForeground(new java.awt.Color(0, 153, 153));
+        jb41.setText("41");
+        jb41.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton41ActionPerformed(evt);
+                jb41ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton41);
+        jpMGameArea.add(jb41);
 
-        jbLButton42.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton42.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton42.setText("42");
-        jbLButton42.addActionListener(new java.awt.event.ActionListener() {
+        jb42.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb42.setForeground(new java.awt.Color(0, 153, 153));
+        jb42.setText("42");
+        jb42.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton42ActionPerformed(evt);
+                jb42ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton42);
+        jpMGameArea.add(jb42);
 
-        jbLButton43.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton43.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton43.setText("43");
-        jbLButton43.addActionListener(new java.awt.event.ActionListener() {
+        jb43.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb43.setForeground(new java.awt.Color(0, 153, 153));
+        jb43.setText("43");
+        jb43.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton43ActionPerformed(evt);
+                jb43ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton43);
+        jpMGameArea.add(jb43);
 
-        jbLButton44.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton44.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton44.setText("44");
-        jbLButton44.addActionListener(new java.awt.event.ActionListener() {
+        jb44.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb44.setForeground(new java.awt.Color(0, 153, 153));
+        jb44.setText("44");
+        jb44.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton44ActionPerformed(evt);
+                jb44ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton44);
+        jpMGameArea.add(jb44);
 
-        jbLButton45.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton45.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton45.setText("45");
-        jbLButton45.addActionListener(new java.awt.event.ActionListener() {
+        jb45.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb45.setForeground(new java.awt.Color(0, 153, 153));
+        jb45.setText("45");
+        jb45.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton45ActionPerformed(evt);
+                jb45ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton45);
+        jpMGameArea.add(jb45);
 
-        jbLButton46.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton46.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton46.setText("46");
-        jbLButton46.addActionListener(new java.awt.event.ActionListener() {
+        jb46.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb46.setForeground(new java.awt.Color(0, 153, 153));
+        jb46.setText("46");
+        jb46.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton46ActionPerformed(evt);
+                jb46ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton46);
+        jpMGameArea.add(jb46);
 
-        jbLButton47.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton47.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton47.setText("47");
-        jbLButton47.addActionListener(new java.awt.event.ActionListener() {
+        jb47.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb47.setForeground(new java.awt.Color(0, 153, 153));
+        jb47.setText("47");
+        jb47.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton47ActionPerformed(evt);
+                jb47ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton47);
+        jpMGameArea.add(jb47);
 
-        jbLButton48.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
-        jbLButton48.setForeground(new java.awt.Color(0, 153, 153));
-        jbLButton48.setText("48");
-        jbLButton48.addActionListener(new java.awt.event.ActionListener() {
+        jb48.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 36)); // NOI18N
+        jb48.setForeground(new java.awt.Color(0, 153, 153));
+        jb48.setText("48");
+        jb48.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbLButton48ActionPerformed(evt);
+                jb48ActionPerformed(evt);
             }
         });
-        jpMGameArea.add(jbLButton48);
+        jpMGameArea.add(jb48);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -853,16 +853,16 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jbQuitActionPerformed
     
-    private void jbLButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton1ActionPerformed
+    private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
         String symbol = Character.toString(symbols[0]); // index should be button#-1
-        jbLButton1.setText(symbol);
+        jb1.setText(symbol);
         CLICKS++;
        
         setIndices(0); //save the index of this card to an array
         afterClick();
             
-    }//GEN-LAST:event_jbLButton1ActionPerformed
-    void setIndices(int index){
+    }//GEN-LAST:event_jb1ActionPerformed
+    private void setIndices(int index){
         
         if (CLICKS == 1){
             indexTurn[0]= index;
@@ -874,7 +874,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
       
     }
     
-    boolean checkMatch(){
+    private boolean checkMatch(){
         
         if (symbols[indexTurn[0]]== symbols[indexTurn[1]])
           return true;
@@ -940,28 +940,28 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         //make this fix cards somehow
         if (matched == false){
             if (indexTurn[0]==0 || indexTurn[1]==0){
-               jbLButton1.setText("1"); 
+               jb1.setText("1"); 
             }
             if (indexTurn[0]==1 || indexTurn[1]==1){
-               jbLButton2.setText("2"); 
+               jb2.setText("2"); 
             }
             if (indexTurn[0]==2 || indexTurn[1]==2){
-               jbLButton3.setText("3"); 
+               jb3.setText("3"); 
             }
             if (indexTurn[0]==3 || indexTurn[1]==3){
-               jbLButton4.setText("4"); 
+               jb4.setText("4"); 
             }
             if (indexTurn[0]==4 || indexTurn[1]==4){
-               jbLButton5.setText("5"); 
+               jb5.setText("5"); 
             }
             if (indexTurn[0]==5 || indexTurn[1]==5){
-               jbLButton6.setText("6"); 
+               jb6.setText("6"); 
             }
             if (indexTurn[0]==6 || indexTurn[1]==6){
-               jbLButton7.setText("7"); 
+               jb7.setText("7"); 
             }
             if (indexTurn[0]==7 || indexTurn[1]==7){
-               jbLButton8.setText("8"); 
+               jb8.setText("8"); 
             }
             matched = false;
             jbNext.setVisible(false); 
@@ -977,28 +977,28 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                 }
         else if (matched == true){
             if (indexTurn[0]==0 || indexTurn[1]==0){
-               jbLButton1.setVisible(false); 
+               jb1.setVisible(false); 
             }
             if (indexTurn[0]==1 || indexTurn[1]==1){
-               jbLButton2.setVisible(false); 
+               jb2.setVisible(false); 
             }
             if (indexTurn[0]==2 || indexTurn[1]==2){
-               jbLButton3.setVisible(false); 
+               jb3.setVisible(false); 
             }
             if (indexTurn[0]==3 || indexTurn[1]==3){
-               jbLButton4.setVisible(false); 
+               jb4.setVisible(false); 
             }
             if (indexTurn[0]==4 || indexTurn[1]==4){
-               jbLButton5.setVisible(false); 
+               jb5.setVisible(false); 
             }
             if (indexTurn[0]==5 || indexTurn[1]==5){
-               jbLButton6.setVisible(false); 
+               jb6.setVisible(false); 
             }
             if (indexTurn[0]==6 || indexTurn[1]==6){
-               jbLButton7.setVisible(false); 
+               jb7.setVisible(false); 
             }
             if (indexTurn[0]==7 || indexTurn[1]==7){
-               jbLButton8.setVisible(false); 
+               jb8.setVisible(false); 
             }
             jbNext.setVisible(false);
                 enableCards();
@@ -1015,258 +1015,258 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     }
     
     private void disableCards(){
-        jbLButton1.setEnabled(false);
-        jbLButton2.setEnabled(false);
-        jbLButton3.setEnabled(false);
-        jbLButton4.setEnabled(false);
-        jbLButton5.setEnabled(false);
-        jbLButton6.setEnabled(false);
-        jbLButton7.setEnabled(false);
-        jbLButton8.setEnabled(false);
+        jb1.setEnabled(false);
+        jb2.setEnabled(false);
+        jb3.setEnabled(false);
+        jb4.setEnabled(false);
+        jb5.setEnabled(false);
+        jb6.setEnabled(false);
+        jb7.setEnabled(false);
+        jb8.setEnabled(false);
     }
     private void enableCards(){
-        jbLButton1.setEnabled(true);
-        jbLButton2.setEnabled(true);
-        jbLButton3.setEnabled(true);
-        jbLButton4.setEnabled(true);
-        jbLButton5.setEnabled(true);
-        jbLButton6.setEnabled(true);
-        jbLButton7.setEnabled(true);
-        jbLButton8.setEnabled(true);
+        jb1.setEnabled(true);
+        jb2.setEnabled(true);
+        jb3.setEnabled(true);
+        jb4.setEnabled(true);
+        jb5.setEnabled(true);
+        jb6.setEnabled(true);
+        jb7.setEnabled(true);
+        jb8.setEnabled(true);
     }
     
     
-    private void jbLButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton2ActionPerformed
+    private void jb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2ActionPerformed
         String symbol = Character.toString(symbols[1]); // index should be button#-1
-        jbLButton2.setText(symbol);
+        jb2.setText(symbol);
         CLICKS++;
         
         setIndices(1); //save the index of this card to an array
         afterClick();
         
        
-    }//GEN-LAST:event_jbLButton2ActionPerformed
+    }//GEN-LAST:event_jb2ActionPerformed
 
-    private void jbLButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton3ActionPerformed
+    private void jb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb3ActionPerformed
         String symbol = Character.toString(symbols[2]); // index should be button#-1
-        jbLButton3.setText(symbol);
+        jb3.setText(symbol);
         CLICKS++;
 
         setIndices(2); //save the index of this card to an array
         afterClick();
      
-    }//GEN-LAST:event_jbLButton3ActionPerformed
+    }//GEN-LAST:event_jb3ActionPerformed
 
-    private void jbLButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton4ActionPerformed
+    private void jb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb4ActionPerformed
         String symbol = Character.toString(symbols[3]); // index should be button#-1
-        jbLButton4.setText(symbol);
+        jb4.setText(symbol);
         CLICKS++;
 
         setIndices(3); //save the index of this card to an array
         afterClick();
      
-    }//GEN-LAST:event_jbLButton4ActionPerformed
+    }//GEN-LAST:event_jb4ActionPerformed
 
-    private void jbLButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton5ActionPerformed
+    private void jb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb5ActionPerformed
         String symbol = Character.toString(symbols[4]); // index should be button#-1
-        jbLButton5.setText(symbol);
+        jb5.setText(symbol);
         CLICKS++;
 
         setIndices(4); //save the index of this card to an array
         afterClick();
     
-    }//GEN-LAST:event_jbLButton5ActionPerformed
+    }//GEN-LAST:event_jb5ActionPerformed
 
-    private void jbLButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton6ActionPerformed
+    private void jb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb6ActionPerformed
         String symbol = Character.toString(symbols[5]); // index should be button#-1
-        jbLButton6.setText(symbol);
+        jb6.setText(symbol);
         CLICKS++;
 
         setIndices(5);
         afterClick();//save the index of this card to an array
      
-    }//GEN-LAST:event_jbLButton6ActionPerformed
+    }//GEN-LAST:event_jb6ActionPerformed
 
-    private void jbLButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton7ActionPerformed
+    private void jb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb7ActionPerformed
         String symbol = Character.toString(symbols[6]); // index should be button#-1
-        jbLButton7.setText(symbol);
+        jb7.setText(symbol);
         CLICKS++;
 
         setIndices(6);
         afterClick();//save the index of this card to an array
        
        
-    }//GEN-LAST:event_jbLButton7ActionPerformed
+    }//GEN-LAST:event_jb7ActionPerformed
 
-    private void jbLButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton8ActionPerformed
+    private void jb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb8ActionPerformed
         String symbol = Character.toString(symbols[7]); // index should be button#-1
-        jbLButton8.setText(symbol);
+        jb8.setText(symbol);
         CLICKS++;
         
         setIndices(7); //save the index of this card to an array
         afterClick();
      
-    }//GEN-LAST:event_jbLButton8ActionPerformed
+    }//GEN-LAST:event_jb8ActionPerformed
 
-    private void jbLButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton9ActionPerformed
+    private void jb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb9ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton9ActionPerformed
+    }//GEN-LAST:event_jb9ActionPerformed
 
-    private void jbLButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton10ActionPerformed
+    private void jb10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb10ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton10ActionPerformed
+    }//GEN-LAST:event_jb10ActionPerformed
 
-    private void jbLButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton11ActionPerformed
+    private void jb11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton11ActionPerformed
+    }//GEN-LAST:event_jb11ActionPerformed
 
-    private void jbLButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton12ActionPerformed
+    private void jb12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb12ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton12ActionPerformed
+    }//GEN-LAST:event_jb12ActionPerformed
 
-    private void jbLButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton13ActionPerformed
+    private void jb13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb13ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton13ActionPerformed
+    }//GEN-LAST:event_jb13ActionPerformed
 
-    private void jbLButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton14ActionPerformed
+    private void jb14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb14ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton14ActionPerformed
+    }//GEN-LAST:event_jb14ActionPerformed
 
-    private void jbLButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton15ActionPerformed
+    private void jb15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb15ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton15ActionPerformed
+    }//GEN-LAST:event_jb15ActionPerformed
 
-    private void jbLButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton16ActionPerformed
+    private void jb16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb16ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton16ActionPerformed
+    }//GEN-LAST:event_jb16ActionPerformed
 
-    private void jbLButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton17ActionPerformed
+    private void jb17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb17ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton17ActionPerformed
+    }//GEN-LAST:event_jb17ActionPerformed
 
-    private void jbLButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton18ActionPerformed
+    private void jb18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb18ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton18ActionPerformed
+    }//GEN-LAST:event_jb18ActionPerformed
 
-    private void jbLButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton19ActionPerformed
+    private void jb19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb19ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton19ActionPerformed
+    }//GEN-LAST:event_jb19ActionPerformed
 
-    private void jbLButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton20ActionPerformed
+    private void jb20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb20ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton20ActionPerformed
+    }//GEN-LAST:event_jb20ActionPerformed
 
-    private void jbLButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton21ActionPerformed
+    private void jb21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb21ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton21ActionPerformed
+    }//GEN-LAST:event_jb21ActionPerformed
 
-    private void jbLButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton22ActionPerformed
+    private void jb22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb22ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton22ActionPerformed
+    }//GEN-LAST:event_jb22ActionPerformed
 
-    private void jbLButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton23ActionPerformed
+    private void jb23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb23ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton23ActionPerformed
+    }//GEN-LAST:event_jb23ActionPerformed
 
-    private void jbLButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton24ActionPerformed
+    private void jb24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb24ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton24ActionPerformed
+    }//GEN-LAST:event_jb24ActionPerformed
 
-    private void jbLButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton25ActionPerformed
+    private void jb25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb25ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton25ActionPerformed
+    }//GEN-LAST:event_jb25ActionPerformed
 
-    private void jbLButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton26ActionPerformed
+    private void jb26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb26ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton26ActionPerformed
+    }//GEN-LAST:event_jb26ActionPerformed
 
-    private void jbLButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton27ActionPerformed
+    private void jb27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb27ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton27ActionPerformed
+    }//GEN-LAST:event_jb27ActionPerformed
 
-    private void jbLButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton28ActionPerformed
+    private void jb28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb28ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton28ActionPerformed
+    }//GEN-LAST:event_jb28ActionPerformed
 
-    private void jbLButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton29ActionPerformed
+    private void jb29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb29ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton29ActionPerformed
+    }//GEN-LAST:event_jb29ActionPerformed
 
-    private void jbLButton30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton30ActionPerformed
+    private void jb30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb30ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton30ActionPerformed
+    }//GEN-LAST:event_jb30ActionPerformed
 
-    private void jbLButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton31ActionPerformed
+    private void jb31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb31ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton31ActionPerformed
+    }//GEN-LAST:event_jb31ActionPerformed
 
-    private void jbLButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton32ActionPerformed
+    private void jb32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb32ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton32ActionPerformed
+    }//GEN-LAST:event_jb32ActionPerformed
 
-    private void jbLButton33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton33ActionPerformed
+    private void jb33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb33ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton33ActionPerformed
+    }//GEN-LAST:event_jb33ActionPerformed
 
-    private void jbLButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton34ActionPerformed
+    private void jb34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb34ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton34ActionPerformed
+    }//GEN-LAST:event_jb34ActionPerformed
 
-    private void jbLButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton35ActionPerformed
+    private void jb35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb35ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton35ActionPerformed
+    }//GEN-LAST:event_jb35ActionPerformed
 
-    private void jbLButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton36ActionPerformed
+    private void jb36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb36ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton36ActionPerformed
+    }//GEN-LAST:event_jb36ActionPerformed
 
-    private void jbLButton37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton37ActionPerformed
+    private void jb37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb37ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton37ActionPerformed
+    }//GEN-LAST:event_jb37ActionPerformed
 
-    private void jbLButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton38ActionPerformed
+    private void jb38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb38ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton38ActionPerformed
+    }//GEN-LAST:event_jb38ActionPerformed
 
-    private void jbLButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton39ActionPerformed
+    private void jb39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb39ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton39ActionPerformed
+    }//GEN-LAST:event_jb39ActionPerformed
 
-    private void jbLButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton40ActionPerformed
+    private void jb40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb40ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton40ActionPerformed
+    }//GEN-LAST:event_jb40ActionPerformed
 
-    private void jbLButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton41ActionPerformed
+    private void jb41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb41ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton41ActionPerformed
+    }//GEN-LAST:event_jb41ActionPerformed
 
-    private void jbLButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton42ActionPerformed
+    private void jb42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb42ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton42ActionPerformed
+    }//GEN-LAST:event_jb42ActionPerformed
 
-    private void jbLButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton43ActionPerformed
+    private void jb43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb43ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton43ActionPerformed
+    }//GEN-LAST:event_jb43ActionPerformed
 
-    private void jbLButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton44ActionPerformed
+    private void jb44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb44ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton44ActionPerformed
+    }//GEN-LAST:event_jb44ActionPerformed
 
-    private void jbLButton45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton45ActionPerformed
+    private void jb45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb45ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton45ActionPerformed
+    }//GEN-LAST:event_jb45ActionPerformed
 
-    private void jbLButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton46ActionPerformed
+    private void jb46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb46ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton46ActionPerformed
+    }//GEN-LAST:event_jb46ActionPerformed
 
-    private void jbLButton47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton47ActionPerformed
+    private void jb47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb47ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton47ActionPerformed
+    }//GEN-LAST:event_jb47ActionPerformed
 
-    private void jbLButton48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton48ActionPerformed
+    private void jb48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb48ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbLButton48ActionPerformed
+    }//GEN-LAST:event_jb48ActionPerformed
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
         setBoard();
@@ -1277,7 +1277,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     }
     
     public void trial(){
-        jbLButton1.setText("trial");
+        jb1.setText("trial");
     }
     /**
      * @param args the command line arguments
@@ -1289,55 +1289,55 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton jb1;
+    private javax.swing.JButton jb10;
+    private javax.swing.JButton jb11;
+    private javax.swing.JButton jb12;
+    private javax.swing.JButton jb13;
+    private javax.swing.JButton jb14;
+    private javax.swing.JButton jb15;
+    private javax.swing.JButton jb16;
+    private javax.swing.JButton jb17;
+    private javax.swing.JButton jb18;
+    private javax.swing.JButton jb19;
+    private javax.swing.JButton jb2;
+    private javax.swing.JButton jb20;
+    private javax.swing.JButton jb21;
+    private javax.swing.JButton jb22;
+    private javax.swing.JButton jb23;
+    private javax.swing.JButton jb24;
+    private javax.swing.JButton jb25;
+    private javax.swing.JButton jb26;
+    private javax.swing.JButton jb27;
+    private javax.swing.JButton jb28;
+    private javax.swing.JButton jb29;
+    private javax.swing.JButton jb3;
+    private javax.swing.JButton jb30;
+    private javax.swing.JButton jb31;
+    private javax.swing.JButton jb32;
+    private javax.swing.JButton jb33;
+    private javax.swing.JButton jb34;
+    private javax.swing.JButton jb35;
+    private javax.swing.JButton jb36;
+    private javax.swing.JButton jb37;
+    private javax.swing.JButton jb38;
+    private javax.swing.JButton jb39;
+    private javax.swing.JButton jb4;
+    private javax.swing.JButton jb40;
+    private javax.swing.JButton jb41;
+    private javax.swing.JButton jb42;
+    private javax.swing.JButton jb43;
+    private javax.swing.JButton jb44;
+    private javax.swing.JButton jb45;
+    private javax.swing.JButton jb46;
+    private javax.swing.JButton jb47;
+    private javax.swing.JButton jb48;
+    private javax.swing.JButton jb5;
+    private javax.swing.JButton jb6;
+    private javax.swing.JButton jb7;
+    private javax.swing.JButton jb8;
+    private javax.swing.JButton jb9;
     private javax.swing.JButton jbHelp;
-    private javax.swing.JButton jbLButton1;
-    private javax.swing.JButton jbLButton10;
-    private javax.swing.JButton jbLButton11;
-    private javax.swing.JButton jbLButton12;
-    private javax.swing.JButton jbLButton13;
-    private javax.swing.JButton jbLButton14;
-    private javax.swing.JButton jbLButton15;
-    private javax.swing.JButton jbLButton16;
-    private javax.swing.JButton jbLButton17;
-    private javax.swing.JButton jbLButton18;
-    private javax.swing.JButton jbLButton19;
-    private javax.swing.JButton jbLButton2;
-    private javax.swing.JButton jbLButton20;
-    private javax.swing.JButton jbLButton21;
-    private javax.swing.JButton jbLButton22;
-    private javax.swing.JButton jbLButton23;
-    private javax.swing.JButton jbLButton24;
-    private javax.swing.JButton jbLButton25;
-    private javax.swing.JButton jbLButton26;
-    private javax.swing.JButton jbLButton27;
-    private javax.swing.JButton jbLButton28;
-    private javax.swing.JButton jbLButton29;
-    private javax.swing.JButton jbLButton3;
-    private javax.swing.JButton jbLButton30;
-    private javax.swing.JButton jbLButton31;
-    private javax.swing.JButton jbLButton32;
-    private javax.swing.JButton jbLButton33;
-    private javax.swing.JButton jbLButton34;
-    private javax.swing.JButton jbLButton35;
-    private javax.swing.JButton jbLButton36;
-    private javax.swing.JButton jbLButton37;
-    private javax.swing.JButton jbLButton38;
-    private javax.swing.JButton jbLButton39;
-    private javax.swing.JButton jbLButton4;
-    private javax.swing.JButton jbLButton40;
-    private javax.swing.JButton jbLButton41;
-    private javax.swing.JButton jbLButton42;
-    private javax.swing.JButton jbLButton43;
-    private javax.swing.JButton jbLButton44;
-    private javax.swing.JButton jbLButton45;
-    private javax.swing.JButton jbLButton46;
-    private javax.swing.JButton jbLButton47;
-    private javax.swing.JButton jbLButton48;
-    private javax.swing.JButton jbLButton5;
-    private javax.swing.JButton jbLButton6;
-    private javax.swing.JButton jbLButton7;
-    private javax.swing.JButton jbLButton8;
-    private javax.swing.JButton jbLButton9;
     private javax.swing.JButton jbMainMenu;
     private javax.swing.JButton jbNext;
     private javax.swing.JButton jbQuit;
