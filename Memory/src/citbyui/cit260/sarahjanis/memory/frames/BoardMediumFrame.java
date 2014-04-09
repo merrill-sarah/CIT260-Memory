@@ -1002,9 +1002,9 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                jb16.setVisible(false); 
             }
             if (indexTurn[0]==17 || indexTurn[1]==17){
-               jb12.setVisible(false); 
+               jb17.setVisible(false); 
             }
-            if (indexTurn[0]==17 || indexTurn[1]==17){
+            if (indexTurn[0]==18 || indexTurn[1]==18){
                jb18.setVisible(false); 
             }
             if (indexTurn[0]==19 || indexTurn[1]==19){
