@@ -858,7 +858,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jb1.setText(symbol);
         CLICKS++;
        
-        setIndices(0); //save the index of this card to an array
+        setIndices(1); //save the index of this card to an array
         afterClick();
             
     }//GEN-LAST:event_jb1ActionPerformed
@@ -876,7 +876,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     
     private boolean checkMatch(){
         
-        if (symbols[indexTurn[0]]== symbols[indexTurn[1]])
+        if (symbols[indexTurn[0]-1]== symbols[indexTurn[1]-1])
           return true;
         else
             return false;
@@ -939,29 +939,41 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void setBoard(){
         //make this fix cards somehow
         if (matched == false){
-            if (indexTurn[0]==0 || indexTurn[1]==0){
+            if (indexTurn[0]==1 || indexTurn[1]==1){
                jb1.setText("1"); 
             }
-            if (indexTurn[0]==1 || indexTurn[1]==1){
+            if (indexTurn[0]==2 || indexTurn[1]==2){
                jb2.setText("2"); 
             }
-            if (indexTurn[0]==2 || indexTurn[1]==2){
+            if (indexTurn[0]==3 || indexTurn[1]==3){
                jb3.setText("3"); 
             }
-            if (indexTurn[0]==3 || indexTurn[1]==3){
+            if (indexTurn[0]==4 || indexTurn[1]==4){
                jb4.setText("4"); 
             }
-            if (indexTurn[0]==4 || indexTurn[1]==4){
+            if (indexTurn[0]==5 || indexTurn[1]==5){
                jb5.setText("5"); 
             }
-            if (indexTurn[0]==5 || indexTurn[1]==5){
+            if (indexTurn[0]==6 || indexTurn[1]==6){
                jb6.setText("6"); 
             }
-            if (indexTurn[0]==6 || indexTurn[1]==6){
+            if (indexTurn[0]==7 || indexTurn[1]==7){
                jb7.setText("7"); 
             }
-            if (indexTurn[0]==7 || indexTurn[1]==7){
+            if (indexTurn[0]==8 || indexTurn[1]==8){
                jb8.setText("8"); 
+            }
+            if (indexTurn[0]==9 || indexTurn[1]==9){
+               jb9.setText("9"); 
+            }
+            if (indexTurn[0]==10 || indexTurn[1]==10){
+               jb10.setText("10"); 
+            }
+            if (indexTurn[0]==11 || indexTurn[1]==11){
+               jb11.setText("11"); 
+            }
+            if (indexTurn[0]==12 || indexTurn[1]==12){
+               jb12.setText("12"); 
             }
             matched = false;
             jbNext.setVisible(false); 
@@ -976,29 +988,41 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                     }
                 }
         else if (matched == true){
-            if (indexTurn[0]==0 || indexTurn[1]==0){
+            if (indexTurn[0]==1 || indexTurn[1]==1){
                jb1.setVisible(false); 
             }
-            if (indexTurn[0]==1 || indexTurn[1]==1){
+            if (indexTurn[0]==2 || indexTurn[1]==2){
                jb2.setVisible(false); 
             }
-            if (indexTurn[0]==2 || indexTurn[1]==2){
-               jb3.setVisible(false); 
-            }
             if (indexTurn[0]==3 || indexTurn[1]==3){
-               jb4.setVisible(false); 
+               jb3.setVisible(false);
             }
             if (indexTurn[0]==4 || indexTurn[1]==4){
-               jb5.setVisible(false); 
+               jb4.setVisible(false); 
             }
             if (indexTurn[0]==5 || indexTurn[1]==5){
-               jb6.setVisible(false); 
+               jb5.setVisible(false); 
             }
             if (indexTurn[0]==6 || indexTurn[1]==6){
-               jb7.setVisible(false); 
+               jb6.setVisible(false); 
             }
             if (indexTurn[0]==7 || indexTurn[1]==7){
+               jb7.setVisible(false); 
+            }
+            if (indexTurn[0]==8 || indexTurn[1]==8){
                jb8.setVisible(false); 
+            }
+            if (indexTurn[0]==9 || indexTurn[1]==9){
+               jb9.setVisible(false); 
+            }
+            if (indexTurn[0]==10 || indexTurn[1]==10){
+               jb10.setVisible(false); 
+            }
+            if (indexTurn[0]==11 || indexTurn[1]==11){
+               jb11.setVisible(false); 
+            }
+            if (indexTurn[0]==12 || indexTurn[1]==12){
+               jb12.setVisible(false); 
             }
             jbNext.setVisible(false);
                 enableCards();
@@ -1041,7 +1065,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jb2.setText(symbol);
         CLICKS++;
         
-        setIndices(1); //save the index of this card to an array
+        setIndices(2); //save the index of this card to an array
         afterClick();
         
        
@@ -1052,7 +1076,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jb3.setText(symbol);
         CLICKS++;
 
-        setIndices(2); //save the index of this card to an array
+        setIndices(3); //save the index of this card to an array
         afterClick();
      
     }//GEN-LAST:event_jb3ActionPerformed
@@ -1062,7 +1086,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jb4.setText(symbol);
         CLICKS++;
 
-        setIndices(3); //save the index of this card to an array
+        setIndices(4); //save the index of this card to an array
         afterClick();
      
     }//GEN-LAST:event_jb4ActionPerformed
@@ -1072,7 +1096,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jb5.setText(symbol);
         CLICKS++;
 
-        setIndices(4); //save the index of this card to an array
+        setIndices(5); //save the index of this card to an array
         afterClick();
     
     }//GEN-LAST:event_jb5ActionPerformed
@@ -1082,7 +1106,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jb6.setText(symbol);
         CLICKS++;
 
-        setIndices(5);
+        setIndices(6);
         afterClick();//save the index of this card to an array
      
     }//GEN-LAST:event_jb6ActionPerformed
@@ -1092,7 +1116,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jb7.setText(symbol);
         CLICKS++;
 
-        setIndices(6);
+        setIndices(7);
         afterClick();//save the index of this card to an array
        
        
@@ -1103,7 +1127,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         jb8.setText(symbol);
         CLICKS++;
         
-        setIndices(7); //save the index of this card to an array
+        setIndices(8); //save the index of this card to an array
         afterClick();
      
     }//GEN-LAST:event_jb8ActionPerformed
