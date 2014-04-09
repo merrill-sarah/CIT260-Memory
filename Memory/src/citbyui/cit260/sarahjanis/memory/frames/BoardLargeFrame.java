@@ -640,47 +640,25 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbQuitActionPerformed
     
     private void jbLButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton1ActionPerformed
-       boolean matched = false;
+       CLICKS++;
+        boolean matched = false;
        
-        while(!matched){
+       // while(!matched){
         String symbol = Character.toString(symbols[0]);
-         jbLButton1.setText(symbol); 
-         
-         CLICKS++;
-         if (CLICKS == 1){
-             card1.getCardArray()[0]= true;
-         }
-         else if (CLICKS == 2)
-            card2.getCardArray()[0]= true;
+         if (CLICKS == 1){jbLButton1.setText(symbol); //}
+      
         }
-        matched = game.cardStatus(symbols);
-        if (matched)
-            jbLButton1.setText("");
-        else
-            jbLButton1.setText("1");
-        
         
     }//GEN-LAST:event_jbLButton1ActionPerformed
 
     private void jbLButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton2ActionPerformed
+        CLICKS++; 
         boolean matched = false;
        
-        while(!matched){
-        String symbol = Character.toString(symbols[1]);
+         String symbol = Character.toString(symbols[1]);
          jbLButton2.setText(symbol); 
          
-         CLICKS++;
-         if (CLICKS == 1){
-             card1.getCardArray()[1]= true;
-         }
-         else if (CLICKS == 2)
-            card2.getCardArray()[1]= true;
-        }
-        matched = game.cardStatus(symbols);
-        if (matched)
-            jbLButton2.setText("");
-        else
-            jbLButton2.setText("2");
+       
     }//GEN-LAST:event_jbLButton2ActionPerformed
 
     private void jbLButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton3ActionPerformed
@@ -739,6 +717,9 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbLButton16ActionPerformed
 
+    public void trial(){
+        jbLButton1.setText("trial");
+    }
     /**
      * @param args the command line arguments
      */
