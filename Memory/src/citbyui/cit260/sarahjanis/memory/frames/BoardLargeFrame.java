@@ -24,6 +24,7 @@ import java.util.logging.Logger;
  */
 public class BoardLargeFrame extends javax.swing.JFrame {
      private char symbols[];
+     int indexTurn[];
     Game game;
     Board board;
     SymbolArray symArr;
@@ -31,6 +32,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     Player player2;
     Card card1;
     Card card2;
+    BoardLargeFrame lFrame;
     
     static int CLICKS;
     /**
@@ -657,38 +659,58 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbQuitActionPerformed
     
     private void jbLButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton1ActionPerformed
-       CLICKS++;
+        CLICKS++;
         boolean matched = false;
        
-       // while(!matched){
-        String symbol = Character.toString(symbols[0]);
+        String symbol = Character.toString(symbols[0]); // index should be button#-1
         jbLButton1.setText(symbol);
-         
-      
-        
-        
+        setIndices(0); //save the index of this card to an array
+        if (CLICKS ==2){
+            matched = checkMatch();
+            CLICKS =0;
+            } 
+        if (matched == true){
+            jbLButton1.setText("");}
+        else if (matched == false)
+          jbLButton1.setText("1");  
     }//GEN-LAST:event_jbLButton1ActionPerformed
     void setIndices(int index){
         
-        int [] index1 = new int[2];
+        int [] indexTurn = new int[2];
         if (CLICKS == 1){
-            index1[0]= index1[index];
+            indexTurn[0]= indexTurn[index];
         }
         else if (CLICKS ==2){
-          index1[1]= index1[index];  
+          indexTurn[1]= indexTurn[index];
         }
+      
+    }
+    
+    boolean checkMatch(){
         
+        if (symbols[indexTurn[0]]== symbols[indexTurn[1]])
+          return true;
+        else
+            return false;
     }
     
     
     
     private void jbLButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLButton2ActionPerformed
-        CLICKS++; 
+         CLICKS++;
         boolean matched = false;
        
-         String symbol = Character.toString(symbols[1]);
-         jbLButton2.setText(symbol); 
-         
+        String symbol = Character.toString(symbols[1]);// index should be button#-1
+        jbLButton2.setText(symbol);
+        setIndices(1); //save the index of this card to an array -- index should be button#-1
+        if (CLICKS ==2){
+            matched = checkMatch();
+            CLICKS =0;
+            } 
+        if (matched == true){
+            jbLButton2.setText("");}
+        else if (matched == false)
+          jbLButton2.setText("2");  
        
     }//GEN-LAST:event_jbLButton2ActionPerformed
 
@@ -750,9 +772,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
 
     private void jbContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbContinueActionPerformed
         if (CLICKS!=2){setVisible(false);}
-    //    this.
-     //   buttonStatusHandler(index1st, index2nd);
-        
+    
         
         
         
