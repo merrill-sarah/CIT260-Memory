@@ -25,9 +25,10 @@ public class Board implements Serializable, DisplayInfo {
     private int totalCards;
     private SymbolArray symbolArr;
     private Card deck[];
+    private int totalMatches;
     
     public Board(){
-        symbolArr = new SymbolArray();
+
     }        
     
   
@@ -48,15 +49,14 @@ public class Board implements Serializable, DisplayInfo {
                 errorMsg.displayError(ErrorType.ERROR102.getMessage());
             
                     }
-        
-        symbolArr.setTotalMatches(totalCards/2);
+        totalMatches=totalCards/2;
         }
    
     
     @Override
     public void display(){
         System.out.println("\n\tThe board is " + rows + " by " + columns + "."
-                + " There are a total of " + (int)symbolArr.getTotalMatches() + " matches to find.");
+                + " There are a total of " + totalMatches + " matches to find.");
         
     }
 
@@ -90,6 +90,13 @@ public class Board implements Serializable, DisplayInfo {
 
     public void setTotalCards(int totalCards) {
         this.totalCards = totalCards;
+    }
+    public int getTotalMatches() {
+        return totalMatches;
+    }
+
+    public void setTotalMatches(int totalMatches) {
+        this.totalMatches = totalMatches;
     }
 
     public SymbolArray getSymbolArr() {

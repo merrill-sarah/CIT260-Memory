@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 public class Player implements Serializable {
     private String name;
-    private int matchedGame = 0; 
+    private int matches = 0; 
     private int totalWins = 0; 
     
     
@@ -33,12 +33,12 @@ public class Player implements Serializable {
         this.name = name;
     }
     //returns when a matched is made
-    public int getMatchedGame() {
-        return matchedGame;
+    public int getMatches() {
+        return matches;
     }
     //sets that a match was made
-    public void setMatchedGame(int matchedGame) {
-        this.matchedGame = matchedGame;
+    public void setMatches(int matches) {
+        this.matches = matches;
     }
     //returns totalWins
     public int getTotalWins() {
