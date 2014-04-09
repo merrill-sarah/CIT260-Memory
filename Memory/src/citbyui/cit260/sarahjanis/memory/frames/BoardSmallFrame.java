@@ -29,7 +29,7 @@ import javax.swing.JPanel;
 
 public class BoardSmallFrame extends javax.swing.JFrame {
     private char symbols[];
-     private int indexTurn[] = new int[2];
+    private int indexTurn[] = new int[2];
     Game game;
     Board board;
     SymbolArray symArr;
@@ -39,19 +39,22 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     Card card2;
     boolean matched = false;
     //BoardLargeFrame lFrame;
-    private int tCounter=1;
+    private int tCounter=  1;
     private int CLICKS;
+    private int matchedGame;
     
     //SymbolArray myArray = new SymbolArray();
     /**
      * Creates new form GameBoardFrame
      */
-    public BoardSmallFrame(Player player1, Player player2, char getSymbols[]) throws BoardException{
+    public BoardSmallFrame(Player player1, Player player2, Board setBoard, char getSymbols[]) throws BoardException{
         P1 = player1;
         P2 = player2;
+        board = setBoard;
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;
+        matchedGame = 0;
         CLICKS = 0;
         
         jlP1Name.setText(P1.getName());
@@ -585,16 +588,15 @@ public class BoardSmallFrame extends javax.swing.JFrame {
             
             if (tCounter % 2 != 0){
                 if (matched == true){
-                     P1.setMatchedGame(P1.getMatchedGame()+1);
+                     P1.setMatches(P1.getMatches()+1);
                      jlInstructions.setText(P1.getName() + ": Yay, you made a match! You get another turn.");
-                     jlP1Matches.setText(Integer.toString(P1.getMatchedGame()));
+                     jlP1Matches.setText(Integer.toString(P1.getMatches()));
                      jbNext.setVisible(true);
                         disableCards();
-            
-                    //jbLButton1.setText("");
+                     matchedGame++;
+                     
                     }
                 else {
-                    //jbLButton1.setText("1"); 
                     jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
                         disableCards();
@@ -605,13 +607,13 @@ public class BoardSmallFrame extends javax.swing.JFrame {
              
             else {
                 if (matched == true){
-                     P2.setMatchedGame(P2.getMatchedGame()+1);
-                     jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
-                     jlP2Matches.setText(Integer.toString(P2.getMatchedGame()));
+                    P2.setMatches(P2.getMatches()+1);
+                    jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
+                    jlP2Matches.setText(Integer.toString(P2.getMatches()));
                     jbNext.setVisible(true);
                         disableCards();
-            
-                    //jbLButton1.setText("");
+                    matchedGame++;
+                    
                     }
                 else{
                     //jbLButton1.setText("1"); 
@@ -782,6 +784,11 @@ public class BoardSmallFrame extends javax.swing.JFrame {
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
         setBoard();
+        
+        //determines whether to show the end game stuff
+        if (matchedGame == board.getTotalMatches()){
+            jlInstructions.setText("The game is over!");
+        }
     }//GEN-LAST:event_jbNextActionPerformed
 
     

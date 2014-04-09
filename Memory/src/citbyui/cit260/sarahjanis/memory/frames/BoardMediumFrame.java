@@ -39,7 +39,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     /**
      * Creates new form BoardMediumFrame
      */
-    public BoardMediumFrame(Player player1, Player player2, char getSymbols[]) {
+    public BoardMediumFrame(Player player1, Player player2, Board board, char getSymbols[]) {
         P1 = player1;
         P2 = player2;
         initComponents();
@@ -817,9 +817,9 @@ public class BoardMediumFrame extends javax.swing.JFrame {
             
             if (tCounter % 2 != 0){
                 if (matched == true){
-                     P1.setMatchedGame(P1.getMatchedGame()+1);
+                     P1.setMatches(P1.getMatches()+1);
                      jlInstructions.setText(P1.getName() + ": Yay, you made a match! You get another turn.");
-                     jlP1Matches.setText(Integer.toString(P1.getMatchedGame()));
+                     jlP1Matches.setText(Integer.toString(P1.getMatches()));
                      jbNext.setVisible(true);
                         disableCards();
             
@@ -837,9 +837,9 @@ public class BoardMediumFrame extends javax.swing.JFrame {
              
             else {
                 if (matched == true){
-                     P2.setMatchedGame(P2.getMatchedGame()+1);
+                     P2.setMatches(P2.getMatches()+1);
                      jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
-                     jlP2Matches.setText(Integer.toString(P2.getMatchedGame()));
+                     jlP2Matches.setText(Integer.toString(P2.getMatches()));
                     jbNext.setVisible(true);
                         disableCards();
             

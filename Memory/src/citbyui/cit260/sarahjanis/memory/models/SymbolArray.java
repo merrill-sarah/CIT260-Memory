@@ -17,7 +17,6 @@ import citbyui.cit260.sarahjanis.memory.views.BoardView;
  */
 public class SymbolArray implements Serializable{
     private BoardView boardview;
-    private float totalMatches;
     private float numSymbols;
     private int numMatchingSymbols;
 
@@ -31,13 +30,12 @@ public class SymbolArray implements Serializable{
      }  
    
    public char[] createArray(Board board, char getSymbols []) throws BoardException{
-        setTotalMatches(board.getTotalCards()/2);
-          
-         if (getNumMatchingSymbols() == 2){
-             setNumSymbols(getTotalMatches());
+                  
+         if (numMatchingSymbols == 2){
+             numSymbols = board.getTotalMatches();
          }
-         else if (getNumMatchingSymbols() == 4){
-             setNumSymbols(getTotalMatches() / 2);
+         else if (numMatchingSymbols == 4){
+             numSymbols = board.getTotalMatches()/2;
          }
          else{
            throw new BoardException(ErrorType.ERROR204.getMessage());
@@ -46,9 +44,9 @@ public class SymbolArray implements Serializable{
        char setSymbols[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X'};
        
              
-       for(int i = 0; i<getNumSymbols();i++){
+       for(int i = 0; i<numSymbols;i++){
            
-            for(int c = 0;c<getNumMatchingSymbols();c++){
+            for(int c = 0;c<numMatchingSymbols;c++){
                 getSymbols[i]=setSymbols[i];
               
             }
@@ -56,7 +54,7 @@ public class SymbolArray implements Serializable{
        int j = 0;  //duplicates the symbols in getSymbols depending on whether the user chooses 2 or 4 matching cards.
        int grid = (board.getTotalCards());
        while (j<grid){
-           for (int i = 0; i<getNumSymbols();i++,j++){
+           for (int i = 0; i<numSymbols;i++,j++){
                getSymbols[j]=getSymbols[i];
            }
        }
@@ -91,20 +89,6 @@ public class SymbolArray implements Serializable{
      */
     public void setBoardview(BoardView boardview) {
         this.boardview = boardview;
-    }
-
-    /**
-     * @return the totalMatches
-     */
-    public float getTotalMatches() {
-        return totalMatches;
-    }
-
-    /**
-     * @param totalMatches the totalMatches to set
-     */
-    public void setTotalMatches(float totalMatches) {
-        this.totalMatches = totalMatches;
     }
 
     /**

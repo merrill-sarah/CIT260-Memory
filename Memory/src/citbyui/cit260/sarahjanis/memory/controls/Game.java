@@ -66,15 +66,15 @@ public class Game implements Serializable {
        
           switch (board.getSize()){
             case "s":
-                 boardSm = new BoardSmallFrame(player1, player2, getSymbols);
+                 boardSm = new BoardSmallFrame(player1, player2, board, getSymbols);
                  boardSm.setVisible(true);
                  break;
             case "m":
-                boardMd = new BoardMediumFrame(player1, player2, getSymbols);
+                boardMd = new BoardMediumFrame(player1, player2, board, getSymbols);
                 boardMd.setVisible(true);
                 break;
             case "l":
-                boardLg = new BoardLargeFrame(player1, player2, getSymbols);
+                boardLg = new BoardLargeFrame(player1, player2, board, getSymbols);
                 boardLg.setVisible(true);
                 break;
             default: 
@@ -152,7 +152,7 @@ public class Game implements Serializable {
                 
                 
       
-        public void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{
+        /*public void playersTurns(Board board, SymbolArray symbols, char getSymbols [], Player player1, Player player2) throws IOException, CardException, BoardException, MemoryException{
         
             
             
@@ -201,7 +201,7 @@ public class Game implements Serializable {
             
              /*determine if a match was made and distribute point to player1 or 
                      player2 based on who's turn it is */   
-             if (card1.getSymbol() == card2.getSymbol()){//should be using player1 and player 2 here as objects... not as evaluated values
+            /* if (card1.getSymbol() == card2.getSymbol()){//should be using player1 and player 2 here as objects... not as evaluated values
                  match = true;
                  card1.setMatched(true);
                  card2.setMatched(true);
@@ -227,6 +227,8 @@ public class Game implements Serializable {
              
          }
       }  
+        */
+
 
     private void selectCard(Board board, char getSymbols[], String name) throws IOException, CardException{
         Scanner in = new Scanner(System.in);
@@ -356,7 +358,7 @@ public class Game implements Serializable {
         
  
     }
-      private void displayScore(Player player1, Player player2){ //move to Player class?
+      /*private void displayScore(Player player1, Player player2){ //move to Player class?
           numPlayers=2; //until we add option to have more than 2 players
           int index=0;
           int[] numWins = new int[numPlayers];
@@ -419,6 +421,7 @@ public class Game implements Serializable {
           System.out.println("\nThe player with the most wins has " + max +
                   "\nThe player with the least amount of wins has " + min);
           }
+      */
       //getter and setter functions
     public GetPlayerListView getPlayerList() {
         return playerList;
