@@ -732,6 +732,11 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         jb6.setEnabled(false);
         jb7.setEnabled(false);
         jb8.setEnabled(false);
+        jb9.setEnabled(false);
+        jb10.setEnabled(false);
+        jb11.setEnabled(false);
+        jb12.setEnabled(false);
+        
     }
     private void enableCards(){
         jb1.setEnabled(true);
@@ -742,6 +747,10 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         jb6.setEnabled(true);
         jb7.setEnabled(true);
         jb8.setEnabled(true);
+        jb9.setEnabled(true);
+        jb10.setEnabled(true);
+        jb11.setEnabled(true);
+        jb12.setEnabled(true);
     }
     
     private void jbMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMainMenuActionPerformed

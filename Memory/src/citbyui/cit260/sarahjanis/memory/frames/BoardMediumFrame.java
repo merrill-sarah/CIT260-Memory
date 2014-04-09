@@ -11,6 +11,7 @@ import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
+import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import java.io.IOException;
@@ -23,20 +24,34 @@ import java.util.logging.Logger;
  */
 public class BoardMediumFrame extends javax.swing.JFrame {
     private char symbols[];
+     private int indexTurn[] = new int[2];
     Game game;
     Board board;
     SymbolArray symArr;
-    Player player1;
-    Player player2;
+    Player P1;
+    Player P2;
+    Card card1;
+    Card card2;
+    boolean matched = false;
+    //BoardLargeFrame lFrame;
+    private int tCounter=1;
+    private int CLICKS;
     /**
      * Creates new form BoardMediumFrame
      */
     public BoardMediumFrame(Player player1, Player player2, char getSymbols[]) {
+        P1 = player1;
+        P2 = player2;
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;
-        jlP1Name.setText(player1.getName());
-        jlP2Name.setText(player2.getName());
+        CLICKS = 0;
+        
+        jlP1Name.setText(P1.getName());
+        jlP2Name.setText(P2.getName());
+        
+        jlInstructions.setText(P1.getName() + ": Choose a card.");        
+        jbNext.setVisible(false);
         
     }
 
@@ -65,6 +80,10 @@ public class BoardMediumFrame extends javax.swing.JFrame {
         jbMainMenu = new javax.swing.JButton();
         jbHelp = new javax.swing.JButton();
         jbQuit = new javax.swing.JButton();
+        jpGamePlayInstructions = new javax.swing.JPanel();
+        jlFirstTurn = new javax.swing.JLabel();
+        jlInstructions = new javax.swing.JLabel();
+        jbNext = new javax.swing.JButton();
         jpMGameArea = new javax.swing.JPanel();
         jb1 = new javax.swing.JButton();
         jb2 = new javax.swing.JButton();
@@ -221,14 +240,50 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jpGamePlayInstructions.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        javax.swing.GroupLayout jpGamePlayInstructionsLayout = new javax.swing.GroupLayout(jpGamePlayInstructions);
+        jpGamePlayInstructions.setLayout(jpGamePlayInstructionsLayout);
+        jpGamePlayInstructionsLayout.setHorizontalGroup(
+            jpGamePlayInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpGamePlayInstructionsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlFirstTurn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jpGamePlayInstructionsLayout.setVerticalGroup(
+            jpGamePlayInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpGamePlayInstructionsLayout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addComponent(jlFirstTurn)
+                .addContainerGap())
+            .addComponent(jlInstructions, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jbNext.setText("Next");
+        jbNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNextActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpMTitleLayout = new javax.swing.GroupLayout(jpMTitle);
         jpMTitle.setLayout(jpMTitleLayout);
         jpMTitleLayout.setHorizontalGroup(
             jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMTitleLayout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(jlMTitle)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
+                .addGroup(jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpMTitleLayout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(jlMTitle))
+                    .addGroup(jpMTitleLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jbNext)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -243,7 +298,12 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                     .addGroup(jpMTitleLayout.createSequentialGroup()
                         .addGroup(jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlMTitle))
+                            .addGroup(jpMTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jbNext)
+                                .addGroup(jpMTitleLayout.createSequentialGroup()
+                                    .addComponent(jlMTitle)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -518,136 +578,520 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
        String symbol = Character.toString(symbols[0]);
        jb1.setText(symbol);
-     /*  CLICK++;
-        try {
-            game.playersTurns(board, symArr, symbols, player1, player2);
-        } catch (IOException ex) {
-            Logger.getLogger(BoardMediumFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (CardException ex) {
-            Logger.getLogger(BoardMediumFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (BoardException ex) {
-            Logger.getLogger(BoardMediumFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (MemoryException ex) {
-            Logger.getLogger(BoardMediumFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+       CLICKS++;
        
+        setIndices(1);
+        afterClick();       
     }//GEN-LAST:event_jb1ActionPerformed
 
     private void jb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2ActionPerformed
         String symbol = Character.toString(symbols[1]);
        jb2.setText(symbol);
+       CLICKS++;
+       
+        setIndices(2);
+        afterClick();
     }//GEN-LAST:event_jb2ActionPerformed
 
     private void jb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb3ActionPerformed
         String symbol = Character.toString(symbols[2]);
        jb3.setText(symbol);
+       CLICKS++;
+       
+        setIndices(3);
+        afterClick();
     }//GEN-LAST:event_jb3ActionPerformed
 
     private void jb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb4ActionPerformed
         String symbol = Character.toString(symbols[3]);
        jb4.setText(symbol);
+       CLICKS++;
+       
+        setIndices(4);
+        afterClick();
     }//GEN-LAST:event_jb4ActionPerformed
 
     private void jb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb5ActionPerformed
         String symbol = Character.toString(symbols[4]);
        jb5.setText(symbol);
+       CLICKS++;
+       
+        setIndices(5);
+        afterClick();
     }//GEN-LAST:event_jb5ActionPerformed
 
     private void jb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb6ActionPerformed
         String symbol = Character.toString(symbols[5]);
        jb6.setText(symbol);
+       CLICKS++;
+       
+        setIndices(6);
+        afterClick();
     }//GEN-LAST:event_jb6ActionPerformed
 
     private void jb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb7ActionPerformed
         String symbol = Character.toString(symbols[6]);
        jb7.setText(symbol);
+       CLICKS++;
+       
+        setIndices(7);
+        afterClick();
     }//GEN-LAST:event_jb7ActionPerformed
 
     private void jb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb8ActionPerformed
         String symbol = Character.toString(symbols[7]);
        jb8.setText(symbol);
+       CLICKS++;
+       
+        setIndices(8);
+        afterClick();
     }//GEN-LAST:event_jb8ActionPerformed
 
     private void jb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb9ActionPerformed
         String symbol = Character.toString(symbols[8]);
        jb9.setText(symbol);
+       CLICKS++;
+       
+        setIndices(9);
+        afterClick();
     }//GEN-LAST:event_jb9ActionPerformed
 
     private void jb10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb10ActionPerformed
         String symbol = Character.toString(symbols[9]);
        jb10.setText(symbol);
+       CLICKS++;
+       
+        setIndices(10);
+        afterClick();
     }//GEN-LAST:event_jb10ActionPerformed
 
     private void jb11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb11ActionPerformed
         String symbol = Character.toString(symbols[10]);
        jb11.setText(symbol);
+       CLICKS++;
+       
+        setIndices(11);
+        afterClick();
     }//GEN-LAST:event_jb11ActionPerformed
 
     private void jb12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb12ActionPerformed
         String symbol = Character.toString(symbols[11]);
        jb12.setText(symbol);
+       CLICKS++;
+       
+        setIndices(12);
+        afterClick();
     }//GEN-LAST:event_jb12ActionPerformed
 
     private void jb13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb13ActionPerformed
         String symbol = Character.toString(symbols[12]);
        jb13.setText(symbol);
+       CLICKS++;
+       
+        setIndices(13);
+        afterClick();
     }//GEN-LAST:event_jb13ActionPerformed
 
     private void jb14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb14ActionPerformed
         String symbol = Character.toString(symbols[13]);
        jb14.setText(symbol);
+       CLICKS++;
+       
+        setIndices(14);
+        afterClick();
     }//GEN-LAST:event_jb14ActionPerformed
 
     private void jb15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb15ActionPerformed
         String symbol = Character.toString(symbols[14]);
        jb15.setText(symbol);
+       CLICKS++;
+       
+        setIndices(15);
+        afterClick();
     }//GEN-LAST:event_jb15ActionPerformed
 
     private void jb16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb16ActionPerformed
         String symbol = Character.toString(symbols[15]);
        jb16.setText(symbol);
+       CLICKS++;
+       
+        setIndices(16);
+        afterClick();
     }//GEN-LAST:event_jb16ActionPerformed
 
     private void jb17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb17ActionPerformed
         String symbol = Character.toString(symbols[16]);
        jb17.setText(symbol);
+       CLICKS++;
+       
+        setIndices(17);
+        afterClick();
     }//GEN-LAST:event_jb17ActionPerformed
 
     private void jb18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb18ActionPerformed
         String symbol = Character.toString(symbols[17]);
        jb18.setText(symbol);
+       CLICKS++;
+       
+        setIndices(18);
+        afterClick();
     }//GEN-LAST:event_jb18ActionPerformed
 
     private void jb19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb19ActionPerformed
         String symbol = Character.toString(symbols[18]);
        jb19.setText(symbol);
+       CLICKS++;
+       
+        setIndices(19);
+        afterClick();
     }//GEN-LAST:event_jb19ActionPerformed
 
     private void jb20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb20ActionPerformed
         String symbol = Character.toString(symbols[19]);
        jb20.setText(symbol);
+       CLICKS++;
+       
+        setIndices(20);
+        afterClick();
     }//GEN-LAST:event_jb20ActionPerformed
 
     private void jb21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb21ActionPerformed
         String symbol = Character.toString(symbols[20]);
        jb21.setText(symbol);
+       CLICKS++;
+       
+        setIndices(21);
+        afterClick();
     }//GEN-LAST:event_jb21ActionPerformed
 
     private void jb22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb22ActionPerformed
         String symbol = Character.toString(symbols[21]);
        jb22.setText(symbol);
+       CLICKS++;
+       
+        setIndices(22);
+        afterClick();
     }//GEN-LAST:event_jb22ActionPerformed
 
     private void jb23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb23ActionPerformed
         String symbol = Character.toString(symbols[22]);
        jb23.setText(symbol);
+       CLICKS++;
+       
+        setIndices(23);
+        afterClick();
     }//GEN-LAST:event_jb23ActionPerformed
 
     private void jb24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb24ActionPerformed
         String symbol = Character.toString(symbols[23]);
        jb24.setText(symbol);
+       CLICKS++;
+       
+        setIndices(24);
+        afterClick();
     }//GEN-LAST:event_jb24ActionPerformed
 
+    private void setIndices(int index){
+        
+        if (CLICKS == 1){
+            indexTurn[0]= index;
+            
+        }
+        else if (CLICKS ==2){
+          indexTurn[1]= index;
+        }
+      
+    }
+    
+    private boolean checkMatch(){
+        
+        if (symbols[indexTurn[0]-1]== symbols[indexTurn[1]-1])
+          return true;
+        else
+            return false;
+    }
+    private void afterClick(){
+        if (CLICKS == 2){
+            matched = checkMatch();
+            CLICKS =0;
+            
+            if (tCounter % 2 != 0){
+                if (matched == true){
+                     P1.setMatchedGame(P1.getMatchedGame()+1);
+                     jlInstructions.setText(P1.getName() + ": Yay, you made a match! You get another turn.");
+                     jlP1Matches.setText(Integer.toString(P1.getMatchedGame()));
+                     jbNext.setVisible(true);
+                        disableCards();
+            
+                    //jbLButton1.setText("");
+                    }
+                else {
+                    //jbLButton1.setText("1"); 
+                    jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
+                    jbNext.setVisible(true);
+                        disableCards();
+            
+                    //next player's turn
+                    tCounter++;} 
+        }
+             
+            else {
+                if (matched == true){
+                     P2.setMatchedGame(P2.getMatchedGame()+1);
+                     jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
+                     jlP2Matches.setText(Integer.toString(P2.getMatchedGame()));
+                    jbNext.setVisible(true);
+                        disableCards();
+            
+                    //jbLButton1.setText("");
+                    }
+                else{
+                    //jbLButton1.setText("1"); 
+                    jlInstructions.setText(P2.getName() + ": Sorry, not a match. Next player's turn.");
+                    jbNext.setVisible(true);
+                        disableCards();
+            
+                    //next player's turn
+                    tCounter++;} 
+            }
+        }
+        else{
+            if (tCounter % 2 != 0){
+              jlInstructions.setText(P1.getName() + ": Choose another card.");  
+            }
+            else{
+              jlInstructions.setText(P2.getName() + ": Choose another card.");
+            }
+        }
+            
+    }
+    private void setBoard(){
+        //make this fix cards somehow
+        if (matched == false){
+            if (indexTurn[0]==1 || indexTurn[1]==1){
+               jb1.setText("1"); 
+            }
+            if (indexTurn[0]==2 || indexTurn[1]==2){
+               jb2.setText("2"); 
+            }
+            if (indexTurn[0]==3 || indexTurn[1]==3){
+               jb3.setText("3"); 
+            }
+            if (indexTurn[0]==4 || indexTurn[1]==4){
+               jb4.setText("4"); 
+            }
+            if (indexTurn[0]==5 || indexTurn[1]==5){
+               jb5.setText("5"); 
+            }
+            if (indexTurn[0]==6 || indexTurn[1]==6){
+               jb6.setText("6"); 
+            }
+            if (indexTurn[0]==7 || indexTurn[1]==7){
+               jb7.setText("7"); 
+            }
+            if (indexTurn[0]==8 || indexTurn[1]==8){
+               jb8.setText("8"); 
+            }
+            if (indexTurn[0]==9 || indexTurn[1]==9){
+               jb9.setText("9"); 
+            }
+            if (indexTurn[0]==10 || indexTurn[1]==10){
+               jb10.setText("10"); 
+            }
+            if (indexTurn[0]==11 || indexTurn[1]==11){
+               jb11.setText("11"); 
+            }
+            if (indexTurn[0]==12 || indexTurn[1]==12){
+               jb12.setText("12"); 
+            }
+            if (indexTurn[0]==13 || indexTurn[1]==13){
+               jb13.setText("13"); 
+            }
+            if (indexTurn[0]==14 || indexTurn[1]==14){
+               jb14.setText("14"); 
+            }
+            if (indexTurn[0]==15 || indexTurn[1]==15){
+               jb15.setText("15"); 
+            }
+            if (indexTurn[0]==16 || indexTurn[1]==16){
+               jb16.setText("16"); 
+            }
+            if (indexTurn[0]==17 || indexTurn[1]==17){
+               jb12.setText("12"); 
+            }
+            if (indexTurn[0]==17 || indexTurn[1]==17){
+               jb18.setText("18"); 
+            }
+            if (indexTurn[0]==19 || indexTurn[1]==19){
+               jb19.setText("19"); 
+            }
+            if (indexTurn[0]==20 || indexTurn[1]==20){
+               jb20.setText("20"); 
+            }
+            if (indexTurn[0]==21 || indexTurn[1]==21){
+               jb21.setText("21"); 
+            }
+            if (indexTurn[0]==22 || indexTurn[1]==22){
+               jb22.setText("22"); 
+            }
+            if (indexTurn[0]==23 || indexTurn[1]==23){
+               jb23.setText("23"); 
+            }
+            if (indexTurn[0]==24 || indexTurn[1]==24){
+               jb24.setText("24"); 
+            }
+            matched = false;
+            jbNext.setVisible(false); 
+                enableCards();
+                
+                //player instructions
+                if (tCounter % 2 != 0){
+                    jlInstructions.setText(P1.getName() + ": Choose a card.");  
+                    }
+                else{
+                    jlInstructions.setText(P2.getName() + ": Choose a card.");
+                    }
+                }
+        else if (matched == true){
+            if (indexTurn[0]==1 || indexTurn[1]==1){
+               jb1.setVisible(false); 
+            }
+            if (indexTurn[0]==2 || indexTurn[1]==2){
+               jb2.setVisible(false); 
+            }
+            if (indexTurn[0]==3 || indexTurn[1]==3){
+               jb3.setVisible(false);
+            }
+            if (indexTurn[0]==4 || indexTurn[1]==4){
+               jb4.setVisible(false); 
+            }
+            if (indexTurn[0]==5 || indexTurn[1]==5){
+               jb5.setVisible(false); 
+            }
+            if (indexTurn[0]==6 || indexTurn[1]==6){
+               jb6.setVisible(false); 
+            }
+            if (indexTurn[0]==7 || indexTurn[1]==7){
+               jb7.setVisible(false); 
+            }
+            if (indexTurn[0]==8 || indexTurn[1]==8){
+               jb8.setVisible(false); 
+            }
+            if (indexTurn[0]==9 || indexTurn[1]==9){
+               jb9.setVisible(false); 
+            }
+            if (indexTurn[0]==10 || indexTurn[1]==10){
+               jb10.setVisible(false); 
+            }
+            if (indexTurn[0]==11 || indexTurn[1]==11){
+               jb11.setVisible(false); 
+            }
+            if (indexTurn[0]==12 || indexTurn[1]==12){
+               jb12.setVisible(false); 
+            }
+            if (indexTurn[0]==13 || indexTurn[1]==13){
+               jb13.setVisible(false); 
+            }
+            if (indexTurn[0]==14 || indexTurn[1]==14){
+               jb14.setVisible(false); 
+            }
+            if (indexTurn[0]==15 || indexTurn[1]==15){
+               jb15.setVisible(false); 
+            }
+            if (indexTurn[0]==16 || indexTurn[1]==16){
+               jb16.setVisible(false); 
+            }
+            if (indexTurn[0]==17 || indexTurn[1]==17){
+               jb12.setVisible(false); 
+            }
+            if (indexTurn[0]==17 || indexTurn[1]==17){
+               jb18.setVisible(false); 
+            }
+            if (indexTurn[0]==19 || indexTurn[1]==19){
+               jb19.setVisible(false); 
+            }
+            if (indexTurn[0]==20 || indexTurn[1]==20){
+               jb20.setVisible(false); 
+            }
+            if (indexTurn[0]==21 || indexTurn[1]==21){
+               jb21.setVisible(false);
+            }
+            if (indexTurn[0]==22 || indexTurn[1]==22){
+               jb22.setVisible(false); 
+            }
+            if (indexTurn[0]==23 || indexTurn[1]==23){
+               jb23.setVisible(false); 
+            }
+            if (indexTurn[0]==24 || indexTurn[1]==24){
+               jb24.setVisible(false); 
+            }
+            jbNext.setVisible(false);
+                enableCards();
+                
+                //player instructions
+                if (tCounter % 2 != 0){
+                    jlInstructions.setText(P1.getName() + ": Choose a card.");  
+                    }
+                else{
+                    jlInstructions.setText(P2.getName() + ": Choose a card.");
+                    }
+                }
+        
+    }
+    
+    private void disableCards(){
+        jb1.setEnabled(false);
+        jb2.setEnabled(false);
+        jb3.setEnabled(false);
+        jb4.setEnabled(false);
+        jb5.setEnabled(false);
+        jb6.setEnabled(false);
+        jb7.setEnabled(false);
+        jb8.setEnabled(false);
+        jb9.setEnabled(false);
+        jb10.setEnabled(false);
+        jb11.setEnabled(false);
+        jb12.setEnabled(false);
+        jb13.setEnabled(false);
+        jb14.setEnabled(false);
+        jb15.setEnabled(false);
+        jb16.setEnabled(false);
+        jb17.setEnabled(false);
+        jb18.setEnabled(false);
+        jb19.setEnabled(false);
+        jb20.setEnabled(false);
+        jb21.setEnabled(false);
+        jb22.setEnabled(false);
+        jb23.setEnabled(false);
+        jb24.setEnabled(false);
+    }
+    private void enableCards(){
+        jb1.setEnabled(true);
+        jb2.setEnabled(true);
+        jb3.setEnabled(true);
+        jb4.setEnabled(true);
+        jb5.setEnabled(true);
+        jb6.setEnabled(true);
+        jb7.setEnabled(true);
+        jb8.setEnabled(true);
+        jb9.setEnabled(true);
+        jb10.setEnabled(true);
+        jb11.setEnabled(true);
+        jb12.setEnabled(true);
+        jb13.setEnabled(true);
+        jb14.setEnabled(true);
+        jb15.setEnabled(true);
+        jb16.setEnabled(true);
+        jb17.setEnabled(true);
+        jb18.setEnabled(true);
+        jb19.setEnabled(true);
+        jb20.setEnabled(true);
+        jb21.setEnabled(true);
+        jb22.setEnabled(true);
+        jb23.setEnabled(true);
+        jb24.setEnabled(true);
+    }
+    
     private void jbMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMainMenuActionPerformed
         this.dispose();
         MainFrame mainFrame =  new MainFrame();
@@ -662,6 +1106,10 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
         this.dispose();
     }//GEN-LAST:event_jbQuitActionPerformed
+
+    private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
+        setBoard();
+    }//GEN-LAST:event_jbNextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -699,7 +1147,10 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private javax.swing.JButton jb9;
     private javax.swing.JButton jbHelp;
     private javax.swing.JButton jbMainMenu;
+    private javax.swing.JButton jbNext;
     private javax.swing.JButton jbQuit;
+    private javax.swing.JLabel jlFirstTurn;
+    private javax.swing.JLabel jlInstructions;
     private javax.swing.JLabel jlMTitle;
     private javax.swing.JLabel jlP1Matches;
     private javax.swing.JLabel jlP1Name;
@@ -707,6 +1158,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jlP2Matches;
     private javax.swing.JLabel jlP2Name;
     private javax.swing.JLabel jlP2Wins;
+    javax.swing.JPanel jpGamePlayInstructions;
     private javax.swing.JPanel jpMGameArea;
     private javax.swing.JPanel jpMTitle;
     // End of variables declaration//GEN-END:variables
