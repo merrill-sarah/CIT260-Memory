@@ -42,6 +42,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private int tCounter=  1;
     private int CLICKS;
     private int matchedGame;
+   // JButton [] buttons; 
     
     //SymbolArray myArray = new SymbolArray();
     /**
@@ -560,7 +561,6 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         else if (CLICKS ==2){
           indexTurn[1]= index;
         }
-      
     }
     
     private boolean checkMatch(){
@@ -624,45 +624,15 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         }
             
     }
-    private void setBoard(){
+    
+    private void setBoard(int size,  JButton [] button){
         //make this fix cards somehow
-        if (matched == false){
-            if (indexTurn[0]==1 || indexTurn[1]==1){
-               jb1.setText("1"); 
+        for (int i = 1, j=0; i < size; i++, j++){
+          if (matched == false){
+            if (indexTurn[0]==i || indexTurn[1]==i){
+               button[j].setText("i"); 
             }
-            if (indexTurn[0]==2 || indexTurn[1]==2){
-               jb2.setText("2"); 
-            }
-            if (indexTurn[0]==3 || indexTurn[1]==3){
-               jb3.setText("3"); 
-            }
-            if (indexTurn[0]==4 || indexTurn[1]==4){
-               jb4.setText("4"); 
-            }
-            if (indexTurn[0]==5 || indexTurn[1]==5){
-               jb5.setText("5"); 
-            }
-            if (indexTurn[0]==6 || indexTurn[1]==6){
-               jb6.setText("6"); 
-            }
-            if (indexTurn[0]==7 || indexTurn[1]==7){
-               jb7.setText("7"); 
-            }
-            if (indexTurn[0]==8 || indexTurn[1]==8){
-               jb8.setText("8"); 
-            }
-            if (indexTurn[0]==9 || indexTurn[1]==9){
-               jb9.setText("9"); 
-            }
-            if (indexTurn[0]==10 || indexTurn[1]==10){
-               jb10.setText("10"); 
-            }
-            if (indexTurn[0]==11 || indexTurn[1]==11){
-               jb11.setText("11"); 
-            }
-            if (indexTurn[0]==12 || indexTurn[1]==12){
-               jb12.setText("12"); 
-            }
+                     
             matched = false;
             jbNext.setVisible(false); 
                 enableCards();
@@ -676,42 +646,10 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     }
                 }
         else if (matched == true){
-            if (indexTurn[0]==1 || indexTurn[1]==1){
-               jb1.setVisible(false); 
-            }
-            if (indexTurn[0]==2 || indexTurn[1]==2){
-               jb2.setVisible(false); 
-            }
-            if (indexTurn[0]==3 || indexTurn[1]==3){
-               jb3.setVisible(false);
-            }
-            if (indexTurn[0]==4 || indexTurn[1]==4){
-               jb4.setVisible(false); 
-            }
-            if (indexTurn[0]==5 || indexTurn[1]==5){
-               jb5.setVisible(false); 
-            }
-            if (indexTurn[0]==6 || indexTurn[1]==6){
-               jb6.setVisible(false); 
-            }
-            if (indexTurn[0]==7 || indexTurn[1]==7){
-               jb7.setVisible(false); 
-            }
-            if (indexTurn[0]==8 || indexTurn[1]==8){
-               jb8.setVisible(false); 
-            }
-            if (indexTurn[0]==9 || indexTurn[1]==9){
-               jb9.setVisible(false); 
-            }
-            if (indexTurn[0]==10 || indexTurn[1]==10){
-               jb10.setVisible(false); 
-            }
-            if (indexTurn[0]==11 || indexTurn[1]==11){
-               jb11.setVisible(false); 
-            }
-            if (indexTurn[0]==12 || indexTurn[1]==12){
-               jb12.setVisible(false); 
-            }
+            for (i = 1, j=0; i < size; i++, j++){
+            if (indexTurn[0]==i || indexTurn[1]==i){
+               buttons[j].setVisible(false);
+            
             jbNext.setVisible(false);
                 enableCards();
                 
@@ -723,8 +661,12 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     jlInstructions.setText(P2.getName() + ": Choose a card.");
                     }
                 }
-        
+            }  
+        }
+        }
     }
+        
+        
     
     private void disableCards(){
         jb1.setEnabled(false);
@@ -772,7 +714,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbQuitActionPerformed
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
-        setBoard();
+        setBoard( 13, buttons);
+        
         
         //determines whether to show the end game stuff
         if (matchedGame == board.getTotalMatches()){
@@ -842,4 +785,5 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jpSGameArea;
     private javax.swing.JPanel jpTitle;
     // End of variables declaration//GEN-END:variables
+JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
 }
