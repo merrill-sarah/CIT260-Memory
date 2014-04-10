@@ -29,12 +29,21 @@ public class OptionFrame extends javax.swing.JFrame {
     private Player player1 = new Player();
     private Player player2 = new Player();
     private Game game = new Game();
+    
     /**
      * Creates new form OptionFrame
      */
     public OptionFrame() {
         initComponents();
         setLocationRelativeTo(null);
+        jpError.setVisible(false);
+        jpError2.setVisible(false);
+        jpError2.setVisible(false);
+        jlErrorGrid.setVisible(false);
+        jlErrorName.setVisible(false);
+        jlErrorSize.setVisible(false);
+        jBReset.setVisible(false);
+        
     }
 
     /**
@@ -62,6 +71,13 @@ public class OptionFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jtfP1Name = new javax.swing.JTextField();
         jtfP2Name = new javax.swing.JTextField();
+        jpError = new javax.swing.JPanel();
+        jlErrorGrid = new javax.swing.JLabel();
+        jpError2 = new javax.swing.JPanel();
+        jlErrorName = new javax.swing.JLabel();
+        jPError3 = new javax.swing.JPanel();
+        jlErrorSize = new javax.swing.JLabel();
+        jBReset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,7 +108,7 @@ public class OptionFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(162, 162, 162)
                 .addComponent(jLabel1)
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,45 +175,114 @@ public class OptionFrame extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         jLabel6.setText("Player 2:");
 
+        jpError.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51), 2));
+        jpError.setOpaque(false);
+
+        javax.swing.GroupLayout jpErrorLayout = new javax.swing.GroupLayout(jpError);
+        jpError.setLayout(jpErrorLayout);
+        jpErrorLayout.setHorizontalGroup(
+            jpErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpErrorLayout.createSequentialGroup()
+                .addComponent(jlErrorGrid, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 33, Short.MAX_VALUE))
+        );
+        jpErrorLayout.setVerticalGroup(
+            jpErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jlErrorGrid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+        );
+
+        jpError2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51), 2));
+        jpError2.setOpaque(false);
+
+        javax.swing.GroupLayout jpError2Layout = new javax.swing.GroupLayout(jpError2);
+        jpError2.setLayout(jpError2Layout);
+        jpError2Layout.setHorizontalGroup(
+            jpError2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpError2Layout.createSequentialGroup()
+                .addComponent(jlErrorName, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 32, Short.MAX_VALUE))
+        );
+        jpError2Layout.setVerticalGroup(
+            jpError2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jlErrorName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+        );
+
+        jPError3.setOpaque(false);
+
+        jlErrorSize.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 51), 2));
+
+        javax.swing.GroupLayout jPError3Layout = new javax.swing.GroupLayout(jPError3);
+        jPError3.setLayout(jPError3Layout);
+        jPError3Layout.setHorizontalGroup(
+            jPError3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPError3Layout.createSequentialGroup()
+                .addComponent(jlErrorSize, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 22, Short.MAX_VALUE))
+        );
+        jPError3Layout.setVerticalGroup(
+            jPError3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jlErrorSize, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+        );
+
+        jBReset.setBackground(new java.awt.Color(255, 255, 0));
+        jBReset.setText("RESET YOUR OPTIONS");
+        jBReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBResetActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpOptionsLayout = new javax.swing.GroupLayout(jpOptions);
         jpOptions.setLayout(jpOptionsLayout);
         jpOptionsLayout.setHorizontalGroup(
             jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpOptionsLayout.createSequentialGroup()
-                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpOptionsLayout.createSequentialGroup()
                         .addGap(87, 87, 87)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpOptionsLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpOptionsLayout.createSequentialGroup()
-                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jbSmall)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jbTwoCards))
-                                .addGap(18, 18, 18)
-                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBReset))
+                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jpOptionsLayout.createSequentialGroup()
+                            .addGap(35, 35, 35)
+                            .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jpOptionsLayout.createSequentialGroup()
+                                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jbSmall)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jbTwoCards))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jbMedium)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jbLarge))
-                                    .addComponent(jbFourCards)))
-                            .addComponent(jLabel4)
-                            .addGroup(jpOptionsLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5))
-                                .addGap(21, 21, 21)
-                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jpOptionsLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jbFourCards))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jpOptionsLayout.createSequentialGroup()
+                                            .addComponent(jbLarge)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jPError3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jpError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel4)
+                                .addGroup(jpOptionsLayout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel5))
+                                    .addGap(21, 21, 21)
+                                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(jpOptionsLayout.createSequentialGroup()
+                            .addGap(26, 26, 26)
+                            .addComponent(jLabel2))))
+                .addGap(16, 114, Short.MAX_VALUE))
+            .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpOptionsLayout.createSequentialGroup()
+                    .addContainerGap(305, Short.MAX_VALUE)
+                    .addComponent(jpError2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(55, 55, 55)))
         );
         jpOptionsLayout.setVerticalGroup(
             jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +290,7 @@ public class OptionFrame extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -216,19 +301,30 @@ public class OptionFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbTwoCards)
-                    .addComponent(jbFourCards))
+                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jbTwoCards)
+                        .addComponent(jbFourCards))
+                    .addComponent(jpError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbSmall)
-                    .addComponent(jbMedium)
-                    .addComponent(jbLarge))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jbSmall)
+                        .addComponent(jbMedium)
+                        .addComponent(jbLarge))
+                    .addComponent(jPError3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBReset, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29))
+            .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jpOptionsLayout.createSequentialGroup()
+                    .addGap(106, 106, 106)
+                    .addComponent(jpError2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(255, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -307,6 +403,11 @@ public class OptionFrame extends javax.swing.JFrame {
         jbTwoCards.setFont(new java.awt.Font("Tahoma", 0, 11));
     }//GEN-LAST:event_jbFourCardsActionPerformed
 
+    private void jBResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBResetActionPerformed
+    /*    OptionFrame options = new OptionFrame();
+             options.setVisible(true);*/
+    }//GEN-LAST:event_jBResetActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -318,6 +419,7 @@ private boolean inputCheck() {
     boolean boardSizeCheck = boardSizeCheck();
     boolean matchSymCheck = matchSymCheck();
      if(namecheck == false || namecheck2 == false || boardSizeCheck == false || matchSymCheck == false){
+         jpError.setVisible(true);
              return false;
                 }
      else
@@ -361,7 +463,8 @@ private boolean boardSizeCheck(){
 private boolean matchSymCheck(){
     MemoryError errorMsg = new MemoryError();
     if (symbols.getNumMatchingSymbols() != 2 && symbols.getNumMatchingSymbols() != 4) {
-        errorMsg.displayError("oops");
+        
+        errorMsg.displayError(ErrorType.ERROR204.getMessage());
         return false;
     }
     else
@@ -369,6 +472,7 @@ private boolean matchSymCheck(){
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBReset;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -376,12 +480,18 @@ private boolean matchSymCheck(){
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPError3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbFourCards;
     private javax.swing.JButton jbLarge;
     private javax.swing.JButton jbMedium;
     private javax.swing.JButton jbSmall;
     private javax.swing.JButton jbTwoCards;
+    private javax.swing.JLabel jlErrorGrid;
+    private javax.swing.JLabel jlErrorName;
+    private javax.swing.JLabel jlErrorSize;
+    private javax.swing.JPanel jpError;
+    private javax.swing.JPanel jpError2;
     private javax.swing.JPanel jpOptions;
     private javax.swing.JTextField jtfP1Name;
     private javax.swing.JTextField jtfP2Name;
