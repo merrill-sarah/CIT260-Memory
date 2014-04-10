@@ -51,7 +51,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     public BoardSmallFrame(Player player1, Player player2, Board setBoard, char getSymbols[]) throws BoardException{
         P1 = player1;
         P2 = player2;
-        board = setBoard;
+        board = setBoard; 
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;
@@ -63,6 +63,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         
         jlInstructions.setText(P1.getName() + ": Choose a card.");        
         jbNext.setVisible(false);
+        //buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
         
     }
 
@@ -646,7 +647,9 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     }
                 }
         else if (matched == true){
-            for (i = 1, j=0; i < size; i++, j++){
+            //for (i = 1, j=0; i < size; i++, j++){
+            i= 1;
+            j=0;
             if (indexTurn[0]==i || indexTurn[1]==i){
                buttons[j].setVisible(false);
             
@@ -661,7 +664,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     jlInstructions.setText(P2.getName() + ": Choose a card.");
                     }
                 }
-            }  
+           // }  
         }
         }
     }
