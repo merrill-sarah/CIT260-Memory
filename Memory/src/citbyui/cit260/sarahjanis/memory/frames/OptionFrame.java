@@ -45,6 +45,19 @@ public class OptionFrame extends javax.swing.JFrame {
         jBReset.setVisible(false);
         
     }
+    public OptionFrame(String string) {
+        initComponents();
+        setLocationRelativeTo(null);
+        jpError.setVisible(false);
+        jpError2.setVisible(false);
+        jpError2.setVisible(false);
+        jlErrorGrid.setVisible(false);
+        jlErrorName.setVisible(false);
+        jlErrorSize.setVisible(false);
+        jBReset.setVisible(true);
+        
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -238,46 +251,46 @@ public class OptionFrame extends javax.swing.JFrame {
             jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jpOptionsLayout.createSequentialGroup()
-                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpOptionsLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBReset))
-                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpOptionsLayout.createSequentialGroup()
-                            .addGap(35, 35, 35)
-                            .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jpOptionsLayout.createSequentialGroup()
-                                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jbSmall)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jbTwoCards))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jbMedium)
-                                        .addComponent(jbFourCards))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jpOptionsLayout.createSequentialGroup()
-                                            .addComponent(jbLarge)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jPError3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jpError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(jLabel4)
-                                .addGroup(jpOptionsLayout.createSequentialGroup()
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel5))
-                                    .addGap(21, 21, 21)
-                                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGroup(jpOptionsLayout.createSequentialGroup()
-                            .addGap(26, 26, 26)
-                            .addComponent(jLabel2))))
+                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpOptionsLayout.createSequentialGroup()
+                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jbSmall)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jbTwoCards))
+                                .addGap(18, 18, 18)
+                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jbMedium)
+                                    .addComponent(jbFourCards))
+                                .addGap(18, 18, 18)
+                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                                        .addComponent(jbLarge)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jPError3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jpError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel4)
+                            .addGroup(jpOptionsLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5))
+                                .addGap(21, 21, 21)
+                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel2)))
                 .addGap(16, 114, Short.MAX_VALUE))
+            .addGroup(jpOptionsLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBReset)
+                .addContainerGap())
             .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpOptionsLayout.createSequentialGroup()
                     .addContainerGap(305, Short.MAX_VALUE)
@@ -350,7 +363,7 @@ public class OptionFrame extends javax.swing.JFrame {
             /*jlError.setText("ERORR"
                      + "\nPlease make sure to enter and select all information."
                      + "\nNames need to be at least one character long.");*/
-            OptionFrame options = new OptionFrame();
+            OptionFrame options = new OptionFrame("error");
              options.setVisible(true);
             
         }
@@ -404,8 +417,8 @@ public class OptionFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbFourCardsActionPerformed
 
     private void jBResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBResetActionPerformed
-    /*    OptionFrame options = new OptionFrame();
-             options.setVisible(true);*/
+       OptionFrame options = new OptionFrame();
+             options.setVisible(true);
     }//GEN-LAST:event_jBResetActionPerformed
 
     /**
@@ -433,6 +446,7 @@ private boolean nameCheck(String name){
             
             if (name.length() < 1){
               errorMsg.displayError(ErrorType.ERROR104.getMessage());
+              
               return false;
             }
             
