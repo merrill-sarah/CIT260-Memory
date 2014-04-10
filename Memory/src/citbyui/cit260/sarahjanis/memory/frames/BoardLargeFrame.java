@@ -194,7 +194,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlP1Name)
                     .addComponent(jlP1Matches))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -930,156 +930,12 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         }
             
     }
-    private void setBoard(){
-        //make this fix cards somehow
-        if (matched == false){
-            if (indexTurn[0]==1 || indexTurn[1]==1){
-               jb1.setText("1"); 
+    private void setBoard(int size,  JButton [] button){
+        for (int i = 1, j=0; i < size; i++, j++){
+          if (matched == false){
+            if (indexTurn[0]==i || indexTurn[1]==i){
+               button[j].setText(Integer.toString(i)); 
             }
-            if (indexTurn[0]==2 || indexTurn[1]==2){
-               jb2.setText("2"); 
-            }
-            if (indexTurn[0]==3 || indexTurn[1]==3){
-               jb3.setText("3"); 
-            }
-            if (indexTurn[0]==4 || indexTurn[1]==4){
-               jb4.setText("4"); 
-            }
-            if (indexTurn[0]==5 || indexTurn[1]==5){
-               jb5.setText("5"); 
-            }
-            if (indexTurn[0]==6 || indexTurn[1]==6){
-               jb6.setText("6"); 
-            }
-            if (indexTurn[0]==7 || indexTurn[1]==7){
-               jb7.setText("7"); 
-            }
-            if (indexTurn[0]==8 || indexTurn[1]==8){
-               jb8.setText("8"); 
-            }
-            if (indexTurn[0]==9 || indexTurn[1]==9){
-               jb9.setText("9"); 
-            }
-            if (indexTurn[0]==10 || indexTurn[1]==10){
-               jb10.setText("10"); 
-            }
-            if (indexTurn[0]==11 || indexTurn[1]==11){
-               jb11.setText("11"); 
-            }
-            if (indexTurn[0]==12 || indexTurn[1]==12){
-               jb12.setText("12"); 
-            }
-            if (indexTurn[0]==13 || indexTurn[1]==13){
-               jb13.setText("13"); 
-            }
-            if (indexTurn[0]==14 || indexTurn[1]==14){
-               jb14.setText("14"); 
-            }
-            if (indexTurn[0]==15 || indexTurn[1]==15){
-               jb15.setText("15"); 
-            }
-            if (indexTurn[0]==16 || indexTurn[1]==16){
-               jb16.setText("16"); 
-            }
-            if (indexTurn[0]==17 || indexTurn[1]==17){
-               jb17.setText("17"); 
-            }
-            if (indexTurn[0]==18 || indexTurn[1]==18){
-               jb18.setText("18"); 
-            }
-            if (indexTurn[0]==19 || indexTurn[1]==19){
-               jb19.setText("19"); 
-            }
-            if (indexTurn[0]==20 || indexTurn[1]==20){
-               jb20.setText("20"); 
-            }
-            if (indexTurn[0]==21 || indexTurn[1]==21){
-               jb21.setText("21"); 
-            }
-            if (indexTurn[0]==22 || indexTurn[1]==22){
-               jb22.setText("22"); 
-            }
-            if (indexTurn[0]==23 || indexTurn[1]==23){
-               jb23.setText("23"); 
-            }
-            if (indexTurn[0]==24 || indexTurn[1]==24){
-               jb24.setText("24"); 
-            }
-            if (indexTurn[0]==25 || indexTurn[1]==25){
-               jb25.setText("25"); 
-            }
-            if (indexTurn[0]==26 || indexTurn[1]==26){
-               jb26.setText("26"); 
-            }
-            if (indexTurn[0]==27 || indexTurn[1]==27){
-               jb27.setText("27"); 
-            }
-            if (indexTurn[0]==28 || indexTurn[1]==28){
-               jb28.setText("28"); 
-            }
-            if (indexTurn[0]==29 || indexTurn[1]==29){
-               jb29.setText("29"); 
-            }
-            if (indexTurn[0]==30 || indexTurn[1]==30){
-               jb30.setText("30"); 
-            }
-            if (indexTurn[0]==31 || indexTurn[1]==31){
-               jb31.setText("31"); 
-            }
-            if (indexTurn[0]==32 || indexTurn[1]==32){
-               jb32.setText("32"); 
-            }
-            if (indexTurn[0]==33 || indexTurn[1]==33){
-               jb33.setText("33"); 
-            }
-            if (indexTurn[0]==34 || indexTurn[1]==34){
-               jb34.setText("34"); 
-            }
-            if (indexTurn[0]==35 || indexTurn[1]==35){
-               jb35.setText("35"); 
-            }
-            if (indexTurn[0]==36 || indexTurn[1]==36){
-               jb36.setText("36"); 
-            }
-            if (indexTurn[0]==37 || indexTurn[1]==37){
-               jb37.setText("37"); 
-            }
-            if (indexTurn[0]==38 || indexTurn[1]==38){
-               jb38.setText("38"); 
-            }
-            if (indexTurn[0]==39 || indexTurn[1]==39){
-               jb39.setText("39"); 
-            }
-            if (indexTurn[0]==40 || indexTurn[1]==40){
-               jb40.setText("40"); 
-            }
-            if (indexTurn[0]==41 || indexTurn[1]==41){
-               jb41.setText("41"); 
-            }
-            if (indexTurn[0]==42 || indexTurn[1]==42){
-               jb42.setText("42"); 
-            }
-            if (indexTurn[0]==43 || indexTurn[1]==43){
-               jb43.setText("43"); 
-            }
-            if (indexTurn[0]==44 || indexTurn[1]==44){
-               jb44.setText("44"); 
-            }
-            if (indexTurn[0]==45 || indexTurn[1]==45){
-               jb45.setText("45"); 
-            }
-            if (indexTurn[0]==46 || indexTurn[1]==46){
-               jb46.setText("46"); 
-            }
-            if (indexTurn[0]==47 || indexTurn[1]==47){
-               jb47.setText("47"); 
-            }
-            if (indexTurn[0]==48 || indexTurn[1]==48){
-               jb48.setText("48"); 
-            }
-            
-            
-            
             matched = false;
             jbNext.setVisible(false); 
                 enableCards();
@@ -1093,149 +949,9 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                     }
                 }
         else if (matched == true){
-            if (indexTurn[0]==1 || indexTurn[1]==1){
-               jb1.setVisible(false); 
-            }
-            if (indexTurn[0]==2 || indexTurn[1]==2){
-               jb2.setVisible(false); 
-            }
-            if (indexTurn[0]==3 || indexTurn[1]==3){
-               jb3.setVisible(false);
-            }
-            if (indexTurn[0]==4 || indexTurn[1]==4){
-               jb4.setVisible(false); 
-            }
-            if (indexTurn[0]==5 || indexTurn[1]==5){
-               jb5.setVisible(false); 
-            }
-            if (indexTurn[0]==6 || indexTurn[1]==6){
-               jb6.setVisible(false); 
-            }
-            if (indexTurn[0]==7 || indexTurn[1]==7){
-               jb7.setVisible(false); 
-            }
-            if (indexTurn[0]==8 || indexTurn[1]==8){
-               jb8.setVisible(false); 
-            }
-            if (indexTurn[0]==9 || indexTurn[1]==9){
-               jb9.setVisible(false); 
-            }
-            if (indexTurn[0]==10 || indexTurn[1]==10){
-               jb10.setVisible(false); 
-            }
-            if (indexTurn[0]==11 || indexTurn[1]==11){
-               jb11.setVisible(false); 
-            }
-            if (indexTurn[0]==12 || indexTurn[1]==12){
-               jb12.setVisible(false); 
-            }
-            if (indexTurn[0]==13 || indexTurn[1]==13){
-               jb13.setVisible(false); 
-            }
-            if (indexTurn[0]==14 || indexTurn[1]==14){
-               jb14.setVisible(false); 
-            }
-            if (indexTurn[0]==15 || indexTurn[1]==15){
-               jb15.setVisible(false); 
-            }
-            if (indexTurn[0]==16 || indexTurn[1]==16){
-               jb16.setVisible(false); 
-            }
-            if (indexTurn[0]==17 || indexTurn[1]==17){
-               jb17.setVisible(false); 
-            }
-            if (indexTurn[0]==18 || indexTurn[1]==18){
-               jb18.setVisible(false); 
-            }
-            if (indexTurn[0]==19 || indexTurn[1]==19){
-               jb19.setVisible(false); 
-            }
-            if (indexTurn[0]==20 || indexTurn[1]==20){
-               jb20.setVisible(false); 
-            }
-            if (indexTurn[0]==21 || indexTurn[1]==21){
-               jb21.setVisible(false); 
-            }
-            if (indexTurn[0]==22 || indexTurn[1]==22){
-               jb22.setVisible(false); 
-            }
-            if (indexTurn[0]==23 || indexTurn[1]==23){
-               jb23.setVisible(false); 
-            }
-            if (indexTurn[0]==24 || indexTurn[1]==24){
-               jb24.setVisible(false); 
-            }
-            if (indexTurn[0]==25 || indexTurn[1]==25){
-               jb25.setVisible(false); 
-            }
-            if (indexTurn[0]==26 || indexTurn[1]==26){
-               jb26.setVisible(false); 
-            }
-            if (indexTurn[0]==27 || indexTurn[1]==27){
-               jb27.setVisible(false); 
-            }
-            if (indexTurn[0]==28 || indexTurn[1]==28){
-               jb28.setVisible(false); 
-            }
-            if (indexTurn[0]==29 || indexTurn[1]==29){
-               jb29.setVisible(false); 
-            }
-            if (indexTurn[0]==30 || indexTurn[1]==30){
-               jb30.setVisible(false); 
-            }
-            if (indexTurn[0]==31 || indexTurn[1]==31){
-               jb31.setVisible(false); 
-            }
-            if (indexTurn[0]==32 || indexTurn[1]==32){
-               jb32.setVisible(false); 
-            }
-            if (indexTurn[0]==33 || indexTurn[1]==33){
-               jb33.setVisible(false); 
-            }
-            if (indexTurn[0]==34 || indexTurn[1]==34){
-               jb34.setVisible(false); 
-            }
-            if (indexTurn[0]==35 || indexTurn[1]==35){
-               jb35.setVisible(false); 
-            }
-            if (indexTurn[0]==36 || indexTurn[1]==36){
-               jb36.setVisible(false); 
-            }
-            if (indexTurn[0]==37 || indexTurn[1]==37){
-               jb37.setVisible(false); 
-            }
-            if (indexTurn[0]==38 || indexTurn[1]==38){
-               jb38.setVisible(false); 
-            }
-            if (indexTurn[0]==39 || indexTurn[1]==39){
-               jb39.setVisible(false); 
-            }
-            if (indexTurn[0]==40 || indexTurn[1]==40){
-               jb40.setVisible(false); 
-            }
-            if (indexTurn[0]==41 || indexTurn[1]==41){
-               jb41.setVisible(false); 
-            }
-            if (indexTurn[0]==42 || indexTurn[1]==42){
-               jb42.setVisible(false); 
-            }
-            if (indexTurn[0]==43 || indexTurn[1]==43){
-               jb43.setVisible(false); 
-            }
-            if (indexTurn[0]==44 || indexTurn[1]==44){
-               jb44.setVisible(false); 
-            }
-            if (indexTurn[0]==45 || indexTurn[1]==45){
-               jb45.setVisible(false); 
-            }
-            if (indexTurn[0]==46 || indexTurn[1]==46){
-               jb46.setVisible(false); 
-            }
-            if (indexTurn[0]==47 || indexTurn[1]==47){
-               jb47.setVisible(false); 
-            }
-            if (indexTurn[0]==48 || indexTurn[1]==48){
-               jb48.setVisible(false); 
+            for ( i = 1, j=0; i < size; i++, j++){
+                if (indexTurn[0]==i || indexTurn[1]==i){
+                button[j].setVisible(false); 
             }
             jbNext.setVisible(false);
                 enableCards();
@@ -1248,112 +964,26 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                     jlInstructions.setText(P2.getName() + ": Choose a card.");
                     }
                 }
+            }
+        }
         
     }
-  //  private void disableCards(/*JButton button*/){
-       // button.setEnabled(false);
-   // }
+  
     private void disableCards(){
-        jb1.setEnabled(false);
-        jb2.setEnabled(false);
-        jb3.setEnabled(false);
-        jb4.setEnabled(false);
-        jb5.setEnabled(false);
-        jb6.setEnabled(false);
-        jb7.setEnabled(false);
-        jb8.setEnabled(false);
-        jb9.setEnabled(false);
-        jb10.setEnabled(false);
-        jb11.setEnabled(false);
-        jb12.setEnabled(false);
-        jb13.setEnabled(false);
-        jb14.setEnabled(false);
-        jb15.setEnabled(false);
-        jb16.setEnabled(false);
-        jb17.setEnabled(false);
-        jb18.setEnabled(false);
-        jb19.setEnabled(false);
-        jb20.setEnabled(false);
-        jb21.setEnabled(false);
-        jb22.setEnabled(false);
-        jb23.setEnabled(false);
-        jb24.setEnabled(false);
-        jb25.setEnabled(false);
-        jb26.setEnabled(false);
-        jb27.setEnabled(false);
-        jb28.setEnabled(false);
-        jb29.setEnabled(false);
-        jb30.setEnabled(false);
-        jb31.setEnabled(false);
-        jb32.setEnabled(false);
-        jb33.setEnabled(false);
-        jb34.setEnabled(false);
-        jb35.setEnabled(false);
-        jb36.setEnabled(false);
-        jb37.setEnabled(false);
-        jb38.setEnabled(false);
-        jb39.setEnabled(false);
-        jb40.setEnabled(false);
-        jb41.setEnabled(false);
-        jb42.setEnabled(false);
-        jb43.setEnabled(false);
-        jb44.setEnabled(false);
-        jb44.setEnabled(false);
-        jb45.setEnabled(false);
-        jb46.setEnabled(false);
-        jb47.setEnabled(false);
-        jb48.setEnabled(false);
+         JButton button []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24,
+            jb25, jb26, jb27, jb28, jb29, jb30, jb31, jb32, jb33, jb34, jb35, jb36,
+            jb37, jb38, jb39, jb40, jb41, jb42, jb43, jb44, jb45, jb46, jb47, jb48}; 
+       for (int i = 0; i <48; i++)  
+        button[i].setEnabled(false);
     }
     private void enableCards(){
-        jb1.setEnabled(true);
-        jb2.setEnabled(true);
-        jb3.setEnabled(true);
-        jb4.setEnabled(true);
-        jb5.setEnabled(true);
-        jb6.setEnabled(true);
-        jb7.setEnabled(true);
-        jb8.setEnabled(true);
-        jb9.setEnabled(true);
-        jb10.setEnabled(true);
-        jb11.setEnabled(true);
-        jb12.setEnabled(true);
-        jb13.setEnabled(true);
-        jb14.setEnabled(true);
-        jb15.setEnabled(true);
-        jb16.setEnabled(true);
-        jb17.setEnabled(true);
-        jb18.setEnabled(true);
-        jb19.setEnabled(true);
-        jb20.setEnabled(true);
-        jb21.setEnabled(true);
-        jb22.setEnabled(true);
-        jb23.setEnabled(true);
-        jb24.setEnabled(true);
-        jb25.setEnabled(true);
-        jb26.setEnabled(true);
-        jb27.setEnabled(true);
-        jb28.setEnabled(true);
-        jb29.setEnabled(true);
-        jb30.setEnabled(true);
-        jb31.setEnabled(true);
-        jb32.setEnabled(true);
-        jb33.setEnabled(true);
-        jb34.setEnabled(true);
-        jb35.setEnabled(true);
-        jb36.setEnabled(true);
-        jb37.setEnabled(true);
-        jb38.setEnabled(true);
-        jb39.setEnabled(true);
-        jb40.setEnabled(true);
-        jb41.setEnabled(true);
-        jb42.setEnabled(true);
-        jb43.setEnabled(true);
-        jb44.setEnabled(true);
-        jb45.setEnabled(true);
-        jb46.setEnabled(true);
-        jb47.setEnabled(true);
-        jb48.setEnabled(true);
-        
+        JButton button []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24,
+            jb25, jb26, jb27, jb28, jb29, jb30, jb31, jb32, jb33, jb34, jb35, jb36,
+            jb37, jb38, jb39, jb40, jb41, jb42, jb43, jb44, jb45, jb46, jb47, jb48}; 
+       for (int i = 0; i <48; i++)
+           button[i].setEnabled(true);
     }
     
     
@@ -1837,17 +1467,23 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jb48ActionPerformed
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
-        setBoard();
+        JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24,
+            jb25, jb26, jb27, jb28, jb29, jb30, jb31, jb32, jb33, jb34, jb35, jb36,
+            jb37, jb38, jb39, jb40, jb41, jb42, jb43, jb44, jb45, jb46, jb47, jb48}; 
+        setBoard(49, buttons);
         
         //determines whether to show the end game stuff
         if (matchedGame == board.getTotalMatches()){
             jLabel4.setText("RESULTS");
              if (P2.getMatches()>P1.getMatches()){
+               jlP2Matches.setFont(new java.awt.Font("Berlin Sans FB", 0, 18));
                jlP2Matches.setText("YOU WON!");
                jlP1Matches.setText("");
              }
             else if (P1.getMatches()>P2.getMatches()){
-               jlP1Matches.setText("YOU WON!");
+                jlP1Matches.setFont(new java.awt.Font("Berlin Sans FB", 0, 18));
+                jlP1Matches.setText("YOU WON!");
                jlP2Matches.setText("");}
             else {jlP1Matches.setText("Tie");
             jlP2Matches.setText("Tie");}

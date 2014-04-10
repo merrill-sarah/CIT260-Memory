@@ -924,56 +924,16 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     }
     
     private void disableCards(){
-        jb1.setEnabled(false);
-        jb2.setEnabled(false);
-        jb3.setEnabled(false);
-        jb4.setEnabled(false);
-        jb5.setEnabled(false);
-        jb6.setEnabled(false);
-        jb7.setEnabled(false);
-        jb8.setEnabled(false);
-        jb9.setEnabled(false);
-        jb10.setEnabled(false);
-        jb11.setEnabled(false);
-        jb12.setEnabled(false);
-        jb13.setEnabled(false);
-        jb14.setEnabled(false);
-        jb15.setEnabled(false);
-        jb16.setEnabled(false);
-        jb17.setEnabled(false);
-        jb18.setEnabled(false);
-        jb19.setEnabled(false);
-        jb20.setEnabled(false);
-        jb21.setEnabled(false);
-        jb22.setEnabled(false);
-        jb23.setEnabled(false);
-        jb24.setEnabled(false);
+        JButton button []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
+         for (int i = 0; i < 24; i++)  
+             button[i].setEnabled(false);
     }
     private void enableCards(){
-        jb1.setEnabled(true);
-        jb2.setEnabled(true);
-        jb3.setEnabled(true);
-        jb4.setEnabled(true);
-        jb5.setEnabled(true);
-        jb6.setEnabled(true);
-        jb7.setEnabled(true);
-        jb8.setEnabled(true);
-        jb9.setEnabled(true);
-        jb10.setEnabled(true);
-        jb11.setEnabled(true);
-        jb12.setEnabled(true);
-        jb13.setEnabled(true);
-        jb14.setEnabled(true);
-        jb15.setEnabled(true);
-        jb16.setEnabled(true);
-        jb17.setEnabled(true);
-        jb18.setEnabled(true);
-        jb19.setEnabled(true);
-        jb20.setEnabled(true);
-        jb21.setEnabled(true);
-        jb22.setEnabled(true);
-        jb23.setEnabled(true);
-        jb24.setEnabled(true);
+         JButton [] button = {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
+        for (int i = 0; i < 24; i++)  
+             button[i].setEnabled(true);
     }
     
     private void jbMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMainMenuActionPerformed
@@ -992,18 +952,21 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbQuitActionPerformed
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
-        JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
+        JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
         setBoard(25, buttons);
         
         //determines whether to show the end game stuff
         if (matchedGame == board.getTotalMatches()){
              jLabel4.setText("RESULTS");
              if (P2.getMatches()>P1.getMatches()){
+               jlP2Matches.setFont(new java.awt.Font("Berlin Sans FB", 0, 18));
                jlP2Matches.setText("YOU WON!");
                jlP1Matches.setText("");
              }
             else if (P1.getMatches()>P2.getMatches()){
-               jlP1Matches.setText("YOU WON!");
+              jlP1Matches.setFont(new java.awt.Font("Berlin Sans FB", 0, 18));
+                jlP1Matches.setText("YOU WON!");
                jlP2Matches.setText("");}
             else {jlP1Matches.setText("Tie");
             jlP2Matches.setText("Tie");}
