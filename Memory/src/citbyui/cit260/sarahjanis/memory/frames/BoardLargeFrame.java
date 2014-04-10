@@ -39,15 +39,18 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     //BoardLargeFrame lFrame;
     private int tCounter=1;
     private int CLICKS;
+    private int matchedGame;
     /**
      * Creates new form BoardLargeFrame
      */
-    public BoardLargeFrame(Player player1, Player player2, Board board, char getSymbols[]) {
+    public BoardLargeFrame(Player player1, Player player2, Board setBoard, char getSymbols[]) {
         P1 = player1;
         P2 = player2;
+        board = setBoard;
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;
+        matchedGame = 0;
         CLICKS = 0;
         
         jlP1Name.setText(P1.getName());
@@ -859,6 +862,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
         String symbol = Character.toString(symbols[0]); // index should be button#-1
         jb1.setText(symbol);
+        jb1.setEnabled(false);
         CLICKS++;
        
         setIndices(1); //save the index of this card to an array
@@ -879,8 +883,10 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     
     private boolean checkMatch(){
         
-        if (symbols[indexTurn[0]-1]== symbols[indexTurn[1]-1])
-          return true;
+        if (symbols[indexTurn[0]-1]== symbols[indexTurn[1]-1]){
+            matchedGame++;
+            return true;
+        }
         else
             return false;
     }
@@ -897,10 +903,8 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                      jbNext.setVisible(true);
                         disableCards(/*button*/);
             
-                    //jbLButton1.setText("");
                     }
                 else {
-                    //jbLButton1.setText("1"); 
                     jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
                         disableCards(/*button*/);
@@ -917,10 +921,8 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                     jbNext.setVisible(true);
                         disableCards(/*button*/);
             
-                    //jbLButton1.setText("");
                     }
                 else{
-                    //jbLButton1.setText("1"); 
                     jlInstructions.setText(P2.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
                         disableCards(/*button*/);
@@ -1369,6 +1371,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2ActionPerformed
         String symbol = Character.toString(symbols[1]); // index should be button#-1
         jb2.setText(symbol);
+        jb2.setEnabled(false);
         CLICKS++;
         
         setIndices(2); //save the index of this card to an array
@@ -1380,6 +1383,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb3ActionPerformed
         String symbol = Character.toString(symbols[2]); // index should be button#-1
         jb3.setText(symbol);
+        jb3.setEnabled(false);
         CLICKS++;
 
         setIndices(3); //save the index of this card to an array
@@ -1390,6 +1394,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb4ActionPerformed
         String symbol = Character.toString(symbols[3]); // index should be button#-1
         jb4.setText(symbol);
+        jb4.setEnabled(false);
         CLICKS++;
 
         setIndices(4); //save the index of this card to an array
@@ -1400,6 +1405,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb5ActionPerformed
         String symbol = Character.toString(symbols[4]); // index should be button#-1
         jb5.setText(symbol);
+        jb5.setEnabled(false);
         CLICKS++;
 
         setIndices(5); //save the index of this card to an array
@@ -1410,6 +1416,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb6ActionPerformed
         String symbol = Character.toString(symbols[5]); // index should be button#-1
         jb6.setText(symbol);
+        jb6.setEnabled(false);
         CLICKS++;
 
         setIndices(6);
@@ -1420,6 +1427,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb7ActionPerformed
         String symbol = Character.toString(symbols[6]); // index should be button#-1
         jb7.setText(symbol);
+        jb7.setEnabled(false);
         CLICKS++;
 
         setIndices(7);
@@ -1431,6 +1439,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb8ActionPerformed
         String symbol = Character.toString(symbols[7]); // index should be button#-1
         jb8.setText(symbol);
+        jb8.setEnabled(false);
         CLICKS++;
         
         setIndices(8); //save the index of this card to an array
@@ -1441,6 +1450,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb9ActionPerformed
         String symbol = Character.toString(symbols[8]); // index should be button#-1
         jb9.setText(symbol);
+        jb9.setEnabled(false);
         CLICKS++;
         
         setIndices(9); //save the index of this card to an array
@@ -1450,6 +1460,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb10ActionPerformed
         String symbol = Character.toString(symbols[9]); // index should be button#-1
         jb10.setText(symbol);
+        jb10.setEnabled(false);
         CLICKS++;
         
         setIndices(10); //save the index of this card to an array
@@ -1459,6 +1470,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb11ActionPerformed
         String symbol = Character.toString(symbols[10]); // index should be button#-1
         jb11.setText(symbol);
+        jb11.setEnabled(false);
         CLICKS++;
         
         setIndices(11); //save the index of this card to an array
@@ -1468,6 +1480,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb12ActionPerformed
         String symbol = Character.toString(symbols[11]); // index should be button#-1
         jb12.setText(symbol);
+        jb12.setEnabled(false);
         CLICKS++;
         
         setIndices(12); //save the index of this card to an array
@@ -1477,6 +1490,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb13ActionPerformed
         String symbol = Character.toString(symbols[12]); // index should be button#-1
         jb13.setText(symbol);
+        jb13.setEnabled(false);
         CLICKS++;
         
         setIndices(13); //save the index of this card to an array
@@ -1486,6 +1500,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb14ActionPerformed
         String symbol = Character.toString(symbols[13]); // index should be button#-1
         jb14.setText(symbol);
+        jb14.setEnabled(false);
         CLICKS++;
         
         setIndices(14); //save the index of this card to an array
@@ -1495,6 +1510,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb15ActionPerformed
         String symbol = Character.toString(symbols[14]); // index should be button#-1
         jb15.setText(symbol);
+        jb15.setEnabled(false);
         CLICKS++;
         
         setIndices(15); //save the index of this card to an array
@@ -1504,6 +1520,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb16ActionPerformed
         String symbol = Character.toString(symbols[15]); // index should be button#-1
         jb16.setText(symbol);
+        jb16.setEnabled(false);
         CLICKS++;
         
         setIndices(16); //save the index of this card to an array
@@ -1513,6 +1530,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb17ActionPerformed
         String symbol = Character.toString(symbols[16]); // index should be button#-1
         jb17.setText(symbol);
+        jb17.setEnabled(false);
         CLICKS++;
         
         setIndices(17); //save the index of this card to an array
@@ -1522,6 +1540,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb18ActionPerformed
         String symbol = Character.toString(symbols[17]); // index should be button#-1
         jb18.setText(symbol);
+        jb18.setEnabled(false);
         CLICKS++;
         
         setIndices(18); //save the index of this card to an array
@@ -1531,6 +1550,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb19ActionPerformed
         String symbol = Character.toString(symbols[18]); // index should be button#-1
         jb19.setText(symbol);
+        jb19.setEnabled(false);
         CLICKS++;
         
         setIndices(19); //save the index of this card to an array
@@ -1540,6 +1560,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb20ActionPerformed
         String symbol = Character.toString(symbols[19]); // index should be button#-1
         jb20.setText(symbol);
+        jb20.setEnabled(false);
         CLICKS++;
         
         setIndices(20); //save the index of this card to an array
@@ -1549,6 +1570,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb21ActionPerformed
        String symbol = Character.toString(symbols[20]); // index should be button#-1
         jb21.setText(symbol);
+        jb21.setEnabled(false);
         CLICKS++;
         
         setIndices(21); //save the index of this card to an array
@@ -1558,6 +1580,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb22ActionPerformed
         String symbol = Character.toString(symbols[21]); // index should be button#-1
         jb22.setText(symbol);
+        jb22.setEnabled(false);
         CLICKS++;
         
         setIndices(22); //save the index of this card to an array
@@ -1567,6 +1590,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb23ActionPerformed
         String symbol = Character.toString(symbols[22]); // index should be button#-1
         jb23.setText(symbol);
+        jb23.setEnabled(false);
         CLICKS++;
         
         setIndices(23); //save the index of this card to an array
@@ -1576,6 +1600,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb24ActionPerformed
        String symbol = Character.toString(symbols[23]); // index should be button#-1
         jb24.setText(symbol);
+        jb24.setEnabled(false);
         CLICKS++;
         
         setIndices(24); //save the index of this card to an array
@@ -1585,6 +1610,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb25ActionPerformed
         String symbol = Character.toString(symbols[24]); // index should be button#-1
         jb25.setText(symbol);
+        jb25.setEnabled(false);
         CLICKS++;
         
         setIndices(25); //save the index of this card to an array
@@ -1594,6 +1620,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb26ActionPerformed
         String symbol = Character.toString(symbols[25]); // index should be button#-1
         jb26.setText(symbol);
+        jb26.setEnabled(false);
         CLICKS++;
         
         setIndices(26); //save the index of this card to an array
@@ -1603,6 +1630,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb27ActionPerformed
         String symbol = Character.toString(symbols[26]); // index should be button#-1
         jb27.setText(symbol);
+        jb27.setEnabled(false);
         CLICKS++;
         
         setIndices(27); //save the index of this card to an array
@@ -1612,6 +1640,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb28ActionPerformed
         String symbol = Character.toString(symbols[27]); // index should be button#-1
         jb28.setText(symbol);
+        jb28.setEnabled(false);
         CLICKS++;
         
         setIndices(28); //save the index of this card to an array
@@ -1621,6 +1650,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb29ActionPerformed
         String symbol = Character.toString(symbols[28]); // index should be button#-1
         jb29.setText(symbol);
+        jb29.setEnabled(false);
         CLICKS++;
         
         setIndices(29); //save the index of this card to an array
@@ -1630,6 +1660,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb30ActionPerformed
         String symbol = Character.toString(symbols[29]); // index should be button#-1
         jb30.setText(symbol);
+        jb30.setEnabled(false);
         CLICKS++;
         
         setIndices(30); //save the index of this card to an array
@@ -1639,6 +1670,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb31ActionPerformed
        String symbol = Character.toString(symbols[30]); // index should be button#-1
         jb31.setText(symbol);
+        jb31.setEnabled(false);
         CLICKS++;
         
         setIndices(31); //save the index of this card to an array
@@ -1648,6 +1680,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb32ActionPerformed
         String symbol = Character.toString(symbols[31]); // index should be button#-1
         jb32.setText(symbol);
+        jb32.setEnabled(false);
         CLICKS++;
         
         setIndices(32); //save the index of this card to an array
@@ -1657,6 +1690,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb33ActionPerformed
         String symbol = Character.toString(symbols[32]); // index should be button#-1
         jb33.setText(symbol);
+        jb33.setEnabled(false);
         CLICKS++;
         
         setIndices(33); //save the index of this card to an array
@@ -1666,6 +1700,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb34ActionPerformed
         String symbol = Character.toString(symbols[33]); // index should be button#-1
         jb34.setText(symbol);
+        jb34.setEnabled(false);
         CLICKS++;
         
         setIndices(34); //save the index of this card to an array
@@ -1675,6 +1710,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb35ActionPerformed
         String symbol = Character.toString(symbols[34]); // index should be button#-1
         jb35.setText(symbol);
+        jb35.setEnabled(false);
         CLICKS++;
         
         setIndices(35); //save the index of this card to an array
@@ -1684,6 +1720,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb36ActionPerformed
         String symbol = Character.toString(symbols[35]); // index should be button#-1
         jb36.setText(symbol);
+        jb36.setEnabled(false);
         CLICKS++;
         
         setIndices(36); //save the index of this card to an array
@@ -1693,6 +1730,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb37ActionPerformed
         String symbol = Character.toString(symbols[36]); // index should be button#-1
         jb37.setText(symbol);
+        jb37.setEnabled(false);
         CLICKS++;
         
         setIndices(37); //save the index of this card to an array
@@ -1702,6 +1740,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb38ActionPerformed
         String symbol = Character.toString(symbols[37]); // index should be button#-1
         jb38.setText(symbol);
+        jb38.setEnabled(false);
         CLICKS++;
         
         setIndices(38); //save the index of this card to an array
@@ -1711,6 +1750,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb39ActionPerformed
         String symbol = Character.toString(symbols[38]); // index should be button#-1
         jb39.setText(symbol);
+        jb39.setEnabled(false);
         CLICKS++;
         
         setIndices(39); //save the index of this card to an array
@@ -1720,6 +1760,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb40ActionPerformed
         String symbol = Character.toString(symbols[39]); // index should be button#-1
         jb40.setText(symbol);
+        jb40.setEnabled(false);
         CLICKS++;
         
         setIndices(40); //save the index of this card to an array
@@ -1729,6 +1770,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb41ActionPerformed
         String symbol = Character.toString(symbols[40]); // index should be button#-1
         jb41.setText(symbol);
+        jb41.setEnabled(false);
         CLICKS++;
         
         setIndices(41); //save the index of this card to an array
@@ -1738,6 +1780,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb42ActionPerformed
         String symbol = Character.toString(symbols[41]); // index should be button#-1
         jb42.setText(symbol);
+        jb42.setEnabled(false);
         CLICKS++;
         
         setIndices(42); //save the index of this card to an array
@@ -1747,6 +1790,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb43ActionPerformed
         String symbol = Character.toString(symbols[42]); // index should be button#-1
         jb43.setText(symbol);
+        jb43.setEnabled(false);
         CLICKS++;
         
         setIndices(43); //save the index of this card to an array
@@ -1756,6 +1800,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb44ActionPerformed
         String symbol = Character.toString(symbols[43]); // index should be button#-1
         jb44.setText(symbol);
+        jb44.setEnabled(false);
         CLICKS++;
         
         setIndices(44); //save the index of this card to an array
@@ -1765,6 +1810,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb45ActionPerformed
         String symbol = Character.toString(symbols[44]); // index should be button#-1
         jb45.setText(symbol);
+        jb45.setEnabled(false);
         CLICKS++;
         
         setIndices(45); //save the index of this card to an array
@@ -1774,6 +1820,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb46ActionPerformed
         String symbol = Character.toString(symbols[45]); // index should be button#-1
         jb46.setText(symbol);
+        jb46.setEnabled(false);
         CLICKS++;
         
         setIndices(46); //save the index of this card to an array
@@ -1783,6 +1830,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb47ActionPerformed
         String symbol = Character.toString(symbols[46]); // index should be button#-1
         jb47.setText(symbol);
+        jb47.setEnabled(false);
         CLICKS++;
         
         setIndices(47); //save the index of this card to an array
@@ -1792,6 +1840,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     private void jb48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb48ActionPerformed
         String symbol = Character.toString(symbols[47]); // index should be button#-1
         jb48.setText(symbol);
+        jb48.setEnabled(false);
         CLICKS++;
         
         setIndices(48); //save the index of this card to an array
@@ -1800,6 +1849,11 @@ public class BoardLargeFrame extends javax.swing.JFrame {
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
         setBoard();
+        
+        //determines whether to show the end game stuff
+        if (matchedGame == board.getTotalMatches()){
+            jlInstructions.setText("The game is over!");
+        }
     }//GEN-LAST:event_jbNextActionPerformed
 
     public void buttonsStatusHandler(int[] index1st, int[] index2nd){

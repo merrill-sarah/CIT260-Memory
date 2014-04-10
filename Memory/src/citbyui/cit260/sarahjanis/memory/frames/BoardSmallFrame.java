@@ -576,8 +576,10 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     
     private boolean checkMatch(){
         
-        if (symbols[indexTurn[0]-1]== symbols[indexTurn[1]-1])
+        if (symbols[indexTurn[0]-1]== symbols[indexTurn[1]-1]){
+            matchedGame++;
           return true;
+        }
         else
             return false;
     }
@@ -593,7 +595,6 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                      jlP1Matches.setText(Integer.toString(P1.getMatches()));
                      jbNext.setVisible(true);
                         disableCards();
-                     matchedGame++;
                      
                     }
                 else {
@@ -612,7 +613,6 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     jlP2Matches.setText(Integer.toString(P2.getMatches()));
                     jbNext.setVisible(true);
                         disableCards();
-                    matchedGame++;
                     
                     }
                 else{

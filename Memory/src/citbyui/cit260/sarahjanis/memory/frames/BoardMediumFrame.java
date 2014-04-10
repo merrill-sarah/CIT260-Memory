@@ -36,15 +36,18 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     //BoardLargeFrame lFrame;
     private int tCounter=1;
     private int CLICKS;
+    private int matchedGame;
     /**
      * Creates new form BoardMediumFrame
      */
-    public BoardMediumFrame(Player player1, Player player2, Board board, char getSymbols[]) {
+    public BoardMediumFrame(Player player1, Player player2, Board setBoard, char getSymbols[]) {
         P1 = player1;
         P2 = player2;
+        board = setBoard;
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;
+        matchedGame = 0;
         CLICKS = 0;
         
         jlP1Name.setText(P1.getName());
@@ -578,6 +581,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
        String symbol = Character.toString(symbols[0]);
        jb1.setText(symbol);
+       jb1.setEnabled(false);
        CLICKS++;
        
         setIndices(1);
@@ -587,6 +591,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2ActionPerformed
         String symbol = Character.toString(symbols[1]);
        jb2.setText(symbol);
+       jb2.setEnabled(false);
        CLICKS++;
        
         setIndices(2);
@@ -596,6 +601,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb3ActionPerformed
         String symbol = Character.toString(symbols[2]);
        jb3.setText(symbol);
+       jb3.setEnabled(false);
        CLICKS++;
        
         setIndices(3);
@@ -605,6 +611,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb4ActionPerformed
         String symbol = Character.toString(symbols[3]);
        jb4.setText(symbol);
+       jb4.setEnabled(false);
        CLICKS++;
        
         setIndices(4);
@@ -614,6 +621,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb5ActionPerformed
         String symbol = Character.toString(symbols[4]);
        jb5.setText(symbol);
+       jb5.setEnabled(false);
        CLICKS++;
        
         setIndices(5);
@@ -623,6 +631,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb6ActionPerformed
         String symbol = Character.toString(symbols[5]);
        jb6.setText(symbol);
+       jb6.setEnabled(false);
        CLICKS++;
        
         setIndices(6);
@@ -632,6 +641,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb7ActionPerformed
         String symbol = Character.toString(symbols[6]);
        jb7.setText(symbol);
+       jb7.setEnabled(false);
        CLICKS++;
        
         setIndices(7);
@@ -641,6 +651,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb8ActionPerformed
         String symbol = Character.toString(symbols[7]);
        jb8.setText(symbol);
+       jb8.setEnabled(false);
        CLICKS++;
        
         setIndices(8);
@@ -650,6 +661,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb9ActionPerformed
         String symbol = Character.toString(symbols[8]);
        jb9.setText(symbol);
+       jb9.setEnabled(false);
        CLICKS++;
        
         setIndices(9);
@@ -659,6 +671,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb10ActionPerformed
         String symbol = Character.toString(symbols[9]);
        jb10.setText(symbol);
+       jb10.setEnabled(false);
        CLICKS++;
        
         setIndices(10);
@@ -668,6 +681,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb11ActionPerformed
         String symbol = Character.toString(symbols[10]);
        jb11.setText(symbol);
+       jb11.setEnabled(false);
        CLICKS++;
        
         setIndices(11);
@@ -677,6 +691,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb12ActionPerformed
         String symbol = Character.toString(symbols[11]);
        jb12.setText(symbol);
+       jb12.setEnabled(false);
        CLICKS++;
        
         setIndices(12);
@@ -686,6 +701,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb13ActionPerformed
         String symbol = Character.toString(symbols[12]);
        jb13.setText(symbol);
+       jb13.setEnabled(false);
        CLICKS++;
        
         setIndices(13);
@@ -695,6 +711,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb14ActionPerformed
         String symbol = Character.toString(symbols[13]);
        jb14.setText(symbol);
+       jb14.setEnabled(false);
        CLICKS++;
        
         setIndices(14);
@@ -704,6 +721,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb15ActionPerformed
         String symbol = Character.toString(symbols[14]);
        jb15.setText(symbol);
+       jb15.setEnabled(false);
        CLICKS++;
        
         setIndices(15);
@@ -713,6 +731,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb16ActionPerformed
         String symbol = Character.toString(symbols[15]);
        jb16.setText(symbol);
+       jb16.setEnabled(false);
        CLICKS++;
        
         setIndices(16);
@@ -722,6 +741,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb17ActionPerformed
         String symbol = Character.toString(symbols[16]);
        jb17.setText(symbol);
+       jb17.setEnabled(false);
        CLICKS++;
        
         setIndices(17);
@@ -731,6 +751,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb18ActionPerformed
         String symbol = Character.toString(symbols[17]);
        jb18.setText(symbol);
+       jb18.setEnabled(false);
        CLICKS++;
        
         setIndices(18);
@@ -740,6 +761,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb19ActionPerformed
         String symbol = Character.toString(symbols[18]);
        jb19.setText(symbol);
+       jb19.setEnabled(false);
        CLICKS++;
        
         setIndices(19);
@@ -749,6 +771,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb20ActionPerformed
         String symbol = Character.toString(symbols[19]);
        jb20.setText(symbol);
+       jb20.setEnabled(false);
        CLICKS++;
        
         setIndices(20);
@@ -758,6 +781,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb21ActionPerformed
         String symbol = Character.toString(symbols[20]);
        jb21.setText(symbol);
+       jb21.setEnabled(false);
        CLICKS++;
        
         setIndices(21);
@@ -767,6 +791,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb22ActionPerformed
         String symbol = Character.toString(symbols[21]);
        jb22.setText(symbol);
+       jb22.setEnabled(false);
        CLICKS++;
        
         setIndices(22);
@@ -776,6 +801,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb23ActionPerformed
         String symbol = Character.toString(symbols[22]);
        jb23.setText(symbol);
+       jb23.setEnabled(false);
        CLICKS++;
        
         setIndices(23);
@@ -785,6 +811,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void jb24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb24ActionPerformed
         String symbol = Character.toString(symbols[23]);
        jb24.setText(symbol);
+       jb24.setEnabled(false);
        CLICKS++;
        
         setIndices(24);
@@ -805,8 +832,10 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     
     private boolean checkMatch(){
         
-        if (symbols[indexTurn[0]-1]== symbols[indexTurn[1]-1])
-          return true;
+        if (symbols[indexTurn[0]-1]== symbols[indexTurn[1]-1]){
+            matchedGame++;
+            return true;
+        }
         else
             return false;
     }
@@ -823,10 +852,8 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                      jbNext.setVisible(true);
                         disableCards();
             
-                    //jbLButton1.setText("");
                     }
-                else {
-                    //jbLButton1.setText("1"); 
+                else { 
                     jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
                         disableCards();
@@ -837,16 +864,14 @@ public class BoardMediumFrame extends javax.swing.JFrame {
              
             else {
                 if (matched == true){
-                     P2.setMatches(P2.getMatches()+1);
-                     jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
-                     jlP2Matches.setText(Integer.toString(P2.getMatches()));
+                    P2.setMatches(P2.getMatches()+1);
+                    jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
+                    jlP2Matches.setText(Integer.toString(P2.getMatches()));
                     jbNext.setVisible(true);
                         disableCards();
-            
-                    //jbLButton1.setText("");
+     
                     }
-                else{
-                    //jbLButton1.setText("1"); 
+                else{                     
                     jlInstructions.setText(P2.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
                         disableCards();
@@ -1109,6 +1134,11 @@ public class BoardMediumFrame extends javax.swing.JFrame {
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
         setBoard();
+        
+        //determines whether to show the end game stuff
+        if (matchedGame == board.getTotalMatches()){
+            jlInstructions.setText("The game is over!");
+        }
     }//GEN-LAST:event_jbNextActionPerformed
 
     /**
