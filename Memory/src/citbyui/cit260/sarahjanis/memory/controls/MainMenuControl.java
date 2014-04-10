@@ -11,7 +11,7 @@ import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 //import citbyui.cit260.sarahjanis.memory.views.HelpMenuView;
-import citbyui.cit260.sarahjanis.memory.views.OptionMenuView;
+
 import java.io.IOException;
 
 /**
@@ -19,25 +19,25 @@ import java.io.IOException;
  * @author Sarawr
  */
 public class MainMenuControl {
-    public MainMenuControl() {
+ //   public MainMenuControl() {
         
     } 
 
-    public void startGame() throws IOException, CardException, BoardException, MemoryException /*Case S*/{
+  //  public void startGame() throws IOException, CardException, BoardException, MemoryException /*Case S*/{
       //try{  Game newGame = new Game();
         //newGame.startGame();}
         //catch (NumberFormatException ex){
                 //throw new NumberFormatException(ErrorType.ERROR106.getMessage());
-                //}
-    }
+//                //}
+ //   }
     
-    public void displayOptionMenu()/*Case O*/ {
-        OptionMenuView optionMenuView = new OptionMenuView();
-        optionMenuView.getInput(null);
-    }
+ //   public void displayOptionMenu()/*Case O*/ {
+ //       OptionMenuView optionMenuView = new OptionMenuView();
+//        optionMenuView.getInput(null);
+    //}
    /* public void displayHelpMenu()/*Case H*/ /*{     
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.getInput(this);
     }*/
                             
-}
+//}

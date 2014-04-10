@@ -11,7 +11,7 @@ import citbyui.cit260.sarahjanis.memory.controls.MainMenuControl;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
-import citbyui.cit260.sarahjanis.memory.views.OptionMenuView;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

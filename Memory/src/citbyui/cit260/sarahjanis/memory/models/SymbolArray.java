@@ -9,14 +9,14 @@ import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import java.io.Serializable;
 import java.util.*;
-import citbyui.cit260.sarahjanis.memory.views.BoardView;
+//import citbyui.cit260.sarahjanis.memory.views.BoardView;
 
 /**
  *
  * @author Janis
  */
 public class SymbolArray implements Serializable{
-    private BoardView boardview;
+    //private BoardView boardview;
     private float numSymbols;
     private int numMatchingSymbols;
 
@@ -75,21 +75,21 @@ public class SymbolArray implements Serializable{
       getSymbols[index] = getSymbols[i];
       getSymbols[i] = a;
     }
-   }
+   
 
     /**
      * @return the boardview
      */
-    public BoardView getBoardview() {
-        return boardview;
+   // public BoardView getBoardview() {
+   //     return boardview;
     }
 
     /**
      * @param boardview the boardview to set
      */
-    public void setBoardview(BoardView boardview) {
-        this.boardview = boardview;
-    }
+   // public void setBoardview(BoardView boardview) {
+   //     this.boardview = boardview;
+  //  }
 
     /**
      * @return the numSymbols

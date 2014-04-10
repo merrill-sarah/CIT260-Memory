@@ -22,12 +22,12 @@ import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.BioS;
 import citbyui.cit260.sarahjanis.memory.models.BioJ;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
-import citbyui.cit260.sarahjanis.memory.views.EndMenuView;
+//import citbyui.cit260.sarahjanis.memory.views.EndMenuView;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.*;
-import citbyui.cit260.sarahjanis.memory.views.BoardView;
-import citbyui.cit260.sarahjanis.memory.views.GetPlayerListView;
+//import citbyui.cit260.sarahjanis.memory.views.BoardView;
+//import citbyui.cit260.sarahjanis.memory.views.GetPlayerListView;
 
 
 
@@ -37,7 +37,7 @@ import citbyui.cit260.sarahjanis.memory.views.GetPlayerListView;
  * @author Janis
  */
 public class Game implements Serializable {
-    private GetPlayerListView playerList= new GetPlayerListView();
+  //  private GetPlayerListView playerList= new GetPlayerListView();
     private Player player1 = new Player();
     private Player player2 = new Player();
     BoardSmallFrame boardSm;
@@ -423,13 +423,13 @@ public class Game implements Serializable {
           }
       */
       //getter and setter functions
-    public GetPlayerListView getPlayerList() {
-        return playerList;
-    }
+   // public GetPlayerListView getPlayerList() {
+   //     return playerList;
+   // }
 
-    public void setPlayerList(GetPlayerListView playerList) {
-        this.playerList = playerList;
-    }
+   // public void setPlayerList(GetPlayerListView playerList) {
+    //    this.playerList = playerList;
+   // }
 
     public Player getPlayer1() {
         return player1;
