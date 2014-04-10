@@ -17,6 +17,7 @@ import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 
 /**
  *
@@ -883,80 +884,12 @@ public class BoardMediumFrame extends javax.swing.JFrame {
         }
             
     }
-    private void setBoard(){
+    private void setBoard(int size,  JButton [] button){
         //make this fix cards somehow
-        if (matched == false){
-            if (indexTurn[0]==1 || indexTurn[1]==1){
-               jb1.setText("1"); 
-            }
-            if (indexTurn[0]==2 || indexTurn[1]==2){
-               jb2.setText("2"); 
-            }
-            if (indexTurn[0]==3 || indexTurn[1]==3){
-               jb3.setText("3"); 
-            }
-            if (indexTurn[0]==4 || indexTurn[1]==4){
-               jb4.setText("4"); 
-            }
-            if (indexTurn[0]==5 || indexTurn[1]==5){
-               jb5.setText("5"); 
-            }
-            if (indexTurn[0]==6 || indexTurn[1]==6){
-               jb6.setText("6"); 
-            }
-            if (indexTurn[0]==7 || indexTurn[1]==7){
-               jb7.setText("7"); 
-            }
-            if (indexTurn[0]==8 || indexTurn[1]==8){
-               jb8.setText("8"); 
-            }
-            if (indexTurn[0]==9 || indexTurn[1]==9){
-               jb9.setText("9"); 
-            }
-            if (indexTurn[0]==10 || indexTurn[1]==10){
-               jb10.setText("10"); 
-            }
-            if (indexTurn[0]==11 || indexTurn[1]==11){
-               jb11.setText("11"); 
-            }
-            if (indexTurn[0]==12 || indexTurn[1]==12){
-               jb12.setText("12"); 
-            }
-            if (indexTurn[0]==13 || indexTurn[1]==13){
-               jb13.setText("13"); 
-            }
-            if (indexTurn[0]==14 || indexTurn[1]==14){
-               jb14.setText("14"); 
-            }
-            if (indexTurn[0]==15 || indexTurn[1]==15){
-               jb15.setText("15"); 
-            }
-            if (indexTurn[0]==16 || indexTurn[1]==16){
-               jb16.setText("16"); 
-            }
-            if (indexTurn[0]==17 || indexTurn[1]==17){
-               jb17.setText("17"); 
-            }
-            if (indexTurn[0]==18 || indexTurn[1]==18){
-               jb18.setText("18"); 
-            }
-            if (indexTurn[0]==19 || indexTurn[1]==19){
-               jb19.setText("19"); 
-            }
-            if (indexTurn[0]==20 || indexTurn[1]==20){
-               jb20.setText("20"); 
-            }
-            if (indexTurn[0]==21 || indexTurn[1]==21){
-               jb21.setText("21"); 
-            }
-            if (indexTurn[0]==22 || indexTurn[1]==22){
-               jb22.setText("22"); 
-            }
-            if (indexTurn[0]==23 || indexTurn[1]==23){
-               jb23.setText("23"); 
-            }
-            if (indexTurn[0]==24 || indexTurn[1]==24){
-               jb24.setText("24"); 
+        for (int i = 1, j=0; i < size; i++, j++){
+          if (matched == false){
+            if (indexTurn[0]==i || indexTurn[1]==i){
+               button[j].setText(Integer.toString(i)); 
             }
             matched = false;
             jbNext.setVisible(false); 
@@ -971,77 +904,9 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                     }
                 }
         else if (matched == true){
-            if (indexTurn[0]==1 || indexTurn[1]==1){
-               jb1.setVisible(false); 
-            }
-            if (indexTurn[0]==2 || indexTurn[1]==2){
-               jb2.setVisible(false); 
-            }
-            if (indexTurn[0]==3 || indexTurn[1]==3){
-               jb3.setVisible(false);
-            }
-            if (indexTurn[0]==4 || indexTurn[1]==4){
-               jb4.setVisible(false); 
-            }
-            if (indexTurn[0]==5 || indexTurn[1]==5){
-               jb5.setVisible(false); 
-            }
-            if (indexTurn[0]==6 || indexTurn[1]==6){
-               jb6.setVisible(false); 
-            }
-            if (indexTurn[0]==7 || indexTurn[1]==7){
-               jb7.setVisible(false); 
-            }
-            if (indexTurn[0]==8 || indexTurn[1]==8){
-               jb8.setVisible(false); 
-            }
-            if (indexTurn[0]==9 || indexTurn[1]==9){
-               jb9.setVisible(false); 
-            }
-            if (indexTurn[0]==10 || indexTurn[1]==10){
-               jb10.setVisible(false); 
-            }
-            if (indexTurn[0]==11 || indexTurn[1]==11){
-               jb11.setVisible(false); 
-            }
-            if (indexTurn[0]==12 || indexTurn[1]==12){
-               jb12.setVisible(false); 
-            }
-            if (indexTurn[0]==13 || indexTurn[1]==13){
-               jb13.setVisible(false); 
-            }
-            if (indexTurn[0]==14 || indexTurn[1]==14){
-               jb14.setVisible(false); 
-            }
-            if (indexTurn[0]==15 || indexTurn[1]==15){
-               jb15.setVisible(false); 
-            }
-            if (indexTurn[0]==16 || indexTurn[1]==16){
-               jb16.setVisible(false); 
-            }
-            if (indexTurn[0]==17 || indexTurn[1]==17){
-               jb17.setVisible(false); 
-            }
-            if (indexTurn[0]==18 || indexTurn[1]==18){
-               jb18.setVisible(false); 
-            }
-            if (indexTurn[0]==19 || indexTurn[1]==19){
-               jb19.setVisible(false); 
-            }
-            if (indexTurn[0]==20 || indexTurn[1]==20){
-               jb20.setVisible(false); 
-            }
-            if (indexTurn[0]==21 || indexTurn[1]==21){
-               jb21.setVisible(false);
-            }
-            if (indexTurn[0]==22 || indexTurn[1]==22){
-               jb22.setVisible(false); 
-            }
-            if (indexTurn[0]==23 || indexTurn[1]==23){
-               jb23.setVisible(false); 
-            }
-            if (indexTurn[0]==24 || indexTurn[1]==24){
-               jb24.setVisible(false); 
+            for (i = 1, j=0; i < size; i++, j++){
+            if (indexTurn[0]==i || indexTurn[1]==i){
+               button[j].setVisible(false);
             }
             jbNext.setVisible(false);
                 enableCards();
@@ -1054,7 +919,8 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                     jlInstructions.setText(P2.getName() + ": Choose a card.");
                     }
                 }
-        
+        }
+        }
     }
     
     private void disableCards(){
@@ -1126,7 +992,8 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbQuitActionPerformed
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
-        setBoard();
+        JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
+        setBoard(25, buttons);
         
         //determines whether to show the end game stuff
         if (matchedGame == board.getTotalMatches()){
