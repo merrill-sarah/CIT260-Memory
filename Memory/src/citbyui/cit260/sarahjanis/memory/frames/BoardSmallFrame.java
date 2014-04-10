@@ -627,11 +627,11 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     }
     
     private void setBoard(int size,  JButton [] button){
-        //make this fix cards somehow
+        
         for (int i = 1, j=0; i < size; i++, j++){
           if (matched == false){
             if (indexTurn[0]==i || indexTurn[1]==i){
-               button[j].setText("i"); 
+               button[j].setText(Integer.toString(i)); 
             }
                      
             matched = false;
@@ -647,11 +647,10 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     }
                 }
         else if (matched == true){
-            //for (i = 1, j=0; i < size; i++, j++){
-            i= 1;
-            j=0;
+            for (i = 1, j=0; i < size; i++, j++){
             if (indexTurn[0]==i || indexTurn[1]==i){
-               buttons[j].setVisible(false);
+               button[j].setVisible(false);
+            }
             
             jbNext.setVisible(false);
                 enableCards();
@@ -717,7 +716,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbQuitActionPerformed
 
     private void jbNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNextActionPerformed
-        setBoard( 13, buttons);
+        JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
+        setBoard(13, buttons);
         
         
         //determines whether to show the end game stuff
@@ -788,5 +788,5 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jpSGameArea;
     private javax.swing.JPanel jpTitle;
     // End of variables declaration//GEN-END:variables
-JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
+
 }

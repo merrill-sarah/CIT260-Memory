@@ -256,8 +256,7 @@ public class OptionFrame extends javax.swing.JFrame {
                      + "\nNames need to be at least one character long.");*/
             OptionFrame options = new OptionFrame();
              options.setVisible(true);
-             
-             
+            
         }
         else        
         try {
