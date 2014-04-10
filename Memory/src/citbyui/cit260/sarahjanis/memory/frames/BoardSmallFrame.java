@@ -83,9 +83,6 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jlP1Matches = new javax.swing.JLabel();
         jlP2Matches = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jlP1Wins = new javax.swing.JLabel();
-        jlP2Wins = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jbMainMenu = new javax.swing.JButton();
         jbHelp = new javax.swing.JButton();
@@ -135,14 +132,6 @@ public class BoardSmallFrame extends javax.swing.JFrame {
 
         jlP2Matches.setText("0");
 
-        jLabel7.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel7.setText("Wins");
-
-        jlP1Wins.setText("0");
-
-        jlP2Wins.setText("0");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -150,20 +139,20 @@ public class BoardSmallFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jlP1Name)
-                    .addComponent(jlP2Name))
-                .addGap(66, 66, 66)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jlP1Matches)
-                    .addComponent(jlP2Matches))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlP2Wins)
-                    .addComponent(jlP1Wins)
-                    .addComponent(jLabel7))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jlP1Name)
+                            .addComponent(jlP2Name))
+                        .addGap(66, 66, 66)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlP2Matches, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                            .addComponent(jlP1Matches, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4)))
+                .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,18 +160,15 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlP1Name)
-                    .addComponent(jlP1Matches)
-                    .addComponent(jlP1Wins))
+                    .addComponent(jlP1Matches))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlP2Name)
-                    .addComponent(jlP2Matches)
-                    .addComponent(jlP2Wins))
+                    .addComponent(jlP2Matches))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -246,8 +232,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
             jpGamePlayInstructionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpGamePlayInstructionsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jlInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jlFirstTurn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -260,7 +246,9 @@ public class BoardSmallFrame extends javax.swing.JFrame {
             .addComponent(jlInstructions, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jbNext.setText("Next");
+        jbNext.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jbNext.setForeground(new java.awt.Color(0, 153, 153));
+        jbNext.setText("NEXT");
         jbNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbNextActionPerformed(evt);
@@ -275,15 +263,16 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                 .addGroup(jpTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpTitleLayout.createSequentialGroup()
                         .addGap(115, 115, 115)
-                        .addComponent(jlTitle))
+                        .addComponent(jlTitle)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE))
                     .addGroup(jpTitleLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbNext)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(jbNext)
+                        .addGap(52, 52, 52)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(50, 50, 50)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8))
         );
@@ -787,7 +776,17 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         
         //determines whether to show the end game stuff
         if (matchedGame == board.getTotalMatches()){
-            jlInstructions.setText("The game is over!");
+             jLabel4.setText("RESULTS");
+             if (P2.getMatches()>P1.getMatches()){
+               jlP2Matches.setText("YOU WON!");
+               jlP1Matches.setText("");
+             }
+            else if (P1.getMatches()>P2.getMatches()){
+               jlP1Matches.setText("YOU WON!");
+               jlP2Matches.setText("");}
+            else {jlP1Matches.setText("Tie");
+            jlP2Matches.setText("Tie");}
+            jlInstructions.setText("Thank you for playing Memory!   To play again click Main Menu.");
         }
     }//GEN-LAST:event_jbNextActionPerformed
 
@@ -814,7 +813,6 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jb1;
@@ -837,10 +835,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jlInstructions;
     private javax.swing.JLabel jlP1Matches;
     private javax.swing.JLabel jlP1Name;
-    private javax.swing.JLabel jlP1Wins;
     private javax.swing.JLabel jlP2Matches;
     private javax.swing.JLabel jlP2Name;
-    private javax.swing.JLabel jlP2Wins;
     private javax.swing.JLabel jlTitle;
     javax.swing.JPanel jpGamePlayInstructions;
     private javax.swing.JPanel jpSGameArea;
