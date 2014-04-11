@@ -63,7 +63,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         
         jlInstructions.setText(P1.getName() + ": Choose a card.");        
         jbNext.setVisible(false);
-        //buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
+        
         
     }
 
@@ -663,7 +663,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     jlInstructions.setText(P2.getName() + ": Choose a card.");
                     }
                 }
-           // }  
+             
         }
         }
     }
@@ -720,24 +720,6 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbNextActionPerformed
 
-    
-    /*public void firstTurn(Player player1, Player player2){
-        
-   jlFirstTurn.setText(player1.getName() + ", pick your first card");
-  // }
-    
-    
-   // public void createCards(){/*
-  /*  jpTitle.setVisible(true);
-    JButton buttonT = new JButton("4 title panel");
-    JButton buttonGB = new JButton("4 game panel");
-    jpTitle.add(buttonT);
-    
-    jpGameArea.add(buttonGB);
-   // buttonGB.setText("I'M A manually added BUTTON IN THE GAME PANEL");
-    
-    //layout.*/
-//}
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
