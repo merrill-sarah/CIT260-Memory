@@ -13,14 +13,13 @@ import citbyui.cit260.sarahjanis.memory.frames.BoardMediumFrame;
 import citbyui.cit260.sarahjanis.memory.frames.BoardSmallFrame;
 import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 import java.io.Serializable;
+import javax.swing.JButton;
 
 /**
  *
  * @author Sarawr
  */
-public class Board implements Serializable, DisplayInfo {
-    private int rows;
-    private int columns;
+public class Board implements Serializable {
     private String size;
     private int totalCards;
     private SymbolArray symbolArr;
@@ -53,29 +52,9 @@ public class Board implements Serializable, DisplayInfo {
         }
    
     
-    @Override
-    public void display(){
-        System.out.println("\n\tThe board is " + rows + " by " + columns + "."
-                + " There are a total of " + totalMatches + " matches to find.");
-        
-    }
+     
 
-    public int getRows() {
-        return rows;
-    }
-
-    public void setRows(int rows) {
-        this.rows = rows;
-    }
-
-    public int getColumns() {
-        return columns;
-    }
-
-    public void setColumns(int columns) {
-        this.columns = columns;
-    }
-
+    
     public String getSize() {
         return size;
     }

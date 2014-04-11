@@ -6,7 +6,6 @@
 
 package citbyui.cit260.sarahjanis.memory.controls;
 
-import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.enums.StatusType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
@@ -14,7 +13,6 @@ import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.frames.BoardLargeFrame;
 import citbyui.cit260.sarahjanis.memory.frames.BoardMediumFrame;
 import citbyui.cit260.sarahjanis.memory.frames.BoardSmallFrame;
-import citbyui.cit260.sarahjanis.memory.frames.OptionFrame;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.Card;
@@ -22,13 +20,11 @@ import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.BioS;
 import citbyui.cit260.sarahjanis.memory.models.BioJ;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
-import javax.swing.*;
-//import citbyui.cit260.sarahjanis.memory.views.EndMenuView;
+
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.*;
-//import citbyui.cit260.sarahjanis.memory.views.BoardView;
-//import citbyui.cit260.sarahjanis.memory.views.GetPlayerListView;
+import javax.swing.JButton;
+
 
 
 
@@ -38,18 +34,16 @@ import java.util.*;
  * @author Janis
  */
 public class Game implements Serializable {
-  //  private GetPlayerListView playerList= new GetPlayerListView();
-    private Player player1 = new Player();
-    private Player player2 = new Player();
-    BoardSmallFrame boardSm;
-    BoardMediumFrame boardMd;
-    BoardLargeFrame boardLg;
+    private BoardSmallFrame boardSm;
+    private BoardMediumFrame boardMd;
+    private BoardLargeFrame boardLg;
     private int numCards;
     private char cardSymbol;
     private int cardSelection;
     private int dupCheck;
     private int numPlayers=2;
     private StatusType status;
+    private Card card = new Card();
  
     
     
@@ -57,50 +51,84 @@ public class Game implements Serializable {
     public Game(){  
       
     }
-    public void startGame(Board board, Player player1, Player player2, SymbolArray symbols ) throws IOException, CardException, BoardException, MemoryException{ 
-                 
+    public void startGame(Board board, Player player1, Player player2, SymbolArray symbols ) throws BoardException { 
+      Game game = new Game();           
       
     board.setUp();
     char getSymbols [] = new char [board.getTotalCards()];
     getSymbols = symbols.createArray(board, getSymbols);
     MemoryError errorMsg = new MemoryError();
-       try{
+  
           switch (board.getSize()){
             case "s":
-                 boardSm = new BoardSmallFrame(player1, player2, board, getSymbols);
+                 boardSm = new BoardSmallFrame(player1, player2, board, game, getSymbols);
                  boardSm.setVisible(true);
                  break;
             case "m":
-                boardMd = new BoardMediumFrame(player1, player2, board, getSymbols);
+                boardMd = new BoardMediumFrame(player1, player2, board, game, getSymbols);
                 boardMd.setVisible(true);
                 break;
             case "l":
-                boardLg = new BoardLargeFrame(player1, player2, board, getSymbols);
+                boardLg = new BoardLargeFrame(player1, player2, board, game, getSymbols);
                 boardLg.setVisible(true);
                 break;
-          }}
-          catch (BoardException ex){
-              board.setUp();
-                  }
+          }
+              
+                  
                     
     }
-    
+    /*public void setIndices(int index){
+        
+        if (boardSm.getCLICKS() == 1){
+            boardSm.indexTurn[0]= index;
             
-    public Player getPlayer1() {
-        return player1;
+        }
+        else if (boardSm.getCLICKS() ==2){
+          indexTurn[1]= index;
+        }
     }
-
-    public void setPlayer1(Player player1) {
-        this.player1 = player1;
-    }
-
-    public Player getPlayer2() {
-        return player2;
-    }
-
-    public void setPlayer2(Player player2) {
-        this.player2 = player2;
-    }
+    public void setBoard(int size,  JButton [] button, Board board){
+        
+        for (int i = 1, j=0; i < size; i++, j++){
+          if (boardSm.isMatched() == false){
+            if (boardSm.getIndexTurn()[0]==i || boardSm.getIndexTurn()[1]==i){
+               button[j].setText(Integer.toString(i)); 
+            }
+                     
+            boardSm.setMatched(false);
+            boardSm.getJbNext().setVisible(false); 
+                card.enableCards(board, button);
+                
+                //player instructions
+                if (boardSm.gettCounter() % 2 != 0){
+                    boardSm.getJlInstructions().setText(boardSm.getP1().getName() + ": Choose a card.");  
+                    }
+                else{
+                    boardSm.getJlInstructions().setText(boardSm.getP2().getName() + ": Choose a card.");
+                    }
+                }
+        else if (boardSm.isMatched() == true){
+            for (i = 1, j=0; i < size; i++, j++){
+            if (boardSm.getIndexTurn()[0]==i || boardSm.getIndexTurn()[1]==i){
+               button[j].setVisible(false);
+            }
+            
+            boardSm.getJbNext().setVisible(false); 
+                card.enableCards(board, button);
+                
+                //player instructions
+                if (boardSm.gettCounter() % 2 != 0){
+                    boardSm.getJlInstructions().setText(boardSm.getP1().getName() + ": Choose a card.");  
+                    }
+                else{
+                    boardSm.getJlInstructions().setText(boardSm.getP2().getName() + ": Choose a card.");
+                    }
+                }
+             
+        }
+        }
+    } */
+    
 
     public int getNumCards() {
         return numCards;

@@ -25,7 +25,7 @@ import javax.swing.JButton;
  */
 public class BoardMediumFrame extends javax.swing.JFrame {
     private char symbols[];
-     private int indexTurn[] = new int[2];
+    private int indexTurn[] = new int[2];
     Game game;
     Board board;
     SymbolArray symArr;
@@ -41,7 +41,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     /**
      * Creates new form BoardMediumFrame
      */
-    public BoardMediumFrame(Player player1, Player player2, Board setBoard, char getSymbols[]) {
+    public BoardMediumFrame(Player player1, Player player2, Board setBoard, Game game, char getSymbols[]) {
         P1 = player1;
         P2 = player2;
         board = setBoard;

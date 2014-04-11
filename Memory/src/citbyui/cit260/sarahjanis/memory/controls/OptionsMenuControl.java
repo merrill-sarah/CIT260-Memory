@@ -7,6 +7,8 @@
 package citbyui.cit260.sarahjanis.memory.controls; 
 
 import citbyui.cit260.sarahjanis.memory.models.Board;
+import citbyui.cit260.sarahjanis.memory.models.MemoryError;
+import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 
 
@@ -15,42 +17,74 @@ import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
  * @author Janis
  */
 public class OptionsMenuControl {
-    Board board = new Board();
-    SymbolArray symbolArr = new SymbolArray();
     
     
     public OptionsMenuControl(){
         
     }
     
-    public void displayBoardOption()/*Case B*/{
-          System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                  + "\n\t~ You have a choice of three board sizes. ~"
-                  + "\n\t~     Small has 12 cards ( 6 matches)     ~"
-                  + "\n\t~    Medium has 24 cards (12 matches)     ~"
-                  + "\n\t~     Large has 48 cards (24 matches)     ~"
-                  + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");        
-        //this.board.gridSize();
+public int inputCheck(SymbolArray symbols, Player player1, Player player2, Board board) {
+    
+    boolean namecheck = nameCheck(player1.getName());
+    boolean namecheck2 = nameCheck(player2.getName());
+    boolean boardSizeCheck = boardSizeCheck(board);
+    boolean matchSymCheck = matchSymCheck(symbols);
+    if(namecheck == false || namecheck2 == false){
+        return 1;
     }
+    if (matchSymCheck == false){
+        return 2;
+    }
+    if (boardSizeCheck == false){
+        return 3;
+    }
+     return 0;
+}
     
-    public void displayMatchingOption()/*Case M*/{
-        System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                + "\n\t~ You can change the difficulty of the game ~"
-                + "\n\t~      by choosing whether there are        ~"
-                + "\n\t~       2 or 4 of each kind of card.        ~"
-                + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+private boolean nameCheck(String name){ 
+        MemoryError errorMsg = new MemoryError();
         
-       // this.symbolArr.matchDifficulty(board);
-    }   
+            name = name.trim();
+            
+            if (name.length() < 1){
+              
+             // errorMsg.displayError(ErrorType.ERROR104.getMessage());
+              
+              return false;
+            }
+            
+            if ((name.equals("Computer"))||(name.equals("computer"))) {
+                errorMsg.displayError("This is a reserved name. You can not use it."
+                        + "\"Try again.");
+               return false; 
+            }
+            
+           /* if (alreadyUsed(listOfPlayerNames, name)){
+                errorMsg.displayError("This name was already entered"
+                        + "\"Try again.");
+                
+            }*/
+            else
+                return true;       
+        }
+
+private boolean boardSizeCheck(Board board){
+     MemoryError errorMsg = new MemoryError();
+    if (!"s".equals(board.getSize()) && !"m".equals(board.getSize()) && !"l".equals(board.getSize())){
+       // errorMsg.displayError(ErrorType.ERROR102.getMessage());
+        return false;
+    }
+    else
+        return true;
+}
+private boolean matchSymCheck(SymbolArray symbols){
+    MemoryError errorMsg = new MemoryError();
+    if (symbols.getNumMatchingSymbols() != 2 && symbols.getNumMatchingSymbols() != 4) {
         
-    public void displayNumPlayersOption()/*Case N*/{
-      //  System.out.println("You will get to choose 2 players, or to play against the computer."
-      //          + "\nThis method is still under construction."
-      //          + "\nBut THE MENU WORKS!!");
-                     
-    }   
-    
-    public void displayPlayerNamesOption()/*Case P*/{
-       
-    }   
+      //  errorMsg.displayError(ErrorType.ERROR204.getMessage());
+        return false;
+    }
+    else
+        return true;
+} 
 }

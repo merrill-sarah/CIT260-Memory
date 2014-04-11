@@ -6,7 +6,6 @@
 
 package citbyui.cit260.sarahjanis.memory.models;
 
-import citbyui.cit260.sarahjanis.memory.models.Author;
 
 /**
  *

@@ -16,34 +16,34 @@ import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
-import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import javax.swing.JButton;
+import java.io.Serializable;
+import javax.swing.JLabel;
 
-public class BoardSmallFrame extends javax.swing.JFrame {
+public class BoardSmallFrame extends javax.swing.JFrame implements Serializable {
     private char symbols[];
     private int indexTurn[] = new int[2];
-    Game game;
-    Board board;
-    SymbolArray symArr;
-    Player P1;
-    Player P2;
-    Card card1;
-    Card card2;
-    boolean matched = false;
-    //BoardLargeFrame lFrame;
-    private int tCounter=  1;
+    private Board board;
+    Card card = new Card();
+    private Player P1;
+    private Player P2;
+    private Game game;
+    private boolean matched = false;
+    private int tCounter =  1;
     private int CLICKS;
     private int matchedGame;
-   // JButton [] buttons; 
+    
     
     //SymbolArray myArray = new SymbolArray();
     /**
      * Creates new form GameBoardFrame
      */
-    public BoardSmallFrame(Player player1, Player player2, Board board, char getSymbols[]) throws BoardException{
+    public BoardSmallFrame(Player player1, Player player2, Board board, Game game, char getSymbols[]) throws BoardException{
+        
         P1 = player1;
         P2 = player2;
         this.board = board; 
+        this.game = game;
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;
@@ -566,6 +566,8 @@ public class BoardSmallFrame extends javax.swing.JFrame {
             return false;
     }
     private void afterClick(){
+        JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
+        
         if (CLICKS == 2){
             matched = checkMatch();
             CLICKS =0;
@@ -576,13 +578,13 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                      jlInstructions.setText(P1.getName() + ": Yay, you made a match! You get another turn.");
                      jlP1Matches.setText(Integer.toString(P1.getMatches()));
                      jbNext.setVisible(true);
-                        disableCards();
+                        card.disableCards(board, buttons);
                      
                     }
                 else {
                     jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
-                        disableCards();
+                        card.disableCards(board, buttons);
             
                     //next player's turn
                     tCounter++;} 
@@ -594,14 +596,14 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                     jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
                     jlP2Matches.setText(Integer.toString(P2.getMatches()));
                     jbNext.setVisible(true);
-                        disableCards();
+                        card.disableCards(board, buttons);
                     
                     }
                 else{
                     //jbLButton1.setText("1"); 
                     jlInstructions.setText(P2.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
-                        disableCards();
+                        card.disableCards(board, buttons);
             
                     //next player's turn
                     tCounter++;} 
@@ -619,6 +621,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     }
     
     private void setBoard(int size,  JButton [] button){
+        JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
         
         for (int i = 1, j=0; i < size; i++, j++){
           if (matched == false){
@@ -628,7 +631,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
                      
             matched = false;
             jbNext.setVisible(false); 
-                enableCards();
+                card.enableCards(board, buttons);
                 
                 //player instructions
                 if (tCounter % 2 != 0){
@@ -645,7 +648,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
             }
             
             jbNext.setVisible(false);
-                enableCards();
+                card.enableCards(board, buttons);
                 
                 //player instructions
                 if (tCounter % 2 != 0){
@@ -662,7 +665,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         
         
     
-    private void disableCards(){
+    /*private void disableCards(){
      JButton[] button= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
      for (int i = 0; i < 12; i++)  
         button[i].setEnabled(false); 
@@ -672,7 +675,7 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         JButton[] button= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
      for (int i = 0; i < 12; i++)  
         button[i].setEnabled(true);
-    }
+    }*/
     
     private void jbMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMainMenuActionPerformed
         this.dispose();
@@ -714,6 +717,103 @@ public class BoardSmallFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jbNextActionPerformed
 
+    public char[] getSymbols() {
+        return symbols;
+    }
+
+    public void setSymbols(char[] symbols) {
+        this.symbols = symbols;
+    }
+
+    public Player getP1() {
+        return P1;
+    }
+
+    public void setP1(Player P1) {
+        this.P1 = P1;
+    }
+
+    public Player getP2() {
+        return P2;
+    }
+
+    public void setP2(Player P2) {
+        this.P2 = P2;
+    }
+
+    public boolean isMatched() {
+        return matched;
+    }
+
+    public void setMatched(boolean matched) {
+        this.matched = matched;
+    }
+
+    public int gettCounter() {
+        return tCounter;
+    }
+
+    public void settCounter(int tCounter) {
+        this.tCounter = tCounter;
+    }
+
+    public int getCLICKS() {
+        return CLICKS;
+    }
+
+    public void setCLICKS(int CLICKS) {
+        this.CLICKS = CLICKS;
+    }
+
+    public int getMatchedGame() {
+        return matchedGame;
+    }
+
+    public void setMatchedGame(int matchedGame) {
+        this.matchedGame = matchedGame;
+    }
+
+    public JButton getJbNext() {
+        return jbNext;
+    }
+
+    public void setJbNext(JButton jbNext) {
+        this.jbNext = jbNext;
+    }
+
+    public JLabel getJlInstructions() {
+        return jlInstructions;
+    }
+
+    public void setJlInstructions(JLabel jlInstructions) {
+        this.jlInstructions = jlInstructions;
+    }
+
+    public JLabel getJlP1Matches() {
+        return jlP1Matches;
+    }
+
+    public void setJlP1Matches(JLabel jlP1Matches) {
+        this.jlP1Matches = jlP1Matches;
+    }
+
+    public JLabel getJlP2Matches() {
+        return jlP2Matches;
+    }
+
+    public void setJlP2Matches(JLabel jlP2Matches) {
+        this.jlP2Matches = jlP2Matches;
+    }
+
+    public int[] getIndexTurn() {
+        return indexTurn;
+    }
+
+    public void setIndexTurn(int[] indexTurn) {
+        this.indexTurn = indexTurn;
+    }
+    
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -749,4 +849,5 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jpTitle;
     // End of variables declaration//GEN-END:variables
 
+    
 }

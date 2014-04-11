@@ -7,6 +7,7 @@
 package citbyui.cit260.sarahjanis.memory.frames;
 
 import citbyui.cit260.sarahjanis.memory.controls.Game;
+import citbyui.cit260.sarahjanis.memory.controls.OptionsMenuControl;
 import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
@@ -28,7 +29,7 @@ public class OptionFrame extends javax.swing.JFrame {
     private SymbolArray symbols = new SymbolArray();
     private Player player1 = new Player();
     private Player player2 = new Player();
-    private Game game = new Game();
+    private OptionsMenuControl control = new OptionsMenuControl();
     
     /**
      * Creates new form OptionFrame
@@ -36,54 +37,9 @@ public class OptionFrame extends javax.swing.JFrame {
     public OptionFrame() {
         initComponents();
         setLocationRelativeTo(null);
-        jpError.setVisible(false);
-        jpError2.setVisible(false);
-        jpError2.setVisible(false);
-        jlErrorGrid.setVisible(false);
-        jlErrorName.setVisible(false);
-        jlErrorSize.setVisible(false);
-        jBReset.setVisible(false);
-        
     }
-    public OptionFrame(String string) {
-        initComponents();
-        setLocationRelativeTo(null);
-        jpError.setVisible(false);
-        jPError3.setVisible(false);
-        jlErrorGrid.setVisible(false);
-        jlErrorSize.setVisible(false);
-        jButton1.setEnabled(false);
-        jBReset.setVisible(true);      
-        jlErrorName.setText(ErrorType.ERROR104.getMessage());
         
-    }
-    public OptionFrame(String string,int num) {
-        initComponents();
-        setLocationRelativeTo(null);
-        
-       jpError2.setVisible(false);
-        jPError3.setVisible(false);
-        jlErrorName.setVisible(false);
-        jlErrorSize.setVisible(false);
-        jBReset.setVisible(true);
-        jButton1.setEnabled(false);
-        jlErrorGrid.setText(ErrorType.ERROR204.getMessage());
-        
-    }
-    public OptionFrame(int num, float num2) {
-        initComponents();
-        setLocationRelativeTo(null);
-        jpError.setVisible(false);
-        jpError2.setVisible(false);
-        jlErrorGrid.setVisible(false);
-        jlErrorName.setVisible(false);
-        jlErrorSize.setVisible(true);
-        jButton1.setEnabled(false);
-        jBReset.setVisible(true);
-        jlErrorSize.setText(ErrorType.ERROR102.getMessage());
-        
-    }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -109,13 +65,8 @@ public class OptionFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jtfP1Name = new javax.swing.JTextField();
         jtfP2Name = new javax.swing.JTextField();
-        jpError = new javax.swing.JPanel();
-        jlErrorGrid = new javax.swing.JLabel();
-        jpError2 = new javax.swing.JPanel();
-        jlErrorName = new javax.swing.JLabel();
-        jPError3 = new javax.swing.JPanel();
-        jlErrorSize = new javax.swing.JLabel();
-        jBReset = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtError = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -213,65 +164,13 @@ public class OptionFrame extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         jLabel6.setText("Player 2:");
 
-        jpError.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51), 2));
-        jpError.setOpaque(false);
-
-        javax.swing.GroupLayout jpErrorLayout = new javax.swing.GroupLayout(jpError);
-        jpError.setLayout(jpErrorLayout);
-        jpErrorLayout.setHorizontalGroup(
-            jpErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpErrorLayout.createSequentialGroup()
-                .addComponent(jlErrorGrid, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 14, Short.MAX_VALUE))
-        );
-        jpErrorLayout.setVerticalGroup(
-            jpErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlErrorGrid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-        );
-
-        jpError2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51), 2));
-        jpError2.setOpaque(false);
-
-        jlErrorName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jlErrorName.setForeground(new java.awt.Color(255, 0, 0));
-        jlErrorName.setAutoscrolls(true);
-
-        javax.swing.GroupLayout jpError2Layout = new javax.swing.GroupLayout(jpError2);
-        jpError2.setLayout(jpError2Layout);
-        jpError2Layout.setHorizontalGroup(
-            jpError2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlErrorName, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-        );
-        jpError2Layout.setVerticalGroup(
-            jpError2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlErrorName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-        );
-
-        jPError3.setOpaque(false);
-
-        jlErrorSize.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 51), 2));
-
-        javax.swing.GroupLayout jPError3Layout = new javax.swing.GroupLayout(jPError3);
-        jPError3.setLayout(jPError3Layout);
-        jPError3Layout.setHorizontalGroup(
-            jPError3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPError3Layout.createSequentialGroup()
-                .addComponent(jlErrorSize, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 22, Short.MAX_VALUE))
-        );
-        jPError3Layout.setVerticalGroup(
-            jPError3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jlErrorSize, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-        );
-
-        jBReset.setBackground(new java.awt.Color(255, 255, 0));
-        jBReset.setText("RESET ");
-        jBReset.setToolTipText("Clear the error, add options again");
-        jBReset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBResetActionPerformed(evt);
-            }
-        });
+        jtError.setBackground(new java.awt.Color(204, 255, 255));
+        jtError.setColumns(20);
+        jtError.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 12)); // NOI18N
+        jtError.setForeground(new java.awt.Color(255, 0, 0));
+        jtError.setRows(3);
+        jtError.setBorder(null);
+        jScrollPane1.setViewportView(jtError);
 
         javax.swing.GroupLayout jpOptionsLayout = new javax.swing.GroupLayout(jpOptions);
         jpOptions.setLayout(jpOptionsLayout);
@@ -283,24 +182,6 @@ public class OptionFrame extends javax.swing.JFrame {
                     .addGroup(jpOptionsLayout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpOptionsLayout.createSequentialGroup()
-                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jbSmall)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jbTwoCards))
-                                .addGap(18, 18, 18)
-                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jbMedium)
-                                    .addComponent(jbFourCards))
-                                .addGap(18, 18, 18)
-                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jpError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jpOptionsLayout.createSequentialGroup()
-                                        .addComponent(jbLarge)
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jBReset)
-                                            .addComponent(jPError3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addComponent(jLabel4)
                             .addGroup(jpOptionsLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -310,68 +191,73 @@ public class OptionFrame extends javax.swing.JFrame {
                                 .addGap(21, 21, 21)
                                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jpOptionsLayout.createSequentialGroup()
+                                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jbSmall)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jbTwoCards))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jbMedium)
+                                            .addComponent(jbFourCards))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jbLarge))
+                                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                                        .addGap(52, 52, 52)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(30, 30, 30)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24))
                     .addGroup(jpOptionsLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jLabel2))
-                    .addGroup(jpOptionsLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(16, 114, Short.MAX_VALUE))
-            .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpOptionsLayout.createSequentialGroup()
-                    .addContainerGap(305, Short.MAX_VALUE)
-                    .addComponent(jpError2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(76, 76, 76)))
+                        .addComponent(jLabel2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpOptionsLayout.setVerticalGroup(
             jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpOptionsLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbTwoCards)
-                        .addComponent(jbFourCards))
-                    .addComponent(jpError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jbSmall)
-                        .addComponent(jbMedium)
-                        .addComponent(jbLarge))
-                    .addComponent(jPError3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBReset, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jtfP2Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbTwoCards)
+                            .addComponent(jbFourCards))
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbSmall)
+                            .addComponent(jbMedium)
+                            .addComponent(jbLarge)))
+                    .addGroup(jpOptionsLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jScrollPane1)))
+                .addGap(36, 36, 36)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
-            .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jpOptionsLayout.createSequentialGroup()
-                    .addGap(106, 106, 106)
-                    .addComponent(jpError2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(255, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpOptions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,55 +267,6 @@ public class OptionFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        player1.setName(jtfP1Name.getText());
-        player2.setName(jtfP2Name.getText());
-        
-        int check = inputCheck();
-        if (check == 1){
-           
-            OptionFrame options = new OptionFrame("error");
-             options.setVisible(true);
-        }
-        else if (check == 2){
-           
-            OptionFrame options = new OptionFrame("error",2);
-             options.setVisible(true);
-        }
-        else if (check == 3){
-           
-            OptionFrame options = new OptionFrame(2, 7);
-             options.setVisible(true);}
-        else        
-        try {
-            game.startGame(board, player1, player2, symbols);
-        } catch (IOException ex) {
-            Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (CardException ex) {
-            Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (BoardException ex) {
-            Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (MemoryException ex) {
-            Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jbSmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSmallActionPerformed
-        board.setSize("s");
-        jbSmall.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
-        jbMedium.setFont(new java.awt.Font("Tahoma", 0, 11));
-        jbLarge.setFont(new java.awt.Font("Tahoma", 0, 11)); 
-       
-    }//GEN-LAST:event_jbSmallActionPerformed
-
-    private void jbMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMediumActionPerformed
-        board.setSize("m");
-        jbMedium.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
-        jbSmall.setFont(new java.awt.Font("Tahoma", 0, 11));
-        jbLarge.setFont(new java.awt.Font("Tahoma", 0, 11));     
-    }//GEN-LAST:event_jbMediumActionPerformed
-
     private void jbLargeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLargeActionPerformed
         board.setSize("l");
         jbLarge.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
@@ -437,11 +274,20 @@ public class OptionFrame extends javax.swing.JFrame {
         jbSmall.setFont(new java.awt.Font("Tahoma", 0, 11));
     }//GEN-LAST:event_jbLargeActionPerformed
 
-    private void jbTwoCardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTwoCardsActionPerformed
-        symbols.setNumMatchingSymbols(2);
-        jbTwoCards.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
-        jbFourCards.setFont(new java.awt.Font("Tahoma", 0, 11));
-    }//GEN-LAST:event_jbTwoCardsActionPerformed
+    private void jbMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMediumActionPerformed
+        board.setSize("m");
+        jbMedium.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
+        jbSmall.setFont(new java.awt.Font("Tahoma", 0, 11));
+        jbLarge.setFont(new java.awt.Font("Tahoma", 0, 11));
+    }//GEN-LAST:event_jbMediumActionPerformed
+
+    private void jbSmallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSmallActionPerformed
+        board.setSize("s");
+        jbSmall.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
+        jbMedium.setFont(new java.awt.Font("Tahoma", 0, 11));
+        jbLarge.setFont(new java.awt.Font("Tahoma", 0, 11));
+
+    }//GEN-LAST:event_jbSmallActionPerformed
 
     private void jbFourCardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFourCardsActionPerformed
         symbols.setNumMatchingSymbols(4);
@@ -449,90 +295,50 @@ public class OptionFrame extends javax.swing.JFrame {
         jbTwoCards.setFont(new java.awt.Font("Tahoma", 0, 11));
     }//GEN-LAST:event_jbFourCardsActionPerformed
 
-    private void jBResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBResetActionPerformed
-       OptionFrame options = new OptionFrame();
-             options.setVisible(true);
-         this.dispose();    
-    }//GEN-LAST:event_jBResetActionPerformed
+    private void jbTwoCardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTwoCardsActionPerformed
+        symbols.setNumMatchingSymbols(2);
+        jbTwoCards.setFont(new java.awt.Font("Berlin Sans FB", 0, 20));
+        jbFourCards.setFont(new java.awt.Font("Tahoma", 0, 11));
+    }//GEN-LAST:event_jbTwoCardsActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        player1.setName(jtfP1Name.getText());
+        player2.setName(jtfP2Name.getText());
+
+        int check = control.inputCheck(symbols, player1, player2, board);
+        if (check == 1){
+            jtError.setText("Error: "
+                + "\nPlease enter the players' names. "
+                + "\nA name must be at least one "
+                + "\ncharacer long.");
+        }
+        else if (check == 2){
+            jtError.setText("Error:"
+                + "\nPlease select how many of each card.");
+        }
+        else if (check == 3){
+            jtError.setText("Error:"
+                + "\nPlease select a board size.");
+        }
+        else if (check == 0) {
+            Game game = new Game();
+            try {
+                game.startGame(board, player1, player2, symbols);
+            } catch (BoardException ex) {
+                Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            this.dispose();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     
-private int inputCheck() {
-    
-    boolean namecheck = nameCheck(player1.getName());
-    boolean namecheck2 = nameCheck(player2.getName());
-    boolean boardSizeCheck = boardSizeCheck();
-    boolean matchSymCheck = matchSymCheck();
-    if(namecheck == false || namecheck2 == false){
-      jpError2.setVisible(true);//ErrorType.ERROR104.getMessage());
-              jlErrorName.setVisible(true);
-              jlErrorName.setText(ErrorType.ERROR104.getMessage());
-    // if(namecheck == false || namecheck2 == false || boardSizeCheck == false || matchSymCheck == false){
-     //    jpError.setVisible(true);
-             return 1;
-                }
-    if (matchSymCheck == false){
-        return 2;
-    }
-    if (boardSizeCheck == false){
-        return 3;
-    }
-   
-     else
-     return 0;
-}
-    
-private boolean nameCheck(String name){ 
-        MemoryError errorMsg = new MemoryError();
-        
-            name = name.trim();
-            
-            if (name.length() < 1){
-              
-             // errorMsg.displayError(ErrorType.ERROR104.getMessage());
-              
-              return false;
-            }
-            
-            if ((name.equals("Computer"))||(name.equals("computer"))) {
-                errorMsg.displayError("This is a reserved name. You can not use it."
-                        + "\"Try again.");
-               return false; 
-            }
-            
-           /* if (alreadyUsed(listOfPlayerNames, name)){
-                errorMsg.displayError("This name was already entered"
-                        + "\"Try again.");
-                
-            }*/
-            else
-                return true;       
-        }
 
-private boolean boardSizeCheck(){
-     MemoryError errorMsg = new MemoryError();
-    if (!"s".equals(board.getSize()) && !"m".equals(board.getSize()) && !"l".equals(board.getSize())){
-       // errorMsg.displayError(ErrorType.ERROR102.getMessage());
-        return false;
-    }
-    else
-        return true;
-}
-private boolean matchSymCheck(){
-    MemoryError errorMsg = new MemoryError();
-    if (symbols.getNumMatchingSymbols() != 2 && symbols.getNumMatchingSymbols() != 4) {
-        
-      //  errorMsg.displayError(ErrorType.ERROR204.getMessage());
-        return false;
-    }
-    else
-        return true;
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBReset;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -540,19 +346,15 @@ private boolean matchSymCheck(){
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPError3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbFourCards;
     private javax.swing.JButton jbLarge;
     private javax.swing.JButton jbMedium;
     private javax.swing.JButton jbSmall;
     private javax.swing.JButton jbTwoCards;
-    private javax.swing.JLabel jlErrorGrid;
-    private javax.swing.JLabel jlErrorName;
-    private javax.swing.JLabel jlErrorSize;
-    private javax.swing.JPanel jpError;
-    private javax.swing.JPanel jpError2;
     private javax.swing.JPanel jpOptions;
+    private javax.swing.JTextArea jtError;
     private javax.swing.JTextField jtfP1Name;
     private javax.swing.JTextField jtfP2Name;
     // End of variables declaration//GEN-END:variables

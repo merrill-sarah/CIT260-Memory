@@ -5,23 +5,14 @@
  */
 
 package citbyui.cit260.sarahjanis.memory.frames;
-
-import citbyui.cit260.sarahjanis.memory.controls.Game;
 import citbyui.cit260.sarahjanis.memory.controls.MainMenuControl;
-import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
-import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
-import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
-
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author Janis
  */
 public class MainFrame extends javax.swing.JFrame {
-     MainMenuControl mainMenu = new MainMenuControl();
+     private MainMenuControl mainMenu = new MainMenuControl();
     
     /**
      * Creates new form MainFrame
@@ -212,20 +203,7 @@ public class MainFrame extends javax.swing.JFrame {
        OptionFrame options = new OptionFrame();
        options.setVisible(true);
        this.dispose();
-        
-        /* Game game = new Game();
-         try {
-             game.startGame();
-         } catch (IOException ex) {
-             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (CardException ex) {
-             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (BoardException ex) {
-             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (MemoryException ex) {
-             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-         }
-                */
+
     }//GEN-LAST:event_jbStartActionPerformed
 
     /**

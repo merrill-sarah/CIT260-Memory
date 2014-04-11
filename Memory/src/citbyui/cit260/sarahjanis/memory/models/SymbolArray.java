@@ -16,7 +16,6 @@ import java.util.*;
  * @author Janis
  */
 public class SymbolArray implements Serializable{
-    //private BoardView boardview;
     private float numSymbols;
     private int numMatchingSymbols;
 
@@ -75,21 +74,9 @@ public class SymbolArray implements Serializable{
       getSymbols[index] = getSymbols[i];
       getSymbols[i] = a;
     }
-   
-
-    /**
-     * @return the boardview
-     */
-   // public BoardView getBoardview() {
-   //     return boardview;
     }
 
-    /**
-     * @param boardview the boardview to set
-     */
-   // public void setBoardview(BoardView boardview) {
-   //     this.boardview = boardview;
-  //  }
+    
 
     /**
      * @return the numSymbols
