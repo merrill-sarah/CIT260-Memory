@@ -7,6 +7,7 @@
 package citbyui.cit260.sarahjanis.memory.models;
 
 import java.io.Serializable;
+import javax.swing.JButton;
 //import citbyui.cit260.sarahjanis.memory.views.BoardView;
 
 /**
@@ -23,6 +24,10 @@ public class Card implements Serializable{
      private char symbol;
      private int cardNumber;
      private boolean [] cardArray;
+     JButton jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24,
+            jb25, jb26, jb27, jb28, jb29, jb30, jb31, jb32, jb33, jb34, jb35, jb36,
+            jb37, jb38, jb39, jb40, jb41, jb42, jb43, jb44, jb45, jb46, jb47, jb48;
   
     
     public Card(){
@@ -130,7 +135,25 @@ public class Card implements Serializable{
     public void setCardNumber(int cardNumber) {
         this.cardNumber = cardNumber;
     }
-/*
+    
+    public void disableCards(){
+         JButton button []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24,
+            jb25, jb26, jb27, jb28, jb29, jb30, jb31, jb32, jb33, jb34, jb35, jb36,
+            jb37, jb38, jb39, jb40, jb41, jb42, jb43, jb44, jb45, jb46, jb47, jb48}; 
+       for (int i = 0; i <48; i++)  
+        button[i].setEnabled(false);}
+
+    
+    public void enableCards(){
+        JButton button []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24,
+            jb25, jb26, jb27, jb28, jb29, jb30, jb31, jb32, jb33, jb34, jb35, jb36,
+            jb37, jb38, jb39, jb40, jb41, jb42, jb43, jb44, jb45, jb46, jb47, jb48}; 
+       for (int i = 0; i <48; i++)
+           button[i].setEnabled(true);
+    }
+    /**/
     /**
      * @return the boardview
      *//*

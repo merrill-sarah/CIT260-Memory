@@ -961,7 +961,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
              jLabel4.setText("RESULTS");
              if (P2.getMatches()>P1.getMatches()){
                jlP2Matches.setFont(new java.awt.Font("Berlin Sans FB", 0, 18));
-               jlP2Name.setFont(new java.awt.Font("Berlin Sans FB", 0, 18));
+               jlP1Name.setFont(new java.awt.Font("Berlin Sans FB", 0, 18));
                jlP2Matches.setText("YOU WON!");
                jlP1Matches.setText("");
              }

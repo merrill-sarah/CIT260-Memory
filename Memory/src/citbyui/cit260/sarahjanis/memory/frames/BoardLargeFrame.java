@@ -34,7 +34,6 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     Player P1;
     Player P2;
     Card card1;
-    Card card2;
     boolean matched = false;
     //BoardLargeFrame lFrame;
     private int tCounter=1;
