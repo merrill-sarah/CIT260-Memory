@@ -17,9 +17,9 @@ public enum ErrorType {
     
     ERROR102 ("Please select a board size."),
     
-    ERROR103 ("Your entry is not valid."
+    ERROR103 ("Your entry is not valid."),
            // + "\nPlease enter a card number or 0 for a hint."
-            + "\n *** ERROR 103 *** "),
+          //  + "\n *** ERROR 103 *** "),
     
     ERROR104("A name must be at least one character!"
             //+ "\nStart over. Please enter your name(s) again"

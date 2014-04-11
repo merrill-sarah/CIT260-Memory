@@ -7,6 +7,7 @@
 package citbyui.cit260.sarahjanis.memory.frames;
 
 import citbyui.cit260.sarahjanis.memory.controls.HelpMenuControl;
+import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.enums.HelpType;
 import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 
@@ -37,7 +38,7 @@ public class HelpFrame extends javax.swing.JFrame {
             String helpText = this.helpCommands.getHelpText(command);
             this.jtHelpText.setText(helpText);
         } catch (MemoryException ex) {
-            this.jtHelpText.setText(ex.getMessage());
+            this.jtHelpText.setText(ErrorType.ERROR103.getMessage());
         }
         
     }

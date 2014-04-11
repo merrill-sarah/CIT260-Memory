@@ -22,6 +22,7 @@ import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.BioS;
 import citbyui.cit260.sarahjanis.memory.models.BioJ;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
+import javax.swing.*;
 //import citbyui.cit260.sarahjanis.memory.views.EndMenuView;
 import java.io.IOException;
 import java.io.Serializable;
@@ -63,7 +64,7 @@ public class Game implements Serializable {
     char getSymbols [] = new char [board.getTotalCards()];
     getSymbols = symbols.createArray(board, getSymbols);
     MemoryError errorMsg = new MemoryError();
-       
+       try{
           switch (board.getSize()){
             case "s":
                  boardSm = new BoardSmallFrame(player1, player2, board, getSymbols);
@@ -77,10 +78,11 @@ public class Game implements Serializable {
                 boardLg = new BoardLargeFrame(player1, player2, board, getSymbols);
                 boardLg.setVisible(true);
                 break;
-            default: 
-                errorMsg.displayError(ErrorType.ERROR102.getMessage());
-            
-                    }
+          }}
+          catch (BoardException ex){
+              board.setUp();
+                  }
+                    
     }
        
         public boolean cardStatus(char getSymbols[]){
