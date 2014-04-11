@@ -52,6 +52,7 @@ public class OptionFrame extends javax.swing.JFrame {
         jPError3.setVisible(false);
         jlErrorGrid.setVisible(false);
         jlErrorSize.setVisible(false);
+        jButton1.setEnabled(false);
         jBReset.setVisible(true);      
         jlErrorName.setText(ErrorType.ERROR104.getMessage());
         
@@ -62,12 +63,10 @@ public class OptionFrame extends javax.swing.JFrame {
         
        jpError2.setVisible(false);
         jPError3.setVisible(false);
-        //jlErrorGrid.setVisible(false);
         jlErrorName.setVisible(false);
         jlErrorSize.setVisible(false);
         jBReset.setVisible(true);
-      //  jpError2.setVisible(true); 
-      //  jlErrorName.setVisible(true);
+        jButton1.setEnabled(false);
         jlErrorGrid.setText(ErrorType.ERROR204.getMessage());
         
     }
@@ -76,10 +75,10 @@ public class OptionFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         jpError.setVisible(false);
         jpError2.setVisible(false);
-        //jPError3.setVisible(false);
         jlErrorGrid.setVisible(false);
         jlErrorName.setVisible(false);
         jlErrorSize.setVisible(true);
+        jButton1.setEnabled(false);
         jBReset.setVisible(true);
         jlErrorSize.setText(ErrorType.ERROR102.getMessage());
         
