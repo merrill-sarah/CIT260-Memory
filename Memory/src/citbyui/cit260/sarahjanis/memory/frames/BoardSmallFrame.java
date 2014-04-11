@@ -17,15 +17,7 @@ import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 public class BoardSmallFrame extends javax.swing.JFrame {
     private char symbols[];
@@ -48,10 +40,10 @@ public class BoardSmallFrame extends javax.swing.JFrame {
     /**
      * Creates new form GameBoardFrame
      */
-    public BoardSmallFrame(Player player1, Player player2, Board setBoard, char getSymbols[]) throws BoardException{
+    public BoardSmallFrame(Player player1, Player player2, Board board, char getSymbols[]) throws BoardException{
         P1 = player1;
         P2 = player2;
-        board = setBoard; 
+        this.board = board; 
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;

@@ -84,29 +84,7 @@ public class Game implements Serializable {
                   }
                     
     }
-       
-        public boolean cardStatus(char getSymbols[]){
-            Card card = new Card();
-            char []symbols = getSymbols;
-            //char symbol1;
-          //  char symbol2;
-            char [] matchCk = new char [2];
-            //int c = 0;
-            int y = 0;
-           while(y<2){
-            for (int i = 0; i<card.getCardArray().length; i++)
-                if(card.getCardArray()[i]== true){
-                 matchCk[y] = symbols[i]; 
-                 y++;
-                }
-           }
-            if (matchCk[0] == matchCk[1]){
-                return true;
-            }
-            else
-                return false;
-            
-        }
+    
             
     public Player getPlayer1() {
         return player1;
