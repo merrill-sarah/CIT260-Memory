@@ -516,7 +516,7 @@ private boolean nameCheck(String name){
 private boolean boardSizeCheck(){
      MemoryError errorMsg = new MemoryError();
     if (!"s".equals(board.getSize()) && !"m".equals(board.getSize()) && !"l".equals(board.getSize())){
-        errorMsg.displayError(ErrorType.ERROR102.getMessage());
+       // errorMsg.displayError(ErrorType.ERROR102.getMessage());
         return false;
     }
     else
@@ -526,7 +526,7 @@ private boolean matchSymCheck(){
     MemoryError errorMsg = new MemoryError();
     if (symbols.getNumMatchingSymbols() != 2 && symbols.getNumMatchingSymbols() != 4) {
         
-        errorMsg.displayError(ErrorType.ERROR204.getMessage());
+      //  errorMsg.displayError(ErrorType.ERROR204.getMessage());
         return false;
     }
     else
