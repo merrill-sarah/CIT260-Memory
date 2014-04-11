@@ -49,13 +49,39 @@ public class OptionFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         jpError.setVisible(false);
-        jpError2.setVisible(false);
-        jpError2.setVisible(false);
+        jPError3.setVisible(false);
         jlErrorGrid.setVisible(false);
+        jlErrorSize.setVisible(false);
+        jBReset.setVisible(true);      
+        jlErrorName.setText(ErrorType.ERROR104.getMessage());
+        
+    }
+    public OptionFrame(String string,int num) {
+        initComponents();
+        setLocationRelativeTo(null);
+        
+       jpError2.setVisible(false);
+        jPError3.setVisible(false);
+        //jlErrorGrid.setVisible(false);
         jlErrorName.setVisible(false);
         jlErrorSize.setVisible(false);
         jBReset.setVisible(true);
+      //  jpError2.setVisible(true); 
+      //  jlErrorName.setVisible(true);
+        jlErrorGrid.setText(ErrorType.ERROR204.getMessage());
         
+    }
+    public OptionFrame(int num, float num2) {
+        initComponents();
+        setLocationRelativeTo(null);
+        jpError.setVisible(false);
+        jpError2.setVisible(false);
+        //jPError3.setVisible(false);
+        jlErrorGrid.setVisible(false);
+        jlErrorName.setVisible(false);
+        jlErrorSize.setVisible(true);
+        jBReset.setVisible(true);
+        jlErrorSize.setText(ErrorType.ERROR102.getMessage());
         
     }
 
@@ -196,8 +222,8 @@ public class OptionFrame extends javax.swing.JFrame {
         jpErrorLayout.setHorizontalGroup(
             jpErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpErrorLayout.createSequentialGroup()
-                .addComponent(jlErrorGrid, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addComponent(jlErrorGrid, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 14, Short.MAX_VALUE))
         );
         jpErrorLayout.setVerticalGroup(
             jpErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,13 +233,15 @@ public class OptionFrame extends javax.swing.JFrame {
         jpError2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51), 2));
         jpError2.setOpaque(false);
 
+        jlErrorName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jlErrorName.setForeground(new java.awt.Color(255, 0, 0));
+        jlErrorName.setAutoscrolls(true);
+
         javax.swing.GroupLayout jpError2Layout = new javax.swing.GroupLayout(jpError2);
         jpError2.setLayout(jpError2Layout);
         jpError2Layout.setHorizontalGroup(
             jpError2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpError2Layout.createSequentialGroup()
-                .addComponent(jlErrorName, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 32, Short.MAX_VALUE))
+            .addComponent(jlErrorName, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
         );
         jpError2Layout.setVerticalGroup(
             jpError2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,6 +267,7 @@ public class OptionFrame extends javax.swing.JFrame {
 
         jBReset.setBackground(new java.awt.Color(255, 255, 0));
         jBReset.setText("RESET YOUR OPTIONS");
+        jBReset.setToolTipText("Clear the error, add options again");
         jBReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBResetActionPerformed(evt);
@@ -295,7 +324,7 @@ public class OptionFrame extends javax.swing.JFrame {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpOptionsLayout.createSequentialGroup()
                     .addContainerGap(305, Short.MAX_VALUE)
                     .addComponent(jpError2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(55, 55, 55)))
+                    .addGap(76, 76, 76)))
         );
         jpOptionsLayout.setVerticalGroup(
             jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,15 +387,21 @@ public class OptionFrame extends javax.swing.JFrame {
         player1.setName(jtfP1Name.getText());
         player2.setName(jtfP2Name.getText());
         
-        boolean check = inputCheck();
-        if (check == false){
-            /*jlError.setText("ERORR"
-                     + "\nPlease make sure to enter and select all information."
-                     + "\nNames need to be at least one character long.");*/
+        int check = inputCheck();
+        if (check == 1){
+           
             OptionFrame options = new OptionFrame("error");
              options.setVisible(true);
-            
         }
+        if (check == 2){
+           
+            OptionFrame options = new OptionFrame("error",2);
+             options.setVisible(true);
+        }
+        if (check == 3){
+           
+            OptionFrame options = new OptionFrame(2, 7);
+             options.setVisible(true);}
         else        
         try {
             game.startGame(board, player1, player2, symbols);
@@ -425,18 +460,29 @@ public class OptionFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     
-private boolean inputCheck() {
+private int inputCheck() {
     
     boolean namecheck = nameCheck(player1.getName());
     boolean namecheck2 = nameCheck(player2.getName());
     boolean boardSizeCheck = boardSizeCheck();
     boolean matchSymCheck = matchSymCheck();
-     if(namecheck == false || namecheck2 == false || boardSizeCheck == false || matchSymCheck == false){
-         jpError.setVisible(true);
-             return false;
+    if(namecheck == false || namecheck2 == false){
+      jpError2.setVisible(true);//ErrorType.ERROR104.getMessage());
+              jlErrorName.setVisible(true);
+              jlErrorName.setText(ErrorType.ERROR104.getMessage());
+    // if(namecheck == false || namecheck2 == false || boardSizeCheck == false || matchSymCheck == false){
+     //    jpError.setVisible(true);
+             return 1;
                 }
+    if (matchSymCheck == false){
+        return 2;
+    }
+    if (boardSizeCheck == false){
+        return 3;
+    }
+   
      else
-     return true;
+     return 0;
 }
     
 private boolean nameCheck(String name){ 
@@ -445,7 +491,8 @@ private boolean nameCheck(String name){
             name = name.trim();
             
             if (name.length() < 1){
-              errorMsg.displayError(ErrorType.ERROR104.getMessage());
+              
+             // errorMsg.displayError(ErrorType.ERROR104.getMessage());
               
               return false;
             }
