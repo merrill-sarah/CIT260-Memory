@@ -166,7 +166,7 @@ public class OptionFrame extends javax.swing.JFrame {
 
         jtError.setBackground(new java.awt.Color(204, 255, 255));
         jtError.setColumns(20);
-        jtError.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 12)); // NOI18N
+        jtError.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
         jtError.setForeground(new java.awt.Color(255, 0, 0));
         jtError.setRows(3);
         jtError.setBorder(null);
@@ -209,22 +209,21 @@ public class OptionFrame extends javax.swing.JFrame {
                                         .addGap(52, 52, 52)
                                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(30, 30, 30)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(24, 24, 24))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jpOptionsLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(24, 24, Short.MAX_VALUE))
         );
         jpOptionsLayout.setVerticalGroup(
             jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpOptionsLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpOptionsLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jtfP1Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -239,15 +238,13 @@ public class OptionFrame extends javax.swing.JFrame {
                             .addComponent(jbTwoCards)
                             .addComponent(jbFourCards))
                         .addGap(24, 24, 24)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbSmall)
-                            .addComponent(jbMedium)
-                            .addComponent(jbLarge)))
-                    .addGroup(jpOptionsLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jScrollPane1)))
+                        .addComponent(jLabel3))
+                    .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbSmall)
+                    .addComponent(jbMedium)
+                    .addComponent(jbLarge))
                 .addGap(36, 36, 36)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
@@ -314,7 +311,7 @@ public class OptionFrame extends javax.swing.JFrame {
         }
         else if (check == 2){
             jtError.setText("Error:"
-                + "\nPlease select how many of each card.");
+                + "\nPlease select how many \nof each card.");
         }
         else if (check == 3){
             jtError.setText("Error:"

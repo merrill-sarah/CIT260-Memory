@@ -188,7 +188,7 @@ public class BoardSmallFrame extends javax.swing.JFrame implements Serializable 
 
         jbQuit.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jbQuit.setForeground(new java.awt.Color(0, 153, 153));
-        jbQuit.setText("QUIT");
+        jbQuit.setText("EXIT");
         jbQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbQuitActionPerformed(evt);

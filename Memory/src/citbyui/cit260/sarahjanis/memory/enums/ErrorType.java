@@ -40,7 +40,8 @@ public enum ErrorType {
     ERROR203 ("That card has already been matched. "
               + "\nPlease enter another card number or 0 for a hint."),
     
-    ERROR204 ("Choose 2 or 4.");
+    ERROR204 (     "***ERROR***\nPlease choose if you\n"
+            + "want 2 or 4 of each kind of card.");
 
     
     String message;

@@ -201,7 +201,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
 
         jbQuit.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jbQuit.setForeground(new java.awt.Color(0, 153, 153));
-        jbQuit.setText("QUIT");
+        jbQuit.setText("EXIT");
         jbQuit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbQuitActionPerformed(evt);
@@ -280,7 +280,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                         .addComponent(jpGamePlayInstructions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbNext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -556,8 +556,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jpMTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpMGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jpMGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 872, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -565,8 +564,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(jpMTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpMGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
-                .addGap(123, 123, 123))
+                .addComponent(jpMGameArea, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE))
         );
 
         pack();
@@ -961,7 +959,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
              jLabel4.setText("RESULTS");
              if (P2.getMatches()>P1.getMatches()){
                jlP2Matches.setFont(new java.awt.Font("Berlin Sans FB", 0, 18));
-               jlP1Name.setFont(new java.awt.Font("Berlin Sans FB", 0, 18));
+               jlP2Name.setFont(new java.awt.Font("Berlin Sans FB", 0, 18));
                jlP2Matches.setText("YOU WON!");
                jlP1Matches.setText("");
              }
