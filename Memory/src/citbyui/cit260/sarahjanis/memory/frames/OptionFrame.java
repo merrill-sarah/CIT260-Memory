@@ -266,7 +266,7 @@ public class OptionFrame extends javax.swing.JFrame {
         );
 
         jBReset.setBackground(new java.awt.Color(255, 255, 0));
-        jBReset.setText("RESET YOUR OPTIONS");
+        jBReset.setText("RESET ");
         jBReset.setToolTipText("Clear the error, add options again");
         jBReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -319,7 +319,7 @@ public class OptionFrame extends javax.swing.JFrame {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBReset)
-                .addContainerGap())
+                .addGap(52, 52, 52))
             .addGroup(jpOptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpOptionsLayout.createSequentialGroup()
                     .addContainerGap(305, Short.MAX_VALUE)
@@ -393,12 +393,12 @@ public class OptionFrame extends javax.swing.JFrame {
             OptionFrame options = new OptionFrame("error");
              options.setVisible(true);
         }
-        if (check == 2){
+        else if (check == 2){
            
             OptionFrame options = new OptionFrame("error",2);
              options.setVisible(true);
         }
-        if (check == 3){
+        else if (check == 3){
            
             OptionFrame options = new OptionFrame(2, 7);
              options.setVisible(true);}
@@ -454,6 +454,7 @@ public class OptionFrame extends javax.swing.JFrame {
     private void jBResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBResetActionPerformed
        OptionFrame options = new OptionFrame();
              options.setVisible(true);
+         this.dispose();    
     }//GEN-LAST:event_jBResetActionPerformed
 
     /**
