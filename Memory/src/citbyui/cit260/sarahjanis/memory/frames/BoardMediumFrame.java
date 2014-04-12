@@ -849,7 +849,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                 else { 
                     jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
-                       disableCards();
+                      disableCards();
             
                     //next player's turn
                     tCounter++;} 
@@ -885,7 +885,9 @@ public class BoardMediumFrame extends javax.swing.JFrame {
             
     }
     private void setBoard(int size,  JButton [] button){
-        //make this fix cards somehow
+        JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
+
         for (int i = 1, j=0; i < size; i++, j++){
           if (matched == false){
             if (indexTurn[0]==i || indexTurn[1]==i){
@@ -893,7 +895,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
             }
             matched = false;
             jbNext.setVisible(false); 
-                enableCards();
+                card.enableCards(board, button);
                 
                 //player instructions
                 if (tCounter % 2 != 0){
@@ -909,7 +911,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                button[j].setVisible(false);
             }
             jbNext.setVisible(false);
-                enableCards();
+                card.disableCards(board, button);
                 
                 //player instructions
                 if (tCounter % 2 != 0){
