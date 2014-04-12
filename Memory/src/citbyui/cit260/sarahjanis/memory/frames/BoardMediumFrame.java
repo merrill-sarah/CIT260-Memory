@@ -27,11 +27,11 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private char symbols[];
     private int indexTurn[] = new int[2];
    // Game game;
-    private Board board;
+    Board board;
     SymbolArray symArr;
     Player P1;
     Player P2;
-    Card card;
+    Card card = new Card();
     boolean matched = false;
     //BoardLargeFrame lFrame;
     private int tCounter=1;
@@ -40,7 +40,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     /**
      * Creates new form BoardMediumFrame
      */
-    public BoardMediumFrame(Player player1, Player player2, Board setBoard,char getSymbols[]) {
+    public BoardMediumFrame(Player player1, Player player2, Board setBoard,/* Game game,*/ char getSymbols[]) {
         P1 = player1;
         P2 = player2;
         board = setBoard;
@@ -849,7 +849,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                 else { 
                     jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
-                      disableCards();
+                        card.disableCards(board, button);
             
                     //next player's turn
                     tCounter++;} 
@@ -867,8 +867,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                 else{                     
                     jlInstructions.setText(P2.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
-                        disableCards();
-                        
+                        card.disableCards(board, button);
             
                     //next player's turn
                     tCounter++;} 
@@ -887,7 +886,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void setBoard(int size,  JButton [] button){
         JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
             jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
-
+        //make this fix cards somehow
         for (int i = 1, j=0; i < size; i++, j++){
           if (matched == false){
             if (indexTurn[0]==i || indexTurn[1]==i){
@@ -895,7 +894,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
             }
             matched = false;
             jbNext.setVisible(false); 
-                card.enableCards(board, button);
+                card.enableCards(board, buttons);
                 
                 //player instructions
                 if (tCounter % 2 != 0){
@@ -911,7 +910,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                button[j].setVisible(false);
             }
             jbNext.setVisible(false);
-                card.disableCards(board, button);
+                card.enableCards(board, buttons);
                 
                 //player instructions
                 if (tCounter % 2 != 0){
@@ -923,19 +922,6 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                 }
         }
         }
-    }
-    
-    private void disableCards(){
-        JButton button []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
-            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
-         for (int i = 0; i < 24; i++)  
-             button[i].setEnabled(false);
-    }
-    private void enableCards(){
-         JButton [] button = {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
-            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
-        for (int i = 0; i < 24; i++)  
-             button[i].setEnabled(true);
     }
     
     private void jbMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMainMenuActionPerformed
