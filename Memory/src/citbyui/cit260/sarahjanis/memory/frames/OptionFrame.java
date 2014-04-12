@@ -164,6 +164,7 @@ public class OptionFrame extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         jLabel6.setText("Player 2:");
 
+        jtError.setEditable(false);
         jtError.setBackground(new java.awt.Color(204, 255, 255));
         jtError.setColumns(20);
         jtError.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
