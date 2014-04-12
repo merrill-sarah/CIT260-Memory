@@ -7,18 +7,10 @@
 package citbyui.cit260.sarahjanis.memory.frames;
 
 import citbyui.cit260.sarahjanis.memory.controls.Game;
-//import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
-//import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
-//import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
-//import java.io.IOException;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-//import java.awt.*;
-//import java.awt.event.*;
 import javax.swing.*;
 
 /**
@@ -28,14 +20,14 @@ import javax.swing.*;
 public class BoardLargeFrame extends javax.swing.JFrame {
      private char symbols[];
      private int indexTurn[] = new int[2];
-    Game game;
+   
     Board board;
     SymbolArray symArr;
     Player P1;
     Player P2;
-    Card card1;
+    Card card = new Card();
     boolean matched = false;
-    //BoardLargeFrame lFrame;
+    
     private int tCounter=1;
     private int CLICKS;
     private int matchedGame;
@@ -879,6 +871,10 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             return false;
     }
     private void afterClick(/*JButton button*/){
+        JButton button []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24,
+            jb25, jb26, jb27, jb28, jb29, jb30, jb31, jb32, jb33, jb34, jb35, jb36,
+            jb37, jb38, jb39, jb40, jb41, jb42, jb43, jb44, jb45, jb46, jb47, jb48}; 
         if (CLICKS == 2){
             matched = checkMatch();
             CLICKS =0;
@@ -889,13 +885,13 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                      jlInstructions.setText(P1.getName() + ": Yay, you made a match! You get another turn.");
                      jlP1Matches.setText(Integer.toString(P1.getMatches()));
                      jbNext.setVisible(true);
-                        disableCards(/*button*/);
+                        card.disableCards(board, button);
             
                     }
                 else {
                     jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
-                        disableCards(/*button*/);
+                        card.disableCards(board, button);
             
                     //next player's turn
                     tCounter++;} 
@@ -907,13 +903,13 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                      jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
                      jlP2Matches.setText(Integer.toString(P2.getMatches()));
                     jbNext.setVisible(true);
-                        disableCards(/*button*/);
+                        card.disableCards(board, button);
             
                     }
                 else{
                     jlInstructions.setText(P2.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
-                        disableCards(/*button*/);
+                        card.disableCards(board, button);
             
                     //next player's turn
                     tCounter++;} 
@@ -930,6 +926,10 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             
     }
     private void setBoard(int size,  JButton [] button){
+        JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24,
+            jb25, jb26, jb27, jb28, jb29, jb30, jb31, jb32, jb33, jb34, jb35, jb36,
+            jb37, jb38, jb39, jb40, jb41, jb42, jb43, jb44, jb45, jb46, jb47, jb48}; 
         for (int i = 1, j=0; i < size; i++, j++){
           if (matched == false){
             if (indexTurn[0]==i || indexTurn[1]==i){
@@ -937,7 +937,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
             }
             matched = false;
             jbNext.setVisible(false); 
-                enableCards();
+                card.enableCards(board, buttons);
                 
                 //player instructions
                 if (tCounter % 2 != 0){
@@ -953,7 +953,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
                 button[j].setVisible(false); 
             }
             jbNext.setVisible(false);
-                enableCards();
+                card.enableCards(board, buttons);
                 
                 //player instructions
                 if (tCounter % 2 != 0){
@@ -968,22 +968,6 @@ public class BoardLargeFrame extends javax.swing.JFrame {
         
     }
   
-    private void disableCards(){
-         JButton button []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
-            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24,
-            jb25, jb26, jb27, jb28, jb29, jb30, jb31, jb32, jb33, jb34, jb35, jb36,
-            jb37, jb38, jb39, jb40, jb41, jb42, jb43, jb44, jb45, jb46, jb47, jb48}; 
-       for (int i = 0; i <48; i++)  
-        button[i].setEnabled(false);
-    }
-    private void enableCards(){
-        JButton button []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
-            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24,
-            jb25, jb26, jb27, jb28, jb29, jb30, jb31, jb32, jb33, jb34, jb35, jb36,
-            jb37, jb38, jb39, jb40, jb41, jb42, jb43, jb44, jb45, jb46, jb47, jb48}; 
-       for (int i = 0; i <48; i++)
-           button[i].setEnabled(true);
-    }
     
     
     private void jb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2ActionPerformed

@@ -6,17 +6,12 @@
 
 package citbyui.cit260.sarahjanis.memory.frames;
 
-//import citbyui.cit260.sarahjanis.memory.controls.Game;
-//import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
-//import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
-//import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
-//import java.io.IOException;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
+
 import javax.swing.JButton;
 
 /**
@@ -26,14 +21,13 @@ import javax.swing.JButton;
 public class BoardMediumFrame extends javax.swing.JFrame {
     private char symbols[];
     private int indexTurn[] = new int[2];
-   // Game game;
     Board board;
     SymbolArray symArr;
     Player P1;
     Player P2;
     Card card = new Card();
     boolean matched = false;
-    //BoardLargeFrame lFrame;
+    
     private int tCounter=1;
     private int CLICKS;
     private int matchedGame;
@@ -886,7 +880,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     private void setBoard(int size,  JButton [] button){
         JButton buttons []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
             jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
-        //make this fix cards somehow
+        
         for (int i = 1, j=0; i < size; i++, j++){
           if (matched == false){
             if (indexTurn[0]==i || indexTurn[1]==i){
