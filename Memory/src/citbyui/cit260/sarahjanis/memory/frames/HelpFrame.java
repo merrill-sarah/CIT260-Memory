@@ -41,6 +41,7 @@ public class HelpFrame extends javax.swing.JFrame {
             this.jtHelpText.setText(ErrorType.ERROR103.getMessage());
         }
         
+        
     }
 
     /**

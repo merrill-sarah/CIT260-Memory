@@ -167,10 +167,11 @@ public class OptionFrame extends javax.swing.JFrame {
         jtError.setEditable(false);
         jtError.setBackground(new java.awt.Color(204, 255, 255));
         jtError.setColumns(20);
-        jtError.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 14)); // NOI18N
+        jtError.setFont(new java.awt.Font("Berlin Sans FB", 0, 16)); // NOI18N
         jtError.setForeground(new java.awt.Color(255, 0, 0));
         jtError.setRows(3);
         jtError.setBorder(null);
+        jtError.setMargin(new java.awt.Insets(10, 10, 10, 10));
         jScrollPane1.setViewportView(jtError);
 
         javax.swing.GroupLayout jpOptionsLayout = new javax.swing.GroupLayout(jpOptions);
@@ -305,18 +306,14 @@ public class OptionFrame extends javax.swing.JFrame {
 
         int check = control.inputCheck(symbols, player1, player2, board);
         if (check == 1){
-            jtError.setText("Error: "
-                + "\nPlease enter the players' names. "
-                + "\nA name must be at least one "
-                + "\ncharacer long.");
+            jtError.setText(ErrorType.ERROR101.getMessage());
         }
         else if (check == 2){
-            jtError.setText("Error:"
-                + "\nPlease select how many \nof each card.");
+            jtError.setText(ErrorType.ERROR204.getMessage());
         }
         else if (check == 3){
-            jtError.setText("Error:"
-                + "\nPlease select a board size.");
+            jtError.setMargin(new java.awt.Insets(10, 10, 10, 10));
+            jtError.setText(ErrorType.ERROR103.getMessage());
         }
         else if (check == 0) {
             Game game = new Game();
@@ -325,8 +322,9 @@ public class OptionFrame extends javax.swing.JFrame {
             } catch (BoardException ex) {
                 Logger.getLogger(OptionFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
+            finally {
 
-            this.dispose();
+            this.dispose();}
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
