@@ -6,17 +6,17 @@
 
 package citbyui.cit260.sarahjanis.memory.frames;
 
-import citbyui.cit260.sarahjanis.memory.controls.Game;
-import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
-import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
-import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+//import citbyui.cit260.sarahjanis.memory.controls.Game;
+//import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
+//import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
+//import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.io.IOException;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 import javax.swing.JButton;
 
 /**
@@ -26,13 +26,12 @@ import javax.swing.JButton;
 public class BoardMediumFrame extends javax.swing.JFrame {
     private char symbols[];
     private int indexTurn[] = new int[2];
-    Game game;
-    Board board;
+   // Game game;
+    private Board board;
     SymbolArray symArr;
     Player P1;
     Player P2;
-    Card card1;
-    Card card2;
+    Card card;
     boolean matched = false;
     //BoardLargeFrame lFrame;
     private int tCounter=1;
@@ -41,7 +40,7 @@ public class BoardMediumFrame extends javax.swing.JFrame {
     /**
      * Creates new form BoardMediumFrame
      */
-    public BoardMediumFrame(Player player1, Player player2, Board setBoard, Game game, char getSymbols[]) {
+    public BoardMediumFrame(Player player1, Player player2, Board setBoard,char getSymbols[]) {
         P1 = player1;
         P2 = player2;
         board = setBoard;
@@ -832,6 +831,8 @@ public class BoardMediumFrame extends javax.swing.JFrame {
             return false;
     }
     private void afterClick(){
+        JButton button []= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12, 
+            jb13, jb14, jb15, jb16, jb17, jb18, jb19, jb20, jb21, jb22, jb23, jb24};
         if (CLICKS == 2){
             matched = checkMatch();
             CLICKS =0;
@@ -842,13 +843,13 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                      jlInstructions.setText(P1.getName() + ": Yay, you made a match! You get another turn.");
                      jlP1Matches.setText(Integer.toString(P1.getMatches()));
                      jbNext.setVisible(true);
-                        disableCards();
+                        card.disableCards(board, button);
             
                     }
                 else { 
                     jlInstructions.setText(P1.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
-                        disableCards();
+                       disableCards();
             
                     //next player's turn
                     tCounter++;} 
@@ -860,13 +861,14 @@ public class BoardMediumFrame extends javax.swing.JFrame {
                     jlInstructions.setText(P2.getName() + ": Yay, you made a match! You get another turn.");
                     jlP2Matches.setText(Integer.toString(P2.getMatches()));
                     jbNext.setVisible(true);
-                        disableCards();
+                        card.disableCards(board, button);
      
                     }
                 else{                     
                     jlInstructions.setText(P2.getName() + ": Sorry, not a match. Next player's turn.");
                     jbNext.setVisible(true);
                         disableCards();
+                        
             
                     //next player's turn
                     tCounter++;} 

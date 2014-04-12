@@ -7,18 +7,18 @@
 package citbyui.cit260.sarahjanis.memory.frames;
 
 import citbyui.cit260.sarahjanis.memory.controls.Game;
-import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
-import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
-import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+//import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
+//import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
+//import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.awt.*;
-import java.awt.event.*;
+//import java.io.IOException;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+//import java.awt.*;
+//import java.awt.event.*;
 import javax.swing.*;
 
 /**
@@ -42,7 +42,7 @@ public class BoardLargeFrame extends javax.swing.JFrame {
     /**
      * Creates new form BoardLargeFrame
      */
-    public BoardLargeFrame(Player player1, Player player2, Board setBoard,Game game, char getSymbols[]) {
+    public BoardLargeFrame(Player player1, Player player2, Board setBoard, char getSymbols[]) {
         P1 = player1;
         P2 = player2;
         board = setBoard;

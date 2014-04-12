@@ -11,8 +11,8 @@ package citbyui.cit260.sarahjanis.memory.frames;
  * @author Janis
  */
 
-import citbyui.cit260.sarahjanis.memory.controls.Game;
-import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
+//import citbyui.cit260.sarahjanis.memory.controls.Game;
+//import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;
@@ -27,7 +27,7 @@ public class BoardSmallFrame extends javax.swing.JFrame implements Serializable 
     Card card = new Card();
     private Player P1;
     private Player P2;
-    private Game game;
+   // private Game game;
     private boolean matched = false;
     private int tCounter =  1;
     private int CLICKS;
@@ -38,12 +38,12 @@ public class BoardSmallFrame extends javax.swing.JFrame implements Serializable 
     /**
      * Creates new form GameBoardFrame
      */
-    public BoardSmallFrame(Player player1, Player player2, Board board, Game game, char getSymbols[]) throws BoardException{
+    public BoardSmallFrame(Player player1, Player player2, Board board, /*Game game,*/ char getSymbols[]) /*throws BoardException*/{
         
         P1 = player1;
         P2 = player2;
         this.board = board; 
-        this.game = game;
+      //  this.game = game;
         initComponents();
         setLocationRelativeTo(null);
         symbols = getSymbols;
@@ -579,6 +579,7 @@ public class BoardSmallFrame extends javax.swing.JFrame implements Serializable 
                      jlP1Matches.setText(Integer.toString(P1.getMatches()));
                      jbNext.setVisible(true);
                         card.disableCards(board, buttons);
+                        
                      
                     }
                 else {
@@ -662,20 +663,7 @@ public class BoardSmallFrame extends javax.swing.JFrame implements Serializable 
         }
         }
     }
-        
-        
-    
-    /*private void disableCards(){
-     JButton[] button= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
-     for (int i = 0; i < 12; i++)  
-        button[i].setEnabled(false); 
-    }
-        
-    private void enableCards(){
-        JButton[] button= {jb1, jb2, jb3, jb4, jb5, jb6, jb7, jb8, jb9, jb10, jb11, jb12};
-     for (int i = 0; i < 12; i++)  
-        button[i].setEnabled(true);
-    }*/
+      
     
     private void jbMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMainMenuActionPerformed
         this.dispose();
@@ -697,7 +685,7 @@ public class BoardSmallFrame extends javax.swing.JFrame implements Serializable 
         setBoard(13, buttons);
         
         
-        //determines whether to show the end game stuff
+        //determines when to show the end game message
         if (matchedGame == board.getTotalMatches()){
              jLabel4.setText("RESULTS");
              if (P2.getMatches()>P1.getMatches()){
