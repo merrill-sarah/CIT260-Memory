@@ -5,13 +5,15 @@
  */
 
 package citbyui.cit260.sarahjanis.memory.frames;
+//import citbyui.cit260.sarahjanis.memory.controls.MainMenuControl;
 
 /**
  *
  * @author Janis
  */
 public class MainFrame extends javax.swing.JFrame {
- 
+   //  private MainMenuControl mainMenu = new MainMenuControl();
+    
     /**
      * Creates new form MainFrame
      */
