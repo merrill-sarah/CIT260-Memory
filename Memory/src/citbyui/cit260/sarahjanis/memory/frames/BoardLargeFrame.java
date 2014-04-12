@@ -6,7 +6,7 @@
 
 package citbyui.cit260.sarahjanis.memory.frames;
 
-import citbyui.cit260.sarahjanis.memory.controls.Game;
+
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Player;

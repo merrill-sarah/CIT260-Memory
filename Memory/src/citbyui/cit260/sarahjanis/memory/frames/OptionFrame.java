@@ -10,13 +10,13 @@ import citbyui.cit260.sarahjanis.memory.controls.Game;
 import citbyui.cit260.sarahjanis.memory.controls.OptionsMenuControl;
 import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
-import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
-import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
+//import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
+//import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

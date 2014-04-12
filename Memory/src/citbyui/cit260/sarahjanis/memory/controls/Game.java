@@ -40,9 +40,7 @@ public class Game implements Serializable {
     private int numCards;
     private char cardSymbol;
     private int cardSelection;
-    private int dupCheck;
     private int numPlayers=2;
-    private StatusType status;
     private Card card = new Card();
  
     
@@ -72,64 +70,9 @@ public class Game implements Serializable {
                 boardLg = new BoardLargeFrame(player1, player2, board, getSymbols);
                 boardLg.setVisible(true);
                 break;
-          }
-              
-                  
-                    
+          }     
     }
-    /*public void setIndices(int index){
-        
-        if (boardSm.getCLICKS() == 1){
-            boardSm.indexTurn[0]= index;
-            
-        }
-        else if (boardSm.getCLICKS() ==2){
-          indexTurn[1]= index;
-        }
-    }
-    public void setBoard(int size,  JButton [] button, Board board){
-        
-        for (int i = 1, j=0; i < size; i++, j++){
-          if (boardSm.isMatched() == false){
-            if (boardSm.getIndexTurn()[0]==i || boardSm.getIndexTurn()[1]==i){
-               button[j].setText(Integer.toString(i)); 
-            }
-                     
-            boardSm.setMatched(false);
-            boardSm.getJbNext().setVisible(false); 
-                card.enableCards(board, button);
-                
-                //player instructions
-                if (boardSm.gettCounter() % 2 != 0){
-                    boardSm.getJlInstructions().setText(boardSm.getP1().getName() + ": Choose a card.");  
-                    }
-                else{
-                    boardSm.getJlInstructions().setText(boardSm.getP2().getName() + ": Choose a card.");
-                    }
-                }
-        else if (boardSm.isMatched() == true){
-            for (i = 1, j=0; i < size; i++, j++){
-            if (boardSm.getIndexTurn()[0]==i || boardSm.getIndexTurn()[1]==i){
-               button[j].setVisible(false);
-            }
-            
-            boardSm.getJbNext().setVisible(false); 
-                card.enableCards(board, button);
-                
-                //player instructions
-                if (boardSm.gettCounter() % 2 != 0){
-                    boardSm.getJlInstructions().setText(boardSm.getP1().getName() + ": Choose a card.");  
-                    }
-                else{
-                    boardSm.getJlInstructions().setText(boardSm.getP2().getName() + ": Choose a card.");
-                    }
-                }
-             
-        }
-        }
-    } */
     
-
     public int getNumCards() {
         return numCards;
     }
@@ -154,14 +97,6 @@ public class Game implements Serializable {
         this.cardSelection = cardSelection;
     }
 
-    public int getDupCheck() {
-        return dupCheck;
-    }
-
-    public void setDupCheck(int dupCheck) {
-        this.dupCheck = dupCheck;
-    }
-
     public int getNumPlayers() {
         return numPlayers;
     }
@@ -169,38 +104,7 @@ public class Game implements Serializable {
     public void setNumPlayers(int numPlayers) {
         this.numPlayers = numPlayers;
     }
-    
-  /*  public void rollCredits(){
-    
-    System.out.println("\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-                 + "\n\t~~~~~~~~~~~~~~~CREDITS~~~~~~~~~~~~~~~~~~"
-                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-         
-         BioJ janis = new BioJ("Janis", "Felsted", "Web Design and Development", "Online Bachelor's Degree",
-         "Senior", "127", "FALL", "2016", "She" );
-         janis.display();
-         janis.getBio();
-         BioS sarah = new BioS("Sarah", "Merrill", "Web Design and Development", "Bachelor's Degree",
-         "Junior", "--", "FALL", "2015", "She" );
-         sarah.display();
-         sarah.getBio();
-    
-    }
 
-    /**
-     * @return the status
-     */
-    public StatusType getStatus() {
-        return status;
-    }
-
-    /**
-     * @param status the status to set
-     */
-    public void setStatus(StatusType status) {
-        this.status = status;
-    }
-      
    
       } 
       
