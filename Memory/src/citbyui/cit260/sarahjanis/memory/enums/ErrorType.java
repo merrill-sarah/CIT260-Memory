@@ -16,7 +16,7 @@ public enum ErrorType {
     ERROR101(   "    * * * Error * * * "
                 + "\n Please enter the players' names. "
                 + "\n A name must be at least one "
-                + "\n characer long."
+                + "\n character long."
     ),
     
     ERROR103 ("    * * * Error * * * \n Please select a grid size."

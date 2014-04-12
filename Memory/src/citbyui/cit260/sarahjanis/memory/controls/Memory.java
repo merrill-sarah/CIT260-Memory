@@ -6,17 +6,11 @@
 
 package citbyui.cit260.sarahjanis.memory.controls;
 
-import citbyui.cit260.sarahjanis.memory.AssignW10.Dogs;
-import citbyui.cit260.sarahjanis.memory.AssignW10.Horses;
-import citbyui.cit260.sarahjanis.memory.AssignW10.HouseCats;
 import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
 import citbyui.cit260.sarahjanis.memory.exceptions.MenuException;
 import citbyui.cit260.sarahjanis.memory.frames.MainFrame;
-//import citbyui.cit260.sarahjanis.memory.views.MainMenuView;
-import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -29,18 +23,7 @@ import java.util.Scanner;
 public class Memory implements Serializable {
      public static MainFrame mainFrame = null;
           
-    private final static String instructions = " Welcome to a game of Memory!"
-            + "\n\tYou may play against the computer or"
-             + " another player."
-            + "\n\tBegin by choosing the options menu where "
-             + "you will choose number of players and the level of difficulty"
-             + "\n\tSelect Play, the game will begin, and you may select two cards."
-            + "\n\tThe object of the game is to make the most matches."
-             +"\n\tHave Fun!!"
-             + "\n";
-    
-    private final static Scanner inFile = new Scanner(System.in);
-    
+ 
     public static void main(String[] args) throws IOException, MenuException {
          Memory memory = null;
         try {  
@@ -66,39 +49,7 @@ public class Memory implements Serializable {
             }
         }
         
-      
-    
-        
-       //Memory myGame = new Memory();
-      //  myGame.displayHelp();
-       
-        
-      //  MainMenuView mainMenuView = new MainMenuView();
-      //  mainMenuView.getInput(myGame);
-      /*  
-        try{
-            Memory memory = new Memory();
-            MainMenuView mainMenuView = new MainMenuView();
-            mainMenuView.getInput(memory);
-          
-       }
-        catch(Throwable e) {
-            MemoryError.displayError("Unexpected Error: " + e.getMessage());
-            MemoryError.displayError(Arrays.toString(e.getStackTrace()));
-        } 
-        finally {
-            Memory.inFile.close();
-           // System.out.println("Ya'll come back now, hear?!"); // testing 
-        }
-    }*/
     }
-    public static Scanner getInputFile() {
-        return Memory.inFile;
-            }
-    
-    public void displayHelp(){
-       System.out.println(Memory.instructions);        
-    }   
 }
 
 

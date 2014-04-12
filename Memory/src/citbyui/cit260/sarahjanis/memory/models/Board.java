@@ -7,13 +7,13 @@
 package citbyui.cit260.sarahjanis.memory.models;
 
 import citbyui.cit260.sarahjanis.memory.enums.ErrorType;
-import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
-import citbyui.cit260.sarahjanis.memory.frames.BoardLargeFrame;
-import citbyui.cit260.sarahjanis.memory.frames.BoardMediumFrame;
-import citbyui.cit260.sarahjanis.memory.frames.BoardSmallFrame;
-import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
+//import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
+//import citbyui.cit260.sarahjanis.memory.frames.BoardLargeFrame;
+//import citbyui.cit260.sarahjanis.memory.frames.BoardMediumFrame;
+//import citbyui.cit260.sarahjanis.memory.frames.BoardSmallFrame;
+//import citbyui.cit260.sarahjanis.memory.interfaces.DisplayInfo;
 import java.io.Serializable;
-import javax.swing.JButton;
+//import javax.swing.JButton;
 
 /**
  *
@@ -45,7 +45,7 @@ public class Board implements Serializable {
                 setTotalCards(48); 
                 break;
             default: 
-                errorMsg.displayError(ErrorType.ERROR102.getMessage());
+                errorMsg.displayError(ErrorType.ERROR103.getMessage());
             
                     }
         totalMatches=totalCards/2;

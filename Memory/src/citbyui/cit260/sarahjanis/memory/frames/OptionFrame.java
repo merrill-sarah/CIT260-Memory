@@ -13,7 +13,7 @@ import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
 //import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
 //import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.models.Board;
-import citbyui.cit260.sarahjanis.memory.models.MemoryError;
+//import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 //import java.io.IOException;

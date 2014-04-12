@@ -6,10 +6,8 @@
 
 package citbyui.cit260.sarahjanis.memory.controls;
 
-import citbyui.cit260.sarahjanis.memory.enums.StatusType;
+
 import citbyui.cit260.sarahjanis.memory.exceptions.BoardException;
-import citbyui.cit260.sarahjanis.memory.exceptions.CardException;
-import citbyui.cit260.sarahjanis.memory.exceptions.MemoryException;
 import citbyui.cit260.sarahjanis.memory.frames.BoardLargeFrame;
 import citbyui.cit260.sarahjanis.memory.frames.BoardMediumFrame;
 import citbyui.cit260.sarahjanis.memory.frames.BoardSmallFrame;
@@ -17,13 +15,11 @@ import citbyui.cit260.sarahjanis.memory.models.SymbolArray;
 import citbyui.cit260.sarahjanis.memory.models.Player;
 import citbyui.cit260.sarahjanis.memory.models.Card;
 import citbyui.cit260.sarahjanis.memory.models.Board;
-import citbyui.cit260.sarahjanis.memory.models.BioS;
-import citbyui.cit260.sarahjanis.memory.models.BioJ;
 import citbyui.cit260.sarahjanis.memory.models.MemoryError;
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.io.Serializable;
-import javax.swing.JButton;
+//import javax.swing.JButton;
 
 
 

@@ -66,7 +66,8 @@ public class HelpFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HELP MENU");
-        setPreferredSize(new java.awt.Dimension(501, 414));
+        setMinimumSize(new java.awt.Dimension(480, 470));
+        setPreferredSize(new java.awt.Dimension(501, 470));
 
         jpHelpBody.setBackground(new java.awt.Color(204, 255, 255));
         jpHelpBody.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 255), 1, true));
@@ -147,7 +148,7 @@ public class HelpFrame extends javax.swing.JFrame {
                 .addComponent(jbHelpDifficultyLevels)
                 .addGap(18, 18, 18)
                 .addComponent(jbReturnToMain)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(227, Short.MAX_VALUE))
         );
 
         jtHelpText.setEditable(false);
@@ -167,7 +168,7 @@ public class HelpFrame extends javax.swing.JFrame {
             .addGroup(jpHelpBodyLayout.createSequentialGroup()
                 .addComponent(jpHelpMenuItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jpHelpBodyLayout.setVerticalGroup(
@@ -187,14 +188,14 @@ public class HelpFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpHelpBody, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
+                .addComponent(jpHelpBody, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpHelpBody, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
+                .addComponent(jpHelpBody, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
